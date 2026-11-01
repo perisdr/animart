@@ -16,7 +16,20 @@ Chosen by the project owner on 2026-11-01.
 
 Use this direction for the first gallery design.
 
-## Framework options (not yet selected)
+## Implementation decision
+
+Use Bootstrap 5.3's precompiled CSS stored locally, plus custom CSS and plain
+JavaScript. Start without Bootstrap's JavaScript bundle; native HTML controls
+cover the current interactions. No npm, Sass compilation, bundler, or framework
+runtime is required. Test through a local static web server and publish the same
+files on GitHub Pages. Direct `file://` access is not a supported target.
+
+Keep `data/wallpapers.json` as the single editable catalogue for both the gallery
+and thumbnail tooling. Load it with `fetch()` and show a helpful error if loading
+fails. Use relative asset paths and locally stored dependencies.
+External reference links and Tinify naturally require internet access.
+
+## Options considered
 
 1. Bootstrap 5.3: recommended for plain HTML and JavaScript. Ready-made forms,
    dropdowns, dialogs, and responsive layout; customize typography, spacing,

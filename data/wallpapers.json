@@ -3,19 +3,37 @@
     "id": "death-note-nighthawks",
     "anime": {
       "name": "Death Note",
-      "anidbUrl": null
+      "anidbUrl": "https://anidb.net/anime/4563",
+      "aliases": [
+        "Desu Noto",
+        "Light Yagami",
+        "L",
+        "Ryuk"
+      ],
+      "description": "A student discovers a notebook that can kill anyone whose name is written inside. His pursuit of a new order becomes a battle of intelligence with the detective L."
     },
     "artwork": {
       "title": "Nighthawks",
       "artist": "Edward Hopper",
-      "sourceUrl": null,
-      "preview": null,
-      "credit": null,
-      "reuseTerms": null
+      "sourceUrl": "https://archive.artic.edu/hopper/artwork/111628",
+      "preview": "previews/originals/nighthawks.webp",
+      "credit": "Edward Hopper / Art Institute of Chicago, via Wikimedia Commons.",
+      "reuseTerms": "Public domain in the United States (copyright not renewed), per Wikimedia Commons; status may differ elsewhere.",
+      "year": "1942",
+      "description": "A brightly lit diner sits against an empty city street. Hopper leaves the relationships between its customers unresolved, inviting us to read the scene for ourselves.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Nighthawks_by_Edward_Hopper_1942.jpg"
     },
-    "metadataStatus": "pending-verification",
+    "metadataStatus": "source-linked",
     "preview": "previews/death-note-nighthawks.webp",
-    "tags": [],
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "diner",
+      "night",
+      "city"
+    ],
     "downloads": [
       {
         "label": "Original PNG",
@@ -39,19 +57,34 @@
     "id": "death-note-the-death-of-marat",
     "anime": {
       "name": "Death Note",
-      "anidbUrl": null
+      "anidbUrl": "https://anidb.net/anime/4563",
+      "aliases": [
+        "Desu Noto",
+        "Light Yagami",
+        "L",
+        "Ryuk"
+      ],
+      "description": "A student discovers a notebook that can kill anyone whose name is written inside. His pursuit of a new order becomes a battle of intelligence with the detective L."
     },
     "artwork": {
       "title": "The Death of Marat",
       "artist": "Jacques-Louis David",
-      "sourceUrl": null,
-      "preview": null,
-      "credit": null,
-      "reuseTerms": null
+      "sourceUrl": "https://www.wga.hu/html/d/david_j/3/301david.html",
+      "preview": "previews/originals/marat.webp",
+      "credit": "Jacques-Louis David / Royal Museums of Fine Arts of Belgium, via Wikimedia Commons.",
+      "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
+      "year": "1793",
+      "description": "David depicts the murdered revolutionary Jean-Paul Marat in his bath. The spare setting and still figure turn a contemporary political death into a solemn memorial.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Death_of_Marat_by_David.jpg"
     },
-    "metadataStatus": "pending-verification",
+    "metadataStatus": "source-linked",
     "preview": "previews/death-note-the-death-of-marat.webp",
-    "tags": [],
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9"
+    ],
     "downloads": [
       {
         "label": "Original PNG",
@@ -75,19 +108,34 @@
     "id": "death-note-the-scream",
     "anime": {
       "name": "Death Note",
-      "anidbUrl": null
+      "anidbUrl": "https://anidb.net/anime/4563",
+      "aliases": [
+        "Desu Noto",
+        "Light Yagami",
+        "L",
+        "Ryuk"
+      ],
+      "description": "A student discovers a notebook that can kill anyone whose name is written inside. His pursuit of a new order becomes a battle of intelligence with the detective L."
     },
     "artwork": {
       "title": "The Scream",
       "artist": "Edvard Munch",
-      "sourceUrl": null,
-      "preview": null,
-      "credit": null,
-      "reuseTerms": null
+      "sourceUrl": "https://www.munch.no/en/The-Scream/",
+      "preview": "previews/originals/the-scream.webp",
+      "credit": "Edvard Munch, 1893 version / National Museum of Norway, via Wikimedia Commons.",
+      "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
+      "year": "1893–1910",
+      "description": "A figure beneath a restless sky gives anxiety a visible form. Munch returned to this motif in several paintings, drawings, and prints; the linked museum explores those versions.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:The_Scream.jpg"
     },
-    "metadataStatus": "pending-verification",
+    "metadataStatus": "source-linked",
     "preview": "previews/death-note-the-scream.webp",
-    "tags": [],
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9"
+    ],
     "downloads": [
       {
         "label": "Original PNG",
@@ -111,19 +159,34 @@
     "id": "death-note-the-son-of-man",
     "anime": {
       "name": "Death Note",
-      "anidbUrl": null
+      "anidbUrl": "https://anidb.net/anime/4563",
+      "aliases": [
+        "Desu Noto",
+        "Light Yagami",
+        "L",
+        "Ryuk"
+      ],
+      "description": "A student discovers a notebook that can kill anyone whose name is written inside. His pursuit of a new order becomes a battle of intelligence with the detective L."
     },
     "artwork": {
       "title": "The Son of Man",
       "artist": "René Magritte",
-      "sourceUrl": null,
-      "preview": null,
-      "credit": null,
-      "reuseTerms": null
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Son_of_Man",
+      "preview": "previews/originals/son-of-man.webp",
+      "credit": "René Magritte, The Son of Man, 1964. Low-resolution reference from English Wikipedia.",
+      "reuseTerms": "Copyrighted artwork; not freely licensed. Wikipedia hosts this reproduction under an article-specific fair-use rationale.",
+      "year": "1964",
+      "description": "A floating apple conceals the face of a man in a bowler hat. Magritte uses an ordinary object to make a familiar portrait feel strange and elusive.",
+      "previewSourceUrl": "https://en.wikipedia.org/wiki/File:Magritte_TheSonOfMan.jpg"
     },
-    "metadataStatus": "pending-verification",
+    "metadataStatus": "source-linked",
     "preview": "previews/death-note-the-son-of-man.webp",
-    "tags": [],
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9"
+    ],
     "downloads": [
       {
         "label": "Original PNG",
@@ -147,19 +210,39 @@
     "id": "demon-slayer-mugen-train-turner",
     "anime": {
       "name": "Demon Slayer",
-      "anidbUrl": null
+      "anidbUrl": "https://anidb.net/anime/14107",
+      "aliases": [
+        "Kimetsu no Yaiba",
+        "Tanjiro",
+        "Tanjirou",
+        "Nezuko",
+        "Rengoku",
+        "Shinobu"
+      ],
+      "description": "Tanjiro joins the Demon Slayer Corps after his family is attacked and his sister becomes a demon. His journey blends swordsmanship, compassion, and a search for a cure."
     },
     "artwork": {
       "title": "Rain, Steam, and Speed",
       "artist": "J. M. W. Turner",
-      "sourceUrl": null,
-      "preview": null,
-      "credit": null,
-      "reuseTerms": null
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-rain-steam-and-speed-the-great-western-railway",
+      "preview": "previews/originals/rain-steam-speed.webp",
+      "credit": "J. M. W. Turner / National Gallery, London, via Wikimedia Commons.",
+      "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
+      "year": "1844",
+      "description": "A locomotive emerges through rain and steam on a railway bridge. Turner lets atmosphere soften the landscape while the train drives directly toward the viewer.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:J._M._W._Turner_-_Rain,_Steam_and_Speed_%E2%80%93_The_Great_Western_Railway.jpg"
     },
-    "metadataStatus": "pending-verification",
+    "metadataStatus": "source-linked",
     "preview": "previews/demon-slayer-mugen-train-turner.webp",
-    "tags": [],
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "Mugen Train",
+      "train",
+      "rain"
+    ],
     "downloads": [
       {
         "label": "Original PNG",
@@ -183,19 +266,39 @@
     "id": "demon-slayer-rengoku-red-fuji",
     "anime": {
       "name": "Demon Slayer",
-      "anidbUrl": null
+      "anidbUrl": "https://anidb.net/anime/14107",
+      "aliases": [
+        "Kimetsu no Yaiba",
+        "Tanjiro",
+        "Tanjirou",
+        "Nezuko",
+        "Rengoku",
+        "Shinobu"
+      ],
+      "description": "Tanjiro joins the Demon Slayer Corps after his family is attacked and his sister becomes a demon. His journey blends swordsmanship, compassion, and a search for a cure."
     },
     "artwork": {
       "title": "Fine Wind, Clear Morning",
       "artist": "Katsushika Hokusai",
-      "sourceUrl": null,
-      "preview": null,
-      "credit": null,
-      "reuseTerms": null
+      "sourceUrl": "https://artsandculture.google.com/asset/thirty-six-views-of-mt-fuji-fine-wind-clear-morning/HgGi21x5uVwD8w",
+      "preview": "previews/originals/red-fuji.webp",
+      "credit": "Katsushika Hokusai / Indianapolis Museum of Art, via Google Art Project and Wikimedia Commons.",
+      "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
+      "year": "c. 1830–1832",
+      "description": "Often called Red Fuji, this woodblock print sets the mountain against bands of delicate cloud. Its bold colour and simple silhouette belong to Hokusai’s Thirty-six Views of Mount Fuji.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Katsushika_Hokusai_-_Fine_Wind,_Clear_Morning_(Gaif%C5%AB_kaisei)_-_Google_Art_Project.jpg"
     },
-    "metadataStatus": "pending-verification",
+    "metadataStatus": "source-linked",
     "preview": "previews/demon-slayer-rengoku-red-fuji.webp",
-    "tags": [],
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "Red Fuji",
+      "Rengoku",
+      "flame"
+    ],
     "downloads": [
       {
         "label": "Original PNG",
@@ -219,19 +322,39 @@
     "id": "demon-slayer-shinobu-monet-garden",
     "anime": {
       "name": "Demon Slayer",
-      "anidbUrl": null
+      "anidbUrl": "https://anidb.net/anime/14107",
+      "aliases": [
+        "Kimetsu no Yaiba",
+        "Tanjiro",
+        "Tanjirou",
+        "Nezuko",
+        "Rengoku",
+        "Shinobu"
+      ],
+      "description": "Tanjiro joins the Demon Slayer Corps after his family is attacked and his sister becomes a demon. His journey blends swordsmanship, compassion, and a search for a cure."
     },
     "artwork": {
       "title": "The Japanese Footbridge",
       "artist": "Claude Monet",
-      "sourceUrl": null,
-      "preview": null,
-      "credit": null,
-      "reuseTerms": null
+      "sourceUrl": "https://www.nga.gov/artworks/74796-japanese-footbridge",
+      "preview": "previews/originals/japanese-footbridge.webp",
+      "credit": "Claude Monet / National Gallery of Art, Washington.",
+      "reuseTerms": "Public domain; National Gallery of Art Open Access.",
+      "year": "1899",
+      "description": "Monet’s garden at Giverny becomes a dense world of water, leaves, and reflected colour. The arch of the bridge gives structure to the loose brushwork around it.",
+      "previewSourceUrl": "https://www.nga.gov/artworks/74796-japanese-footbridge"
     },
-    "metadataStatus": "pending-verification",
+    "metadataStatus": "source-linked",
     "preview": "previews/demon-slayer-shinobu-monet-garden.webp",
-    "tags": [],
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "Shinobu",
+      "garden",
+      "water lilies"
+    ],
     "downloads": [
       {
         "label": "Original PNG",
@@ -255,19 +378,39 @@
     "id": "demon-slayer-tanjiro-great-wave-corrected",
     "anime": {
       "name": "Demon Slayer",
-      "anidbUrl": null
+      "anidbUrl": "https://anidb.net/anime/14107",
+      "aliases": [
+        "Kimetsu no Yaiba",
+        "Tanjiro",
+        "Tanjirou",
+        "Nezuko",
+        "Rengoku",
+        "Shinobu"
+      ],
+      "description": "Tanjiro joins the Demon Slayer Corps after his family is attacked and his sister becomes a demon. His journey blends swordsmanship, compassion, and a search for a cure."
     },
     "artwork": {
       "title": "The Great Wave off Kanagawa",
       "artist": "Katsushika Hokusai",
-      "sourceUrl": null,
-      "preview": null,
-      "credit": null,
-      "reuseTerms": null
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/45434",
+      "preview": "previews/originals/great-wave.webp",
+      "credit": "Katsushika Hokusai / The Metropolitan Museum of Art. H. O. Havemeyer Collection, Bequest of Mrs. H. O. Havemeyer, 1929.",
+      "reuseTerms": "Public domain; The Met Open Access.",
+      "year": "c. 1830–1832",
+      "description": "A towering wave curls above boats while Mount Fuji appears small in the distance. Hokusai uses scale, perspective, and blue pigments to make the sea feel immense.",
+      "previewSourceUrl": "https://www.metmuseum.org/art/collection/search/45434"
     },
-    "metadataStatus": "pending-verification",
+    "metadataStatus": "source-linked",
     "preview": "previews/demon-slayer-tanjiro-great-wave-corrected.webp",
-    "tags": [],
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "ocean",
+      "wave",
+      "ukiyo-e"
+    ],
     "downloads": [
       {
         "label": "Original PNG",
@@ -291,19 +434,39 @@
     "id": "demon-slayer-tanjiro-moonlit-temple",
     "anime": {
       "name": "Demon Slayer",
-      "anidbUrl": null
+      "anidbUrl": "https://anidb.net/anime/14107",
+      "aliases": [
+        "Kimetsu no Yaiba",
+        "Tanjiro",
+        "Tanjirou",
+        "Nezuko",
+        "Rengoku",
+        "Shinobu"
+      ],
+      "description": "Tanjiro joins the Demon Slayer Corps after his family is attacked and his sister becomes a demon. His journey blends swordsmanship, compassion, and a search for a cure."
     },
     "artwork": {
       "title": "The Abbey in the Oakwood",
       "artist": "Caspar David Friedrich",
-      "sourceUrl": null,
-      "preview": null,
-      "credit": null,
-      "reuseTerms": null
+      "sourceUrl": "https://search.smb.museum/object/obj-968249",
+      "preview": "previews/originals/abbey.webp",
+      "credit": "Caspar David Friedrich / Alte Nationalgalerie, Berlin, via Google Art Project and Wikimedia Commons.",
+      "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
+      "year": "1809–1810",
+      "description": "Bare oak trees surround the ruins of a Gothic abbey. Friedrich brings architecture, winter, and a funeral procession together in a quiet meditation on mortality.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Abtei_im_Eichwald_-_Google_Art_Project.jpg"
     },
-    "metadataStatus": "pending-verification",
+    "metadataStatus": "source-linked",
     "preview": "previews/demon-slayer-tanjiro-moonlit-temple.webp",
-    "tags": [],
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "Tanjiro",
+      "temple",
+      "moonlight"
+    ],
     "downloads": [
       {
         "label": "Original PNG",
@@ -326,20 +489,37 @@
   {
     "id": "fma-fma-creation-of-adam-1920x1080",
     "anime": {
-      "name": "FMA",
-      "anidbUrl": null
+      "name": "Fullmetal Alchemist",
+      "anidbUrl": "https://anidb.net/anime/979",
+      "aliases": [
+        "FMA",
+        "Hagane no Renkinjutsushi",
+        "Brotherhood",
+        "Edward Elric",
+        "Alphonse Elric"
+      ],
+      "description": "Brothers Edward and Alphonse Elric seek to restore their bodies after a forbidden act of alchemy. The franchise explores sacrifice, responsibility, and the limits of human ambition.",
+      "alternateAnidbUrl": "https://anidb.net/anime/6107"
     },
     "artwork": {
       "title": "The Creation of Adam",
       "artist": "Michelangelo",
-      "sourceUrl": null,
-      "preview": null,
-      "credit": null,
-      "reuseTerms": null
+      "sourceUrl": "https://www.wga.hu/html_m/m/michelan/3sistina/1genesis/6adam/06_3ce6.html",
+      "preview": "previews/originals/creation-of-adam.webp",
+      "credit": "Michelangelo / Wikimedia Commons. Detail of the Sistine Chapel ceiling.",
+      "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
+      "year": "c. 1510",
+      "description": "Part of the Sistine Chapel ceiling, this fresco stages the creation of Adam around two almost-touching hands. The small gap between them holds the composition’s tension.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Michelangelo_-_Creation_of_Adam_(cropped).jpg"
     },
-    "metadataStatus": "pending-verification",
+    "metadataStatus": "source-linked",
     "preview": "previews/fma-fma-creation-of-adam-1920x1080.webp",
-    "tags": [],
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9"
+    ],
     "downloads": [
       {
         "label": "Original PNG",
@@ -362,20 +542,40 @@
   {
     "id": "fma-fma-wanderer-1920x1080",
     "anime": {
-      "name": "FMA",
-      "anidbUrl": null
+      "name": "Fullmetal Alchemist",
+      "anidbUrl": "https://anidb.net/anime/979",
+      "aliases": [
+        "FMA",
+        "Hagane no Renkinjutsushi",
+        "Brotherhood",
+        "Edward Elric",
+        "Alphonse Elric"
+      ],
+      "description": "Brothers Edward and Alphonse Elric seek to restore their bodies after a forbidden act of alchemy. The franchise explores sacrifice, responsibility, and the limits of human ambition.",
+      "alternateAnidbUrl": "https://anidb.net/anime/6107"
     },
     "artwork": {
       "title": "Wanderer above the Sea of Fog",
       "artist": "Caspar David Friedrich",
-      "sourceUrl": null,
-      "preview": null,
-      "credit": null,
-      "reuseTerms": null
+      "sourceUrl": "https://wanderer.cdfriedrich.de/en/",
+      "preview": "previews/originals/wanderer.webp",
+      "credit": "Caspar David Friedrich / Hamburger Kunsthalle, via Wikimedia Commons.",
+      "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
+      "year": "c. 1817",
+      "description": "A traveller seen from behind looks out over mist-covered mountains. By hiding his expression, Friedrich invites us to share the view and imagine the feelings it evokes.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Friedrich,_Caspar_David_-_Wanderer_%C3%BCber_dem_Nebelmeer.jpg"
     },
-    "metadataStatus": "pending-verification",
+    "metadataStatus": "source-linked",
     "preview": "previews/fma-fma-wanderer-1920x1080.webp",
-    "tags": [],
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "mountains",
+      "fog",
+      "Romanticism"
+    ],
     "downloads": [
       {
         "label": "Original PNG",
@@ -399,19 +599,36 @@
     "id": "one-piece-one-piece-great-wave-1920x1080",
     "anime": {
       "name": "One Piece",
-      "anidbUrl": null
+      "anidbUrl": "https://anidb.net/anime/69",
+      "aliases": [
+        "Luffy",
+        "Monkey D. Luffy",
+        "Straw Hat Pirates"
+      ],
+      "description": "Monkey D. Luffy and the Straw Hat Pirates sail in search of the One Piece treasure. Their voyage brings together adventure, friendship, and the pursuit of freedom."
     },
     "artwork": {
       "title": "The Great Wave off Kanagawa",
       "artist": "Katsushika Hokusai",
-      "sourceUrl": null,
-      "preview": null,
-      "credit": null,
-      "reuseTerms": null
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/45434",
+      "preview": "previews/originals/great-wave.webp",
+      "credit": "Katsushika Hokusai / The Metropolitan Museum of Art. H. O. Havemeyer Collection, Bequest of Mrs. H. O. Havemeyer, 1929.",
+      "reuseTerms": "Public domain; The Met Open Access.",
+      "year": "c. 1830–1832",
+      "description": "A towering wave curls above boats while Mount Fuji appears small in the distance. Hokusai uses scale, perspective, and blue pigments to make the sea feel immense.",
+      "previewSourceUrl": "https://www.metmuseum.org/art/collection/search/45434"
     },
-    "metadataStatus": "pending-verification",
+    "metadataStatus": "source-linked",
     "preview": "previews/one-piece-one-piece-great-wave-1920x1080.webp",
-    "tags": [],
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "ocean",
+      "wave",
+      "ukiyo-e"
+    ],
     "downloads": [
       {
         "label": "Original PNG",
