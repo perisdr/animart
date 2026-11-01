@@ -1,0 +1,434 @@
+[
+  {
+    "id": "death-note-nighthawks",
+    "anime": {
+      "name": "Death Note",
+      "anidbUrl": null
+    },
+    "artwork": {
+      "title": "Nighthawks",
+      "artist": "Edward Hopper",
+      "sourceUrl": null,
+      "preview": null,
+      "credit": null,
+      "reuseTerms": null
+    },
+    "metadataStatus": "pending-verification",
+    "preview": "previews/death-note-nighthawks.webp",
+    "tags": [],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Death Note/nighthawks.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 2667161
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Death Note/tinified/nighthawks.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 986309
+      }
+    ]
+  },
+  {
+    "id": "death-note-the-death-of-marat",
+    "anime": {
+      "name": "Death Note",
+      "anidbUrl": null
+    },
+    "artwork": {
+      "title": "The Death of Marat",
+      "artist": "Jacques-Louis David",
+      "sourceUrl": null,
+      "preview": null,
+      "credit": null,
+      "reuseTerms": null
+    },
+    "metadataStatus": "pending-verification",
+    "preview": "previews/death-note-the-death-of-marat.webp",
+    "tags": [],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Death Note/the_death_of_marat.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 2585084
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Death Note/tinified/the_death_of_marat.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1225060
+      }
+    ]
+  },
+  {
+    "id": "death-note-the-scream",
+    "anime": {
+      "name": "Death Note",
+      "anidbUrl": null
+    },
+    "artwork": {
+      "title": "The Scream",
+      "artist": "Edvard Munch",
+      "sourceUrl": null,
+      "preview": null,
+      "credit": null,
+      "reuseTerms": null
+    },
+    "metadataStatus": "pending-verification",
+    "preview": "previews/death-note-the-scream.webp",
+    "tags": [],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Death Note/the_scream.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 3853935
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Death Note/tinified/the_scream.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1338625
+      }
+    ]
+  },
+  {
+    "id": "death-note-the-son-of-man",
+    "anime": {
+      "name": "Death Note",
+      "anidbUrl": null
+    },
+    "artwork": {
+      "title": "The Son of Man",
+      "artist": "René Magritte",
+      "sourceUrl": null,
+      "preview": null,
+      "credit": null,
+      "reuseTerms": null
+    },
+    "metadataStatus": "pending-verification",
+    "preview": "previews/death-note-the-son-of-man.webp",
+    "tags": [],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Death Note/the_son_of_man.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 2753120
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Death Note/tinified/the_son_of_man.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1044186
+      }
+    ]
+  },
+  {
+    "id": "demon-slayer-mugen-train-turner",
+    "anime": {
+      "name": "Demon Slayer",
+      "anidbUrl": null
+    },
+    "artwork": {
+      "title": "Rain, Steam, and Speed",
+      "artist": "J. M. W. Turner",
+      "sourceUrl": null,
+      "preview": null,
+      "credit": null,
+      "reuseTerms": null
+    },
+    "metadataStatus": "pending-verification",
+    "preview": "previews/demon-slayer-mugen-train-turner.webp",
+    "tags": [],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Demon Slayer/mugen_train_turner.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 3495275
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Demon Slayer/tinified/mugen_train_turner.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1194554
+      }
+    ]
+  },
+  {
+    "id": "demon-slayer-rengoku-red-fuji",
+    "anime": {
+      "name": "Demon Slayer",
+      "anidbUrl": null
+    },
+    "artwork": {
+      "title": "Fine Wind, Clear Morning",
+      "artist": "Katsushika Hokusai",
+      "sourceUrl": null,
+      "preview": null,
+      "credit": null,
+      "reuseTerms": null
+    },
+    "metadataStatus": "pending-verification",
+    "preview": "previews/demon-slayer-rengoku-red-fuji.webp",
+    "tags": [],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Demon Slayer/rengoku_red_fuji.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 4004348
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Demon Slayer/tinified/rengoku_red_fuji.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1169891
+      }
+    ]
+  },
+  {
+    "id": "demon-slayer-shinobu-monet-garden",
+    "anime": {
+      "name": "Demon Slayer",
+      "anidbUrl": null
+    },
+    "artwork": {
+      "title": "The Japanese Footbridge",
+      "artist": "Claude Monet",
+      "sourceUrl": null,
+      "preview": null,
+      "credit": null,
+      "reuseTerms": null
+    },
+    "metadataStatus": "pending-verification",
+    "preview": "previews/demon-slayer-shinobu-monet-garden.webp",
+    "tags": [],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Demon Slayer/shinobu_monet_garden.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 4285158
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Demon Slayer/tinified/shinobu_monet_garden.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1488307
+      }
+    ]
+  },
+  {
+    "id": "demon-slayer-tanjiro-great-wave-corrected",
+    "anime": {
+      "name": "Demon Slayer",
+      "anidbUrl": null
+    },
+    "artwork": {
+      "title": "The Great Wave off Kanagawa",
+      "artist": "Katsushika Hokusai",
+      "sourceUrl": null,
+      "preview": null,
+      "credit": null,
+      "reuseTerms": null
+    },
+    "metadataStatus": "pending-verification",
+    "preview": "previews/demon-slayer-tanjiro-great-wave-corrected.webp",
+    "tags": [],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Demon Slayer/tanjiro_great_wave_corrected.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 3985350
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Demon Slayer/tinified/tanjiro_great_wave_corrected.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1334925
+      }
+    ]
+  },
+  {
+    "id": "demon-slayer-tanjiro-moonlit-temple",
+    "anime": {
+      "name": "Demon Slayer",
+      "anidbUrl": null
+    },
+    "artwork": {
+      "title": "The Abbey in the Oakwood",
+      "artist": "Caspar David Friedrich",
+      "sourceUrl": null,
+      "preview": null,
+      "credit": null,
+      "reuseTerms": null
+    },
+    "metadataStatus": "pending-verification",
+    "preview": "previews/demon-slayer-tanjiro-moonlit-temple.webp",
+    "tags": [],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Demon Slayer/tanjiro_moonlit_temple.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 3701419
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Demon Slayer/tinified/tanjiro_moonlit_temple.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1505083
+      }
+    ]
+  },
+  {
+    "id": "fma-fma-creation-of-adam-1920x1080",
+    "anime": {
+      "name": "FMA",
+      "anidbUrl": null
+    },
+    "artwork": {
+      "title": "The Creation of Adam",
+      "artist": "Michelangelo",
+      "sourceUrl": null,
+      "preview": null,
+      "credit": null,
+      "reuseTerms": null
+    },
+    "metadataStatus": "pending-verification",
+    "preview": "previews/fma-fma-creation-of-adam-1920x1080.webp",
+    "tags": [],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/FMA/fma_creation_of_adam_1920x1080.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 3085050
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/FMA/tinified/fma_creation_of_adam_1920x1080.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1194083
+      }
+    ]
+  },
+  {
+    "id": "fma-fma-wanderer-1920x1080",
+    "anime": {
+      "name": "FMA",
+      "anidbUrl": null
+    },
+    "artwork": {
+      "title": "Wanderer above the Sea of Fog",
+      "artist": "Caspar David Friedrich",
+      "sourceUrl": null,
+      "preview": null,
+      "credit": null,
+      "reuseTerms": null
+    },
+    "metadataStatus": "pending-verification",
+    "preview": "previews/fma-fma-wanderer-1920x1080.webp",
+    "tags": [],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/FMA/fma_wanderer_1920x1080.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 3314126
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/FMA/tinified/fma_wanderer_1920x1080.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1091520
+      }
+    ]
+  },
+  {
+    "id": "one-piece-one-piece-great-wave-1920x1080",
+    "anime": {
+      "name": "One Piece",
+      "anidbUrl": null
+    },
+    "artwork": {
+      "title": "The Great Wave off Kanagawa",
+      "artist": "Katsushika Hokusai",
+      "sourceUrl": null,
+      "preview": null,
+      "credit": null,
+      "reuseTerms": null
+    },
+    "metadataStatus": "pending-verification",
+    "preview": "previews/one-piece-one-piece-great-wave-1920x1080.webp",
+    "tags": [],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/One Piece/one_piece_great_wave_1920x1080.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 4316611
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/One Piece/tinified/one_piece_great_wave_1920x1080.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1330542
+      }
+    ]
+  }
+]
