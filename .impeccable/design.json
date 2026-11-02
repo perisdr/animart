@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T00:00:00+02:00",
+  "title": "Design System: Animart",
+  "extensions": {
+    "typographyMeta": {
+      "display": {
+        "displayName": "Fraunces display",
+        "purpose": "Headlines and artwork titles; locally hosted SIL OFL font."
+      },
+      "body": {
+        "displayName": "Source Sans 3",
+        "purpose": "Reading and interface controls; local CSS family Source."
+      }
+    },
+    "shadows": [
+      {
+        "name": "wipe-handle",
+        "value": "0 2px 8px #182a4355",
+        "purpose": "Make the comparison handle legible over artwork."
+      }
+    ],
+    "motion": [
+      {
+        "name": "comparison-duration",
+        "value": "320ms",
+        "purpose": "Desktop image expansion/reset; disabled for reduced motion."
+      },
+      {
+        "name": "comparison-easing",
+        "value": "cubic-bezier(.22,1,.36,1)",
+        "purpose": "Image transition continuity."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-phone",
+        "value": "575px"
+      },
+      {
+        "name": "mobile-gallery-max",
+        "value": "767px"
+      },
+      {
+        "name": "stacked-slider-max",
+        "value": "991px"
+      },
+      {
+        "name": "wide-container-min",
+        "value": "1500px"
+      }
+    ]
+  },
+  "components": [],
+  "narrative": {
+    "northStar": "The Crossover Edition",
+    "overview": "An image-first exhibition publication with expressive type, warm paper, dark framing, and selective vermilion actions.",
+    "keyCharacteristics": [
+      "Desktop gallery view choices",
+      "Single mobile image feed",
+      "Preserved image proportions",
+      "Collapsed verbatim prompts"
+    ],
+    "rules": [
+      {
+        "name": "Preserve proportion",
+        "body": "Use contained images in every comparison, including the mobile reveal.",
+        "section": "layout"
+      }
+    ],
+    "dos": [
+      "Keep the approved fonts and palette.",
+      "Honor reduced motion.",
+      "Keep prompt provenance accurate."
+    ],
+    "donts": [
+      "Do not add a redundant Show both button.",
+      "Do not show desktop gallery view choices on phones.",
+      "Do not imply pixel alignment between different compositions."
+    ]
+  }
+}

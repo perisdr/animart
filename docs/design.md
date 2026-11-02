@@ -1,42 +1,22 @@
-# Design discussion
+# Approved design: The Crossover Edition
 
-## Selected direction: quiet museum catalogue
+Approved for the main site on 2 November 2026 after iterative mockups. This replaces the initial quiet museum-catalogue direction. See `../DESIGN.md` for the normative visual tokens and component rules; `.impeccable/design.json` records motion, breakpoints, and design metadata.
 
-Chosen by the project owner on 2026-11-01.
+## Experience
 
-- Warm off-white canvas, near-black text, muted ink-blue accent.
-- Large uncropped 16:9 crossover images; restrained captions underneath.
-- Serif artwork titles with a readable sans-serif interface.
-- Compact search and filter toolbar; visible result count and clear-all action.
-- Two or three gallery columns on desktop, one on small screens.
-- Artwork detail shows original and crossover together, preserving both aspect ratios.
-- Downloads show format, dimensions, size, and optimization explicitly.
-- Brief introduction; longer project story available on demand.
-- Keyboard navigation, visible focus, labelled controls, reduced-motion support.
+- Preserve the approved Fraunces / Source Sans 3 typography and paper, ink-blue, vermilion palette.
+- Use dark header/opening and dark story/footer to frame the light gallery.
+- Desktop offers Grid, Slider, and List; Slider is the default.
+- Phones at widths up to 767px have one image-first feed, short captions, and collapsible filters.
+- Desktop artwork details offer Original / Both / Crossover with animated click-to-expand/reset, honoring reduced motion.
+- Mobile details use a draggable original/crossover reveal. Both images remain contained in the shared frame without stretching or forced crops.
+- Downloads remain prominent; detailed source information, AI attribution, and credits stay with each work.
+- The Prompt is collapsed initially and shows the archived prompt verbatim when available.
 
-Use this direction for the first gallery design.
+## Implementation
 
-## Implementation decision
+Use locally stored Bootstrap 5.3.8 CSS, custom CSS, plain JavaScript, native dialog/details, and no build step. `styles/site.css` owns presentation; `scripts/gallery.js` owns gallery, filters, links, detail interactions, and sharing. `fonts/` contains the locally hosted variable fonts and their SIL Open Font License files.
 
-Use Bootstrap 5.3's precompiled CSS stored locally, plus custom CSS and plain
-JavaScript. Start without Bootstrap's JavaScript bundle; native HTML controls
-cover the current interactions. No npm, Sass compilation, bundler, or framework
-runtime is required. Test through a local static web server and publish the same
-files on GitHub Pages. Direct `file://` access is not a supported target.
+`data/wallpapers.json` remains the catalogue. `data/prompts.json` maps catalogue IDs to the verbatim prompts in `docs/anime_art_crossover_prompts.md`. Prompt 8 is labelled as the original generation prompt for the corrected Tanjiro wave image; the correction prompt is absent. Prompt 13 is an unused rewrite and is not presented as having generated a shipped image.
 
-Keep `data/wallpapers.json` as the single editable catalogue for both the gallery
-and thumbnail tooling. Load it with `fetch()` and show a helpful error if loading
-fails. Use relative asset paths and locally stored dependencies.
-External reference links and Tinify naturally require internet access.
-
-## Options considered
-
-1. Bootstrap 5.3: recommended for plain HTML and JavaScript. Ready-made forms,
-   dropdowns, dialogs, and responsive layout; customize typography, spacing,
-   colours, and borders so the site has its own visual identity.
-2. shadcn/ui with React: customizable component source and richer controls,
-   with an additional build toolchain and more dependencies.
-
-The framework supplies controls, not the site's art direction. The wallpapers should
-carry the visual weight. Avoid decorative gradients, oversized marketing headings,
-heavy card shadows, and unnecessary animation.
+The original personal story and source credits are preserved. `mockups/crossover-edition/` remains the design preview, not the production dependency. Publication is a separate step; design approval is not a deployment claim.

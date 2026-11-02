@@ -6,9 +6,11 @@ AI-generated anime crossovers inspired by well-known artworks, made as TV wallpa
 
 **Beta: v0.1.0-beta.1** — functional first version, ready for UI/UX review.
 
-The first gallery uses a warm museum-catalogue design, locally stored Bootstrap
-5.3.8 CSS, custom CSS, and plain JavaScript. It includes combined filters, free-text
-search, artwork comparisons, direct downloads, and shareable links.
+The gallery uses the approved Crossover Edition design: Fraunces and Source Sans 3,
+ink-blue framing, a warm paper gallery, and vermilion actions. Locally stored
+Bootstrap 5.3.8 CSS, custom CSS, and plain JavaScript provide the interface. Desktop
+offers Grid, Slider, and List; mobile uses one image-first feed. Artwork details
+include comparisons, generation prompts, direct downloads, and shareable links.
 The gallery requires no build step; local testing uses a static
 web server. Opening the page directly with `file://` is not a supported target.
 Nothing is deployed. The existing collection contains 12 crossovers, each with original
@@ -21,10 +23,13 @@ and Tinify-optimized 1920 × 1080 PNG downloads.
 - `styles/site.css`: colours, typography, layout, and responsive rules.
 - `scripts/gallery.js`: filtering, catalogue rendering, detail views, and sharing.
 - `data/wallpapers.json`: catalogue and per-image source metadata.
+- `data/prompts.json`: original prompt text keyed by catalogue ID, with provenance notes.
+- `fonts/`: local Fraunces and Source Sans 3 variable fonts and SIL OFL licences.
+- `DESIGN.md`: approved visual system; `.impeccable/design.json` carries extensions.
 - `previews/`: generated WebP thumbnails, committed for static hosting.
 - `vendor/`: precompiled Bootstrap CSS and its MIT licence; no CDN required.
 - `scripts/thumbnails.py`: local Tinify thumbnail generation; never runs in the visitor's browser.
-- `docs/design.md`: proposed visual direction and framework choices.
+- `docs/design.md`: approved design decisions and framework choices.
 - `docs/publishing.md`: GitHub Pages hosting plan.
 
 ## Local preview
@@ -70,6 +75,13 @@ Record artwork credits, source URLs, and image reuse terms alongside each entry.
 The URL retains filter selections; each artwork has a `#piece=...` link.
 After publishing, the copy-link button produces public links. Localhost links are
 only useful on the computer running the preview server.
+
+## Generation prompts
+
+`data/prompts.json` preserves prompts 1–12 from `docs/anime_art_crossover_prompts.md`.
+Each artwork opens with The Prompt collapsed. Section 8 is identified as the original
+generation prompt for the corrected Tanjiro wave; the correction prompt is not in the
+archive. Section 13 is an unused future-generation rewrite and is excluded.
 
 ## Publication
 
