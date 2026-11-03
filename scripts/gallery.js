@@ -1,4 +1,10 @@
 'use strict';
+const SITE_BUILD = '2026.11.03.1';
+const buildLabel = document.querySelector('#site-build');
+if (buildLabel) {
+  buildLabel.textContent = 'Build ' + SITE_BUILD;
+  buildLabel.hidden = false;
+}
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const root = document.querySelector('#pieces');
 const controls = {q:document.querySelector('#search'),anime:document.querySelector('#anime'),artist:document.querySelector('#artist'),artwork:document.querySelector('#artwork')};

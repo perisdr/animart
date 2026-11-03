@@ -112,3 +112,12 @@ from the entire catalogue. Initial dates use the first catalogue commit, 1 Novem
 Use verified WikiArt references in `artwork.sourceUrl` and labelled `{label, url}`
 entries in `artwork.links` for Interesting links. Keep image provenance in
 `previewSourceUrl`. See `docs/source-links.md` for verification and the Monet exception.
+## Release identification
+
+The footer shows the build ID embedded in the loaded `scripts/gallery.js`.
+For each release, update `SITE_BUILD` there and both `?v=` values for the
+custom CSS and gallery script in `index.html` to the same `YYYY.MM.DD.N` ID
+(increment N for releases on the same date). This keeps the site static, with
+no build step, and gives changed assets new cache URLs. The label identifies
+the loaded release, not whether a newer release is still deploying. An older
+cached HTML page can still show the previous build until refreshed.
