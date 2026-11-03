@@ -1,0 +1,14 @@
+# FMA 4K review
+
+Both review PNGs are exactly 3840 × 2160. Originals and website references remain unchanged.
+
+- `Assets/FMA/Fullmetal Alchemist X Wanderer above the Sea of Fog X 2160p.png`: built-in image generation using the non-tinified original as edit target, followed by System.Drawing high-quality bicubic resizing from 1672 × 941. Not native 4K generation.
+- `Assets/FMA/Fullmetal Alchemist X The Creation of Adam X 2160p.png`: direct high-quality bicubic upscale of the non-tinified 1920 × 1080 original. The built-in generation attempt was blocked by output moderation (sexual category); no generated output was available. No generated detail added.
+
+## Wanderer generation prompt
+
+Use case: identity-preserve. Input image is the edit target: original non-tinified Fullmetal Alchemist × Wanderer above the Sea of Fog wallpaper. Produce a faithful high-resolution version, exactly 3840 × 2160 pixels, landscape 16:9. Preserve original framing, composition, positions, proportions, palette, lighting, and Romantic oil painting style. Keep rear views of Edward with golden braid and red coat at center and much taller Alphonse in gray spiked armor to his right, standing on the same rocky summit; preserve layered fog valleys, distant cities, mountains, golden sunrise at left and expansive clouded sky. Reconstruct fine armor engraving, cloth folds, rocks, foliage, architecture and painterly atmosphere with crisp natural detail. Preserve character identities and silhouettes. This is detail enhancement of the same artwork, not a redesign. No new objects, cropping, text, border, watermark or excessive sharpening. Output one finished 3840 × 2160 PNG.
+
+## Creation of Adam attempted prompt (blocked)
+
+Use case: identity-preserve. Input image is the edit target: original non-tinified Fullmetal Alchemist × The Creation of Adam wallpaper. Produce a faithful high-resolution version, exactly 3840 × 2160 pixels, landscape 16:9. Preserve original framing, composition, figure positions, poses, proportions, palette, lighting and Renaissance fresco style. Keep Edward reclining at left in black clothing with flowing red coat and golden braid, his silver automail arm extended toward the center. Keep the small luminous gap between his index fingertip and Truth's index fingertip. Truth remains a smooth white featureless humanoid with its same subtle grin and no sexual details, reclining amid clouds at right before the same dark carved Gate of Truth. Preserve the antique ivory aged plaster background and cracks, rock ledge, drapery and gate relief. Reconstruct fine metal articulation, natural hands, cloth folds, hair, carving and fresco brushwork with clear elegant detail. Preserve identities and anatomy; no extra fingers or limbs. This is detail enhancement of the same artwork, not a redesign. No new objects, cropping, text, border, watermark or excessive sharpening. Output one finished 3840 × 2160 PNG.

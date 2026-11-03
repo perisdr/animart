@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#f5f3ed"/><text x="12" y="46" font-family="Georgia,serif" font-size="50" fill="#243e49">a.</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Animart</title>
+  <rect width="64" height="64" rx="12" fill="#182a43"/>
+  <path fill="#f4ebdd" d="M7 56 33 11 48 6 34 26 22 43 43 39 45 46 19 48Z"/>
+  <path fill="#f5a184" d="M51 7C36 19 35 37 42 50L49 58 38 54C26 43 27 24 40 13L38 18Z"/>
+</svg>

@@ -14,7 +14,9 @@ include comparisons, generation prompts, direct downloads, and shareable links.
 The gallery requires no build step; local testing uses a static
 web server. Opening the page directly with `file://` is not a supported target.
 Nothing is deployed. The existing collection contains 12 crossovers, each with original
-and Tinify-optimized 1920 × 1080 PNG downloads.
+and Tinify-optimized PNG downloads at 1920 × 1080 and 3840 × 2160.
+The split download button defaults to Tinified 1080p; its dropdown offers Tinified
+2160p, Uncompressed 1080p, and Uncompressed 2160p.
 
 ## Structure
 
@@ -59,6 +61,14 @@ The generator fits images inside 640 × 640 without cropping, converts to WebP,
 and skips unchanged source images with matching generated outputs.
 Tinify charges quota for uploads and resizing; its returned monthly count is printed.
 Original-art previews can be added to the same pipeline after sourcing and attribution review.
+
+For additional wallpaper variants, `scripts/tinify_variants.py` accepts source PNG paths
+and uses `TINIFY_API_KEY` (or `--env-file` pointing to a local file). It saves a
+full-resolution compressed PNG and a 640 × 360 WebP thumbnail beside each source
+in its `tinified/` folder, skipping existing outputs. All collection wallpaper filenames follow
+`Anime Title X Painting Title X 1080p.png` / `2160p.png`; small thumbnails use
+`Anime Title X Painting Title X 640x360.webp`. The 2160p review variants are upscaled;
+see the review notes in `docs/` for their generation provenance.
 
 ## Editing the collection
 

@@ -14,3 +14,16 @@
 .mobile-wipe{display:none;--reveal:50%}.wipe-frame{position:relative;aspect-ratio:4/3;background:#dce5ea;isolation:isolate;overflow:hidden}.wipe-frame>img,.wipe-overlay,.wipe-overlay img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.wipe-overlay{background:#dce5ea;clip-path:inset(0 0 0 calc(100% - var(--reveal)))}.wipe-label{position:absolute;top:10px;background:var(--ink);color:var(--paper);padding:5px 10px;font-size:12px;pointer-events:none}.original-label{left:10px}.crossover-label{right:10px}.wipe-divider{position:absolute;left:calc(100% - var(--reveal));top:0;bottom:0;border-left:2px solid var(--paper);pointer-events:none}.wipe-divider>span{position:absolute;bottom:14px;left:-23px;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:var(--paper);color:var(--ink);font-size:23px;box-shadow:0 2px 8px #182a4355}.wipe-input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;direction:rtl;touch-action:pan-y}.wipe-frame:focus-within{outline:3px solid var(--red);outline-offset:3px}.mobile-wipe>p{font-size:13px;margin:12px 0 0}@media(max-width:767px){.has-mobile-wipe .comparison-controls,.has-mobile-wipe .art-comparison{display:none}.has-mobile-wipe .mobile-wipe{display:block;margin-block:24px}}
 
 .skip-link{position:absolute;top:-100px;left:16px;z-index:10;background:var(--paper);color:var(--ink);padding:12px}.skip-link:focus{top:12px}.additional-filters summary{cursor:pointer;font-size:14px;min-height:44px;padding-block:10px}#share-message{overflow-wrap:anywhere}.share-url{width:100%}
+
+.brand-logo{width:126px;height:auto}header .brand{display:block;flex-shrink:0}@media(max-width:575px){.brand-logo{width:96px}header nav{gap:16px!important;font-size:14px}}
+/* Shared split download control, with native download links in the disclosure. */
+.download-split{position:relative;display:flex;min-width:0;grid-column:1}
+.download-split .slide-download{flex:1;min-width:0;padding:12px 8px}
+.download-split .slide-download small{font-size:13px;line-height:1.4}
+.download-toggle{flex:0 0 44px;border:0;border-left:1px solid #f5a184;border-radius:0;background:var(--red);color:white;display:grid;place-items:center;padding:0}
+.download-toggle:hover,.download-toggle[aria-expanded=true]{background:var(--ink);color:white}
+.download-split .btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:none;z-index:1}
+.download-options{position:absolute;top:calc(100% + 6px);right:0;z-index:3;width:max(100%,250px);max-width:calc(100vw - 32px);background:var(--paper);border:1px solid #b9afa2;padding:4px}
+.download-options a{display:block;padding:10px 12px;text-decoration:none;min-height:44px}
+.download-options a:hover,.download-options a:focus-visible{background:var(--ink);color:var(--paper)}
+.download-options small{display:block;font-size:13px;font-variant-numeric:tabular-nums}

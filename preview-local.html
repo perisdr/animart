@@ -1,0 +1,1007 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Animart — Anime, in a different frame</title>
+<link rel="stylesheet" href="vendor/bootstrap.min.css">
+<link rel="stylesheet" href="styles/site.css">
+<link rel="icon" href="favicon.svg">
+<meta name="theme-color" content="#182a43">
+<meta name="description" content="Anime meets art: a personal collection of AI-generated TV wallpapers, with original artwork comparisons and generation prompts.">
+<body>
+<a class="skip-link" href="#collection">Skip to collection</a>
+<header class="container-fluid px-4 px-lg-5">
+<a class="brand" href="#" aria-label="Animart home"><img class="brand-logo" src="Assets/branding/animart-on-dark-v1.png" width="1536" height="1024" alt="Animart">
+</a>
+<nav class="d-flex gap-4" aria-label="Main navigation">
+<a href="#collection">Collection</a>
+<a href="#story">The story</a>
+</nav>
+</header>
+<main>
+<section class="opening">
+<div class="container-fluid px-4 px-lg-5">
+<div class="row align-items-end g-4 title-row">
+<div class="col-lg-8">
+<h1>Anime, in a<br>
+<em>different frame.</em>
+</h1>
+</div>
+<div class="col-lg-4 intro">
+<p>Characters I love. Paintings I’m learning to appreciate.</p>
+<a class="browse" href="#collection">Explore the collection <span aria-hidden="true">↓</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section id="collection" class="collection container-fluid px-4 px-lg-5">
+<div class="d-flex justify-content-between align-items-end flex-wrap gap-3">
+<h2>The collection<span>.</span>
+</h2>
+<p>16:9 wallpapers · Made for your screen</p>
+</div>
+<button type="button" class="btn mobile-filter-toggle" aria-expanded="false" aria-controls="gallery-filters">Search & filter</button>
+<form id="gallery-filters" class="row g-3 filter-row" onsubmit="return false">
+<div class="col-md-7">
+<label class="form-label" for="search">Search the collection</label>
+<input class="form-control" id="search" type="search" placeholder="A character, a painting, a feeling…">
+</div>
+<div class="col-md-5">
+<label class="form-label" for="anime">Anime</label>
+<select id="anime" class="form-select">
+<option value="">All anime</option>
+<option>Death Note</option>
+<option>Demon Slayer</option>
+<option>Fullmetal Alchemist</option>
+<option>One Piece</option>
+</select>
+</div>
+<details class="col-12 additional-filters">
+<summary>More filters</summary>
+<div class="row g-3 mt-1">
+<div class="col-md-6">
+<label class="form-label" for="artist">Artist</label>
+<select class="form-select" id="artist">
+<option value="">All artists</option>
+</select>
+</div>
+<div class="col-md-6">
+<label class="form-label" for="artwork">Artwork</label>
+<select class="form-select" id="artwork">
+<option value="">All artworks</option>
+</select>
+</div>
+</div>
+</details>
+</form>
+<div class="gallery-toolbar d-flex justify-content-between align-items-center flex-wrap gap-3">
+<p id="count" role="status" class="m-0">Loading the collection…</p>
+<button class="btn btn-outline-dark" id="clear-filters" type="button" hidden>Clear filters</button>
+<div class="btn-group view-switch" role="group" aria-label="Gallery view">
+<button class="btn" type="button" data-view="grid" aria-pressed="false">Grid</button>
+<button class="btn" type="button" data-view="slider" aria-pressed="true">Slider</button>
+<button class="btn" type="button" data-view="list" aria-pressed="false">List</button>
+</div>
+</div>
+<div id="load-error" role="alert" hidden>
+<p>The collection couldn’t load. Please try again.</p>
+<button class="btn btn-outline-dark" id="retry" type="button">Try again</button>
+</div>
+<div id="pieces">
+</div>
+<noscript>
+<p>Enable JavaScript to browse the collection, or <a href="Assets/">browse wallpaper files</a>.</p>
+</noscript>
+</section>
+<section id="story" class="container-fluid px-4 px-lg-5 story">
+<div class="row g-4">
+<h2 class="col-lg-6">It started<br>with my TV.</h2>
+<div class="col-lg-6" id="about">
+<p class="lead">I wanted something a little more personal on my screen. I found a new way to look at art.</p>
+          <p>After experimenting with <a href="https://cleanyour.tv/" target="_blank" rel="noopener noreferrer">CleanYourTV ↗</a> and setting up <a href="https://github.com/CVasilakis/luncher" target="_blank" rel="noopener noreferrer">Luncher ↗</a>, I needed wallpapers for my new launcher. Anime felt like an obvious place to start.</p>
+          <p>I don’t know much about art, and I don’t always understand it. But sometimes a painting makes me stop and look. So I started bringing familiar characters into unfamiliar paintings: something I love, mixed with something I want to understand better.</p>
+          <details>
+<summary>A note on AI and the originals</summary>
+<p>These wallpapers are AI-generated personal experiments. Using AI to reinterpret human-made art is controversial, and I don’t want to gloss over that. The original artworks and the people behind them are part of the story here, with credits and links to learn more.</p>
+<p>This is an unofficial fan project. It isn’t affiliated with the artists’ estates, museums, anime creators, or rights holders. Image credits and source information are included with each piece.</p>
+</details>
+</div>
+</div>
+</section>
+</main>
+<footer class="container-fluid px-4 px-lg-5 d-flex justify-content-between flex-wrap gap-3">
+<span class="brand"><img class="brand-logo" src="Assets/branding/animart-on-dark-v1.png" width="1536" height="1024" alt="Animart"></span>
+<div>
+<p>Explore</p>
+<a href="#collection">Collection</a> · <a href="#story">The story</a>
+</div>
+<div>
+<p>About the artwork</p>
+<a href="#story">AI & the collection</a>
+<p>Artwork credits appear in each detail view.</p>
+</div>
+<a href="#collection">Back to collection ↑</a>
+</footer>
+<dialog id="artwork-dialog" aria-labelledby="artwork-title">
+<div class="detail-toolbar">
+<span>Artwork details</span>
+<button class="btn" id="close-artwork" aria-label="Close artwork details">Close ×</button>
+</div>
+<div id="artwork-content">
+</div>
+</dialog>
+<script>'use strict';
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const root = document.querySelector('#pieces');
+const controls = {q:document.querySelector('#search'),anime:document.querySelector('#anime'),artist:document.querySelector('#artist'),artwork:document.querySelector('#artwork')};
+const normalize = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+function readFilters(){const params=new URLSearchParams(location.search);for(const [name,control] of Object.entries(controls))control.value=params.get(name)||'';}
+function clearFilters(){Object.values(controls).forEach(control=>control.value='');filter();}
+function fillSelect(name,values){const select=controls[name];select.length=1;[...new Set(values)].sort((a,b)=>a.localeCompare(b)).forEach(value=>select.add(new Option(value,value)));}
+
+const mobile = matchMedia('(max-width: 767px)');
+mobile.addEventListener('change', () => render());
+const filterToggle = document.querySelector('.mobile-filter-toggle');
+filterToggle.addEventListener('click', () => {
+  const open = filterToggle.getAttribute('aria-expanded') !== 'true';
+  filterToggle.setAttribute('aria-expanded', String(open));
+  document.querySelector('#gallery-filters').classList.toggle('is-open', open);
+});
+let view = 'slider', currentId = null, records = [], filtered = [];
+const path = p => esc(encodeURI(p));
+const detail = r => `#piece=${encodeURIComponent(r.id)}`;
+const image = (r, large = false) => `<img ${large ? '' : 'loading="lazy"'} src="${path(large ? (r.downloads.find(d => /optimized/i.test(d.label)) || r.downloads[0]).path : r.preview)}" alt="${esc(r.anime.name)} crossover inspired by ${esc(r.artwork.title)}">`;
+const meta = r => `<p class="anime">${esc(r.anime.name)} ×</p><h3>${esc(r.artwork.title)}</h3><p>After ${esc(r.artwork.artist)}${r.artwork.year ? ` · ${esc(r.artwork.year)}` : ''}</p>`;
+function render() {
+  document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
+  document.querySelector('#count').textContent = `${filtered.length} of ${records.length} crossovers`;
+  root.className = `gallery-${view}`;
+  if (!filtered.length) { root.innerHTML='<div class="gallery-empty"><h3>No crossovers found.</h3><p>Try another search or return to the full collection.</p><button type="button" class="btn btn-outline-dark" id="reset-gallery">Clear filters</button></div>';document.querySelector('#reset-gallery').onclick=()=>{clearFilters();document.querySelector('#search').focus();};return; }
+  if (!filtered.some(r => r.id === currentId)) currentId = filtered[0].id;
+  if (mobile.matches) {
+    root.className = 'gallery-mobile';
+    root.innerHTML = filtered.map(r => `<article><a class="mobile-artwork" href="${detail(r)}" aria-label="View details: ${esc(r.anime.name)} × ${esc(r.artwork.title)}">${image(r)}<span class="mobile-caption"><span>${esc(r.anime.name)} <span aria-hidden="true">×</span> ${esc(r.artwork.title)}</span><span aria-hidden="true">→</span></span></a></article>`).join('');
+    return;
+  }
+  if (view === 'grid') { root.innerHTML = `<div class="row g-4">${filtered.map(r=>`<article class="col-md-6 col-xl-4"><a class="piece" href="${detail(r)}">${image(r)}<div class="piece-copy">${meta(r)}<small>Explore & download →</small></div></a></article>`).join('')}</div>`;return; }
+  if (view === 'list') { root.innerHTML = filtered.map(r=>`<article class="list-piece"><a class="list-image" href="${detail(r)}">${image(r)}</a><div class="list-copy">${meta(r)}<p class="list-description">${esc(r.artwork.description || '')}</p></div><div class="list-action"><span>1920 × 1080</span><a href="${detail(r)}">Explore & download →</a></div></article>`).join('');return; }
+  const i=filtered.findIndex(r=>r.id===currentId),r=filtered[i],file=r.downloads.find(d=>/optimized/i.test(d.label))||r.downloads[0];
+  root.innerHTML=`<section class="slider-stage" aria-label="Artwork viewer" aria-roledescription="carousel"><div class="slider-art"><a href="${detail(r)}">${image(r,true)}</a><div class="slide-navigation"><button class="btn" id="previous" aria-label="Previous artwork" ${filtered.length===1?'disabled':''}>←</button><p role="status">${i+1} / ${filtered.length} <span>— ${esc(r.anime.name)}</span></p><button class="btn" id="next" aria-label="Next artwork" ${filtered.length===1?'disabled':''}>→</button></div></div><aside class="slider-caption">${meta(r)}<p class="slide-description">${esc(r.artwork.description||'')}</p>${r.artwork.preview?`<figure class="source-reference"><img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} — original artwork"><figcaption>The original artwork</figcaption></figure>`:''}<a class="btn slide-download" href="${path(file.path)}" download>Download crossover ↓</a><a class="slide-details" href="${detail(r)}">Explore the story & credits →</a></aside></section><div class="filmstrip" role="group" aria-label="Choose artwork">${filtered.map((item,n)=>`<button type="button" class="film-frame" data-piece="${esc(item.id)}" aria-label="Show ${esc(item.anime.name)} × ${esc(item.artwork.title)}" aria-pressed="${n===i}">${image(item)}<span>${String(n+1).padStart(2,'0')}</span></button>`).join('')}</div>`;
+  const move=(amount,focusId)=>{currentId=filtered[(i+amount+filtered.length)%filtered.length].id;render();document.getElementById(focusId).focus({preventScroll:true});};
+  document.querySelector('#previous').onclick=()=>move(-1,'previous');document.querySelector('#next').onclick=()=>move(1,'next');
+  root.querySelectorAll('[data-piece]').forEach(b=>b.onclick=()=>{currentId=b.dataset.piece;render();Array.from(root.querySelectorAll('[data-piece]')).find(el=>el.dataset.piece===currentId).focus({preventScroll:true});});
+}
+function filter(updateURL=true){
+  const words=normalize(controls.q.value.trim()).split(/\s+/).filter(Boolean);
+  filtered=records.filter(r=>{
+    const text=normalize([r.anime.name,...(r.anime.aliases||[]),r.anime.description,r.artwork.title,r.artwork.artist,r.artwork.description,...(r.tags||[])].filter(Boolean).join(' '));
+    return (!controls.anime.value||r.anime.name===controls.anime.value)&&(!controls.artist.value||r.artwork.artist===controls.artist.value)&&(!controls.artwork.value||r.artwork.title===controls.artwork.value)&&words.every(word=>text.includes(word));
+  });
+  document.querySelector('#clear-filters').hidden=!Object.values(controls).some(control=>control.value);
+  if(updateURL){const url=new URL(location.href);for(const [name,control] of Object.entries(controls)){if(control.value)url.searchParams.set(name,control.value);else url.searchParams.delete(name);}history.replaceState(null,'',url);}
+  render();
+}
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{view=b.dataset.view;render();});
+controls.q.addEventListener('input',()=>filter());
+for(const name of ['anime','artist','artwork'])controls[name].addEventListener('change',()=>filter());
+document.querySelector('#clear-filters').addEventListener('click',clearFilters);
+async function loadGallery(){
+  document.querySelector('#load-error').hidden=true;
+  document.querySelector('#count').textContent='Loading the collection…';
+  try{
+    const response=({ok:true,json:async()=>[
+  {
+    "id": "death-note-nighthawks",
+    "anime": {
+      "name": "Death Note",
+      "anidbUrl": "https://anidb.net/anime/4563",
+      "aliases": [
+        "Desu Noto",
+        "Light Yagami",
+        "L",
+        "Ryuk"
+      ],
+      "description": "A student discovers a notebook that can kill anyone whose name is written inside. His pursuit of a new order becomes a battle of intelligence with the detective L."
+    },
+    "artwork": {
+      "title": "Nighthawks",
+      "artist": "Edward Hopper",
+      "sourceUrl": "https://archive.artic.edu/hopper/artwork/111628",
+      "preview": "previews/originals/nighthawks.webp",
+      "credit": "Edward Hopper / Art Institute of Chicago, via Wikimedia Commons.",
+      "reuseTerms": "Public domain in the United States (copyright not renewed), per Wikimedia Commons; status may differ elsewhere.",
+      "year": "1942",
+      "description": "A brightly lit diner sits against an empty city street. Hopper leaves the relationships between its customers unresolved, inviting us to read the scene for ourselves.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Nighthawks_by_Edward_Hopper_1942.jpg"
+    },
+    "metadataStatus": "source-linked",
+    "preview": "previews/death-note-nighthawks.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "diner",
+      "night",
+      "city"
+    ],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Death Note/Death Note X Nighthawks X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 2667161
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Death Note/tinified/Death Note X Nighthawks X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 986309
+      }
+    ]
+  },
+  {
+    "id": "death-note-the-death-of-marat",
+    "anime": {
+      "name": "Death Note",
+      "anidbUrl": "https://anidb.net/anime/4563",
+      "aliases": [
+        "Desu Noto",
+        "Light Yagami",
+        "L",
+        "Ryuk"
+      ],
+      "description": "A student discovers a notebook that can kill anyone whose name is written inside. His pursuit of a new order becomes a battle of intelligence with the detective L."
+    },
+    "artwork": {
+      "title": "The Death of Marat",
+      "artist": "Jacques-Louis David",
+      "sourceUrl": "https://www.wga.hu/html/d/david_j/3/301david.html",
+      "preview": "previews/originals/marat.webp",
+      "credit": "Jacques-Louis David / Royal Museums of Fine Arts of Belgium, via Wikimedia Commons.",
+      "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
+      "year": "1793",
+      "description": "David depicts the murdered revolutionary Jean-Paul Marat in his bath. The spare setting and still figure turn a contemporary political death into a solemn memorial.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Death_of_Marat_by_David.jpg"
+    },
+    "metadataStatus": "source-linked",
+    "preview": "previews/death-note-the-death-of-marat.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9"
+    ],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Death Note/Death Note X The Death of Marat X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 2585084
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Death Note/tinified/Death Note X The Death of Marat X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1225060
+      }
+    ]
+  },
+  {
+    "id": "death-note-the-scream",
+    "anime": {
+      "name": "Death Note",
+      "anidbUrl": "https://anidb.net/anime/4563",
+      "aliases": [
+        "Desu Noto",
+        "Light Yagami",
+        "L",
+        "Ryuk"
+      ],
+      "description": "A student discovers a notebook that can kill anyone whose name is written inside. His pursuit of a new order becomes a battle of intelligence with the detective L."
+    },
+    "artwork": {
+      "title": "The Scream",
+      "artist": "Edvard Munch",
+      "sourceUrl": "https://www.munch.no/en/The-Scream/",
+      "preview": "previews/originals/the-scream.webp",
+      "credit": "Edvard Munch, 1893 version / National Museum of Norway, via Wikimedia Commons.",
+      "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
+      "year": "1893–1910",
+      "description": "A figure beneath a restless sky gives anxiety a visible form. Munch returned to this motif in several paintings, drawings, and prints; the linked museum explores those versions.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:The_Scream.jpg"
+    },
+    "metadataStatus": "source-linked",
+    "preview": "previews/death-note-the-scream.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9"
+    ],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Death Note/Death Note X The Scream X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 3853935
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Death Note/tinified/Death Note X The Scream X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1338625
+      }
+    ]
+  },
+  {
+    "id": "death-note-the-son-of-man",
+    "anime": {
+      "name": "Death Note",
+      "anidbUrl": "https://anidb.net/anime/4563",
+      "aliases": [
+        "Desu Noto",
+        "Light Yagami",
+        "L",
+        "Ryuk"
+      ],
+      "description": "A student discovers a notebook that can kill anyone whose name is written inside. His pursuit of a new order becomes a battle of intelligence with the detective L."
+    },
+    "artwork": {
+      "title": "The Son of Man",
+      "artist": "René Magritte",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Son_of_Man",
+      "preview": "previews/originals/son-of-man.webp",
+      "credit": "René Magritte, The Son of Man, 1964. Low-resolution reference from English Wikipedia.",
+      "reuseTerms": "Copyrighted artwork; not freely licensed. Wikipedia hosts this reproduction under an article-specific fair-use rationale.",
+      "year": "1964",
+      "description": "A floating apple conceals the face of a man in a bowler hat. Magritte uses an ordinary object to make a familiar portrait feel strange and elusive.",
+      "previewSourceUrl": "https://en.wikipedia.org/wiki/File:Magritte_TheSonOfMan.jpg"
+    },
+    "metadataStatus": "source-linked",
+    "preview": "previews/death-note-the-son-of-man.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9"
+    ],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Death Note/Death Note X The Son of Man X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 2753120
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Death Note/tinified/Death Note X The Son of Man X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1044186
+      }
+    ]
+  },
+  {
+    "id": "demon-slayer-mugen-train-turner",
+    "anime": {
+      "name": "Demon Slayer",
+      "anidbUrl": "https://anidb.net/anime/14107",
+      "aliases": [
+        "Kimetsu no Yaiba",
+        "Tanjiro",
+        "Tanjirou",
+        "Nezuko",
+        "Rengoku",
+        "Shinobu"
+      ],
+      "description": "Tanjiro joins the Demon Slayer Corps after his family is attacked and his sister becomes a demon. His journey blends swordsmanship, compassion, and a search for a cure."
+    },
+    "artwork": {
+      "title": "Rain, Steam, and Speed",
+      "artist": "J. M. W. Turner",
+      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-rain-steam-and-speed-the-great-western-railway",
+      "preview": "previews/originals/rain-steam-speed.webp",
+      "credit": "J. M. W. Turner / National Gallery, London, via Wikimedia Commons.",
+      "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
+      "year": "1844",
+      "description": "A locomotive emerges through rain and steam on a railway bridge. Turner lets atmosphere soften the landscape while the train drives directly toward the viewer.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:J._M._W._Turner_-_Rain,_Steam_and_Speed_%E2%80%93_The_Great_Western_Railway.jpg"
+    },
+    "metadataStatus": "source-linked",
+    "preview": "previews/demon-slayer-mugen-train-turner.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "Mugen Train",
+      "train",
+      "rain"
+    ],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Demon Slayer/Demon Slayer X Rain, Steam, and Speed X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 3495275
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X Rain, Steam, and Speed X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1194554
+      }
+    ]
+  },
+  {
+    "id": "demon-slayer-rengoku-red-fuji",
+    "anime": {
+      "name": "Demon Slayer",
+      "anidbUrl": "https://anidb.net/anime/14107",
+      "aliases": [
+        "Kimetsu no Yaiba",
+        "Tanjiro",
+        "Tanjirou",
+        "Nezuko",
+        "Rengoku",
+        "Shinobu"
+      ],
+      "description": "Tanjiro joins the Demon Slayer Corps after his family is attacked and his sister becomes a demon. His journey blends swordsmanship, compassion, and a search for a cure."
+    },
+    "artwork": {
+      "title": "Fine Wind, Clear Morning",
+      "artist": "Katsushika Hokusai",
+      "sourceUrl": "https://artsandculture.google.com/asset/thirty-six-views-of-mt-fuji-fine-wind-clear-morning/HgGi21x5uVwD8w",
+      "preview": "previews/originals/red-fuji.webp",
+      "credit": "Katsushika Hokusai / Indianapolis Museum of Art, via Google Art Project and Wikimedia Commons.",
+      "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
+      "year": "c. 1830–1832",
+      "description": "Often called Red Fuji, this woodblock print sets the mountain against bands of delicate cloud. Its bold colour and simple silhouette belong to Hokusai’s Thirty-six Views of Mount Fuji.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Katsushika_Hokusai_-_Fine_Wind,_Clear_Morning_(Gaif%C5%AB_kaisei)_-_Google_Art_Project.jpg"
+    },
+    "metadataStatus": "source-linked",
+    "preview": "previews/demon-slayer-rengoku-red-fuji.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "Red Fuji",
+      "Rengoku",
+      "flame"
+    ],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Demon Slayer/Demon Slayer X Fine Wind, Clear Morning X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 4004348
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X Fine Wind, Clear Morning X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1169891
+      }
+    ]
+  },
+  {
+    "id": "demon-slayer-shinobu-monet-garden",
+    "anime": {
+      "name": "Demon Slayer",
+      "anidbUrl": "https://anidb.net/anime/14107",
+      "aliases": [
+        "Kimetsu no Yaiba",
+        "Tanjiro",
+        "Tanjirou",
+        "Nezuko",
+        "Rengoku",
+        "Shinobu"
+      ],
+      "description": "Tanjiro joins the Demon Slayer Corps after his family is attacked and his sister becomes a demon. His journey blends swordsmanship, compassion, and a search for a cure."
+    },
+    "artwork": {
+      "title": "The Japanese Footbridge",
+      "artist": "Claude Monet",
+      "sourceUrl": "https://www.nga.gov/artworks/74796-japanese-footbridge",
+      "preview": "previews/originals/japanese-footbridge.webp",
+      "credit": "Claude Monet / National Gallery of Art, Washington.",
+      "reuseTerms": "Public domain; National Gallery of Art Open Access.",
+      "year": "1899",
+      "description": "Monet’s garden at Giverny becomes a dense world of water, leaves, and reflected colour. The arch of the bridge gives structure to the loose brushwork around it.",
+      "previewSourceUrl": "https://www.nga.gov/artworks/74796-japanese-footbridge"
+    },
+    "metadataStatus": "source-linked",
+    "preview": "previews/demon-slayer-shinobu-monet-garden.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "Shinobu",
+      "garden",
+      "water lilies"
+    ],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Demon Slayer/Demon Slayer X The Japanese Footbridge X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 4285158
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Japanese Footbridge X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1488307
+      }
+    ]
+  },
+  {
+    "id": "demon-slayer-tanjiro-great-wave-corrected",
+    "anime": {
+      "name": "Demon Slayer",
+      "anidbUrl": "https://anidb.net/anime/14107",
+      "aliases": [
+        "Kimetsu no Yaiba",
+        "Tanjiro",
+        "Tanjirou",
+        "Nezuko",
+        "Rengoku",
+        "Shinobu"
+      ],
+      "description": "Tanjiro joins the Demon Slayer Corps after his family is attacked and his sister becomes a demon. His journey blends swordsmanship, compassion, and a search for a cure."
+    },
+    "artwork": {
+      "title": "The Great Wave off Kanagawa",
+      "artist": "Katsushika Hokusai",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/45434",
+      "preview": "previews/originals/great-wave.webp",
+      "credit": "Katsushika Hokusai / The Metropolitan Museum of Art. H. O. Havemeyer Collection, Bequest of Mrs. H. O. Havemeyer, 1929.",
+      "reuseTerms": "Public domain; The Met Open Access.",
+      "year": "c. 1830–1832",
+      "description": "A towering wave curls above boats while Mount Fuji appears small in the distance. Hokusai uses scale, perspective, and blue pigments to make the sea feel immense.",
+      "previewSourceUrl": "https://www.metmuseum.org/art/collection/search/45434"
+    },
+    "metadataStatus": "source-linked",
+    "preview": "previews/demon-slayer-tanjiro-great-wave-corrected.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "ocean",
+      "wave",
+      "ukiyo-e"
+    ],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Demon Slayer/Demon Slayer X The Great Wave off Kanagawa X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 3985350
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Great Wave off Kanagawa X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1334925
+      }
+    ]
+  },
+  {
+    "id": "demon-slayer-tanjiro-moonlit-temple",
+    "anime": {
+      "name": "Demon Slayer",
+      "anidbUrl": "https://anidb.net/anime/14107",
+      "aliases": [
+        "Kimetsu no Yaiba",
+        "Tanjiro",
+        "Tanjirou",
+        "Nezuko",
+        "Rengoku",
+        "Shinobu"
+      ],
+      "description": "Tanjiro joins the Demon Slayer Corps after his family is attacked and his sister becomes a demon. His journey blends swordsmanship, compassion, and a search for a cure."
+    },
+    "artwork": {
+      "title": "The Abbey in the Oakwood",
+      "artist": "Caspar David Friedrich",
+      "sourceUrl": "https://search.smb.museum/object/obj-968249",
+      "preview": "previews/originals/abbey.webp",
+      "credit": "Caspar David Friedrich / Alte Nationalgalerie, Berlin, via Google Art Project and Wikimedia Commons.",
+      "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
+      "year": "1809–1810",
+      "description": "Bare oak trees surround the ruins of a Gothic abbey. Friedrich brings architecture, winter, and a funeral procession together in a quiet meditation on mortality.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Abtei_im_Eichwald_-_Google_Art_Project.jpg"
+    },
+    "metadataStatus": "source-linked",
+    "preview": "previews/demon-slayer-tanjiro-moonlit-temple.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "Tanjiro",
+      "temple",
+      "moonlight"
+    ],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/Demon Slayer/Demon Slayer X The Abbey in the Oakwood X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 3701419
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Abbey in the Oakwood X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1505083
+      }
+    ]
+  },
+  {
+    "id": "fma-fma-creation-of-adam-1920x1080",
+    "anime": {
+      "name": "Fullmetal Alchemist",
+      "anidbUrl": "https://anidb.net/anime/979",
+      "aliases": [
+        "FMA",
+        "Hagane no Renkinjutsushi",
+        "Brotherhood",
+        "Edward Elric",
+        "Alphonse Elric"
+      ],
+      "description": "Brothers Edward and Alphonse Elric seek to restore their bodies after a forbidden act of alchemy. The franchise explores sacrifice, responsibility, and the limits of human ambition.",
+      "alternateAnidbUrl": "https://anidb.net/anime/6107"
+    },
+    "artwork": {
+      "title": "The Creation of Adam",
+      "artist": "Michelangelo",
+      "sourceUrl": "https://www.wga.hu/html_m/m/michelan/3sistina/1genesis/6adam/06_3ce6.html",
+      "preview": "previews/originals/creation-of-adam.webp",
+      "credit": "Michelangelo / Wikimedia Commons. Detail of the Sistine Chapel ceiling.",
+      "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
+      "year": "c. 1510",
+      "description": "Part of the Sistine Chapel ceiling, this fresco stages the creation of Adam around two almost-touching hands. The small gap between them holds the composition’s tension.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Michelangelo_-_Creation_of_Adam_(cropped).jpg"
+    },
+    "metadataStatus": "source-linked",
+    "preview": "previews/fma-fma-creation-of-adam-1920x1080.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9"
+    ],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/FMA/Fullmetal Alchemist X The Creation of Adam X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 3085050
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/FMA/tinified/Fullmetal Alchemist X The Creation of Adam X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1194083
+      }
+    ]
+  },
+  {
+    "id": "fma-fma-wanderer-1920x1080",
+    "anime": {
+      "name": "Fullmetal Alchemist",
+      "anidbUrl": "https://anidb.net/anime/979",
+      "aliases": [
+        "FMA",
+        "Hagane no Renkinjutsushi",
+        "Brotherhood",
+        "Edward Elric",
+        "Alphonse Elric"
+      ],
+      "description": "Brothers Edward and Alphonse Elric seek to restore their bodies after a forbidden act of alchemy. The franchise explores sacrifice, responsibility, and the limits of human ambition.",
+      "alternateAnidbUrl": "https://anidb.net/anime/6107"
+    },
+    "artwork": {
+      "title": "Wanderer above the Sea of Fog",
+      "artist": "Caspar David Friedrich",
+      "sourceUrl": "https://wanderer.cdfriedrich.de/en/",
+      "preview": "previews/originals/wanderer.webp",
+      "credit": "Caspar David Friedrich / Hamburger Kunsthalle, via Wikimedia Commons.",
+      "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
+      "year": "c. 1817",
+      "description": "A traveller seen from behind looks out over mist-covered mountains. By hiding his expression, Friedrich invites us to share the view and imagine the feelings it evokes.",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Friedrich,_Caspar_David_-_Wanderer_%C3%BCber_dem_Nebelmeer.jpg"
+    },
+    "metadataStatus": "source-linked",
+    "preview": "previews/fma-fma-wanderer-1920x1080.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "mountains",
+      "fog",
+      "Romanticism"
+    ],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/FMA/Fullmetal Alchemist X Wanderer above the Sea of Fog X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 3314126
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/FMA/tinified/Fullmetal Alchemist X Wanderer above the Sea of Fog X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1091520
+      }
+    ]
+  },
+  {
+    "id": "one-piece-one-piece-great-wave-1920x1080",
+    "anime": {
+      "name": "One Piece",
+      "anidbUrl": "https://anidb.net/anime/69",
+      "aliases": [
+        "Luffy",
+        "Monkey D. Luffy",
+        "Straw Hat Pirates"
+      ],
+      "description": "Monkey D. Luffy and the Straw Hat Pirates sail in search of the One Piece treasure. Their voyage brings together adventure, friendship, and the pursuit of freedom."
+    },
+    "artwork": {
+      "title": "The Great Wave off Kanagawa",
+      "artist": "Katsushika Hokusai",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/45434",
+      "preview": "previews/originals/great-wave.webp",
+      "credit": "Katsushika Hokusai / The Metropolitan Museum of Art. H. O. Havemeyer Collection, Bequest of Mrs. H. O. Havemeyer, 1929.",
+      "reuseTerms": "Public domain; The Met Open Access.",
+      "year": "c. 1830–1832",
+      "description": "A towering wave curls above boats while Mount Fuji appears small in the distance. Hokusai uses scale, perspective, and blue pigments to make the sea feel immense.",
+      "previewSourceUrl": "https://www.metmuseum.org/art/collection/search/45434"
+    },
+    "metadataStatus": "source-linked",
+    "preview": "previews/one-piece-one-piece-great-wave-1920x1080.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "ocean",
+      "wave",
+      "ukiyo-e"
+    ],
+    "downloads": [
+      {
+        "label": "Original PNG",
+        "path": "Assets/One Piece/One Piece X The Great Wave off Kanagawa X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 4316611
+      },
+      {
+        "label": "Optimized PNG",
+        "path": "Assets/One Piece/tinified/One Piece X The Great Wave off Kanagawa X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1330542
+      }
+    ]
+  }
+]});if(!response.ok)throw Error('Catalogue unavailable');
+    const data=await response.json();if(!Array.isArray(data)||!data.length)throw Error('Catalogue empty');
+    // Prompt availability must not prevent wallpaper browsing.
+    let prompts={};try{const response=({ok:true,json:async()=>{
+  "death-note-nighthawks": {
+    "text": "One independent finished landscape 16:9 desktop wallpaper target 1920x1080: Death Note crossed with Edward Hopper's Nighthawks. Faithfully echo Hopper's iconic wide exterior view of a wedge-shaped glass-fronted late-night American diner on a deserted urban street corner, long curving amber wooden counter, cream ceiling, fluorescent pale green-yellow light, deep teal and navy deserted street, red-brown building facades. Inside two recognizably Death Note characters sit apart: on the left L with messy jet black hair and dark-ringed large eyes, loose white long sleeve shirt blue jeans, bare feet tucked up on his stool, hunched over a plate of strawberry cake and a cup of tea; on the right Light Yagami with neat brown hair tan jacket white shirt red tie, poised upright, a small closed black notebook beside his coffee. They watch each other across a span of empty counter. A discreet white uniformed server behind counter. Outside near the far dark window the almost invisible tall spiky silhouette of Ryuk peers in, small red eyes and a red apple hint at his presence. Balanced geometric shapes, clear architectural perspective, sparse details, flat planes of color and subtle oil brushwork characteristic of Hopper, melancholy stillness and psychological tension. Characters rendered in the same painterly style as architecture with recognizable faces, not pasted anime cutouts. Expansive cinematic composition, no legible signs, no text, no watermark, no border.",
+    "archiveSection": 6,
+    "note": ""
+  },
+  "death-note-the-death-of-marat": {
+    "text": "Create one independent finished 16:9 landscape desktop wallpaper target 1920x1080: Death Note's L in a solemn neoclassical oil painting closely inspired by Jacques-Louis David's The Death of Marat. Adapt the original's iconic slumped pose, hanging arm, simple wooden crate and large empty dark background. L is recognizable with pale skin, tousled spiky black hair and dark under-eye circles, fully clothed in loose white long sleeve shirt and blue jeans, barefoot. He sits lifeless and peacefully slumped in a plain dark wooden armchair draped with muted sage green cloth; his head tilts gently to one side with closed eyes, one pale arm hangs down with relaxed fingers. No blood, injuries, or violence. Beside him a humble wooden crate serves as a table with a white plate and a small untouched slice of strawberry cake. A tipped white porcelain teacup on the floor below his hand, small spill of tea, subtle intimate symbolism. Warm raking light from upper left illuminates face, white shirt and hanging hand, leaving the rest in deep olive umber darkness. Restrained beautiful historical painting, masterful chiaroscuro, sculptural anatomy, quiet grief and dignity, subtle canvas texture. Figure and crate occupy center-right with generous dark negative space on left for wallpaper icons, composition balanced for wide format while clearly recalling David's masterpiece. No other characters, no writing on the crate, no titles, no watermark, no frame.",
+    "archiveSection": 7,
+    "note": ""
+  },
+  "death-note-the-scream": {
+    "text": "Create a single independent finished Death Note x Edvard Munch The Scream crossover wallpaper, landscape 16:9 target 1920x1080. Faithfully use the raw expressionist oil-and-pastel language of The Scream: strongly sinuous thick bands of vermilion orange sky, dark cobalt swirling fjord, steep diagonal bridge railing receding into distance. Light Yagami occupies the foreground, recognizable swept brown hair, pale face, tan jacket white shirt red tie, his hands raised along his cheeks and mouth open in existential horror as the world ripples around him. Stylize his anatomy and face with Munch's elongated haunting distortions while retaining recognizable Light features. Two small ominous figures far down the bridge: L hunched in a white long sleeve shirt and dark jeans, and Ryuk tall black spiky silhouette with feathery shoulders. A black notebook lies near Light's feet, no readable text. Vivid turbulent red-orange versus deep blue-green; deliberately flat, hand-drawn wavy brush strokes, coarse expressive texture, a true Munch-like painting rather than realistic anime composited onto a backdrop. Expand the landscape naturally into widescreen. No border, no watermark, no lettering.",
+    "archiveSection": 5,
+    "note": ""
+  },
+  "death-note-the-son-of-man": {
+    "text": "Create one polished landscape 16:9 desktop wallpaper, target 1920x1080, Death Note crossed with Rene Magritte's The Son of Man. Surrealist oil painting faithful to the original's restrained clean brushwork and iconic frontal composition. Light Yagami stands centered from thighs up, recognizable brown neatly swept hair, tan suit jacket white shirt and red tie, no bowler hat. A vivid floating red apple obscures the center of his face, subtly revealing one intense eye. Low stone parapet behind him, gray-blue sea and vast softly cloudy overcast sky. Behind and slightly beside him, Ryuk's unmistakable jagged winged silhouette appears as an impossible dark shadow on the wall, with a subtle hint of red eyes, ominous but elegant. Light holds a small closed black notebook at his side, no lettering. Understated surreal menace, muted slate blue and stone neutrals with apple crimson focal point. Large breathing room on either side for widescreen wallpaper. No title, text, watermark or frame.",
+    "archiveSection": 4,
+    "note": ""
+  },
+  "demon-slayer-mugen-train-turner": {
+    "text": "Create one independent widescreen 16:9 wallpaper target 1920x1080: Demon Slayer Mugen Train crossed with JMW Turner's Rain Steam and Speed. A masterful atmospheric Romantic oil painting, luminous dissolving forms, scumbled golden ochre light, rain and steam sweeping diagonally across the composition, cool slate blue shadows, visible expressive painterly brushwork. Recognizable Taisho-era black Japanese steam locomotive Mugen Train rushes toward viewer along a towering stone railway viaduct that recedes to the upper-right distance, recalling the diagonal perspective and vast hazy river landscape of Turner's original. Strong dark circular locomotive front and glowing warm headlamp emerge through golden mist. Rengoku stands securely atop the locomotive, identifiable by flame-yellow hair with red tips, dark uniform and white flame-edged cape billowing backwards. He is small relative to the train and landscape but legible, a heroic sentinel; orange sparks and subtle flame-like strokes weave through the steam around him. Train carriages fade into rain behind, a river and a faint second bridge lie below at left. Sense of tremendous speed and dramatic weather, beautiful light rather than literal digital fire effects. Keep entire scene in Turner's soft-edged oil technique, no pasted anime, no modern train, no text or numbers, no watermark or border.",
+    "archiveSection": 11,
+    "note": ""
+  },
+  "demon-slayer-rengoku-red-fuji": {
+    "text": "Single independent 16:9 landscape wallpaper target 1920x1080. Demon Slayer Kyojuro Rengoku crossed with Hokusai Fine Wind Clear Morning (Red Fuji). Exquisite ukiyo-e woodblock print with bold simplified shapes, flat pigment, carved ink lines, subtle cream washi paper grain. The iconic enormous brick-red triangular Mount Fuji occupies center and right, its upper slopes streaked with fine dark lines and a little pale snow, deep pine-green forest base, layered small white clouds across clear pale blue sky just like Hokusai's Red Fuji. In lower-left foreground stands recognizable Kyojuro Rengoku viewed three-quarter profile, flowing yellow hair with red flame tips, fierce golden eyes, dark Demon Slayer uniform and white cape with red-orange flame hem, sword sheathed at his waist. He gazes toward the mountain, heroic and calm. Golden susuki grasses bend in the wind, a few delicate ember sparks drift around his cape and echo the mountain's red. Character modest scale, landscape dominant, generous breathing space, restrained flat crimson gold jade and blue palette. Authentic elegant print design rather than photorealism, no text, no signature, no border, no watermark.",
+    "archiveSection": 9,
+    "note": ""
+  },
+  "demon-slayer-shinobu-monet-garden": {
+    "text": "Create a single independent finished widescreen 16:9 wallpaper target 1920x1080: Demon Slayer Shinobu Kocho crossed with Claude Monet's The Japanese Footbridge, 1899. A lush luminous Impressionist oil painting with the iconic shallow arching green Japanese footbridge spanning a water-lily pond, rich layered broken brushwork, dappled light and exquisite shifting reflections. Recognizable Shinobu stands gracefully on the bridge slightly right of center: black hair with violet tips swept into a butterfly hair ornament, violet eyes, dark high-collared Demon Slayer uniform, white butterfly-wing patterned haori fading into pale mint and pink with dark veined edging. Small full-length figure integrated into the garden, one hand gently extended to a butterfly, peaceful soft smile. Hanging lavender and violet wisteria frames the upper edges; a few pale butterflies drift above pink and ivory lilies. Pond fills foreground with richly painted green teal lavender and rose reflections, soft sunlight filters through lush willows. Preserve Monet's garden composition and painterly technique, not photorealism or glossy digital anime; recognizable character details rendered with delicate painterly strokes. Serene, enchanting, cohesive, soft edges with subtle focal detail, no lettering, no watermark, no frame.",
+    "archiveSection": 10,
+    "note": ""
+  },
+  "demon-slayer-tanjiro-great-wave-corrected": {
+    "text": "Create one finished widescreen 16:9 wallpaper, target 1920x1080: Demon Slayer Tanjiro Kamado crossed with Hokusai's The Great Wave off Kanagawa. Authentic exquisite ukiyo-e woodblock print visual language, indigo carved wave lines, ivory claw-shaped foam, flat colors, fine black contours, subtle washi texture. Recognizable Tanjiro with burgundy swept hair, forehead scar, hanafuda earrings, green-and-black checkered haori over dark uniform, executing a dynamic Water Breathing sword slash from a rocky outcrop near lower right center. A single coherent giant curling water ribbon flows from the arc of his katana into Hokusai's enormous wave on the left. Distant small Mount Fuji beneath parchment sky, restrained blue sea and mist. Dynamic yet refined, strong sweeping composition, clear face and anatomically correct hands, one sword. Integrate character in same woodblock technique rather than a pasted anime layer. Expansive scenic landscape and crisp detail, no lettering, no border, no watermark.",
+    "archiveSection": 8,
+    "note": "Original generation prompt. The displayed wallpaper is the corrected version; the prompt for that correction is not included in this archive. The archive also contains an unused standalone rewrite, which is not presented as the prompt for this image."
+  },
+  "demon-slayer-tanjiro-moonlit-temple": {
+    "text": "Create one independent finished widescreen 16:9 desktop wallpaper target 1920x1080. Demon Slayer crossed with Caspar David Friedrich's The Abbey in the Oakwood. Sublime solemn German Romantic oil painting: a procession-like solitary journey through a grove of tall ancient leafless oak trees, dark twisted branches silhouetted against a pale winter moon and luminous fog. Echo Friedrich's composition with central ruined sacred architecture framed by bare oaks, small figure dwarfed by landscape and a vast softly gradated dusk sky. Adapt the abbey into a ruined Japanese Buddhist temple, broken gateway and partial roof with elegant Japanese architectural silhouette, moss-covered stone steps and weathered stone lanterns along the path. Tanjiro Kamado seen from behind in the lower central foreground walks toward the temple carrying Nezuko's large rectangular wooden travel box strapped securely to his back; visible green-and-black checkered haori, burgundy hair, sheathed katana at hip. Nezuko remains inside box. Moonlight catches his silhouette and the worn path, low bands of mist wind around roots, sparse fallen brown leaves and light frost. Muted charcoal, umber, silver-gray and faint pale gold horizon, subtle emerald haori accent. Detailed naturalistic tree forms, delicate oil brushwork, eerie beauty and quiet resolve, no visible monsters, no battle, no blood, no text, no watermark, no border. Landscape dominates, figure modest scale, cohesive historical oil painting rather than digital anime.",
+    "archiveSection": 12,
+    "note": ""
+  },
+  "fma-fma-creation-of-adam-1920x1080": {
+    "text": "Create a single finished 1920x1080 landscape 16:9 desktop wallpaper: Fullmetal Alchemist crossed with Michelangelo's The Creation of Adam. A majestic Renaissance fresco interpretation retaining the unmistakable horizontal composition of two reclining/reaching figures whose index fingertips nearly meet at the center, small charged gap between hands. LEFT: recognizable Edward Elric, golden braided hair, amber eyes, fully clothed in black shirt and black trousers, iconic long red coat draped around his body and over the rocky ledge. He reclines on a rugged stone platform and reaches his RIGHT silver automail arm toward the center, beautifully articulated metal fingers, precise natural anatomy. RIGHT: Truth from Fullmetal Alchemist, a smooth luminous white featureless humanoid silhouette with a subtle unsettling broad smile, no anatomical or sexual details, suspended in an arc of pale flowing cloud and shadow, reaching toward Ed with one hand. Behind Truth rises the imposing dark intricately carved Gate of Truth, with fine reliefs and an alchemical tree motif, receding into an ivory infinite void. Keep the Gate secondary to the near-touching fingers. The composition echoes Michelangelo closely in gesture, balance and drapery but tells the FMA story. Muted antique ivory, stone sage, warm flesh tones, deep charcoal, oxidized silver, a strong vermilion red coat accent. Exquisite fresco brushwork, subtle aged plaster texture, sculptural modeling and soft Renaissance light, immense quiet negative space around the center hands. Emotion: humanity confronting the price of knowledge. Elegant, solemn, painterly, visually coherent. No extra characters, no extra limbs, no lettering, no watermark, no border. This is its own independent image, not a continuation of any prior image.",
+    "archiveSection": 3,
+    "note": ""
+  },
+  "fma-fma-wanderer-1920x1080": {
+    "text": "Create a single finished 1920x1080 landscape 16:9 desktop wallpaper: Fullmetal Alchemist crossed with Caspar David Friedrich's Wanderer above the Sea of Fog. Painterly Romantic oil painting, sublime landscape, rich atmospheric depth and delicate brushwork. View from behind of Edward Elric and Alphonse Elric standing together on a rugged dark rocky summit in the foreground, contemplating vast mist-filled valleys of Amestris. Edward is short with a golden braided ponytail, iconic long vivid red coat moving gently in the wind, black trousers and boots. Beside him Alphonse is much taller and broader, an unmistakable full suit of gray steel armor with spiked shoulders, horned helmet and pale trailing plume; faithfully recognizable silhouettes, no exposed human body. The brothers are central but leave expansive landscape on both sides. Jagged peaks emerge from luminous layers of fog, far mountains fade into cool blue-gray, faint distant hints of Amestrian architecture. Pale warm early morning sky, restrained golden light against cool steel and mist, Ed's red coat the main color accent. Preserve the contemplative rear-view summit composition and Romantic painting character of Friedrich's original while thoughtfully expanding it horizontally for a cinematic wallpaper. Beautiful detailed stone and armor, atmospheric rather than photorealistic, emotionally quiet sense of brotherhood and a long journey. No text, no watermark, no frame.",
+    "archiveSection": 2,
+    "note": ""
+  },
+  "one-piece-one-piece-great-wave-1920x1080": {
+    "text": "Create a polished desktop wallpaper, 1920 x 1080 pixels, landscape 16:9. Blend Katsushika Hokusai's The Great Wave off Kanagawa with One Piece: the recognizable Thousand Sunny pirate ship actively sailing through the rolling sea beneath a majestic curling Great Wave. Render the whole scene as a cohesive exquisite Japanese ukiyo-e woodblock print, delicate ink contours, carved wave lines, subtle washi paper texture, indigo and Prussian blue water and ivory claw-shaped sea foam. Thousand Sunny recognizable lion/sun figurehead, warm wooden hull, red and cream detailing, billowing sails with Straw Hat pirates skull-and-straw-hat emblem, angled dynamically as it sails, intact and adventurous. The ship is the clear secondary focal point within the wave composition, not overwhelmed or obscured by foam. Japan in late autumn: distant shoreline with crimson maple and gold foliage, a few windblown red maple leaves in the foreground, distant Mount Fuji, cool mist and layered slate clouds with a soft amber break of late afternoon sunlight. Beautiful restrained burnt orange, muted gold, deep navy and parchment palette. Grand wave on left curls toward ship near lower right center, graceful open sky above, refined balanced panoramic composition suitable for a wallpaper. No text, no lettering, no frame, no watermark. Detailed elegant printmaking rather than photorealism or 3D. Deliver a single finished wallpaper.",
+    "archiveSection": 1,
+    "note": ""
+  }
+}});if(response.ok)prompts=await response.json();}catch{}
+    records=data.map(r=>({...r,prompt:prompts[r.id]?.text||'',promptNote:prompts[r.id]?.note||''}));
+    const order=name=>name==='One Piece'?0:/Fullmetal|FMA/.test(name)?1:name==='Death Note'?2:3;
+    records.sort((a,b)=>order(a.anime.name)-order(b.anime.name));
+    fillSelect('anime',records.map(r=>r.anime.name));fillSelect('artist',records.map(r=>r.artwork.artist));fillSelect('artwork',records.map(r=>r.artwork.title));
+    currentId=records[0].id;readFilters();filter(false);syncDetail();
+  }catch(error){root.innerHTML='';document.querySelector('#load-error').hidden=false;document.querySelector('#count').textContent='Collection unavailable';console.error('Unable to load collection:',error);}
+}
+document.querySelector('#retry').addEventListener('click',loadGallery);
+
+const artworkDialog = document.querySelector('#artwork-dialog');
+let detailLauncher = null;
+const externalLink = (url,label) => /^https:\/\//.test(url || '') ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>` : '';
+function syncDetail() {
+  const match=location.hash.match(/^#piece=(.+)$/);let id;
+  try{id=match?decodeURIComponent(match[1]):null;}catch{id=null;}
+  const r=records.find(item=>item.id===id);
+  if(!r){if(artworkDialog.open)artworkDialog.close();return;}
+  if(!artworkDialog.open)detailLauncher=document.activeElement;
+  const files=[...r.downloads].sort((a,b)=>a.bytes-b.bytes);
+  const prompt=typeof r.prompt==='string'?r.prompt.trim():'';
+  document.querySelector('#artwork-content').innerHTML=`<div class="row g-3 align-items-end"><div class="col-lg-8"><h2 id="artwork-title">${esc(r.artwork.title)}</h2><p>${esc(r.anime.name)} × ${esc(r.artwork.artist)}</p></div><div class="col-lg-4"><a class="btn slide-download" href="${path(files[0].path)}" download>Download wallpaper ↓<small>${files[0].width} × ${files[0].height} · ${(files[0].bytes/1000000).toFixed(2)} MB</small></a></div></div><div class="comparison-controls my-4"><div class="btn-group compare-switch" role="group" aria-label="Artwork comparison view"><button class="btn" data-compare="0" aria-pressed="false">Original</button><button class="btn" data-compare="1" aria-pressed="true">Both</button><button class="btn" data-compare="2" aria-pressed="false">Crossover</button></div><p id="comparison-hint">Select an image to expand it. Select it again or choose Both to compare.</p></div><div class="art-comparison" data-mode="both"><figure data-image="original">${r.artwork.preview?`<img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} by ${esc(r.artwork.artist)}">`:'<p>Original preview unavailable.</p>'}<figcaption>The original artwork</figcaption></figure><figure data-image="crossover">${image(r,true)}<figcaption>The crossover · AI-generated</figcaption></figure></div><div class="row g-4 mt-2"><section class="col-md-6"><h3>Behind the painting</h3><p>${esc(r.artwork.description||'')}</p>${externalLink(r.artwork.sourceUrl,'View original source')}</section><section class="col-md-6"><h3>From the anime</h3><p>${esc(r.anime.description||'')}</p>${externalLink(r.anime.anidbUrl,'Explore the anime')}${externalLink(r.anime.alternateAnidbUrl,'Brotherhood on AniDB')}</section></div><details class="prompt-section"><summary>The Prompt</summary>${prompt?`${r.promptNote?`<p class="prompt-note">${esc(r.promptNote)}</p>`:''}<p class="prompt-text">${esc(prompt)}</p><button type="button" class="btn btn-outline-dark" id="copy-prompt">Copy prompt</button><p id="prompt-status" role="status"></p>`:'<p>The original generation prompt hasn’t been added to this artwork yet.</p>'}</details><details class="file-options"><summary>More download options</summary><div class="d-flex flex-wrap gap-3 mt-3">${files.map(f=>`<a href="${path(f.path)}" download>${/optimized/i.test(f.label)?'Optimized crossover PNG':'Crossover PNG'} · ${f.width} × ${f.height} · ${(f.bytes/1000000).toFixed(2)} MB</a>`).join('')}</div></details><div class="mt-4"><button type="button" class="btn btn-outline-dark" id="share-piece">Copy link</button><p id="share-message" role="status"></p></div><section class="artwork-credits"><h3>Credits & sources</h3><p>${esc(r.artwork.credit||r.artwork.artist)} ${esc(r.artwork.reuseTerms||'')}</p>${externalLink(r.artwork.previewSourceUrl,'Image source & rights')}<p>Crossover: AI-generated fan artwork. No affiliation with the original creators or rights holders.</p></section>`;
+  const comparison = artworkDialog.querySelector('.art-comparison');
+  const modes = ['original','both','crossover'];
+  function setComparison(value) {
+    const previous = new Map();
+    comparison.querySelectorAll('img').forEach(img => {
+      img.getAnimations().forEach(animation => animation.cancel());
+      previous.set(img, img.getBoundingClientRect());
+    });
+    comparison.dataset.mode = modes[value];
+    artworkDialog.querySelectorAll('[data-compare]').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.compare) === value)));
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches && artworkDialog.open) {
+      comparison.querySelectorAll('img').forEach(img => {
+        const before = previous.get(img), after = img.getBoundingClientRect();
+        if (!after.width || !after.height) return;
+        const scale = before.width ? Math.min(before.width / after.width, before.height / after.height) : .97;
+        const x = before.width ? before.x + before.width / 2 - after.x - after.width / 2 : 0;
+        const y = before.height ? before.y + before.height / 2 - after.y - after.height / 2 : 0;
+        img.animate([{transform: 'translate('+x+'px,'+y+'px) scale('+scale+')', opacity:before.width?1:0}, {transform:'none',opacity:1}], {duration:320,easing:'cubic-bezier(.22,1,.36,1)'});
+      });
+    }
+    comparison.querySelectorAll('.expand-artwork').forEach(button => {
+      const name = button.closest('figure').dataset.image;
+      button.setAttribute('aria-label', value === 1 ? 'Expand ' + name + ' artwork' : 'Show both artworks');
+    });
+  }
+  comparison.querySelectorAll('figure img').forEach(img => {
+    const figure = img.closest('figure');
+    const button = document.createElement('button');
+    button.type = 'button'; button.className = 'expand-artwork';
+    img.replaceWith(button); button.append(img);
+    button.onclick = () => { setComparison(comparison.dataset.mode === 'both' ? (figure.dataset.image === 'original' ? 0 : 2) : 1); button.focus({preventScroll:true}); };
+  });
+  artworkDialog.querySelectorAll('[data-compare]').forEach(button => button.onclick = () => setComparison(Number(button.dataset.compare)));
+
+  setComparison(1);
+  if (r.artwork.preview) {
+    const wipe = document.createElement('section');
+    wipe.className = 'mobile-wipe';
+    wipe.setAttribute('aria-label', 'Original and crossover comparison');
+    wipe.innerHTML = '<div class="wipe-frame"><img class="wipe-original" src="'+path(r.artwork.preview)+'" alt="'+esc(r.artwork.title)+' — original"><div class="wipe-overlay">'+image(r,true)+'</div><span class="wipe-label original-label">Original</span><span class="wipe-label crossover-label">Crossover</span><span class="wipe-divider" aria-hidden="true"><span>‹ ›</span></span><input class="wipe-input" type="range" min="0" max="100" value="50" aria-label="Reveal crossover" aria-valuetext="50% crossover revealed"></div><p>Drag to compare. Images retain their own proportions.</p>';
+    comparison.after(wipe);
+    const input=wipe.querySelector('input');
+    input.addEventListener('input',()=>{
+      wipe.style.setProperty('--reveal',input.value+'%');
+      input.setAttribute('aria-valuetext',input.value+'% crossover revealed');
+    });
+    artworkDialog.classList.add('has-mobile-wipe');
+  } else artworkDialog.classList.remove('has-mobile-wipe');
+
+  document.querySelector('#share-piece').onclick=async()=>{
+    const status=document.querySelector('#share-message');status.textContent='Copying link…';
+    try{await copyText(location.href);status.textContent='Link copied.';}
+    catch{status.textContent='Copy this link: ';const input=document.createElement('input');input.className='form-control';input.readOnly=true;input.value=location.href;input.setAttribute('aria-label','Shareable artwork link');status.append(input);input.focus();input.select();}
+  };
+  if(prompt)document.querySelector('#copy-prompt').onclick=async()=>{try{await copyText(prompt);document.querySelector('#prompt-status').textContent='Prompt copied.';}catch{document.querySelector('#prompt-status').textContent='Copy unavailable. Select the prompt text above to copy it.';}};
+  if(!artworkDialog.open)artworkDialog.showModal();artworkDialog.scrollTop=0;
+}
+function closeDetail(){history.replaceState(null,'',location.pathname+location.search+'#collection');artworkDialog.close();}
+document.querySelector('#close-artwork').onclick=closeDetail;
+artworkDialog.addEventListener('cancel',e=>{e.preventDefault();closeDetail();});
+artworkDialog.addEventListener('close',()=>{const href=detailLauncher?.getAttribute('href');const target=detailLauncher?.isConnected?detailLauncher:href?Array.from(root.querySelectorAll('a')).find(link=>link.getAttribute('href')===href):null;(target||controls.q).focus({preventScroll:true});});
+window.addEventListener('hashchange',syncDetail);
+
+async function copyText(text){let timer;try{await Promise.race([navigator.clipboard.writeText(text),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('Clipboard unavailable')),1500);})]);}finally{clearTimeout(timer);}}
+// A failed preview leaves the accessible destination and explanatory text usable.
+document.addEventListener('error',event=>{
+  const img=event.target;if(!(img instanceof HTMLImageElement))return;
+  const inWipe=img.closest('.mobile-wipe');
+  if(inWipe){inWipe.remove();artworkDialog.classList.remove('has-mobile-wipe');}
+  const message=document.createElement('span');message.className='image-unavailable';message.textContent='Preview unavailable: '+img.alt;img.replaceWith(message);
+},true);
+artworkDialog.addEventListener('click',event=>{if(event.target!==artworkDialog)return;const rect=artworkDialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)closeDetail();});
+window.addEventListener('popstate',()=>{readFilters();filter(false);syncDetail();});
+loadGallery();
+
+</script>
+</body>
+</html>
+

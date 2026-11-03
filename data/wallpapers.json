@@ -36,20 +36,36 @@
     ],
     "downloads": [
       {
-        "label": "Original PNG",
-        "path": "Assets/Death Note/nighthawks.png",
+        "label": "Tinified 1080p",
+        "path": "Assets/Death Note/tinified/Death Note X Nighthawks X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 986309
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/Death Note/tinified/Death Note X Nighthawks X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 2831891
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/Death Note/Death Note X Nighthawks X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
         "bytes": 2667161
       },
       {
-        "label": "Optimized PNG",
-        "path": "Assets/Death Note/tinified/nighthawks.png",
-        "width": 1920,
-        "height": 1080,
+        "label": "Uncompressed 2160p",
+        "path": "Assets/Death Note/Death Note X Nighthawks X 2160p.png",
+        "width": 3840,
+        "height": 2160,
         "format": "png",
-        "bytes": 986309
+        "bytes": 15422167
       }
     ]
   },
@@ -87,20 +103,36 @@
     ],
     "downloads": [
       {
-        "label": "Original PNG",
-        "path": "Assets/Death Note/the_death_of_marat.png",
+        "label": "Tinified 1080p",
+        "path": "Assets/Death Note/tinified/Death Note X The Death of Marat X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1225060
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/Death Note/tinified/Death Note X The Death of Marat X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 3442700
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/Death Note/Death Note X The Death of Marat X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
         "bytes": 2585084
       },
       {
-        "label": "Optimized PNG",
-        "path": "Assets/Death Note/tinified/the_death_of_marat.png",
-        "width": 1920,
-        "height": 1080,
+        "label": "Uncompressed 2160p",
+        "path": "Assets/Death Note/Death Note X The Death of Marat X 2160p.png",
+        "width": 3840,
+        "height": 2160,
         "format": "png",
-        "bytes": 1225060
+        "bytes": 14011070
       }
     ]
   },
@@ -138,20 +170,36 @@
     ],
     "downloads": [
       {
-        "label": "Original PNG",
-        "path": "Assets/Death Note/the_scream.png",
+        "label": "Tinified 1080p",
+        "path": "Assets/Death Note/tinified/Death Note X The Scream X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1338625
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/Death Note/tinified/Death Note X The Scream X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 3888842
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/Death Note/Death Note X The Scream X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
         "bytes": 3853935
       },
       {
-        "label": "Optimized PNG",
-        "path": "Assets/Death Note/tinified/the_scream.png",
-        "width": 1920,
-        "height": 1080,
+        "label": "Uncompressed 2160p",
+        "path": "Assets/Death Note/Death Note X The Scream X 2160p.png",
+        "width": 3840,
+        "height": 2160,
         "format": "png",
-        "bytes": 1338625
+        "bytes": 24072257
       }
     ]
   },
@@ -189,20 +237,36 @@
     ],
     "downloads": [
       {
-        "label": "Original PNG",
-        "path": "Assets/Death Note/the_son_of_man.png",
+        "label": "Tinified 1080p",
+        "path": "Assets/Death Note/tinified/Death Note X The Son of Man X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1044186
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/Death Note/tinified/Death Note X The Son of Man X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 2926367
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/Death Note/Death Note X The Son of Man X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
         "bytes": 2753120
       },
       {
-        "label": "Optimized PNG",
-        "path": "Assets/Death Note/tinified/the_son_of_man.png",
-        "width": 1920,
-        "height": 1080,
+        "label": "Uncompressed 2160p",
+        "path": "Assets/Death Note/Death Note X The Son of Man X 2160p.png",
+        "width": 3840,
+        "height": 2160,
         "format": "png",
-        "bytes": 1044186
+        "bytes": 15585417
       }
     ]
   },
@@ -245,20 +309,36 @@
     ],
     "downloads": [
       {
-        "label": "Original PNG",
-        "path": "Assets/Demon Slayer/mugen_train_turner.png",
+        "label": "Tinified 1080p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X Rain, Steam, and Speed X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1194554
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X Rain, Steam, and Speed X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 3520404
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/Demon Slayer/Demon Slayer X Rain, Steam, and Speed X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
         "bytes": 3495275
       },
       {
-        "label": "Optimized PNG",
-        "path": "Assets/Demon Slayer/tinified/mugen_train_turner.png",
-        "width": 1920,
-        "height": 1080,
+        "label": "Uncompressed 2160p",
+        "path": "Assets/Demon Slayer/Demon Slayer X Rain, Steam, and Speed X 2160p.png",
+        "width": 3840,
+        "height": 2160,
         "format": "png",
-        "bytes": 1194554
+        "bytes": 23911049
       }
     ]
   },
@@ -301,20 +381,36 @@
     ],
     "downloads": [
       {
-        "label": "Original PNG",
-        "path": "Assets/Demon Slayer/rengoku_red_fuji.png",
+        "label": "Tinified 1080p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X Fine Wind, Clear Morning X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1169891
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X Fine Wind, Clear Morning X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 3325855
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/Demon Slayer/Demon Slayer X Fine Wind, Clear Morning X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
         "bytes": 4004348
       },
       {
-        "label": "Optimized PNG",
-        "path": "Assets/Demon Slayer/tinified/rengoku_red_fuji.png",
-        "width": 1920,
-        "height": 1080,
+        "label": "Uncompressed 2160p",
+        "path": "Assets/Demon Slayer/Demon Slayer X Fine Wind, Clear Morning X 2160p.png",
+        "width": 3840,
+        "height": 2160,
         "format": "png",
-        "bytes": 1169891
+        "bytes": 21618466
       }
     ]
   },
@@ -357,20 +453,36 @@
     ],
     "downloads": [
       {
-        "label": "Original PNG",
-        "path": "Assets/Demon Slayer/shinobu_monet_garden.png",
+        "label": "Tinified 1080p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Japanese Footbridge X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1488307
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Japanese Footbridge X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 4460061
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/Demon Slayer/Demon Slayer X The Japanese Footbridge X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
         "bytes": 4285158
       },
       {
-        "label": "Optimized PNG",
-        "path": "Assets/Demon Slayer/tinified/shinobu_monet_garden.png",
-        "width": 1920,
-        "height": 1080,
+        "label": "Uncompressed 2160p",
+        "path": "Assets/Demon Slayer/Demon Slayer X The Japanese Footbridge X 2160p.png",
+        "width": 3840,
+        "height": 2160,
         "format": "png",
-        "bytes": 1488307
+        "bytes": 26452846
       }
     ]
   },
@@ -413,20 +525,36 @@
     ],
     "downloads": [
       {
-        "label": "Original PNG",
-        "path": "Assets/Demon Slayer/tanjiro_great_wave_corrected.png",
+        "label": "Tinified 1080p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Great Wave off Kanagawa X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1334925
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Great Wave off Kanagawa X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 4039796
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/Demon Slayer/Demon Slayer X The Great Wave off Kanagawa X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
         "bytes": 3985350
       },
       {
-        "label": "Optimized PNG",
-        "path": "Assets/Demon Slayer/tinified/tanjiro_great_wave_corrected.png",
-        "width": 1920,
-        "height": 1080,
+        "label": "Uncompressed 2160p",
+        "path": "Assets/Demon Slayer/Demon Slayer X The Great Wave off Kanagawa X 2160p.png",
+        "width": 3840,
+        "height": 2160,
         "format": "png",
-        "bytes": 1334925
+        "bytes": 22347136
       }
     ]
   },
@@ -469,20 +597,36 @@
     ],
     "downloads": [
       {
-        "label": "Original PNG",
-        "path": "Assets/Demon Slayer/tanjiro_moonlit_temple.png",
+        "label": "Tinified 1080p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Abbey in the Oakwood X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1505083
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Abbey in the Oakwood X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 4581573
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/Demon Slayer/Demon Slayer X The Abbey in the Oakwood X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
         "bytes": 3701419
       },
       {
-        "label": "Optimized PNG",
-        "path": "Assets/Demon Slayer/tinified/tanjiro_moonlit_temple.png",
-        "width": 1920,
-        "height": 1080,
+        "label": "Uncompressed 2160p",
+        "path": "Assets/Demon Slayer/Demon Slayer X The Abbey in the Oakwood X 2160p.png",
+        "width": 3840,
+        "height": 2160,
         "format": "png",
-        "bytes": 1505083
+        "bytes": 20581127
       }
     ]
   },
@@ -522,20 +666,36 @@
     ],
     "downloads": [
       {
-        "label": "Original PNG",
-        "path": "Assets/FMA/fma_creation_of_adam_1920x1080.png",
+        "label": "Tinified 1080p",
+        "path": "Assets/FMA/tinified/Fullmetal Alchemist X The Creation of Adam X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1194083
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/FMA/tinified/Fullmetal Alchemist X The Creation of Adam X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 3246042
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/FMA/Fullmetal Alchemist X The Creation of Adam X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
         "bytes": 3085050
       },
       {
-        "label": "Optimized PNG",
-        "path": "Assets/FMA/tinified/fma_creation_of_adam_1920x1080.png",
-        "width": 1920,
-        "height": 1080,
+        "label": "Uncompressed 2160p",
+        "path": "Assets/FMA/Fullmetal Alchemist X The Creation of Adam X 2160p.png",
+        "width": 3840,
+        "height": 2160,
         "format": "png",
-        "bytes": 1194083
+        "bytes": 18640894
       }
     ]
   },
@@ -578,20 +738,36 @@
     ],
     "downloads": [
       {
-        "label": "Original PNG",
-        "path": "Assets/FMA/fma_wanderer_1920x1080.png",
+        "label": "Tinified 1080p",
+        "path": "Assets/FMA/tinified/Fullmetal Alchemist X Wanderer above the Sea of Fog X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1091520
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/FMA/tinified/Fullmetal Alchemist X Wanderer above the Sea of Fog X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 3439447
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/FMA/Fullmetal Alchemist X Wanderer above the Sea of Fog X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
         "bytes": 3314126
       },
       {
-        "label": "Optimized PNG",
-        "path": "Assets/FMA/tinified/fma_wanderer_1920x1080.png",
-        "width": 1920,
-        "height": 1080,
+        "label": "Uncompressed 2160p",
+        "path": "Assets/FMA/Fullmetal Alchemist X Wanderer above the Sea of Fog X 2160p.png",
+        "width": 3840,
+        "height": 2160,
         "format": "png",
-        "bytes": 1091520
+        "bytes": 21777432
       }
     ]
   },
@@ -631,20 +807,36 @@
     ],
     "downloads": [
       {
-        "label": "Original PNG",
-        "path": "Assets/One Piece/one_piece_great_wave_1920x1080.png",
+        "label": "Tinified 1080p",
+        "path": "Assets/One Piece/tinified/One Piece X The Great Wave off Kanagawa X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1330542
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/One Piece/tinified/One Piece X The Great Wave off Kanagawa X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 3893688
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/One Piece/One Piece X The Great Wave off Kanagawa X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
         "bytes": 4316611
       },
       {
-        "label": "Optimized PNG",
-        "path": "Assets/One Piece/tinified/one_piece_great_wave_1920x1080.png",
-        "width": 1920,
-        "height": 1080,
+        "label": "Uncompressed 2160p",
+        "path": "Assets/One Piece/One Piece X The Great Wave off Kanagawa X 2160p.png",
+        "width": 3840,
+        "height": 2160,
         "format": "png",
-        "bytes": 1330542
+        "bytes": 24283472
       }
     ]
   }
