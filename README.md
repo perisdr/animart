@@ -23,7 +23,7 @@ The split download button defaults to Tinified 1080p; its dropdown offers Tinifi
 - `Assets/`: supplied wallpapers and existing `tinified/` variants.
 - `index.html`: introduction, gallery controls, story, and detail-dialog shell.
 - `styles/site.css`: colours, typography, layout, and responsive rules.
-- `scripts/gallery.js`: filtering, catalogue rendering, detail views, and sharing.
+- `scripts/gallery.js`: filtering, catalogue rendering, detail views, and URL navigation.
 - `data/wallpapers.json`: catalogue and per-image source metadata.
 - `data/prompts.json`: original prompt text keyed by catalogue ID, with provenance notes.
 - `fonts/`: local Fraunces and Source Sans 3 variable fonts and SIL OFL licences.
@@ -83,13 +83,13 @@ want to generate their previews. There is no need to regenerate existing images.
 Record artwork credits, source URLs, and image reuse terms alongside each entry.
 
 The URL retains filter selections; each artwork has a `#piece=...` link.
-After publishing, the copy-link button produces public links. Localhost links are
-only useful on the computer running the preview server.
+Copy the browser URL to share a detail view. Localhost links are only useful on
+the computer running the preview server.
 
 ## Generation prompts
 
 `data/prompts.json` preserves prompts 1–12 from `docs/anime_art_crossover_prompts.md`.
-Each artwork opens with The Prompt collapsed. Section 8 is identified as the original
+Each AI Crossover opens with a three-line fading prompt preview; View more reveals the full prompt and copy control. Section 8 is identified as the original
 generation prompt for the corrected Tanjiro wave; the correction prompt is not in the
 archive. Section 13 is an unused future-generation rewrite and is excluded.
 
@@ -102,3 +102,13 @@ Pages as described in `docs/publishing.md`.
 
 No blanket image licence is granted by this repository. Code licensing and image
 attribution will be documented separately before publication.
+
+## Collection dates and references
+
+Set `addedOn` (YYYY-MM-DD) when adding a new crossover; preserve it during edits.
+The footer derives its last-added date and piece, original-artist and anime counts
+from the entire catalogue. Initial dates use the first catalogue commit, 1 November 2026.
+
+Use verified WikiArt references in `artwork.sourceUrl` and labelled `{label, url}`
+entries in `artwork.links` for Interesting links. Keep image provenance in
+`previewSourceUrl`. See `docs/source-links.md` for verification and the Monet exception.

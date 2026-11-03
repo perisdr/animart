@@ -15,13 +15,23 @@
     "artwork": {
       "title": "Nighthawks",
       "artist": "Edward Hopper",
-      "sourceUrl": "https://archive.artic.edu/hopper/artwork/111628",
+      "sourceUrl": "https://www.wikiart.org/en/edward-hopper/nighthawks",
       "preview": "previews/originals/nighthawks.webp",
       "credit": "Edward Hopper / Art Institute of Chicago, via Wikimedia Commons.",
       "reuseTerms": "Public domain in the United States (copyright not renewed), per Wikimedia Commons; status may differ elsewhere.",
       "year": "1942",
       "description": "A brightly lit diner sits against an empty city street. Hopper leaves the relationships between its customers unresolved, inviting us to read the scene for ourselves.",
-      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Nighthawks_by_Edward_Hopper_1942.jpg"
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Nighthawks_by_Edward_Hopper_1942.jpg",
+      "links": [
+        {
+          "label": "Art Institute of Chicago",
+          "url": "https://archive.artic.edu/hopper/artwork/111628"
+        },
+        {
+          "label": "Google Arts & Culture",
+          "url": "https://artsandculture.google.com/asset/nighthawks/6AEKkO_F-9wicw"
+        }
+      ]
     },
     "metadataStatus": "source-linked",
     "preview": "previews/death-note-nighthawks.webp",
@@ -67,7 +77,8 @@
         "format": "png",
         "bytes": 15422167
       }
-    ]
+    ],
+    "addedOn": "2026-11-01"
   },
   {
     "id": "death-note-the-death-of-marat",
@@ -85,13 +96,23 @@
     "artwork": {
       "title": "The Death of Marat",
       "artist": "Jacques-Louis David",
-      "sourceUrl": "https://www.wga.hu/html/d/david_j/3/301david.html",
+      "sourceUrl": "https://www.wikiart.org/en/jacques-louis-david/the-death-of-marat-1793",
       "preview": "previews/originals/marat.webp",
       "credit": "Jacques-Louis David / Royal Museums of Fine Arts of Belgium, via Wikimedia Commons.",
       "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
       "year": "1793",
       "description": "David depicts the murdered revolutionary Jean-Paul Marat in his bath. The spare setting and still figure turn a contemporary political death into a solemn memorial.",
-      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Death_of_Marat_by_David.jpg"
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Death_of_Marat_by_David.jpg",
+      "links": [
+        {
+          "label": "Royal Museums of Fine Arts of Belgium (French)",
+          "url": "https://fine-arts-museum.be/fr/la-collection/jacques-louis-david-marat-assassine"
+        },
+        {
+          "label": "Web Gallery of Art",
+          "url": "https://www.wga.hu/html/d/david_j/3/301david.html"
+        }
+      ]
     },
     "metadataStatus": "source-linked",
     "preview": "previews/death-note-the-death-of-marat.webp",
@@ -134,7 +155,8 @@
         "format": "png",
         "bytes": 14011070
       }
-    ]
+    ],
+    "addedOn": "2026-11-01"
   },
   {
     "id": "death-note-the-scream",
@@ -152,13 +174,23 @@
     "artwork": {
       "title": "The Scream",
       "artist": "Edvard Munch",
-      "sourceUrl": "https://www.munch.no/en/The-Scream/",
+      "sourceUrl": "https://www.wikiart.org/en/edvard-munch/the-scream-1893",
       "preview": "previews/originals/the-scream.webp",
       "credit": "Edvard Munch, 1893 version / National Museum of Norway, via Wikimedia Commons.",
       "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
       "year": "1893–1910",
       "description": "A figure beneath a restless sky gives anxiety a visible form. Munch returned to this motif in several paintings, drawings, and prints; the linked museum explores those versions.",
-      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:The_Scream.jpg"
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:The_Scream.jpg",
+      "links": [
+        {
+          "label": "MUNCH — the versions of The Scream",
+          "url": "https://www.munch.no/en/The-Scream/"
+        },
+        {
+          "label": "Google Arts & Culture — 1910 version at MUNCH",
+          "url": "https://artsandculture.google.com/asset/the-scream-edvard-munch/eQFdRTFKDtVQ1A"
+        }
+      ]
     },
     "metadataStatus": "source-linked",
     "preview": "previews/death-note-the-scream.webp",
@@ -201,7 +233,8 @@
         "format": "png",
         "bytes": 24072257
       }
-    ]
+    ],
+    "addedOn": "2026-11-01"
   },
   {
     "id": "death-note-the-son-of-man",
@@ -219,13 +252,19 @@
     "artwork": {
       "title": "The Son of Man",
       "artist": "René Magritte",
-      "sourceUrl": "https://en.wikipedia.org/wiki/The_Son_of_Man",
+      "sourceUrl": "https://www.wikiart.org/en/rene-magritte/son-of-man-1964",
       "preview": "previews/originals/son-of-man.webp",
       "credit": "René Magritte, The Son of Man, 1964. Low-resolution reference from English Wikipedia.",
       "reuseTerms": "Copyrighted artwork; not freely licensed. Wikipedia hosts this reproduction under an article-specific fair-use rationale.",
       "year": "1964",
       "description": "A floating apple conceals the face of a man in a bowler hat. Magritte uses an ordinary object to make a familiar portrait feel strange and elusive.",
-      "previewSourceUrl": "https://en.wikipedia.org/wiki/File:Magritte_TheSonOfMan.jpg"
+      "previewSourceUrl": "https://en.wikipedia.org/wiki/File:Magritte_TheSonOfMan.jpg",
+      "links": [
+        {
+          "label": "Wikipedia — The Son of Man",
+          "url": "https://en.wikipedia.org/wiki/The_Son_of_Man"
+        }
+      ]
     },
     "metadataStatus": "source-linked",
     "preview": "previews/death-note-the-son-of-man.webp",
@@ -268,7 +307,8 @@
         "format": "png",
         "bytes": 15585417
       }
-    ]
+    ],
+    "addedOn": "2026-11-01"
   },
   {
     "id": "demon-slayer-mugen-train-turner",
@@ -288,13 +328,23 @@
     "artwork": {
       "title": "Rain, Steam, and Speed",
       "artist": "J. M. W. Turner",
-      "sourceUrl": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-rain-steam-and-speed-the-great-western-railway",
+      "sourceUrl": "https://www.wikiart.org/en/william-turner/rain-steam-and-speed-the-great-western-railway",
       "preview": "previews/originals/rain-steam-speed.webp",
       "credit": "J. M. W. Turner / National Gallery, London, via Wikimedia Commons.",
       "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
       "year": "1844",
       "description": "A locomotive emerges through rain and steam on a railway bridge. Turner lets atmosphere soften the landscape while the train drives directly toward the viewer.",
-      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:J._M._W._Turner_-_Rain,_Steam_and_Speed_%E2%80%93_The_Great_Western_Railway.jpg"
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:J._M._W._Turner_-_Rain,_Steam_and_Speed_%E2%80%93_The_Great_Western_Railway.jpg",
+      "links": [
+        {
+          "label": "National Gallery, London",
+          "url": "https://www.nationalgallery.org.uk/paintings/joseph-mallord-william-turner-rain-steam-and-speed-the-great-western-railway"
+        },
+        {
+          "label": "Google Arts & Culture",
+          "url": "https://artsandculture.google.com/asset/rain-steam-and-speed-the-great-western-railway-0005/3gErCUZWBIktDg"
+        }
+      ]
     },
     "metadataStatus": "source-linked",
     "preview": "previews/demon-slayer-mugen-train-turner.webp",
@@ -340,7 +390,8 @@
         "format": "png",
         "bytes": 23911049
       }
-    ]
+    ],
+    "addedOn": "2026-11-01"
   },
   {
     "id": "demon-slayer-rengoku-red-fuji",
@@ -360,13 +411,23 @@
     "artwork": {
       "title": "Fine Wind, Clear Morning",
       "artist": "Katsushika Hokusai",
-      "sourceUrl": "https://artsandculture.google.com/asset/thirty-six-views-of-mt-fuji-fine-wind-clear-morning/HgGi21x5uVwD8w",
+      "sourceUrl": "https://www.wikiart.org/en/katsushika-hokusai/fuji-mountains-in-clear-weather-1831",
       "preview": "previews/originals/red-fuji.webp",
       "credit": "Katsushika Hokusai / Indianapolis Museum of Art, via Google Art Project and Wikimedia Commons.",
       "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
       "year": "c. 1830–1832",
       "description": "Often called Red Fuji, this woodblock print sets the mountain against bands of delicate cloud. Its bold colour and simple silhouette belong to Hokusai’s Thirty-six Views of Mount Fuji.",
-      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Katsushika_Hokusai_-_Fine_Wind,_Clear_Morning_(Gaif%C5%AB_kaisei)_-_Google_Art_Project.jpg"
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Katsushika_Hokusai_-_Fine_Wind,_Clear_Morning_(Gaif%C5%AB_kaisei)_-_Google_Art_Project.jpg",
+      "links": [
+        {
+          "label": "Carnegie Museum of Art — collection impression",
+          "url": "https://collection.carnegieart.org/objects/6e4f895b-2056-4606-a893-c7a1c06c56cd"
+        },
+        {
+          "label": "Google Arts & Culture — Red Fuji",
+          "url": "https://artsandculture.google.com/asset/thirty-six-views-of-mt-fuji-fine-wind-clear-morning/HgGi21x5uVwD8w"
+        }
+      ]
     },
     "metadataStatus": "source-linked",
     "preview": "previews/demon-slayer-rengoku-red-fuji.webp",
@@ -412,7 +473,8 @@
         "format": "png",
         "bytes": 21618466
       }
-    ]
+    ],
+    "addedOn": "2026-11-01"
   },
   {
     "id": "demon-slayer-shinobu-monet-garden",
@@ -438,7 +500,21 @@
       "reuseTerms": "Public domain; National Gallery of Art Open Access.",
       "year": "1899",
       "description": "Monet’s garden at Giverny becomes a dense world of water, leaves, and reflected colour. The arch of the bridge gives structure to the loose brushwork around it.",
-      "previewSourceUrl": "https://www.nga.gov/artworks/74796-japanese-footbridge"
+      "previewSourceUrl": "https://www.nga.gov/artworks/74796-japanese-footbridge",
+      "links": [
+        {
+          "label": "National Gallery of Art, Washington",
+          "url": "https://www.nga.gov/artworks/74796-japanese-footbridge"
+        },
+        {
+          "label": "WikiArt — other paintings in the Japanese Bridge series",
+          "url": "https://www.wikiart.org/en/claude-monet/the-japanese-bridge-the-water-lily-pond-1899"
+        },
+        {
+          "label": "Google Arts & Culture",
+          "url": "https://artsandculture.google.com/asset/the-japanese-footbridge-claude-monet/RgG90GYz4QkZ4A"
+        }
+      ]
     },
     "metadataStatus": "source-linked",
     "preview": "previews/demon-slayer-shinobu-monet-garden.webp",
@@ -484,7 +560,8 @@
         "format": "png",
         "bytes": 26452846
       }
-    ]
+    ],
+    "addedOn": "2026-11-01"
   },
   {
     "id": "demon-slayer-tanjiro-great-wave-corrected",
@@ -504,13 +581,23 @@
     "artwork": {
       "title": "The Great Wave off Kanagawa",
       "artist": "Katsushika Hokusai",
-      "sourceUrl": "https://www.metmuseum.org/art/collection/search/45434",
+      "sourceUrl": "https://www.wikiart.org/en/katsushika-hokusai/the-great-wave-of-kanagawa-1831",
       "preview": "previews/originals/great-wave.webp",
       "credit": "Katsushika Hokusai / The Metropolitan Museum of Art. H. O. Havemeyer Collection, Bequest of Mrs. H. O. Havemeyer, 1929.",
       "reuseTerms": "Public domain; The Met Open Access.",
       "year": "c. 1830–1832",
       "description": "A towering wave curls above boats while Mount Fuji appears small in the distance. Hokusai uses scale, perspective, and blue pigments to make the sea feel immense.",
-      "previewSourceUrl": "https://www.metmuseum.org/art/collection/search/45434"
+      "previewSourceUrl": "https://www.metmuseum.org/art/collection/search/45434",
+      "links": [
+        {
+          "label": "The Metropolitan Museum of Art",
+          "url": "https://www.metmuseum.org/art/collection/search/45434"
+        },
+        {
+          "label": "Google Arts & Culture — British Museum impression",
+          "url": "https://artsandculture.google.com/asset/hokusai-s-the-great-wave/lwFOIObpzzqtrA"
+        }
+      ]
     },
     "metadataStatus": "source-linked",
     "preview": "previews/demon-slayer-tanjiro-great-wave-corrected.webp",
@@ -556,7 +643,8 @@
         "format": "png",
         "bytes": 22347136
       }
-    ]
+    ],
+    "addedOn": "2026-11-01"
   },
   {
     "id": "demon-slayer-tanjiro-moonlit-temple",
@@ -576,13 +664,23 @@
     "artwork": {
       "title": "The Abbey in the Oakwood",
       "artist": "Caspar David Friedrich",
-      "sourceUrl": "https://search.smb.museum/object/obj-968249",
+      "sourceUrl": "https://www.wikiart.org/en/caspar-david-friedrich/the-abbey-in-the-oakwood",
       "preview": "previews/originals/abbey.webp",
       "credit": "Caspar David Friedrich / Alte Nationalgalerie, Berlin, via Google Art Project and Wikimedia Commons.",
       "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
       "year": "1809–1810",
       "description": "Bare oak trees surround the ruins of a Gothic abbey. Friedrich brings architecture, winter, and a funeral procession together in a quiet meditation on mortality.",
-      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Abtei_im_Eichwald_-_Google_Art_Project.jpg"
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Abtei_im_Eichwald_-_Google_Art_Project.jpg",
+      "links": [
+        {
+          "label": "Staatliche Museen zu Berlin",
+          "url": "https://search.smb.museum/object/obj-968249"
+        },
+        {
+          "label": "Google Arts & Culture",
+          "url": "https://artsandculture.google.com/asset/abbey-among-oak-trees-0123/UAEmmuxqtNUt-g"
+        }
+      ]
     },
     "metadataStatus": "source-linked",
     "preview": "previews/demon-slayer-tanjiro-moonlit-temple.webp",
@@ -628,7 +726,8 @@
         "format": "png",
         "bytes": 20581127
       }
-    ]
+    ],
+    "addedOn": "2026-11-01"
   },
   {
     "id": "fma-fma-creation-of-adam-1920x1080",
@@ -648,13 +747,23 @@
     "artwork": {
       "title": "The Creation of Adam",
       "artist": "Michelangelo",
-      "sourceUrl": "https://www.wga.hu/html_m/m/michelan/3sistina/1genesis/6adam/06_3ce6.html",
+      "sourceUrl": "https://www.wikiart.org/en/michelangelo/the-creation-of-adam-1512",
       "preview": "previews/originals/creation-of-adam.webp",
       "credit": "Michelangelo / Wikimedia Commons. Detail of the Sistine Chapel ceiling.",
       "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
       "year": "c. 1510",
       "description": "Part of the Sistine Chapel ceiling, this fresco stages the creation of Adam around two almost-touching hands. The small gap between them holds the composition’s tension.",
-      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Michelangelo_-_Creation_of_Adam_(cropped).jpg"
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Michelangelo_-_Creation_of_Adam_(cropped).jpg",
+      "links": [
+        {
+          "label": "Vatican Museums — Creation of Adam",
+          "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/volta/storie-centrali/creazione-di-adamo.html"
+        },
+        {
+          "label": "Web Gallery of Art",
+          "url": "https://www.wga.hu/html_m/m/michelan/3sistina/1genesis/6adam/06_3ce6.html"
+        }
+      ]
     },
     "metadataStatus": "source-linked",
     "preview": "previews/fma-fma-creation-of-adam-1920x1080.webp",
@@ -697,7 +806,8 @@
         "format": "png",
         "bytes": 18640894
       }
-    ]
+    ],
+    "addedOn": "2026-11-01"
   },
   {
     "id": "fma-fma-wanderer-1920x1080",
@@ -717,13 +827,19 @@
     "artwork": {
       "title": "Wanderer above the Sea of Fog",
       "artist": "Caspar David Friedrich",
-      "sourceUrl": "https://wanderer.cdfriedrich.de/en/",
+      "sourceUrl": "https://www.wikiart.org/en/caspar-david-friedrich/the-wanderer-above-the-sea-of-fog",
       "preview": "previews/originals/wanderer.webp",
       "credit": "Caspar David Friedrich / Hamburger Kunsthalle, via Wikimedia Commons.",
       "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
       "year": "c. 1817",
       "description": "A traveller seen from behind looks out over mist-covered mountains. By hiding his expression, Friedrich invites us to share the view and imagine the feelings it evokes.",
-      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Friedrich,_Caspar_David_-_Wanderer_%C3%BCber_dem_Nebelmeer.jpg"
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Friedrich,_Caspar_David_-_Wanderer_%C3%BCber_dem_Nebelmeer.jpg",
+      "links": [
+        {
+          "label": "Hamburger Kunsthalle — explore the Wanderer",
+          "url": "https://wanderer.cdfriedrich.de/en/"
+        }
+      ]
     },
     "metadataStatus": "source-linked",
     "preview": "previews/fma-fma-wanderer-1920x1080.webp",
@@ -769,7 +885,8 @@
         "format": "png",
         "bytes": 21777432
       }
-    ]
+    ],
+    "addedOn": "2026-11-01"
   },
   {
     "id": "one-piece-one-piece-great-wave-1920x1080",
@@ -786,13 +903,23 @@
     "artwork": {
       "title": "The Great Wave off Kanagawa",
       "artist": "Katsushika Hokusai",
-      "sourceUrl": "https://www.metmuseum.org/art/collection/search/45434",
+      "sourceUrl": "https://www.wikiart.org/en/katsushika-hokusai/the-great-wave-of-kanagawa-1831",
       "preview": "previews/originals/great-wave.webp",
       "credit": "Katsushika Hokusai / The Metropolitan Museum of Art. H. O. Havemeyer Collection, Bequest of Mrs. H. O. Havemeyer, 1929.",
       "reuseTerms": "Public domain; The Met Open Access.",
       "year": "c. 1830–1832",
       "description": "A towering wave curls above boats while Mount Fuji appears small in the distance. Hokusai uses scale, perspective, and blue pigments to make the sea feel immense.",
-      "previewSourceUrl": "https://www.metmuseum.org/art/collection/search/45434"
+      "previewSourceUrl": "https://www.metmuseum.org/art/collection/search/45434",
+      "links": [
+        {
+          "label": "The Metropolitan Museum of Art",
+          "url": "https://www.metmuseum.org/art/collection/search/45434"
+        },
+        {
+          "label": "Google Arts & Culture — British Museum impression",
+          "url": "https://artsandculture.google.com/asset/hokusai-s-the-great-wave/lwFOIObpzzqtrA"
+        }
+      ]
     },
     "metadataStatus": "source-linked",
     "preview": "previews/one-piece-one-piece-great-wave-1920x1080.webp",
@@ -838,6 +965,7 @@
         "format": "png",
         "bytes": 24283472
       }
-    ]
+    ],
+    "addedOn": "2026-11-01"
   }
 ]

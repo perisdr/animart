@@ -22,7 +22,7 @@ const defaultDownload = r => r.downloads.find(d => d.label === 'Tinified 1080p')
 function downloadButton(r, surface) {
   const file = defaultDownload(r), id = `downloads-${surface}-${r.id}`;
   const size = f => `${f.width} × ${f.height} · ${(f.bytes / 1000000).toFixed(2)} MB`;
-  return `<div class="download-split"><a class="btn slide-download" href="${path(file.path)}" download aria-label="Download ${esc(file.label)}"><span>Download artwork</span><small>${esc(file.label)} · ${(file.bytes / 1000000).toFixed(2)} MB</small></a><button type="button" class="btn download-toggle" aria-label="Other download options" aria-expanded="false" aria-controls="${id}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="download-options" id="${id}" hidden>${r.downloads.filter(f => f !== file).map(f => `<a href="${path(f.path)}" download><span>${esc(f.label)}</span><small>${size(f)}</small></a>`).join('')}</div></div>`;
+  return `<div class="download-split"><a class="btn slide-download" href="${path(file.path)}" download aria-label="Download ${esc(file.label)}"><span>Download AI Crossover</span><small>${esc(file.label)} · ${(file.bytes / 1000000).toFixed(2)} MB</small></a><button type="button" class="btn download-toggle" aria-label="Other download options" aria-expanded="false" aria-controls="${id}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="download-options" id="${id}" hidden>${r.downloads.filter(f => f !== file).map(f => `<a href="${path(f.path)}" download><span>${esc(f.label)}</span><small>${size(f)}</small></a>`).join('')}</div></div>`;
 }
 function closeDownloads(except = null) {
   document.querySelectorAll('.download-toggle[aria-expanded="true"]').forEach(button => {
@@ -56,13 +56,13 @@ document.addEventListener('keydown', event => {
     split.querySelector('.download-options a').focus();
   }
 });
-const image = (r, large = false) => `<img ${large ? '' : 'loading="lazy"'} src="${path(large ? (defaultDownload(r)).path : r.preview)}" alt="${esc(r.anime.name)} crossover inspired by ${esc(r.artwork.title)}">`;
+const image = (r, large = false) => `<img ${large ? '' : 'loading="lazy"'} src="${path(large ? (defaultDownload(r)).path : r.preview)}" alt="${esc(r.anime.name)} AI Crossover inspired by ${esc(r.artwork.title)}">`;
 const meta = r => `<p class="anime">${esc(r.anime.name)} ×</p><h3>${esc(r.artwork.title)}</h3><p>After ${esc(r.artwork.artist)}${r.artwork.year ? ` · ${esc(r.artwork.year)}` : ''}</p>`;
 function render() {
   document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
-  document.querySelector('#count').textContent = `${filtered.length} of ${records.length} crossovers`;
+  document.querySelector('#count').textContent = `${filtered.length} of ${records.length} AI Crossovers`;
   root.className = `gallery-${view}`;
-  if (!filtered.length) { root.innerHTML='<div class="gallery-empty"><h3>No crossovers found.</h3><p>Try another search or return to the full collection.</p><button type="button" class="btn btn-outline-dark" id="reset-gallery">Clear filters</button></div>';document.querySelector('#reset-gallery').onclick=()=>{clearFilters();document.querySelector('#search').focus();};return; }
+  if (!filtered.length) { root.innerHTML='<div class="gallery-empty"><h3>No AI Crossovers found.</h3><p>Try another search or return to the full collection.</p><button type="button" class="btn btn-outline-dark" id="reset-gallery">Clear filters</button></div>';document.querySelector('#reset-gallery').onclick=()=>{clearFilters();document.querySelector('#search').focus();};return; }
   if (!filtered.some(r => r.id === currentId)) currentId = filtered[0].id;
   if (mobile.matches) {
     root.className = 'gallery-mobile';
@@ -72,7 +72,7 @@ function render() {
   if (view === 'grid') { root.innerHTML = `<div class="row g-4">${filtered.map(r=>`<article class="col-md-6 col-xl-4"><a class="piece" href="${detail(r)}">${image(r)}<div class="piece-copy">${meta(r)}<small>Explore & download →</small></div></a></article>`).join('')}</div>`;return; }
   if (view === 'list') { root.innerHTML = filtered.map(r=>`<article class="list-piece"><a class="list-image" href="${detail(r)}">${image(r)}</a><div class="list-copy">${meta(r)}<p class="list-description">${esc(r.artwork.description || '')}</p></div><div class="list-action"><span>1920 × 1080</span><a href="${detail(r)}">Explore & download →</a></div></article>`).join('');return; }
   const i=filtered.findIndex(r=>r.id===currentId),r=filtered[i];
-  root.innerHTML=`<section class="slider-stage" aria-label="Artwork viewer" aria-roledescription="carousel"><div class="slider-art"><a href="${detail(r)}">${image(r,true)}</a><div class="slide-navigation"><button class="btn" id="previous" aria-label="Previous artwork" ${filtered.length===1?'disabled':''}>←</button><p role="status">${i+1} / ${filtered.length} <span>— ${esc(r.anime.name)}</span></p><button class="btn" id="next" aria-label="Next artwork" ${filtered.length===1?'disabled':''}>→</button></div></div><aside class="slider-caption">${meta(r)}<p class="slide-description">${esc(r.artwork.description||'')}</p>${r.artwork.preview?`<figure class="source-reference"><img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} — original artwork"><figcaption>The original artwork</figcaption></figure>`:''}${downloadButton(r, "slider")}<a class="slide-details" href="${detail(r)}">Explore the story & credits →</a></aside></section><div class="filmstrip" role="group" aria-label="Choose artwork">${filtered.map((item,n)=>`<button type="button" class="film-frame" data-piece="${esc(item.id)}" aria-label="Show ${esc(item.anime.name)} × ${esc(item.artwork.title)}" aria-pressed="${n===i}">${image(item)}<span>${String(n+1).padStart(2,'0')}</span></button>`).join('')}</div>`;
+  root.innerHTML=`<section class="slider-stage" aria-label="AI Crossover viewer" aria-roledescription="carousel"><div class="slider-art"><a href="${detail(r)}">${image(r,true)}</a><div class="slide-navigation"><button class="btn" id="previous" aria-label="Previous AI Crossover" ${filtered.length===1?'disabled':''}>←</button><p role="status">${i+1} / ${filtered.length} <span>— ${esc(r.anime.name)}</span></p><button class="btn" id="next" aria-label="Next AI Crossover" ${filtered.length===1?'disabled':''}>→</button></div></div><aside class="slider-caption">${meta(r)}<p class="slide-description">${esc(r.artwork.description||'')}</p>${r.artwork.preview?`<figure class="source-reference"><img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} — original artwork"><figcaption>The original artwork</figcaption></figure>`:''}${downloadButton(r, "slider")}<a class="slide-details" href="${detail(r)}">Explore the story & credits →</a></aside></section><div class="filmstrip" role="group" aria-label="Choose AI Crossover">${filtered.map((item,n)=>`<button type="button" class="film-frame" data-piece="${esc(item.id)}" aria-label="Show ${esc(item.anime.name)} × ${esc(item.artwork.title)}" aria-pressed="${n===i}">${image(item)}<span>${String(n+1).padStart(2,'0')}</span></button>`).join('')}</div>`;
   const move=(amount,focusId)=>{currentId=filtered[(i+amount+filtered.length)%filtered.length].id;render();document.getElementById(focusId).focus({preventScroll:true});};
   document.querySelector('#previous').onclick=()=>move(-1,'previous');document.querySelector('#next').onclick=()=>move(1,'next');
   root.querySelectorAll('[data-piece]').forEach(b=>b.onclick=()=>{currentId=b.dataset.piece;render();Array.from(root.querySelectorAll('[data-piece]')).find(el=>el.dataset.piece===currentId).focus({preventScroll:true});});
@@ -93,6 +93,7 @@ for(const name of ['anime','artist','artwork'])controls[name].addEventListener('
 document.querySelector('#clear-filters').addEventListener('click',clearFilters);
 async function loadGallery(){
   document.querySelector('#load-error').hidden=true;
+  document.querySelector('.collection-update').hidden=true;
   document.querySelector('#count').textContent='Loading the collection…';
   try{
     const response=await fetch('data/wallpapers.json');if(!response.ok)throw Error('Catalogue unavailable');
@@ -103,7 +104,7 @@ async function loadGallery(){
     const order=name=>name==='One Piece'?0:/Fullmetal|FMA/.test(name)?1:name==='Death Note'?2:3;
     records.sort((a,b)=>order(a.anime.name)-order(b.anime.name));
     fillSelect('anime',records.map(r=>r.anime.name));fillSelect('artist',records.map(r=>r.artwork.artist));fillSelect('artwork',records.map(r=>r.artwork.title));
-    currentId=records[0].id;readFilters();filter(false);syncDetail();
+    renderCollectionUpdate();currentId=records[0].id;readFilters();filter(false);syncDetail();
   }catch(error){root.innerHTML='';document.querySelector('#load-error').hidden=false;document.querySelector('#count').textContent='Collection unavailable';console.error('Unable to load collection:',error);}
 }
 document.querySelector('#retry').addEventListener('click',loadGallery);
@@ -111,6 +112,25 @@ document.querySelector('#retry').addEventListener('click',loadGallery);
 const artworkDialog = document.querySelector('#artwork-dialog');
 let detailLauncher = null;
 const externalLink = (url,label) => /^https:\/\//.test(url || '') ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>` : '';
+function interestingLinks(artwork) {
+  const links = (artwork.links || []).map(link => externalLink(link.url, link.label)).filter(Boolean);
+  return links.length ? '<section class="interesting-links"><h3>Interesting links</h3><ul>' + links.map(link => '<li>' + link + '</li>').join('') + '</ul></section>' : '';
+}
+function renderCollectionUpdate() {
+  const latest = records.map(r => r.addedOn).filter(date => /^\d{4}-\d{2}-\d{2}$/.test(date || '') && !Number.isNaN(Date.parse(date))).sort().at(-1);
+  const lastAdded = document.querySelector('#last-added');
+  lastAdded.replaceChildren();
+  if (latest) {
+    const time = document.createElement('time');
+    time.dateTime = latest;
+    time.textContent = new Intl.DateTimeFormat('en-GB', {day:'numeric', month:'long', year:'numeric', timeZone:'UTC'}).format(new Date(latest));
+    lastAdded.append('Last added: ', time);
+  }
+  const artists = new Set(records.map(r => r.artwork.artist)).size;
+  const anime = new Set(records.map(r => r.anime.name)).size;
+  document.querySelector('#collection-totals').textContent = records.length + ' AI Crossovers · ' + artists + ' original artists · ' + anime + ' anime';
+  document.querySelector('.collection-update').hidden = false;
+}
 function syncDetail() {
   const match=location.hash.match(/^#piece=(.+)$/);let id;
   try{id=match?decodeURIComponent(match[1]):null;}catch{id=null;}
@@ -118,7 +138,7 @@ function syncDetail() {
   if(!r){if(artworkDialog.open)artworkDialog.close();return;}
   if(!artworkDialog.open)detailLauncher=document.activeElement;
   const prompt=typeof r.prompt==='string'?r.prompt.trim():'';
-  document.querySelector('#artwork-content').innerHTML=`<div class="row g-3 align-items-end"><div class="col-lg-8"><h2 id="artwork-title">${esc(r.artwork.title)}</h2><p>${esc(r.anime.name)} × ${esc(r.artwork.artist)}</p></div><div class="col-lg-4">${downloadButton(r, "detail")}</div></div><div class="comparison-controls my-4"><div class="btn-group compare-switch" role="group" aria-label="Artwork comparison view"><button class="btn" data-compare="0" aria-pressed="false">Original</button><button class="btn" data-compare="1" aria-pressed="true">Both</button><button class="btn" data-compare="2" aria-pressed="false">Crossover</button></div><p id="comparison-hint">Select an image to expand it. Select it again or choose Both to compare.</p></div><div class="art-comparison" data-mode="both"><figure data-image="original">${r.artwork.preview?`<img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} by ${esc(r.artwork.artist)}">`:'<p>Original preview unavailable.</p>'}<figcaption>The original artwork</figcaption></figure><figure data-image="crossover">${image(r,true)}<figcaption>The crossover · AI-generated</figcaption></figure></div><div class="row g-4 mt-2"><section class="col-md-6"><h3>Behind the painting</h3><p>${esc(r.artwork.description||'')}</p>${externalLink(r.artwork.sourceUrl,'View original source')}</section><section class="col-md-6"><h3>From the anime</h3><p>${esc(r.anime.description||'')}</p>${externalLink(r.anime.anidbUrl,'Explore the anime')}${externalLink(r.anime.alternateAnidbUrl,'Brotherhood on AniDB')}</section></div><details class="prompt-section"><summary>The Prompt</summary>${prompt?`${r.promptNote?`<p class="prompt-note">${esc(r.promptNote)}</p>`:''}<p class="prompt-text">${esc(prompt)}</p><button type="button" class="btn btn-outline-dark" id="copy-prompt">Copy prompt</button><p id="prompt-status" role="status"></p>`:'<p>The original generation prompt hasn’t been added to this artwork yet.</p>'}</details><div class="mt-4"><button type="button" class="btn btn-outline-dark" id="share-piece">Copy link</button><p id="share-message" role="status"></p></div><section class="artwork-credits"><h3>Credits & sources</h3><p>${esc(r.artwork.credit||r.artwork.artist)} ${esc(r.artwork.reuseTerms||'')}</p>${externalLink(r.artwork.previewSourceUrl,'Image source & rights')}<p>Crossover: AI-generated fan artwork. No affiliation with the original creators or rights holders.</p></section>`;
+  document.querySelector('#artwork-content').innerHTML=`<div class="row g-3 align-items-end"><div class="col-lg-8"><h2 id="artwork-title">${esc(r.artwork.title)}</h2><p>${esc(r.anime.name)} × ${esc(r.artwork.artist)}</p></div><div class="col-lg-4">${downloadButton(r, "detail")}</div></div><div class="comparison-controls my-4"><div class="btn-group compare-switch" role="group" aria-label="Original and AI Crossover comparison"><button class="btn" data-compare="0" aria-pressed="false">Original</button><button class="btn" data-compare="1" aria-pressed="true">Both</button><button class="btn" data-compare="2" aria-pressed="false">AI Crossover</button></div><p id="comparison-hint">Select an image to expand it. Select it again or choose Both to compare.</p></div><div class="art-comparison" data-mode="both"><figure data-image="original">${r.artwork.preview?`<img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} by ${esc(r.artwork.artist)}">`:'<p>Original preview unavailable.</p>'}<figcaption>The original artwork</figcaption></figure><figure data-image="crossover">${image(r,true)}<figcaption>The AI Crossover</figcaption></figure></div><div class="row g-4 mt-2"><section class="col-md-6"><h3>Behind the painting</h3><p>${esc(r.artwork.description||'')}</p>${externalLink(r.artwork.sourceUrl,'View the original')}</section><section class="col-md-6"><h3>From the anime</h3><p>${esc(r.anime.description||'')}</p>${externalLink(r.anime.anidbUrl,'Explore the anime')}${externalLink(r.anime.alternateAnidbUrl,'Brotherhood on AniDB')}</section></div>${interestingLinks(r.artwork)}<section class="prompt-section"><h3>The Prompt</h3>${prompt?`<p class="prompt-preview" aria-hidden="true">${esc(prompt)}</p><div id="full-prompt" hidden>${r.promptNote?`<p class="prompt-note">${esc(r.promptNote)}</p>`:''}<p class="prompt-text">${esc(prompt)}</p><button type="button" class="btn btn-outline-dark" id="copy-prompt">Copy prompt</button><p id="prompt-status" role="status"></p></div><button type="button" class="prompt-toggle" aria-expanded="false" aria-controls="full-prompt">Click here to view more</button>`:'<p>The original generation prompt hasn’t been added to this AI Crossover yet.</p>'}</section><section class="artwork-credits"><h3>Credits & sources</h3><p>${esc(r.artwork.credit||r.artwork.artist)} ${esc(r.artwork.reuseTerms||'')}</p>${externalLink(r.artwork.previewSourceUrl,'Image source & rights')}<p>AI Crossover: an AI-generated fan experiment. No affiliation with the original creators or rights holders.</p></section>`;
   const comparison = artworkDialog.querySelector('.art-comparison');
   const modes = ['original','both','crossover'];
   function setComparison(value) {
@@ -141,7 +161,7 @@ function syncDetail() {
     }
     comparison.querySelectorAll('.expand-artwork').forEach(button => {
       const name = button.closest('figure').dataset.image;
-      button.setAttribute('aria-label', value === 1 ? 'Expand ' + name + ' artwork' : 'Show both artworks');
+      button.setAttribute('aria-label', value === 1 ? (name === 'original' ? 'Expand original artwork' : 'Expand AI Crossover') : 'Show both images');
     });
   }
   comparison.querySelectorAll('figure img').forEach(img => {
@@ -157,21 +177,23 @@ function syncDetail() {
   if (r.artwork.preview) {
     const wipe = document.createElement('section');
     wipe.className = 'mobile-wipe';
-    wipe.setAttribute('aria-label', 'Original and crossover comparison');
-    wipe.innerHTML = '<div class="wipe-frame"><img class="wipe-original" src="'+path(r.artwork.preview)+'" alt="'+esc(r.artwork.title)+' — original"><div class="wipe-overlay">'+image(r,true)+'</div><span class="wipe-label original-label">Original</span><span class="wipe-label crossover-label">Crossover</span><span class="wipe-divider" aria-hidden="true"><span>‹ ›</span></span><input class="wipe-input" type="range" min="0" max="100" value="50" aria-label="Reveal crossover" aria-valuetext="50% crossover revealed"></div><p>Drag to compare. Images retain their own proportions.</p>';
+    wipe.setAttribute('aria-label', 'Original and AI Crossover comparison');
+    wipe.innerHTML = '<div class="wipe-frame"><img class="wipe-original" src="'+path(r.artwork.preview)+'" alt="'+esc(r.artwork.title)+' — original"><div class="wipe-overlay">'+image(r,true)+'</div><span class="wipe-label original-label">Original</span><span class="wipe-label crossover-label">AI Crossover</span><span class="wipe-divider" aria-hidden="true"><span>‹ ›</span></span><input class="wipe-input" type="range" min="0" max="100" value="50" aria-label="Reveal AI Crossover" aria-valuetext="50% AI Crossover revealed"></div><p>Drag to compare. Images retain their own proportions.</p>';
     comparison.after(wipe);
     const input=wipe.querySelector('input');
     input.addEventListener('input',()=>{
       wipe.style.setProperty('--reveal',input.value+'%');
-      input.setAttribute('aria-valuetext',input.value+'% crossover revealed');
+      input.setAttribute('aria-valuetext',input.value+'% AI Crossover revealed');
     });
     artworkDialog.classList.add('has-mobile-wipe');
   } else artworkDialog.classList.remove('has-mobile-wipe');
 
-  document.querySelector('#share-piece').onclick=async()=>{
-    const status=document.querySelector('#share-message');status.textContent='Copying link…';
-    try{await copyText(location.href);status.textContent='Link copied.';}
-    catch{status.textContent='Copy this link: ';const input=document.createElement('input');input.className='form-control';input.readOnly=true;input.value=location.href;input.setAttribute('aria-label','Shareable artwork link');status.append(input);input.focus();input.select();}
+  if(prompt)document.querySelector('.prompt-toggle').onclick=event=>{
+    const button=event.currentTarget, expanded=button.getAttribute('aria-expanded')!=='true';
+    button.setAttribute('aria-expanded',String(expanded));
+    button.textContent=expanded?'Click here to hide':'Click here to view more';
+    document.querySelector('#full-prompt').hidden=!expanded;
+    document.querySelector('.prompt-preview').hidden=expanded;
   };
   if(prompt)document.querySelector('#copy-prompt').onclick=async()=>{try{await copyText(prompt);document.querySelector('#prompt-status').textContent='Prompt copied.';}catch{document.querySelector('#prompt-status').textContent='Copy unavailable. Select the prompt text above to copy it.';}};
   if(!artworkDialog.open)artworkDialog.showModal();artworkDialog.scrollTop=0;

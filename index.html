@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="styles/site.css">
 <link rel="icon" href="favicon.svg">
 <meta name="theme-color" content="#182a43">
-<meta name="description" content="Anime meets art: a personal collection of AI-generated TV wallpapers, with original artwork comparisons and generation prompts.">
+<meta name="description" content="Anime meets art: a personal collection of AI Crossovers for TV wallpapers, with original artwork comparisons and generation prompts.">
 <body>
 <a class="skip-link" href="#collection">Skip to collection</a>
 <header class="container-fluid px-4 px-lg-5">
@@ -29,8 +29,6 @@
 </div>
 <div class="col-lg-4 intro">
 <p>Characters I love. Paintings I’m learning to appreciate.</p>
-<a class="browse" href="#collection">Explore the collection <span aria-hidden="true">↓</span>
-</a>
 </div>
 </div>
 </div>
@@ -67,9 +65,9 @@
 </select>
 </div>
 <div class="col-md-6">
-<label class="form-label" for="artwork">Artwork</label>
+<label class="form-label" for="artwork">Original artwork</label>
 <select class="form-select" id="artwork">
-<option value="">All artworks</option>
+<option value="">All original artworks</option>
 </select>
 </div>
 </div>
@@ -112,21 +110,17 @@
 </main>
 <footer class="container-fluid px-4 px-lg-5 d-flex justify-content-between flex-wrap gap-3">
 <span class="brand"><img class="brand-logo" src="Assets/branding/animart-on-dark-v1.png" width="1536" height="1024" alt="Animart"></span>
-<div>
-<p>Explore</p>
-<a href="#collection">Collection</a> · <a href="#story">The story</a>
-</div>
-<div>
-<p>About the artwork</p>
-<a href="#story">AI & the collection</a>
-<p>Artwork credits appear in each detail view.</p>
-</div>
+<section class="collection-update" aria-labelledby="collection-update-title" hidden>
+<h2 id="collection-update-title">Collection update</h2>
+<p id="last-added"></p>
+<p id="collection-totals"></p>
+</section>
 <a href="#collection">Back to collection ↑</a>
 </footer>
 <dialog id="artwork-dialog" aria-labelledby="artwork-title">
 <div class="detail-toolbar">
-<span>Artwork details</span>
-<button class="btn" id="close-artwork" aria-label="Close artwork details">Close ×</button>
+<span>AI Crossover details</span>
+<button class="btn" id="close-artwork" aria-label="Close AI Crossover details">Close ×</button>
 </div>
 <div id="artwork-content">
 </div>
