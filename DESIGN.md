@@ -72,6 +72,8 @@ Use locally stored Bootstrap 5.3.8 CSS containers, rows, columns, gutters, flex 
 
 Desktop offers Grid, Slider, and List, with Slider as the default. Slider pairs a large landscape with contextual details and a thumbnail strip; Grid provides an overview; List favors comparison of descriptions. At 991px and below, the slider stage stacks. At 767px and below, one edge-to-edge image feed replaces all three desktop choices, with short captions and collapsed search/filter controls.
 
+The collection amplifies the publication identity with a large Fraunces heading and an ink rule. Desktop filters share a compact row, with additional filters expanding beneath it. Grid uses two generous image columns; List gives images roughly a third of the row. Slider titles reach 48px, and phone captions use 23px Fraunces beneath uncropped images. These treatments are scoped to the collection; the opening, story, and detail dialog retain their own hierarchy.
+
 The desktop artwork dialog is at most 1120px wide, inset 20px from the viewport edges. Mobile details use the viewport. Keep image proportions with `object-fit: contain`; never force unrelated paintings into matching crops. Desktop comparison supports Original / Both / Crossover and clicking an image to expand or reset. Mobile replaces these with a draggable reveal over two contained images in a 4:3 frame. This compares compositions; it does not imply pixel-aligned subjects.
 
 ## Elevation & Depth
@@ -88,6 +90,7 @@ Controls and artwork frames are square. The mobile wipe handle is circular with 
 - **Downloads:** solid vermilion primary action, with dimensions and size; secondary files remain available. Use unambiguous crossover labels.
 - **Comparison:** preserve image aspect ratios and accessible keyboard controls. No redundant Show both button; the Both option and image toggle provide reset on desktop.
 - **Motion:** desktop image transitions use 320ms and `cubic-bezier(.22,1,.36,1)`, with uniform scaling and positional continuity. Disable this animation under reduced motion. No automatic gallery advancement.
+- **Collection browsing:** user-triggered slide changes reveal the next print with a directional 420ms wipe after its image decodes. Controls remain available during the transition. Reduced motion skips the wipe and cancels an active one. Thumbnail titles remain visible; the selected thumbnail uses vermilion and stays in view. Left/right arrow keys browse while a navigation or thumbnail button has focus. Supporting control color feedback takes 140ms; no automatic entrances or looping effects.
 - **The Prompt:** native details disclosure, initially closed for every artwork. Preserve original line breaks and provide copy feedback/fallback. Prompts come from the archive, not generated descriptions.
 - **Navigation/footer:** shallow header, dark closing story/footer, useful grouped links; maintain the distinction between dark framing and light gallery.
 - **Focus:** visible 3px vermilion outlines with offsets; on dark story/footer surfaces use the warm headline accent.

@@ -58,6 +58,45 @@ document.addEventListener('keydown', event => {
 });
 const image = (r, large = false) => `<img ${large ? '' : 'loading="lazy"'} src="${path(large ? (defaultDownload(r)).path : r.preview)}" alt="${esc(r.anime.name)} AI Crossover inspired by ${esc(r.artwork.title)}">`;
 const meta = r => `<p class="anime">${esc(r.anime.name)} ×</p><h3>${esc(r.artwork.title)}</h3><p>After ${esc(r.artwork.artist)}${r.artwork.year ? ` · ${esc(r.artwork.year)}` : ''}</p>`;
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+reducedMotion.addEventListener('change', () => {
+  if (reducedMotion.matches) {
+    root.getAnimations({subtree:true}).forEach(animation => animation.cancel());
+    root.querySelectorAll('.slide-outgoing').forEach(image => image.remove());
+  }
+});
+function changeSlide(id, focusId, direction = 1) {
+  if (id === currentId) return;
+  const previousImage = root.querySelector('.slider-art > a > img');
+  const outgoing = previousImage?.cloneNode(true);
+  currentId = id;
+  render();
+  const focusTarget = focusId ? document.getElementById(focusId) : Array.from(root.querySelectorAll('[data-piece]')).find(button => button.dataset.piece === id);
+  focusTarget?.focus({preventScroll:true});
+  const selected = root.querySelector('.film-frame[aria-pressed="true"]');
+  if (selected) {
+    const strip = selected.parentElement;
+    const left = selected.offsetLeft - strip.offsetLeft;
+    if (left < strip.scrollLeft || left + selected.offsetWidth > strip.scrollLeft + strip.clientWidth) {
+      strip.scrollTo({left:left - (strip.clientWidth - selected.offsetWidth) / 2, behavior:'instant'});
+    }
+  }
+  const incoming = root.querySelector('.slider-art > a > img');
+  if (!incoming || !outgoing || reducedMotion.matches) return;
+  outgoing.className = 'slide-outgoing';
+  outgoing.alt = '';
+  outgoing.setAttribute('aria-hidden','true');
+  incoming.parentElement.append(outgoing);
+  // Keep the previous print visible until the new image is ready; never delay controls.
+  incoming.decode().then(() => {
+    if (!incoming.isConnected || reducedMotion.matches) return;
+    const animation = outgoing.animate([
+      {clipPath:'inset(0 0 0 0)'},
+      {clipPath:direction > 0 ? 'inset(0 0 0 100%)' : 'inset(0 100% 0 0)'}
+    ], {duration:420,easing:'cubic-bezier(.22,1,.36,1)'});
+    return animation.finished.catch(() => {});
+  }).catch(() => {}).finally(() => outgoing.remove());
+}
 function render() {
   document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
   document.querySelector('#count').textContent = `${filtered.length} of ${records.length} AI Crossovers`;
@@ -72,11 +111,22 @@ function render() {
   if (view === 'grid') { root.innerHTML = `<div class="row g-4">${filtered.map(r=>`<article class="col-md-6 col-xl-4"><a class="piece" href="${detail(r)}">${image(r)}<div class="piece-copy">${meta(r)}<small>Explore & download →</small></div></a></article>`).join('')}</div>`;return; }
   if (view === 'list') { root.innerHTML = filtered.map(r=>`<article class="list-piece"><a class="list-image" href="${detail(r)}">${image(r)}</a><div class="list-copy">${meta(r)}<p class="list-description">${esc(r.artwork.description || '')}</p></div><div class="list-action"><span>1920 × 1080</span><a href="${detail(r)}">Explore & download →</a></div></article>`).join('');return; }
   const i=filtered.findIndex(r=>r.id===currentId),r=filtered[i];
-  root.innerHTML=`<section class="slider-stage" aria-label="AI Crossover viewer" aria-roledescription="carousel"><div class="slider-art"><a href="${detail(r)}">${image(r,true)}</a><div class="slide-navigation"><button class="btn" id="previous" aria-label="Previous AI Crossover" ${filtered.length===1?'disabled':''}>←</button><p role="status">${i+1} / ${filtered.length} <span>— ${esc(r.anime.name)}</span></p><button class="btn" id="next" aria-label="Next AI Crossover" ${filtered.length===1?'disabled':''}>→</button></div></div><aside class="slider-caption">${meta(r)}<p class="slide-description">${esc(r.artwork.description||'')}</p>${r.artwork.preview?`<figure class="source-reference"><img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} — original artwork"><figcaption>The original artwork</figcaption></figure>`:''}${downloadButton(r, "slider")}<a class="slide-details" href="${detail(r)}">Explore the story & credits →</a></aside></section><div class="filmstrip" role="group" aria-label="Choose AI Crossover">${filtered.map((item,n)=>`<button type="button" class="film-frame" data-piece="${esc(item.id)}" aria-label="Show ${esc(item.anime.name)} × ${esc(item.artwork.title)}" aria-pressed="${n===i}">${image(item)}<span>${String(n+1).padStart(2,'0')}</span></button>`).join('')}</div>`;
-  const move=(amount,focusId)=>{currentId=filtered[(i+amount+filtered.length)%filtered.length].id;render();document.getElementById(focusId).focus({preventScroll:true});};
+  root.innerHTML=`<section class="slider-stage" aria-label="AI Crossover viewer" aria-roledescription="carousel"><div class="slider-art"><a href="${detail(r)}">${image(r,true)}</a><div class="slide-navigation"><button class="btn" id="previous" aria-label="Previous AI Crossover" ${filtered.length===1?'disabled':''}>←</button><p role="status">${i+1} / ${filtered.length} <span>— ${esc(r.anime.name)}</span></p><button class="btn" id="next" aria-label="Next AI Crossover" ${filtered.length===1?'disabled':''}>→</button></div></div><aside class="slider-caption">${meta(r)}<p class="slide-description">${esc(r.artwork.description||'')}</p>${r.artwork.preview?`<figure class="source-reference"><img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} — original artwork"><figcaption>The original artwork</figcaption></figure>`:''}${downloadButton(r, "slider")}<a class="slide-details" href="${detail(r)}">Explore the story & credits →</a></aside></section><div class="filmstrip" role="group" aria-label="Choose AI Crossover">${filtered.map((item,n)=>`<button type="button" class="film-frame" data-piece="${esc(item.id)}" aria-label="Show AI Crossover: ${esc(item.anime.name)} × ${esc(item.artwork.title)}" aria-pressed="${n===i}">${image(item)}<span class="film-number">${String(n+1).padStart(2,'0')}</span><span class="film-title">${esc(item.artwork.title)}</span></button>`).join('')}</div>`;
+  const move=(amount,focusId)=>changeSlide(filtered[(i+amount+filtered.length)%filtered.length].id,focusId,amount);
   document.querySelector('#previous').onclick=()=>move(-1,'previous');document.querySelector('#next').onclick=()=>move(1,'next');
-  root.querySelectorAll('[data-piece]').forEach(b=>b.onclick=()=>{currentId=b.dataset.piece;render();Array.from(root.querySelectorAll('[data-piece]')).find(el=>el.dataset.piece===currentId).focus({preventScroll:true});});
+  root.querySelectorAll('[data-piece]').forEach((b,n)=>b.onclick=()=>changeSlide(b.dataset.piece,null,n-i));
+  const hint=document.createElement('p');
+  hint.className='browse-hint';hint.textContent='A different frame, one at a time. Use the arrow keys to browse.';
+  root.append(hint);
 }
+root.addEventListener('keydown', event => {
+  if (view !== 'slider' || mobile.matches || !['ArrowLeft','ArrowRight'].includes(event.key) || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+  if (!event.target.matches('#previous, #next, .film-frame')) return;
+  event.preventDefault();
+  const amount = event.key === 'ArrowRight' ? 1 : -1;
+  const index = filtered.findIndex(record => record.id === currentId);
+  changeSlide(filtered[(index + amount + filtered.length) % filtered.length].id,event.target.id || null,amount);
+});
 function filter(updateURL=true){
   const words=normalize(controls.q.value.trim()).split(/\s+/).filter(Boolean);
   filtered=records.filter(r=>{
