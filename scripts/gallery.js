@@ -56,7 +56,7 @@ document.addEventListener('keydown', event => {
     split.querySelector('.download-options a').focus();
   }
 });
-const image = (r, large = false) => `<img ${large ? '' : 'loading="lazy"'} src="${path(large ? (defaultDownload(r)).path : r.preview)}" alt="${esc(r.anime.name)} AI Crossover inspired by ${esc(r.artwork.title)}">`;
+const image = (r, large = false, eager = false) => `<img decoding="async" ${large || eager ? 'loading="eager"' : 'loading="lazy"'} src="${path(large ? (defaultDownload(r)).path : r.preview)}" alt="${esc(r.anime.name)} AI Crossover inspired by ${esc(r.artwork.title)}">`;
 const meta = r => `<p class="anime">${esc(r.anime.name)} ×</p><h3>${esc(r.artwork.title)}</h3><p>After ${esc(r.artwork.artist)}${r.artwork.year ? ` · ${esc(r.artwork.year)}` : ''}</p>`;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 reducedMotion.addEventListener('change', () => {
@@ -65,12 +65,15 @@ reducedMotion.addEventListener('change', () => {
     root.querySelectorAll('.slide-outgoing').forEach(image => image.remove());
   }
 });
+const sliderStage = (r,i) => `<section class="slider-stage" aria-label="AI Crossover viewer" aria-roledescription="carousel"><div class="slider-art"><a href="${detail(r)}">${image(r,true)}</a><div class="slide-navigation"><button class="btn" id="previous" aria-label="Previous AI Crossover" ${filtered.length===1?'disabled':''}>←</button><p role="status">${i+1} / ${filtered.length} <span>— ${esc(r.anime.name)}</span></p><button class="btn" id="next" aria-label="Next AI Crossover" ${filtered.length===1?'disabled':''}>→</button></div></div><aside class="slider-caption">${meta(r)}<p class="slide-description">${esc(r.artwork.description||'')}</p>${r.artwork.preview?`<figure class="source-reference"><img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} — original artwork"><figcaption>The original artwork</figcaption></figure>`:''}${downloadButton(r, "slider")}<a class="slide-details" href="${detail(r)}">Explore the story & credits →</a></aside></section>`;
 function changeSlide(id, focusId, direction = 1) {
   if (id === currentId) return;
   const previousImage = root.querySelector('.slider-art > a > img');
   const outgoing = previousImage?.cloneNode(true);
   currentId = id;
-  render();
+  const index = filtered.findIndex(record => record.id === id);
+  root.querySelector('.slider-stage').outerHTML = sliderStage(filtered[index],index);
+  root.querySelectorAll('[data-piece]').forEach(button => button.setAttribute('aria-pressed',String(button.dataset.piece === id)));
   const focusTarget = focusId ? document.getElementById(focusId) : Array.from(root.querySelectorAll('[data-piece]')).find(button => button.dataset.piece === id);
   focusTarget?.focus({preventScroll:true});
   const selected = root.querySelector('.film-frame[aria-pressed="true"]');
@@ -105,20 +108,25 @@ function render() {
   if (!filtered.some(r => r.id === currentId)) currentId = filtered[0].id;
   if (mobile.matches) {
     root.className = 'gallery-mobile';
-    root.innerHTML = filtered.map(r => `<article><a class="mobile-artwork" href="${detail(r)}" aria-label="View details: ${esc(r.anime.name)} × ${esc(r.artwork.title)}">${image(r)}<span class="mobile-caption"><span>${esc(r.anime.name)} <span aria-hidden="true">×</span> ${esc(r.artwork.title)}</span><span aria-hidden="true">→</span></span></a></article>`).join('');
+    root.innerHTML = filtered.map((r,i) => `<article><a class="mobile-artwork" href="${detail(r)}" aria-label="View details: ${esc(r.anime.name)} × ${esc(r.artwork.title)}">${image(r,false,i===0)}<span class="mobile-caption"><span>${esc(r.anime.name)} <span aria-hidden="true">×</span> ${esc(r.artwork.title)}</span><span aria-hidden="true">→</span></span></a></article>`).join('');
     return;
   }
   if (view === 'grid') { root.innerHTML = `<div class="row g-4">${filtered.map(r=>`<article class="col-md-6 col-xl-4"><a class="piece" href="${detail(r)}">${image(r)}<div class="piece-copy">${meta(r)}<small>Explore & download →</small></div></a></article>`).join('')}</div>`;return; }
   if (view === 'list') { root.innerHTML = filtered.map(r=>`<article class="list-piece"><a class="list-image" href="${detail(r)}">${image(r)}</a><div class="list-copy">${meta(r)}<p class="list-description">${esc(r.artwork.description || '')}</p></div><div class="list-action"><span>1920 × 1080</span><a href="${detail(r)}">Explore & download →</a></div></article>`).join('');return; }
   const i=filtered.findIndex(r=>r.id===currentId),r=filtered[i];
-  root.innerHTML=`<section class="slider-stage" aria-label="AI Crossover viewer" aria-roledescription="carousel"><div class="slider-art"><a href="${detail(r)}">${image(r,true)}</a><div class="slide-navigation"><button class="btn" id="previous" aria-label="Previous AI Crossover" ${filtered.length===1?'disabled':''}>←</button><p role="status">${i+1} / ${filtered.length} <span>— ${esc(r.anime.name)}</span></p><button class="btn" id="next" aria-label="Next AI Crossover" ${filtered.length===1?'disabled':''}>→</button></div></div><aside class="slider-caption">${meta(r)}<p class="slide-description">${esc(r.artwork.description||'')}</p>${r.artwork.preview?`<figure class="source-reference"><img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} — original artwork"><figcaption>The original artwork</figcaption></figure>`:''}${downloadButton(r, "slider")}<a class="slide-details" href="${detail(r)}">Explore the story & credits →</a></aside></section><div class="filmstrip" role="group" aria-label="Choose AI Crossover">${filtered.map((item,n)=>`<button type="button" class="film-frame" data-piece="${esc(item.id)}" aria-label="Show AI Crossover: ${esc(item.anime.name)} × ${esc(item.artwork.title)}" aria-pressed="${n===i}">${image(item)}<span class="film-number">${String(n+1).padStart(2,'0')}</span><span class="film-title">${esc(item.artwork.title)}</span></button>`).join('')}</div>`;
-  const move=(amount,focusId)=>changeSlide(filtered[(i+amount+filtered.length)%filtered.length].id,focusId,amount);
-  document.querySelector('#previous').onclick=()=>move(-1,'previous');document.querySelector('#next').onclick=()=>move(1,'next');
-  root.querySelectorAll('[data-piece]').forEach((b,n)=>b.onclick=()=>changeSlide(b.dataset.piece,null,n-i));
+  root.innerHTML=`${sliderStage(r,i)}<div class="filmstrip" role="group" aria-label="Choose AI Crossover">${filtered.map((item,n)=>`<button type="button" class="film-frame" data-piece="${esc(item.id)}" aria-label="Show AI Crossover: ${esc(item.anime.name)} × ${esc(item.artwork.title)}" aria-pressed="${n===i}">${image(item)}<span class="film-number">${String(n+1).padStart(2,'0')}</span><span class="film-title">${esc(item.artwork.title)}</span></button>`).join('')}</div>`;
   const hint=document.createElement('p');
   hint.className='browse-hint';hint.textContent='A different frame, one at a time. Use the arrow keys to browse.';
   root.append(hint);
 }
+root.addEventListener('click', event => {
+  const button = event.target.closest('#previous, #next, [data-piece]');
+  if (!button || button.disabled) return;
+  const index = filtered.findIndex(record => record.id === currentId);
+  const target = button.dataset.piece ? filtered.findIndex(record => record.id === button.dataset.piece) : (index + (button.id === 'next' ? 1 : -1) + filtered.length) % filtered.length;
+  const direction = button.dataset.piece ? target - index : button.id === 'next' ? 1 : -1;
+  changeSlide(filtered[target].id,button.id || null,direction);
+});
 root.addEventListener('keydown', event => {
   if (view !== 'slider' || mobile.matches || !['ArrowLeft','ArrowRight'].includes(event.key) || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
   if (!event.target.matches('#previous, #next, .film-frame')) return;
@@ -148,9 +156,7 @@ async function loadGallery(){
   try{
     const response=await fetch('data/wallpapers.json');if(!response.ok)throw Error('Catalogue unavailable');
     const data=await response.json();if(!Array.isArray(data)||!data.length)throw Error('Catalogue empty');
-    // Prompt availability must not prevent wallpaper browsing.
-    let prompts={};try{const response=await fetch('data/prompts.json');if(response.ok)prompts=await response.json();}catch{}
-    records=data.map(r=>({...r,prompt:prompts[r.id]?.text||'',promptNote:prompts[r.id]?.note||''}));
+    records=data;
     const order=name=>name==='One Piece'?0:/Fullmetal|FMA/.test(name)?1:name==='Death Note'?2:3;
     records.sort((a,b)=>order(a.anime.name)-order(b.anime.name));
     fillSelect('anime',records.map(r=>r.anime.name));fillSelect('artist',records.map(r=>r.artwork.artist));fillSelect('artwork',records.map(r=>r.artwork.title));
@@ -181,14 +187,27 @@ function renderCollectionUpdate() {
   document.querySelector('#collection-totals').textContent = records.length + ' AI Crossovers · ' + artists + ' original artists · ' + anime + ' anime';
   document.querySelector('.collection-update').hidden = false;
 }
+let promptRequest;
+function loadPrompts() {
+  if (!promptRequest) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(),8000);
+    promptRequest = fetch('data/prompts.json',{signal:controller.signal})
+      .then(response => { if (!response.ok) throw Error('Prompts unavailable'); return response.json(); })
+      .catch(() => { promptRequest = null; return null; })
+      .finally(() => clearTimeout(timeout));
+  }
+  return promptRequest;
+}
+let detailVersion = 0;
 function syncDetail() {
+  const version = ++detailVersion;
   const match=location.hash.match(/^#piece=(.+)$/);let id;
   try{id=match?decodeURIComponent(match[1]):null;}catch{id=null;}
   const r=records.find(item=>item.id===id);
   if(!r){if(artworkDialog.open)artworkDialog.close();return;}
   if(!artworkDialog.open)detailLauncher=document.activeElement;
-  const prompt=typeof r.prompt==='string'?r.prompt.trim():'';
-  document.querySelector('#artwork-content').innerHTML=`<div class="row g-3 align-items-end"><div class="col-lg-8"><h2 id="artwork-title">${esc(r.artwork.title)}</h2><p>${esc(r.anime.name)} × ${esc(r.artwork.artist)}</p></div><div class="col-lg-4">${downloadButton(r, "detail")}</div></div><div class="comparison-controls my-4"><div class="btn-group compare-switch" role="group" aria-label="Original and AI Crossover comparison"><button class="btn" data-compare="0" aria-pressed="false">Original</button><button class="btn" data-compare="1" aria-pressed="true">Both</button><button class="btn" data-compare="2" aria-pressed="false">AI Crossover</button></div><p id="comparison-hint">Select an image to expand it. Select it again or choose Both to compare.</p></div><div class="art-comparison" data-mode="both"><figure data-image="original">${r.artwork.preview?`<img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} by ${esc(r.artwork.artist)}">`:'<p>Original preview unavailable.</p>'}<figcaption>The original artwork</figcaption></figure><figure data-image="crossover">${image(r,true)}<figcaption>The AI Crossover</figcaption></figure></div><div class="row g-4 mt-2"><section class="col-md-6"><h3>Behind the painting</h3><p>${esc(r.artwork.description||'')}</p>${externalLink(r.artwork.sourceUrl,'View the original')}</section><section class="col-md-6"><h3>From the anime</h3><p>${esc(r.anime.description||'')}</p>${externalLink(r.anime.anidbUrl,'Explore the anime')}${externalLink(r.anime.alternateAnidbUrl,'Brotherhood on AniDB')}</section></div>${interestingLinks(r.artwork)}<section class="prompt-section"><h3>The Prompt</h3>${prompt?`<p class="prompt-preview" aria-hidden="true">${esc(prompt)}</p><div id="full-prompt" hidden>${r.promptNote?`<p class="prompt-note">${esc(r.promptNote)}</p>`:''}<p class="prompt-text">${esc(prompt)}</p><button type="button" class="btn btn-outline-dark" id="copy-prompt">Copy prompt</button><p id="prompt-status" role="status"></p></div><button type="button" class="prompt-toggle" aria-expanded="false" aria-controls="full-prompt">Click here to view more</button>`:'<p>The original generation prompt hasn’t been added to this AI Crossover yet.</p>'}</section><section class="artwork-credits"><h3>Credits & sources</h3><p>${esc(r.artwork.credit||r.artwork.artist)} ${esc(r.artwork.reuseTerms||'')}</p>${externalLink(r.artwork.previewSourceUrl,'Image source & rights')}<p>AI Crossover: an AI-generated fan experiment. No affiliation with the original creators or rights holders.</p></section>`;
+  document.querySelector('#artwork-content').innerHTML=`<div class="row g-3 align-items-end"><div class="col-lg-8"><h2 id="artwork-title">${esc(r.artwork.title)}</h2><p>${esc(r.anime.name)} × ${esc(r.artwork.artist)}</p></div><div class="col-lg-4">${downloadButton(r, "detail")}</div></div><div class="comparison-controls my-4"><div class="btn-group compare-switch" role="group" aria-label="Original and AI Crossover comparison"><button class="btn" data-compare="0" aria-pressed="false">Original</button><button class="btn" data-compare="1" aria-pressed="true">Both</button><button class="btn" data-compare="2" aria-pressed="false">AI Crossover</button></div><p id="comparison-hint">Select an image to expand it. Select it again or choose Both to compare.</p></div><div class="art-comparison" data-mode="both"><figure data-image="original">${r.artwork.preview?`<img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} by ${esc(r.artwork.artist)}">`:'<p>Original preview unavailable.</p>'}<figcaption>The original artwork</figcaption></figure><figure data-image="crossover">${image(r,true)}<figcaption>The AI Crossover</figcaption></figure></div><div class="row g-4 mt-2"><section class="col-md-6"><h3>Behind the painting</h3><p>${esc(r.artwork.description||'')}</p>${externalLink(r.artwork.sourceUrl,'View the original')}</section><section class="col-md-6"><h3>From the anime</h3><p>${esc(r.anime.description||'')}</p>${externalLink(r.anime.anidbUrl,'Explore the anime')}${externalLink(r.anime.alternateAnidbUrl,'Brotherhood on AniDB')}</section></div>${interestingLinks(r.artwork)}<section class="prompt-section"><h3>The Prompt</h3><p role="status">Loading the original prompt…</p></section><section class="artwork-credits"><h3>Credits & sources</h3><p>${esc(r.artwork.credit||r.artwork.artist)} ${esc(r.artwork.reuseTerms||'')}</p>${externalLink(r.artwork.previewSourceUrl,'Image source & rights')}<p>AI Crossover: an AI-generated fan experiment. No affiliation with the original creators or rights holders.</p></section>`;
   const comparison = artworkDialog.querySelector('.art-comparison');
   const modes = ['original','both','crossover'];
   function setComparison(value) {
@@ -238,6 +257,24 @@ function syncDetail() {
     artworkDialog.classList.add('has-mobile-wipe');
   } else artworkDialog.classList.remove('has-mobile-wipe');
 
+  if(!artworkDialog.open)artworkDialog.showModal();artworkDialog.scrollTop=0;
+  hydratePrompt(id,version);
+}
+async function hydratePrompt(id,version) {
+  const prompts = await loadPrompts();
+  if (version !== detailVersion || !artworkDialog.open) return;
+  const section = artworkDialog.querySelector('.prompt-section');
+  if (!prompts) {
+    section.innerHTML = '<h3>The Prompt</h3><p>The prompt couldn’t load.</p><button type="button" class="btn btn-outline-dark" id="retry-prompt">Try again</button>';
+    section.querySelector('#retry-prompt').onclick = () => {
+      section.innerHTML = '<h3>The Prompt</h3><p role="status">Loading the original prompt…</p>';
+      hydratePrompt(id,version);
+    };
+    return;
+  }
+  const prompt=typeof prompts[id]?.text==='string'?prompts[id].text.trim():'';
+  const promptNote=prompts[id]?.note || '';
+  section.innerHTML = `<h3>The Prompt</h3>${prompt?`<p class="prompt-preview" aria-hidden="true">${esc(prompt)}</p><div id="full-prompt" hidden>${promptNote?`<p class="prompt-note">${esc(promptNote)}</p>`:''}<p class="prompt-text">${esc(prompt)}</p><button type="button" class="btn btn-outline-dark" id="copy-prompt">Copy prompt</button><p id="prompt-status" role="status"></p></div><button type="button" class="prompt-toggle" aria-expanded="false" aria-controls="full-prompt">Click here to view more</button>`:'<p>The original generation prompt hasn’t been added to this AI Crossover yet.</p>'}`;
   if(prompt)document.querySelector('.prompt-toggle').onclick=event=>{
     const button=event.currentTarget, expanded=button.getAttribute('aria-expanded')!=='true';
     button.setAttribute('aria-expanded',String(expanded));
@@ -246,7 +283,6 @@ function syncDetail() {
     document.querySelector('.prompt-preview').hidden=expanded;
   };
   if(prompt)document.querySelector('#copy-prompt').onclick=async()=>{try{await copyText(prompt);document.querySelector('#prompt-status').textContent='Prompt copied.';}catch{document.querySelector('#prompt-status').textContent='Copy unavailable. Select the prompt text above to copy it.';}};
-  if(!artworkDialog.open)artworkDialog.showModal();artworkDialog.scrollTop=0;
 }
 function closeDetail(){history.replaceState(null,'',location.pathname+location.search+'#collection');artworkDialog.close();}
 document.querySelector('#close-artwork').onclick=closeDetail;
