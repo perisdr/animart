@@ -56,7 +56,15 @@ document.addEventListener('keydown', event => {
     split.querySelector('.download-options a').focus();
   }
 });
-const image = (r, large = false, eager = false) => `<img decoding="async" ${large || eager ? 'loading="eager"' : 'loading="lazy"'} src="${path(large ? (defaultDownload(r)).path : r.preview)}" alt="${esc(r.anime.name)} AI Crossover inspired by ${esc(r.artwork.title)}">`;
+function image(r, large = false, eager = false, thumbnail = false) {
+  const web = r.webImage;
+  const source = thumbnail ? web.thumbnail.path : large ? web.large.path : r.preview;
+  const sizes = large
+    ? '(max-width: 767px) 100vw, (max-width: 991px) calc(100vw - 48px), (min-width: 1500px) 1080px, 70vw'
+    : '(max-width: 767px) 100vw, (min-width: 1500px) 704px, calc(50vw - 64px)';
+  const responsive = thumbnail ? '' : ` srcset="${path(r.preview)} 640w, ${path(web.medium.path)} ${web.medium.width}w, ${path(web.large.path)} ${web.large.width}w" sizes="${sizes}"`;
+  return `<img decoding="async" ${large || eager ? 'loading="eager"' : 'loading="lazy"'} src="${path(source)}"${responsive} alt="${esc(r.anime.name)} AI Crossover inspired by ${esc(r.artwork.title)}">`;
+}
 const meta = r => `<p class="anime">${esc(r.anime.name)} ×</p><h3>${esc(r.artwork.title)}</h3><p>After ${esc(r.artwork.artist)}${r.artwork.year ? ` · ${esc(r.artwork.year)}` : ''}</p>`;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 reducedMotion.addEventListener('change', () => {
@@ -114,7 +122,7 @@ function render() {
   if (view === 'grid') { root.innerHTML = `<div class="row g-4">${filtered.map(r=>`<article class="col-md-6 col-xl-4"><a class="piece" href="${detail(r)}">${image(r)}<div class="piece-copy">${meta(r)}<small>Explore & download →</small></div></a></article>`).join('')}</div>`;return; }
   if (view === 'list') { root.innerHTML = filtered.map(r=>`<article class="list-piece"><a class="list-image" href="${detail(r)}">${image(r)}</a><div class="list-copy">${meta(r)}<p class="list-description">${esc(r.artwork.description || '')}</p></div><div class="list-action"><span>1920 × 1080</span><a href="${detail(r)}">Explore & download →</a></div></article>`).join('');return; }
   const i=filtered.findIndex(r=>r.id===currentId),r=filtered[i];
-  root.innerHTML=`${sliderStage(r,i)}<div class="filmstrip" role="group" aria-label="Choose AI Crossover">${filtered.map((item,n)=>`<button type="button" class="film-frame" data-piece="${esc(item.id)}" aria-label="Show AI Crossover: ${esc(item.anime.name)} × ${esc(item.artwork.title)}" aria-pressed="${n===i}">${image(item)}<span class="film-number">${String(n+1).padStart(2,'0')}</span><span class="film-title">${esc(item.artwork.title)}</span></button>`).join('')}</div>`;
+  root.innerHTML=`${sliderStage(r,i)}<div class="filmstrip" role="group" aria-label="Choose AI Crossover">${filtered.map((item,n)=>`<button type="button" class="film-frame" data-piece="${esc(item.id)}" aria-label="Show AI Crossover: ${esc(item.anime.name)} × ${esc(item.artwork.title)}" aria-pressed="${n===i}">${image(item,false,false,true)}<span class="film-number">${String(n+1).padStart(2,'0')}</span><span class="film-title">${esc(item.artwork.title)}</span></button>`).join('')}</div>`;
   const hint=document.createElement('p');
   hint.className='browse-hint';hint.textContent='A different frame, one at a time. Use the arrow keys to browse.';
   root.append(hint);

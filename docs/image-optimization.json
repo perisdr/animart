@@ -1,0 +1,302 @@
+[
+  {
+    "source": "Assets/branding/animart-on-dark-v1.png",
+    "beforeBytes": 1412255,
+    "outputs": [
+      {
+        "path": "Assets/branding/animart-on-dark-v1.webp",
+        "width": 378,
+        "height": 252,
+        "bytes": 28966
+      }
+    ]
+  },
+  {
+    "source": "Assets/Death Note/Death Note X Nighthawks X 1080p.png",
+    "beforeBytes": 986309,
+    "outputs": [
+      {
+        "path": "previews/web/death-note-nighthawks-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 8868
+      },
+      {
+        "path": "previews/web/death-note-nighthawks-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 93208
+      },
+      {
+        "path": "previews/web/death-note-nighthawks-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 170366
+      }
+    ]
+  },
+  {
+    "source": "Assets/Death Note/Death Note X The Death of Marat X 1080p.png",
+    "beforeBytes": 1225060,
+    "outputs": [
+      {
+        "path": "previews/web/death-note-the-death-of-marat-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 6140
+      },
+      {
+        "path": "previews/web/death-note-the-death-of-marat-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 73330
+      },
+      {
+        "path": "previews/web/death-note-the-death-of-marat-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 137358
+      }
+    ]
+  },
+  {
+    "source": "Assets/Death Note/Death Note X The Scream X 1080p.png",
+    "beforeBytes": 1338625,
+    "outputs": [
+      {
+        "path": "previews/web/death-note-the-scream-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 21926
+      },
+      {
+        "path": "previews/web/death-note-the-scream-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 298314
+      },
+      {
+        "path": "previews/web/death-note-the-scream-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 522872
+      }
+    ]
+  },
+  {
+    "source": "Assets/Death Note/Death Note X The Son of Man X 1080p.png",
+    "beforeBytes": 1044186,
+    "outputs": [
+      {
+        "path": "previews/web/death-note-the-son-of-man-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 9542
+      },
+      {
+        "path": "previews/web/death-note-the-son-of-man-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 107274
+      },
+      {
+        "path": "previews/web/death-note-the-son-of-man-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 183972
+      }
+    ]
+  },
+  {
+    "source": "Assets/Demon Slayer/Demon Slayer X Rain, Steam, and Speed X 1080p.png",
+    "beforeBytes": 1194554,
+    "outputs": [
+      {
+        "path": "previews/web/demon-slayer-mugen-train-turner-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 17472
+      },
+      {
+        "path": "previews/web/demon-slayer-mugen-train-turner-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 217200
+      },
+      {
+        "path": "previews/web/demon-slayer-mugen-train-turner-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 369662
+      }
+    ]
+  },
+  {
+    "source": "Assets/Demon Slayer/Demon Slayer X Fine Wind, Clear Morning X 1080p.png",
+    "beforeBytes": 1169891,
+    "outputs": [
+      {
+        "path": "previews/web/demon-slayer-rengoku-red-fuji-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 22222
+      },
+      {
+        "path": "previews/web/demon-slayer-rengoku-red-fuji-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 301234
+      },
+      {
+        "path": "previews/web/demon-slayer-rengoku-red-fuji-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 555334
+      }
+    ]
+  },
+  {
+    "source": "Assets/Demon Slayer/Demon Slayer X The Japanese Footbridge X 1080p.png",
+    "beforeBytes": 1488307,
+    "outputs": [
+      {
+        "path": "previews/web/demon-slayer-shinobu-monet-garden-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 27276
+      },
+      {
+        "path": "previews/web/demon-slayer-shinobu-monet-garden-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 377174
+      },
+      {
+        "path": "previews/web/demon-slayer-shinobu-monet-garden-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 658954
+      }
+    ]
+  },
+  {
+    "source": "Assets/Demon Slayer/Demon Slayer X The Great Wave off Kanagawa X 1080p.png",
+    "beforeBytes": 1334925,
+    "outputs": [
+      {
+        "path": "previews/web/demon-slayer-tanjiro-great-wave-corrected-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 27544
+      },
+      {
+        "path": "previews/web/demon-slayer-tanjiro-great-wave-corrected-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 323068
+      },
+      {
+        "path": "previews/web/demon-slayer-tanjiro-great-wave-corrected-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 540466
+      }
+    ]
+  },
+  {
+    "source": "Assets/Demon Slayer/Demon Slayer X The Abbey in the Oakwood X 1080p.png",
+    "beforeBytes": 1505083,
+    "outputs": [
+      {
+        "path": "previews/web/demon-slayer-tanjiro-moonlit-temple-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 18414
+      },
+      {
+        "path": "previews/web/demon-slayer-tanjiro-moonlit-temple-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 243572
+      },
+      {
+        "path": "previews/web/demon-slayer-tanjiro-moonlit-temple-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 412442
+      }
+    ]
+  },
+  {
+    "source": "Assets/FMA/Fullmetal Alchemist X The Creation of Adam X 1080p.png",
+    "beforeBytes": 1194083,
+    "outputs": [
+      {
+        "path": "previews/web/fma-fma-creation-of-adam-1920x1080-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 14186
+      },
+      {
+        "path": "previews/web/fma-fma-creation-of-adam-1920x1080-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 147566
+      },
+      {
+        "path": "previews/web/fma-fma-creation-of-adam-1920x1080-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 248894
+      }
+    ]
+  },
+  {
+    "source": "Assets/FMA/Fullmetal Alchemist X Wanderer above the Sea of Fog X 1080p.png",
+    "beforeBytes": 1091520,
+    "outputs": [
+      {
+        "path": "previews/web/fma-fma-wanderer-1920x1080-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 16704
+      },
+      {
+        "path": "previews/web/fma-fma-wanderer-1920x1080-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 191410
+      },
+      {
+        "path": "previews/web/fma-fma-wanderer-1920x1080-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 317694
+      }
+    ]
+  },
+  {
+    "source": "Assets/One Piece/One Piece X The Great Wave off Kanagawa X 1080p.png",
+    "beforeBytes": 1330542,
+    "outputs": [
+      {
+        "path": "previews/web/one-piece-one-piece-great-wave-1920x1080-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 29052
+      },
+      {
+        "path": "previews/web/one-piece-one-piece-great-wave-1920x1080-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 364146
+      },
+      {
+        "path": "previews/web/one-piece-one-piece-great-wave-1920x1080-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 648786
+      }
+    ]
+  }
+]

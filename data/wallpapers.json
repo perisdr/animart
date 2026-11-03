@@ -78,7 +78,27 @@
         "bytes": 15422167
       }
     ],
-    "addedOn": "2026-11-01"
+    "addedOn": "2026-11-01",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/death-note-nighthawks-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 8868
+      },
+      "medium": {
+        "path": "previews/web/death-note-nighthawks-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 93208
+      },
+      "large": {
+        "path": "previews/web/death-note-nighthawks-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 170366
+      }
+    }
   },
   {
     "id": "death-note-the-death-of-marat",
@@ -156,7 +176,27 @@
         "bytes": 14011070
       }
     ],
-    "addedOn": "2026-11-01"
+    "addedOn": "2026-11-01",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/death-note-the-death-of-marat-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 6140
+      },
+      "medium": {
+        "path": "previews/web/death-note-the-death-of-marat-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 73330
+      },
+      "large": {
+        "path": "previews/web/death-note-the-death-of-marat-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 137358
+      }
+    }
   },
   {
     "id": "death-note-the-scream",
@@ -234,7 +274,27 @@
         "bytes": 24072257
       }
     ],
-    "addedOn": "2026-11-01"
+    "addedOn": "2026-11-01",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/death-note-the-scream-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 21926
+      },
+      "medium": {
+        "path": "previews/web/death-note-the-scream-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 298314
+      },
+      "large": {
+        "path": "previews/web/death-note-the-scream-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 522872
+      }
+    }
   },
   {
     "id": "death-note-the-son-of-man",
@@ -308,7 +368,27 @@
         "bytes": 15585417
       }
     ],
-    "addedOn": "2026-11-01"
+    "addedOn": "2026-11-01",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/death-note-the-son-of-man-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 9542
+      },
+      "medium": {
+        "path": "previews/web/death-note-the-son-of-man-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 107274
+      },
+      "large": {
+        "path": "previews/web/death-note-the-son-of-man-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 183972
+      }
+    }
   },
   {
     "id": "demon-slayer-mugen-train-turner",
@@ -391,7 +471,27 @@
         "bytes": 23911049
       }
     ],
-    "addedOn": "2026-11-01"
+    "addedOn": "2026-11-01",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/demon-slayer-mugen-train-turner-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 17472
+      },
+      "medium": {
+        "path": "previews/web/demon-slayer-mugen-train-turner-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 217200
+      },
+      "large": {
+        "path": "previews/web/demon-slayer-mugen-train-turner-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 369662
+      }
+    }
   },
   {
     "id": "demon-slayer-rengoku-red-fuji",
@@ -474,7 +574,27 @@
         "bytes": 21618466
       }
     ],
-    "addedOn": "2026-11-01"
+    "addedOn": "2026-11-01",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/demon-slayer-rengoku-red-fuji-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 22222
+      },
+      "medium": {
+        "path": "previews/web/demon-slayer-rengoku-red-fuji-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 301234
+      },
+      "large": {
+        "path": "previews/web/demon-slayer-rengoku-red-fuji-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 555334
+      }
+    }
   },
   {
     "id": "demon-slayer-shinobu-monet-garden",
@@ -561,7 +681,27 @@
         "bytes": 26452846
       }
     ],
-    "addedOn": "2026-11-01"
+    "addedOn": "2026-11-01",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/demon-slayer-shinobu-monet-garden-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 27276
+      },
+      "medium": {
+        "path": "previews/web/demon-slayer-shinobu-monet-garden-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 377174
+      },
+      "large": {
+        "path": "previews/web/demon-slayer-shinobu-monet-garden-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 658954
+      }
+    }
   },
   {
     "id": "demon-slayer-tanjiro-great-wave-corrected",
@@ -644,7 +784,27 @@
         "bytes": 22347136
       }
     ],
-    "addedOn": "2026-11-01"
+    "addedOn": "2026-11-01",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/demon-slayer-tanjiro-great-wave-corrected-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 27544
+      },
+      "medium": {
+        "path": "previews/web/demon-slayer-tanjiro-great-wave-corrected-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 323068
+      },
+      "large": {
+        "path": "previews/web/demon-slayer-tanjiro-great-wave-corrected-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 540466
+      }
+    }
   },
   {
     "id": "demon-slayer-tanjiro-moonlit-temple",
@@ -727,7 +887,27 @@
         "bytes": 20581127
       }
     ],
-    "addedOn": "2026-11-01"
+    "addedOn": "2026-11-01",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/demon-slayer-tanjiro-moonlit-temple-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 18414
+      },
+      "medium": {
+        "path": "previews/web/demon-slayer-tanjiro-moonlit-temple-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 243572
+      },
+      "large": {
+        "path": "previews/web/demon-slayer-tanjiro-moonlit-temple-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 412442
+      }
+    }
   },
   {
     "id": "fma-fma-creation-of-adam-1920x1080",
@@ -807,7 +987,27 @@
         "bytes": 18640894
       }
     ],
-    "addedOn": "2026-11-01"
+    "addedOn": "2026-11-01",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/fma-fma-creation-of-adam-1920x1080-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 14186
+      },
+      "medium": {
+        "path": "previews/web/fma-fma-creation-of-adam-1920x1080-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 147566
+      },
+      "large": {
+        "path": "previews/web/fma-fma-creation-of-adam-1920x1080-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 248894
+      }
+    }
   },
   {
     "id": "fma-fma-wanderer-1920x1080",
@@ -886,7 +1086,27 @@
         "bytes": 21777432
       }
     ],
-    "addedOn": "2026-11-01"
+    "addedOn": "2026-11-01",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/fma-fma-wanderer-1920x1080-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 16704
+      },
+      "medium": {
+        "path": "previews/web/fma-fma-wanderer-1920x1080-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 191410
+      },
+      "large": {
+        "path": "previews/web/fma-fma-wanderer-1920x1080-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 317694
+      }
+    }
   },
   {
     "id": "one-piece-one-piece-great-wave-1920x1080",
@@ -966,6 +1186,26 @@
         "bytes": 24283472
       }
     ],
-    "addedOn": "2026-11-01"
+    "addedOn": "2026-11-01",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/one-piece-one-piece-great-wave-1920x1080-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 29052
+      },
+      "medium": {
+        "path": "previews/web/one-piece-one-piece-great-wave-1920x1080-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 364146
+      },
+      "large": {
+        "path": "previews/web/one-piece-one-piece-great-wave-1920x1080-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 648786
+      }
+    }
   }
 ]
