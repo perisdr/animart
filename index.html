@@ -4,38 +4,27 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Animart — Anime, in a different frame</title>
 <link rel="stylesheet" href="vendor/bootstrap.min.css">
-<link rel="stylesheet" href="styles/site.css?v=2026.11.03.1">
-<!-- Keep the default gallery image and its responsive sizes in sync with gallery.js. -->
+<link rel="stylesheet" href="styles/site.css?v=2026.11.03.5">
+<!-- Keep the featured AI Crossover and its responsive sizes in sync with gallery.js. -->
 <link rel="preload" as="image" type="image/webp" fetchpriority="high"
-      imagesrcset="previews/one-piece-one-piece-great-wave-1920x1080.webp 640w, previews/web/one-piece-one-piece-great-wave-1920x1080-1280.webp 1280w, previews/web/one-piece-one-piece-great-wave-1920x1080-1920.webp 1920w"
-      imagesizes="(max-width: 767px) 100vw, (max-width: 991px) calc(100vw - 48px), (min-width: 1500px) 1080px, 70vw">
+      imagesrcset="previews/demon-slayer-shinobu-monet-garden.webp 640w, previews/web/demon-slayer-shinobu-monet-garden-1280.webp 1280w, previews/web/demon-slayer-shinobu-monet-garden-1920.webp 1920w"
+      imagesizes="(max-width: 767px) 100vw, (max-width: 991px) calc(100vw - 48px), 70vw">
 <link rel="icon" href="favicon.svg">
-<meta name="theme-color" content="#182a43">
+<meta name="theme-color" content="#29163b">
 <meta name="description" content="Anime meets art: a personal collection of AI Crossovers for TV wallpapers, with original artwork comparisons and generation prompts.">
 <body>
 <a class="skip-link" href="#collection">Skip to collection</a>
 <header class="container-fluid px-4 px-lg-5">
-<a class="brand" href="#" aria-label="Animart home"><img class="brand-logo" src="Assets/branding/animart-on-dark-v1.webp" width="378" height="252" alt="Animart">
-</a>
+<a class="brand" href="#" aria-label="Animart home">Animart</a>
 <nav class="d-flex gap-4" aria-label="Main navigation">
 <a href="#collection">Collection</a>
 <a href="#story">The story</a>
 </nav>
 </header>
 <main>
-<section class="opening">
-<div class="container-fluid px-4 px-lg-5">
-<div class="row align-items-end g-4 title-row">
-<div class="col-lg-8">
-<h1>Anime, in a<br>
-<em>different frame.</em>
-</h1>
-</div>
-<div class="col-lg-4 intro">
-<p>Characters I love. Paintings I’m learning to appreciate.</p>
-</div>
-</div>
-</div>
+<section class="opening container-fluid px-4 px-lg-5" aria-labelledby="archive-title">
+<h1 id="archive-title">AI Crossovers for your TV</h1>
+<div id="featured"></div>
 </section>
 <section id="collection" class="collection container-fluid px-4 px-lg-5">
 <div class="collection-heading d-flex justify-content-between align-items-end flex-wrap gap-3">
@@ -81,8 +70,8 @@
 <p id="count" role="status" class="m-0">Loading the collection…</p>
 <button class="btn btn-outline-dark" id="clear-filters" type="button" hidden>Clear filters</button>
 <div class="btn-group view-switch" role="group" aria-label="Gallery view">
-<button class="btn" type="button" data-view="grid" aria-pressed="false">Grid</button>
-<button class="btn" type="button" data-view="slider" aria-pressed="true">Slider</button>
+<button class="btn" type="button" data-view="grid" aria-pressed="true">Grid</button>
+<button class="btn" type="button" data-view="slider" aria-pressed="false">Slider</button>
 <button class="btn" type="button" data-view="list" aria-pressed="false">List</button>
 </div>
 </div>
@@ -113,7 +102,7 @@
 </section>
 </main>
 <footer class="container-fluid px-4 px-lg-5 d-flex justify-content-between flex-wrap gap-3">
-<span class="brand"><img class="brand-logo" src="Assets/branding/animart-on-dark-v1.webp" width="378" height="252" alt="Animart"></span>
+<span class="brand">Animart</span>
 <section class="collection-update" aria-labelledby="collection-update-title" hidden>
 <h2 id="collection-update-title">Collection update</h2>
 <p id="last-added"></p>
@@ -130,7 +119,7 @@
 <div id="artwork-content">
 </div>
 </dialog>
-<script src="scripts/gallery.js?v=2026.11.03.1">
+<script src="scripts/gallery.js?v=2026.11.03.4">
 </script>
 </body>
 </html>

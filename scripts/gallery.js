@@ -1,5 +1,5 @@
 'use strict';
-const SITE_BUILD = '2026.11.03.1';
+const SITE_BUILD = '2026.11.03.4';
 const buildLabel = document.querySelector('#site-build');
 if (buildLabel) {
   buildLabel.textContent = 'Build ' + SITE_BUILD;
@@ -21,7 +21,7 @@ filterToggle.addEventListener('click', () => {
   filterToggle.setAttribute('aria-expanded', String(open));
   document.querySelector('#gallery-filters').classList.toggle('is-open', open);
 });
-let view = 'slider', currentId = null, records = [], filtered = [];
+let view = 'grid', currentId = null, records = [], filtered = [];
 const path = p => esc(encodeURI(p));
 const detail = r => `#piece=${encodeURIComponent(r.id)}`;
 const defaultDownload = r => r.downloads.find(d => d.label === 'Tinified 1080p') || r.downloads[0];
@@ -66,8 +66,8 @@ function image(r, large = false, eager = false, thumbnail = false) {
   const web = r.webImage;
   const source = thumbnail ? web.thumbnail.path : large ? web.large.path : r.preview;
   const sizes = large
-    ? '(max-width: 767px) 100vw, (max-width: 991px) calc(100vw - 48px), (min-width: 1500px) 1080px, 70vw'
-    : '(max-width: 767px) 100vw, (min-width: 1500px) 704px, calc(50vw - 64px)';
+    ? '(max-width: 767px) 100vw, (max-width: 991px) calc(100vw - 48px), 70vw'
+    : '(max-width: 767px) 100vw, (min-width: 1200px) calc((100vw - 144px) / 3), calc(50vw - 64px)';
   const responsive = thumbnail ? '' : ` srcset="${path(r.preview)} 640w, ${path(web.medium.path)} ${web.medium.width}w, ${path(web.large.path)} ${web.large.width}w" sizes="${sizes}"`;
   return `<img decoding="async" ${large || eager ? 'loading="eager"' : 'loading="lazy"'} src="${path(source)}"${responsive} alt="${esc(r.anime.name)} AI Crossover inspired by ${esc(r.artwork.title)}">`;
 }
@@ -87,17 +87,7 @@ function changeSlide(id, focusId, direction = 1) {
   currentId = id;
   const index = filtered.findIndex(record => record.id === id);
   root.querySelector('.slider-stage').outerHTML = sliderStage(filtered[index],index);
-  root.querySelectorAll('[data-piece]').forEach(button => button.setAttribute('aria-pressed',String(button.dataset.piece === id)));
-  const focusTarget = focusId ? document.getElementById(focusId) : Array.from(root.querySelectorAll('[data-piece]')).find(button => button.dataset.piece === id);
-  focusTarget?.focus({preventScroll:true});
-  const selected = root.querySelector('.film-frame[aria-pressed="true"]');
-  if (selected) {
-    const strip = selected.parentElement;
-    const left = selected.offsetLeft - strip.offsetLeft;
-    if (left < strip.scrollLeft || left + selected.offsetWidth > strip.scrollLeft + strip.clientWidth) {
-      strip.scrollTo({left:left - (strip.clientWidth - selected.offsetWidth) / 2, behavior:'instant'});
-    }
-  }
+  document.getElementById(focusId)?.focus({preventScroll:true});
   const incoming = root.querySelector('.slider-art > a > img');
   if (!incoming || !outgoing || reducedMotion.matches) return;
   outgoing.className = 'slide-outgoing';
@@ -122,28 +112,25 @@ function render() {
   if (!filtered.some(r => r.id === currentId)) currentId = filtered[0].id;
   if (mobile.matches) {
     root.className = 'gallery-mobile';
-    root.innerHTML = filtered.map((r,i) => `<article><a class="mobile-artwork" href="${detail(r)}" aria-label="View details: ${esc(r.anime.name)} × ${esc(r.artwork.title)}">${image(r,false,i===0)}<span class="mobile-caption"><span>${esc(r.anime.name)} <span aria-hidden="true">×</span> ${esc(r.artwork.title)}</span><span aria-hidden="true">→</span></span></a></article>`).join('');
+    root.innerHTML = filtered.map(r => `<article><a class="mobile-artwork" href="${detail(r)}">${image(r)}</a><div class="mobile-caption"><div>${meta(r)}</div><div class="featured-actions">${downloadButton(r,'mobile')}<a class="featured-details" href="${detail(r)}">Details →</a></div></div></article>`).join('');
     return;
   }
   if (view === 'grid') { root.innerHTML = `<div class="row g-4">${filtered.map(r=>`<article class="col-md-6 col-xl-4"><a class="piece" href="${detail(r)}">${image(r)}<div class="piece-copy">${meta(r)}<small>Explore & download →</small></div></a></article>`).join('')}</div>`;return; }
   if (view === 'list') { root.innerHTML = filtered.map(r=>`<article class="list-piece"><a class="list-image" href="${detail(r)}">${image(r)}</a><div class="list-copy">${meta(r)}<p class="list-description">${esc(r.artwork.description || '')}</p></div><div class="list-action"><span>1920 × 1080</span><a href="${detail(r)}">Explore & download →</a></div></article>`).join('');return; }
   const i=filtered.findIndex(r=>r.id===currentId),r=filtered[i];
-  root.innerHTML=`${sliderStage(r,i)}<div class="filmstrip" role="group" aria-label="Choose AI Crossover">${filtered.map((item,n)=>`<button type="button" class="film-frame" data-piece="${esc(item.id)}" aria-label="Show AI Crossover: ${esc(item.anime.name)} × ${esc(item.artwork.title)}" aria-pressed="${n===i}">${image(item,false,false,true)}<span class="film-number">${String(n+1).padStart(2,'0')}</span><span class="film-title">${esc(item.artwork.title)}</span></button>`).join('')}</div>`;
-  const hint=document.createElement('p');
-  hint.className='browse-hint';hint.textContent='A different frame, one at a time. Use the arrow keys to browse.';
-  root.append(hint);
+  root.innerHTML=sliderStage(r,i);
 }
 root.addEventListener('click', event => {
-  const button = event.target.closest('#previous, #next, [data-piece]');
+  const button = event.target.closest('#previous, #next');
   if (!button || button.disabled) return;
   const index = filtered.findIndex(record => record.id === currentId);
-  const target = button.dataset.piece ? filtered.findIndex(record => record.id === button.dataset.piece) : (index + (button.id === 'next' ? 1 : -1) + filtered.length) % filtered.length;
-  const direction = button.dataset.piece ? target - index : button.id === 'next' ? 1 : -1;
-  changeSlide(filtered[target].id,button.id || null,direction);
+  const direction = button.id === 'next' ? 1 : -1;
+  const target = (index + direction + filtered.length) % filtered.length;
+  changeSlide(filtered[target].id,button.id,direction);
 });
 root.addEventListener('keydown', event => {
   if (view !== 'slider' || mobile.matches || !['ArrowLeft','ArrowRight'].includes(event.key) || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
-  if (!event.target.matches('#previous, #next, .film-frame')) return;
+  if (!event.target.matches('#previous, #next')) return;
   event.preventDefault();
   const amount = event.key === 'ArrowRight' ? 1 : -1;
   const index = filtered.findIndex(record => record.id === currentId);
@@ -171,6 +158,10 @@ async function loadGallery(){
     const response=await fetch('data/wallpapers.json');if(!response.ok)throw Error('Catalogue unavailable');
     const data=await response.json();if(!Array.isArray(data)||!data.length)throw Error('Catalogue empty');
     records=data;
+    const featured = records.find(record => record.id === 'demon-slayer-shinobu-monet-garden') || records[0];
+    if (featured) {
+      document.querySelector('#featured').innerHTML = `<div class="featured-layout"><a class="featured-image" href="${detail(featured)}">${image(featured,true)}</a><div class="featured-caption"><p class="featured-label">Featured AI Crossover</p>${meta(featured)}<p>${esc(featured.artwork.description || '')}</p><div class="featured-actions">${downloadButton(featured,'featured')}<a class="featured-details" href="${detail(featured)}">Details →</a></div></div></div>`;
+    }
     const order=name=>name==='One Piece'?0:/Fullmetal|FMA/.test(name)?1:name==='Death Note'?2:3;
     records.sort((a,b)=>order(a.anime.name)-order(b.anime.name));
     fillSelect('anime',records.map(r=>r.anime.name));fillSelect('artist',records.map(r=>r.artwork.artist));fillSelect('artwork',records.map(r=>r.artwork.title));

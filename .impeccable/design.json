@@ -1,22 +1,18 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-03T21:24:16.6195055+02:00",
-  "title": "Design System: Animart",
+  "generatedAt": "2026-11-03T22:03:58.2498481+02:00",
+  "title": "Design System: Animart — Cel Archive",
   "extensions": {
     "typographyMeta": {
-      "display": {
-        "displayName": "Fraunces display",
-        "purpose": "Headlines and artwork titles; locally hosted SIL OFL font."
-      },
       "body": {
         "displayName": "Source Sans 3",
-        "purpose": "Reading and interface controls; local CSS family Source."
+        "purpose": "Reading, headings, and controls."
       }
     },
     "shadows": [
       {
         "name": "wipe-handle",
-        "value": "0 2px 8px #182a4355",
+        "value": "0 2px 8px #29163b55",
         "purpose": "Make the comparison handle legible over artwork."
       }
     ],
@@ -65,54 +61,41 @@
     {
       "name": "Download action",
       "html": "<a class=\"ds-download\" href=\"#download\">Download wallpaper</a>",
-      "css": ".ds-download{display:block;background:var(--red,#b83b28);color:white;padding:12px 18px;font:17px Source,sans-serif;text-decoration:none}.ds-download:hover{background:var(--ink,#182a43)} :focus-visible{outline:3px solid var(--red,#b83b28);outline-offset:5px}"
+      "css": ".ds-download{display:block;background:var(--red,#633988);color:white;padding:12px 18px;font:17px Source,sans-serif;text-decoration:none}.ds-download:hover{background:var(--ink,#29163b)} :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
     },
     {
       "name": "Gallery view",
       "html": "<button class=\"ds-view\" aria-pressed=\"true\">Slider</button>",
-      "css": ".ds-view{border:1px solid var(--ink,#182a43);border-radius:0;min-height:44px;padding-inline:22px;background:var(--ink,#182a43);color:var(--paper,#f4ebdd)}.ds-view:hover{background:#dce5ea;color:var(--ink,#182a43)} :focus-visible{outline:3px solid var(--red,#b83b28);outline-offset:5px}"
+      "css": ".ds-view{border:1px solid var(--ink,#29163b);border-radius:0;min-height:44px;padding-inline:22px;background:var(--ink,#29163b);color:var(--paper,#f3eef9)}.ds-view:hover{background:#e8def3;color:var(--ink,#29163b)} :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
     },
     {
       "name": "Search",
       "html": "<label class=\"ds-search\">Search <input type=\"search\"></label>",
-      "css": ".ds-search{display:grid;gap:8px;font:14px Source,sans-serif}.ds-search input{min-height:48px;border:1px solid var(--ink,#182a43);border-radius:0;background:transparent;padding:6px 12px;font:17px Source,sans-serif} :focus-visible{outline:3px solid var(--red,#b83b28);outline-offset:5px}"
+      "css": ".ds-search{display:grid;gap:8px;font:14px Source,sans-serif}.ds-search input{min-height:48px;border:1px solid var(--ink,#29163b);border-radius:0;background:transparent;padding:6px 12px;font:17px Source,sans-serif} :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
     },
     {
       "name": "Navigation",
       "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#collection\">Collection</a></nav>",
-      "css": ".ds-nav{padding:22px 24px;background:var(--ink,#182a43);color:var(--paper,#f4ebdd);border-bottom:1px solid #647080}.ds-nav a{color:inherit;text-decoration:none}.ds-nav a:hover{text-decoration:underline} :focus-visible{outline:3px solid var(--red,#b83b28);outline-offset:5px}"
+      "css": ".ds-nav{padding:22px 24px;background:var(--ink,#29163b);color:var(--paper,#f3eef9);border-bottom:1px solid #89749d}.ds-nav a{color:inherit;text-decoration:none}.ds-nav a:hover{text-decoration:underline} :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
     },
     {
       "name": "Prompt disclosure",
       "html": "<details class=\"ds-prompt\"><summary>The Prompt</summary><p>Archived prompt text appears here.</p></details>",
-      "css": ".ds-prompt{border-top:1px solid #b9afa2;padding-block:16px;font:17px Source,sans-serif}.ds-prompt summary{cursor:pointer} :focus-visible{outline:3px solid var(--red,#b83b28);outline-offset:5px}"
+      "css": ".ds-prompt{border-top:1px solid #a995bb;padding-block:16px;font:17px Source,sans-serif}.ds-prompt summary{cursor:pointer} :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
     }
   ],
   "narrative": {
-    "northStar": "The Crossover Edition",
-    "overview": "An image-first exhibition publication with expressive type, warm paper, dark framing, and selective vermilion actions.",
+    "rules": [],
+    "donts": [],
+    "northStar": "Cel Archive",
     "keyCharacteristics": [
-      "Desktop gallery view choices",
-      "Single mobile image feed",
-      "Preserved image proportions",
-      "Collapsed verbatim prompts"
-    ],
-    "rules": [
-      {
-        "name": "Preserve proportion",
-        "body": "Use contained images in every comparison, including the mobile reveal.",
-        "section": "layout"
-      }
+      "Featured 16:9 image",
+      "Desktop grid",
+      "Single-column phone gallery"
     ],
     "dos": [
-      "Keep the approved fonts and palette.",
-      "Honor reduced motion.",
-      "Keep prompt provenance accurate."
+      "Preserve original artwork proportions in comparisons."
     ],
-    "donts": [
-      "Do not add a redundant Show both button.",
-      "Do not show desktop gallery view choices on phones.",
-      "Do not imply pixel alignment between different compositions."
-    ]
+    "overview": "Large anime AI Crossovers framed by matte lavender, plum typography, and fine rules."
   }
 }
