@@ -262,6 +262,40 @@ function syncDetail() {
       wipe.style.setProperty('--reveal',input.value+'%');
       input.setAttribute('aria-valuetext',input.value+'% AI Crossover revealed');
     });
+    // The visible handle is not the native range thumb. Map the whole frame
+    // explicitly so touch dragging works wherever a browser places that thumb.
+    const frame = wipe.querySelector('.wipe-frame');
+    let activePointer = null;
+    const revealAt = clientX => {
+      const bounds = input.getBoundingClientRect();
+      if (!bounds.width) return;
+      input.value = String(Math.round(Math.max(0, Math.min(100,
+        100 * (bounds.right - clientX) / bounds.width))));
+      input.dispatchEvent(new Event('input', {bubbles:true}));
+    };
+    frame.addEventListener('pointerdown', event => {
+      if (!event.isPrimary || event.button !== 0 || activePointer !== null) return;
+      event.preventDefault();
+      activePointer = event.pointerId;
+      frame.setPointerCapture(activePointer);
+      input.focus({preventScroll:true});
+      revealAt(event.clientX);
+    });
+    frame.addEventListener('pointermove', event => {
+      if (event.pointerId !== activePointer) return;
+      event.preventDefault();
+      revealAt(event.clientX);
+    });
+    frame.addEventListener('pointerup', event => {
+      if (event.pointerId !== activePointer) return;
+      revealAt(event.clientX);
+      activePointer = null;
+      if (frame.hasPointerCapture(event.pointerId)) frame.releasePointerCapture(event.pointerId);
+      input.dispatchEvent(new Event('change', {bubbles:true}));
+    });
+    const cancelDrag = () => { activePointer = null; };
+    frame.addEventListener('pointercancel', cancelDrag);
+    frame.addEventListener('lostpointercapture', cancelDrag);
     artworkDialog.classList.add('has-mobile-wipe');
   } else artworkDialog.classList.remove('has-mobile-wipe');
 
