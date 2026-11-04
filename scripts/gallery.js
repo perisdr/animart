@@ -26,9 +26,10 @@ const path = p => esc(encodeURI(p));
 const detail = r => `#piece=${encodeURIComponent(r.id)}`;
 const defaultDownload = r => r.downloads.find(d => d.label === 'Tinified 1080p') || r.downloads[0];
 function downloadButton(r, surface) {
+  const groupHeading = surface === "featured" || surface === "detail" ? 3 : 4;
   const groups = [1080, 2160].map(height => {
     const files = r.downloads.filter(file => file.height === height);
-    return `<section class="download-group"><h4>${height === 1080 ? 'Full HD · 1080p' : '4K · 2160p'}</h4>${files.map(file => `<a class="download-file" href="${path(file.path)}" download><span><strong>${file.label.startsWith('Tinified') ? 'Optimized PNG' : 'Uncompressed PNG'}</strong></span><span>${(file.bytes / 1000000).toFixed(2)} MB ↓</span></a>`).join('')}</section>`;
+    return `<section class="download-group"><h${groupHeading} class="download-group-title">${height === 1080 ? 'Full HD · 1080p' : '4K · 2160p'}</h${groupHeading}>${files.map(file => `<a class="download-file" href="${path(file.path)}" download><span><strong>${file.label.startsWith('Tinified') ? 'Optimized PNG' : 'Uncompressed PNG'}</strong></span><span>${(file.bytes / 1000000).toFixed(2)} MB ↓</span></a>`).join('')}</section>`;
   }).join('');
   return `<details class="download-picker"><summary aria-label="Download options for ${esc(r.anime.name)} × ${esc(r.artwork.title)}" title="Download options"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg></summary><div class="download-panel">${groups}</div></details>`;
 }
@@ -88,7 +89,7 @@ function image(r, large = false, eager = false, thumbnail = false) {
   const responsive = thumbnail ? '' : ` srcset="${path(r.preview)} 640w, ${path(web.medium.path)} ${web.medium.width}w, ${path(web.large.path)} ${web.large.width}w" sizes="${sizes}"`;
   return `<img decoding="async" ${large || eager ? 'loading="eager"' : 'loading="lazy"'} src="${path(source)}"${responsive} alt="${esc(r.anime.name)} AI Crossover inspired by ${esc(r.artwork.title)}">`;
 }
-const crossoverHeading = r => `<h3><a class="crossover-title" href="${detail(r)}"><span class="title-anime">${esc(r.anime.name)}</span> <span class="title-cross">×</span> <span class="title-art">${esc(r.artwork.title)}</span></a></h3>`;
+const crossoverHeading = (r, level = 3) => `<h${level}><a class="crossover-title" href="${detail(r)}"><span class="title-anime">${esc(r.anime.name)}</span> <span class="title-cross">×</span> <span class="title-art">${esc(r.artwork.title)}</span></a></h${level}>`;
 const artistCredit = r => `<p class="artist-credit">After ${esc(r.artwork.artist)}${r.artwork.year ? ` · ${esc(r.artwork.year)}` : ""}</p>`;
 const meta = r => crossoverHeading(r) + artistCredit(r);
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -179,7 +180,7 @@ async function loadGallery(){
     records=data;
     const featured = records.find(record => record.id === 'demon-slayer-shinobu-monet-garden') || records[0];
     if (featured) {
-      document.querySelector('#featured').innerHTML = `<div class="featured-layout">${crossoverHeading(featured)}<a class="featured-image preview-link" href="${detail(featured)}">${image(featured,true)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="featured-caption">${artistCredit(featured)}<div class="featured-actions">${downloadButton(featured,'featured')}</div></div></div>`;
+      document.querySelector('#featured').innerHTML = `<div class="featured-layout">${crossoverHeading(featured, 2)}<a class="featured-image preview-link" href="${detail(featured)}">${image(featured,true)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="featured-caption">${artistCredit(featured)}<div class="featured-actions">${downloadButton(featured,'featured')}</div></div></div>`;
     }
     const order=name=>name==='One Piece'?0:/Fullmetal|FMA/.test(name)?1:name==='Death Note'?2:3;
     records.sort((a,b)=>order(a.anime.name)-order(b.anime.name));
