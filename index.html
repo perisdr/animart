@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Animart — Anime, in a different frame</title>
 <link rel="stylesheet" href="vendor/bootstrap.min.css">
-<link rel="stylesheet" href="styles/site.css?v=2026.11.03.5">
+<link rel="stylesheet" href="styles/site.css?v=2026.11.04.7">
 <!-- Keep the featured AI Crossover and its responsive sizes in sync with gallery.js. -->
 <link rel="preload" as="image" type="image/webp" fetchpriority="high"
       imagesrcset="previews/demon-slayer-shinobu-monet-garden.webp 640w, previews/web/demon-slayer-shinobu-monet-garden-1280.webp 1280w, previews/web/demon-slayer-shinobu-monet-garden-1920.webp 1920w"
@@ -15,7 +15,7 @@
 <body>
 <a class="skip-link" href="#collection">Skip to collection</a>
 <header class="container-fluid px-4 px-lg-5">
-<a class="brand" href="#" aria-label="Animart home">Animart</a>
+<a class="brand" href="#" aria-label="Animart home"><img class="brand-logo" src="Assets/branding/animart-on-light-v1.png" width="1536" height="1024" alt="Animart"></a>
 <nav class="d-flex gap-4" aria-label="Main navigation">
 <a href="#collection">Collection</a>
 <a href="#story">The story</a>
@@ -23,16 +23,32 @@
 </header>
 <main>
 <section class="opening container-fluid px-4 px-lg-5" aria-labelledby="archive-title">
-<h1 id="archive-title">AI Crossovers for your TV</h1>
+<div class="archive-intro">
+<div>
+<p class="archive-kicker">The Crossover you didn't know you needed</p>
+<h1 id="archive-title">Anime, in a<br><em>different frame.</em></h1>
+</div>
+<p class="archive-note">Characters I love. Paintings I’m learning to appreciate.</p>
+</div>
 <div id="featured"></div>
 </section>
 <section id="collection" class="collection container-fluid px-4 px-lg-5">
 <div class="collection-heading d-flex justify-content-between align-items-end flex-wrap gap-3">
 <h2>The collection<span>.</span>
 </h2>
-<p>16:9 wallpapers · Made for your screen</p>
+<div class="gallery-toolbar d-flex justify-content-between align-items-center flex-wrap gap-3">
+<p id="count" role="status" class="m-0">Loading the collection…</p>
+<button class="btn btn-outline-dark" id="clear-filters" type="button" hidden>Clear filters</button>
+<button type="button" class="btn mobile-filter-toggle" aria-expanded="false" aria-controls="gallery-filters" aria-label="Search and filter the collection"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18l-7 8v7l-4 2v-9z"/></svg><span class="filter-label">Filters</span></button>
+<div class="btn-group view-switch" role="group" aria-label="Gallery view">
+<button class="btn" type="button" data-view="grid" aria-pressed="true">Grid</button>
+<button class="btn" type="button" data-view="slider" aria-pressed="false">Slider</button>
+<button class="btn" type="button" data-view="list" aria-pressed="false">List</button>
 </div>
-<button type="button" class="btn mobile-filter-toggle" aria-expanded="false" aria-controls="gallery-filters">Search & filter</button>
+</div>
+
+</div>
+
 <form id="gallery-filters" class="row g-3 filter-row" onsubmit="return false">
 <div class="col-md-7">
 <label class="form-label" for="search">Search the collection</label>
@@ -66,15 +82,6 @@
 </div>
 </details>
 </form>
-<div class="gallery-toolbar d-flex justify-content-between align-items-center flex-wrap gap-3">
-<p id="count" role="status" class="m-0">Loading the collection…</p>
-<button class="btn btn-outline-dark" id="clear-filters" type="button" hidden>Clear filters</button>
-<div class="btn-group view-switch" role="group" aria-label="Gallery view">
-<button class="btn" type="button" data-view="grid" aria-pressed="true">Grid</button>
-<button class="btn" type="button" data-view="slider" aria-pressed="false">Slider</button>
-<button class="btn" type="button" data-view="list" aria-pressed="false">List</button>
-</div>
-</div>
 <div id="load-error" role="alert" hidden>
 <p>The collection couldn’t load. Please try again.</p>
 <button class="btn btn-outline-dark" id="retry" type="button">Try again</button>
@@ -102,7 +109,7 @@
 </section>
 </main>
 <footer class="container-fluid px-4 px-lg-5 d-flex justify-content-between flex-wrap gap-3">
-<span class="brand">Animart</span>
+<span class="brand"><img class="brand-logo" src="Assets/branding/animart-on-light-v1.png" width="1536" height="1024" alt="Animart"></span>
 <section class="collection-update" aria-labelledby="collection-update-title" hidden>
 <h2 id="collection-update-title">Collection update</h2>
 <p id="last-added"></p>
@@ -119,7 +126,7 @@
 <div id="artwork-content">
 </div>
 </dialog>
-<script src="scripts/gallery.js?v=2026.11.03.4">
+<script src="scripts/gallery.js?v=2026.11.04.7">
 </script>
 </body>
 </html>

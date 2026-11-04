@@ -26,42 +26,59 @@ const path = p => esc(encodeURI(p));
 const detail = r => `#piece=${encodeURIComponent(r.id)}`;
 const defaultDownload = r => r.downloads.find(d => d.label === 'Tinified 1080p') || r.downloads[0];
 function downloadButton(r, surface) {
-  const file = defaultDownload(r), id = `downloads-${surface}-${r.id}`;
-  const size = f => `${f.width} × ${f.height} · ${(f.bytes / 1000000).toFixed(2)} MB`;
-  return `<div class="download-split"><a class="btn slide-download" href="${path(file.path)}" download aria-label="Download ${esc(file.label)}"><span>Download AI Crossover</span><small>${esc(file.label)} · ${(file.bytes / 1000000).toFixed(2)} MB</small></a><button type="button" class="btn download-toggle" aria-label="Other download options" aria-expanded="false" aria-controls="${id}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="download-options" id="${id}" hidden>${r.downloads.filter(f => f !== file).map(f => `<a href="${path(f.path)}" download><span>${esc(f.label)}</span><small>${size(f)}</small></a>`).join('')}</div></div>`;
+  const groups = [1080, 2160].map(height => {
+    const files = r.downloads.filter(file => file.height === height);
+    return `<section class="download-group"><h4>${height === 1080 ? 'Full HD · 1080p' : '4K · 2160p'}</h4>${files.map(file => `<a class="download-file" href="${path(file.path)}" download><span><strong>${file.label.startsWith('Tinified') ? 'Optimized PNG' : 'Uncompressed PNG'}</strong></span><span>${(file.bytes / 1000000).toFixed(2)} MB ↓</span></a>`).join('')}</section>`;
+  }).join('');
+  return `<details class="download-picker"><summary aria-label="Download options for ${esc(r.anime.name)} × ${esc(r.artwork.title)}" title="Download options"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg></summary><div class="download-panel">${groups}</div></details>`;
 }
-function closeDownloads(except = null) {
-  document.querySelectorAll('.download-toggle[aria-expanded="true"]').forEach(button => {
-    if (button === except) return;
-    button.setAttribute('aria-expanded', 'false');
-    document.getElementById(button.getAttribute('aria-controls')).hidden = true;
+function positionDownloadPanel(picker) {
+  const panel = picker.querySelector('.download-panel');
+  const trigger = picker.querySelector('summary').getBoundingClientRect();
+  const gap = 8;
+  const width = Math.min(360, window.innerWidth - 24);
+  panel.style.width = width + 'px';
+  panel.style.left = Math.max(12, Math.min(trigger.right - width, window.innerWidth - width - 12)) + 'px';
+  const below = window.innerHeight - trigger.bottom - gap - 12;
+  const above = trigger.top - gap - 12;
+  const openAbove = below < 240 && above > below;
+  panel.style.maxHeight = Math.max(80, openAbove ? above : below) + 'px';
+  panel.style.top = openAbove ? 'auto' : (trigger.bottom + gap) + 'px';
+  panel.style.bottom = openAbove ? (window.innerHeight - trigger.top + gap) + 'px' : 'auto';
+}
+document.addEventListener('toggle', event => {
+  const picker = event.target;
+  if (!picker.matches?.('.download-picker') || !picker.open) return;
+  document.querySelectorAll('.download-picker[open]').forEach(other => {
+    if (other !== picker) other.open = false;
   });
-}
-document.addEventListener('click', event => {
-  const toggle = event.target.closest('.download-toggle');
-  if (toggle) {
-    const open = toggle.getAttribute('aria-expanded') !== 'true';
-    closeDownloads();
-    toggle.setAttribute('aria-expanded', String(open));
-    document.getElementById(toggle.getAttribute('aria-controls')).hidden = !open;
-  } else closeDownloads();
-});
-document.addEventListener('focusin', event => {
-  closeDownloads(event.target.closest('.download-split')?.querySelector('.download-toggle'));
-});
+  positionDownloadPanel(picker);
+}, true);
+document.addEventListener('pointerdown', event => {
+  document.querySelectorAll('.download-picker[open]').forEach(picker => {
+    const trigger = picker.querySelector('summary');
+    const panel = picker.querySelector('.download-panel');
+    if (!trigger.contains(event.target) && !panel.contains(event.target)) {
+      picker.open = false;
+    }
+  });
+}, true);
 document.addEventListener('keydown', event => {
-  const split = event.target.closest('.download-split');
-  if (!split) return;
-  const toggle = split.querySelector('.download-toggle');
-  if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
-    event.preventDefault(); event.stopPropagation(); closeDownloads(); toggle.focus();
-  } else if (event.key === 'ArrowDown' && event.target === toggle) {
-    event.preventDefault(); closeDownloads(toggle);
-    toggle.setAttribute('aria-expanded', 'true');
-    split.querySelector('.download-options').hidden = false;
-    split.querySelector('.download-options a').focus();
+  if (event.key !== 'Escape') return;
+  const picker = document.querySelector('.download-picker[open]');
+  if (picker) {
+    event.preventDefault();
+    event.stopPropagation();
+    picker.open = false;
+    picker.querySelector('summary').focus();
   }
+}, true);
+window.addEventListener('resize', () => {
+  document.querySelectorAll('.download-picker[open]').forEach(positionDownloadPanel);
 });
+document.addEventListener('scroll', () => {
+  document.querySelectorAll('.download-picker[open]').forEach(positionDownloadPanel);
+}, true);
 function image(r, large = false, eager = false, thumbnail = false) {
   const web = r.webImage;
   const source = thumbnail ? web.thumbnail.path : large ? web.large.path : r.preview;
@@ -71,7 +88,9 @@ function image(r, large = false, eager = false, thumbnail = false) {
   const responsive = thumbnail ? '' : ` srcset="${path(r.preview)} 640w, ${path(web.medium.path)} ${web.medium.width}w, ${path(web.large.path)} ${web.large.width}w" sizes="${sizes}"`;
   return `<img decoding="async" ${large || eager ? 'loading="eager"' : 'loading="lazy"'} src="${path(source)}"${responsive} alt="${esc(r.anime.name)} AI Crossover inspired by ${esc(r.artwork.title)}">`;
 }
-const meta = r => `<p class="anime">${esc(r.anime.name)} ×</p><h3>${esc(r.artwork.title)}</h3><p>After ${esc(r.artwork.artist)}${r.artwork.year ? ` · ${esc(r.artwork.year)}` : ''}</p>`;
+const crossoverHeading = r => `<h3><a class="crossover-title" href="${detail(r)}"><span class="title-anime">${esc(r.anime.name)}</span> <span class="title-cross">×</span> <span class="title-art">${esc(r.artwork.title)}</span></a></h3>`;
+const artistCredit = r => `<p class="artist-credit">After ${esc(r.artwork.artist)}${r.artwork.year ? ` · ${esc(r.artwork.year)}` : ""}</p>`;
+const meta = r => crossoverHeading(r) + artistCredit(r);
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 reducedMotion.addEventListener('change', () => {
   if (reducedMotion.matches) {
@@ -79,7 +98,7 @@ reducedMotion.addEventListener('change', () => {
     root.querySelectorAll('.slide-outgoing').forEach(image => image.remove());
   }
 });
-const sliderStage = (r,i) => `<section class="slider-stage" aria-label="AI Crossover viewer" aria-roledescription="carousel"><div class="slider-art"><a href="${detail(r)}">${image(r,true)}</a><div class="slide-navigation"><button class="btn" id="previous" aria-label="Previous AI Crossover" ${filtered.length===1?'disabled':''}>←</button><p role="status">${i+1} / ${filtered.length} <span>— ${esc(r.anime.name)}</span></p><button class="btn" id="next" aria-label="Next AI Crossover" ${filtered.length===1?'disabled':''}>→</button></div></div><aside class="slider-caption">${meta(r)}<p class="slide-description">${esc(r.artwork.description||'')}</p>${r.artwork.preview?`<figure class="source-reference"><img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} — original artwork"><figcaption>The original artwork</figcaption></figure>`:''}${downloadButton(r, "slider")}<a class="slide-details" href="${detail(r)}">Explore the story & credits →</a></aside></section>`;
+const sliderStage = (r,i) => `<section class="slider-stage" aria-label="AI Crossover viewer" aria-roledescription="carousel"><div class="slider-art">${crossoverHeading(r)}<a class="preview-link" href="${detail(r)}">${image(r,true)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="slide-navigation"><button class="btn" id="previous" aria-label="Previous AI Crossover" ${filtered.length===1?'disabled':''}>←</button><p role="status">${i+1} / ${filtered.length} <span>— ${esc(r.anime.name)}</span></p><button class="btn" id="next" aria-label="Next AI Crossover" ${filtered.length===1?'disabled':''}>→</button></div></div><aside class="slider-caption">${artistCredit(r)}<p class="slide-description">${esc(r.artwork.description||'')}</p>${r.artwork.preview?`<figure class="source-reference"><img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} — original artwork"><figcaption>The original artwork</figcaption></figure>`:''}${downloadButton(r, "slider")}</aside></section>`;
 function changeSlide(id, focusId, direction = 1) {
   if (id === currentId) return;
   const previousImage = root.querySelector('.slider-art > a > img');
@@ -112,11 +131,11 @@ function render() {
   if (!filtered.some(r => r.id === currentId)) currentId = filtered[0].id;
   if (mobile.matches) {
     root.className = 'gallery-mobile';
-    root.innerHTML = filtered.map(r => `<article><a class="mobile-artwork" href="${detail(r)}">${image(r)}</a><div class="mobile-caption"><div>${meta(r)}</div><div class="featured-actions">${downloadButton(r,'mobile')}<a class="featured-details" href="${detail(r)}">Details →</a></div></div></article>`).join('');
+    root.innerHTML = filtered.map(r => `<article>${crossoverHeading(r)}<a class="mobile-artwork preview-link" href="${detail(r)}">${image(r)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="mobile-caption">${artistCredit(r)}<div class="featured-actions">${downloadButton(r,'mobile')}</div></div></article>`).join('');
     return;
   }
-  if (view === 'grid') { root.innerHTML = `<div class="row g-4">${filtered.map(r=>`<article class="col-md-6 col-xl-4"><a class="piece" href="${detail(r)}">${image(r)}<div class="piece-copy">${meta(r)}<small>Explore & download →</small></div></a></article>`).join('')}</div>`;return; }
-  if (view === 'list') { root.innerHTML = filtered.map(r=>`<article class="list-piece"><a class="list-image" href="${detail(r)}">${image(r)}</a><div class="list-copy">${meta(r)}<p class="list-description">${esc(r.artwork.description || '')}</p></div><div class="list-action"><span>1920 × 1080</span><a href="${detail(r)}">Explore & download →</a></div></article>`).join('');return; }
+  if (view === 'grid') { root.innerHTML = `<div class="row g-4">${filtered.map(r=>`<article class="col-md-6 col-xl-4"><div class="piece">${crossoverHeading(r)}<a class="preview-link" href="${detail(r)}">${image(r)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="piece-copy">${artistCredit(r)}${downloadButton(r,"grid")}</div></div></article>`).join('')}</div>`;return; }
+  if (view === 'list') { root.innerHTML = filtered.map(r=>`<article class="list-piece"><a class="list-image preview-link" href="${detail(r)}">${image(r)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="list-copy">${meta(r)}<p class="list-description">${esc(r.artwork.description || '')}</p></div><div class="list-action"><span>1920 × 1080</span><a href="${detail(r)}">Explore & download →</a></div></article>`).join('');return; }
   const i=filtered.findIndex(r=>r.id===currentId),r=filtered[i];
   root.innerHTML=sliderStage(r,i);
 }
@@ -160,7 +179,7 @@ async function loadGallery(){
     records=data;
     const featured = records.find(record => record.id === 'demon-slayer-shinobu-monet-garden') || records[0];
     if (featured) {
-      document.querySelector('#featured').innerHTML = `<div class="featured-layout"><a class="featured-image" href="${detail(featured)}">${image(featured,true)}</a><div class="featured-caption"><p class="featured-label">Featured AI Crossover</p>${meta(featured)}<p>${esc(featured.artwork.description || '')}</p><div class="featured-actions">${downloadButton(featured,'featured')}<a class="featured-details" href="${detail(featured)}">Details →</a></div></div></div>`;
+      document.querySelector('#featured').innerHTML = `<div class="featured-layout">${crossoverHeading(featured)}<a class="featured-image preview-link" href="${detail(featured)}">${image(featured,true)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="featured-caption">${artistCredit(featured)}<div class="featured-actions">${downloadButton(featured,'featured')}</div></div></div>`;
     }
     const order=name=>name==='One Piece'?0:/Fullmetal|FMA/.test(name)?1:name==='Death Note'?2:3;
     records.sort((a,b)=>order(a.anime.name)-order(b.anime.name));

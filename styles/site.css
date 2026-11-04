@@ -200,3 +200,297 @@ footer .brand { color: var(--ink); }
     text-underline-offset: 3px;
   }
 }
+
+.archive-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(230px, 1fr);
+  align-items: end;
+  gap: 12px clamp(18px, 2.4vw, 36px);
+  padding-block: clamp(8px, 2vw, 28px) clamp(16px, 2.4vw, 32px);
+}
+.archive-kicker {
+  margin: 0 0 10px;
+  color: var(--archive-muted);
+  font-size: 14px;
+  font-weight: 650;
+}
+#archive-title {
+  margin: 0;
+  color: var(--ink);
+  font: 650 clamp(38px, 5vw, 72px)/.98 Fraunces, serif;
+  letter-spacing: -.035em;
+}
+#archive-title em { color: var(--red); font-style: italic; }
+.archive-note {
+  max-width: 27ch;
+  margin: 0;
+  border-top: 1px solid var(--archive-rule);
+  padding-top: 10px;
+  font-size: clamp(16px, 1.5vw, 21px);
+  line-height: 1.25;
+}
+@media (max-width: 767px) {
+  .archive-intro { grid-template-columns: minmax(0, 1fr); }
+  .archive-note { max-width: 34ch; border: 0; padding-top: 0; }
+}
+
+/* Keep the personal invitation and catalogue close to their images. */
+main > .opening { padding-top: 10px; }
+.archive-intro { padding-block: 4px 18px; }
+#archive-title { font-size: clamp(38px, 4vw, 56px); }
+.archive-kicker { margin-bottom: 6px; }
+.featured-caption > p:not(.featured-label):not(.anime) { font-size: 16px; line-height: 1.4; }
+.featured-actions { margin-top: 16px; }
+.collection { padding-top: 28px; }
+.collection .collection-heading { align-items: center !important; padding-bottom: 10px; }
+.collection .collection-heading h2 { font-size: clamp(30px, 3vw, 40px); }
+.collection .collection-heading .gallery-toolbar {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  gap: 12px !important;
+}
+.collection #count { font-size: 14px; font-weight: 400; }
+.collection .filter-row { --bs-gutter-y: 8px; padding-block: 8px 12px; margin-bottom: 16px; }
+.collection .form-label { font-size: 13px; margin-bottom: 4px; }
+.collection .additional-filters { font-size: 14px; }
+.collection .view-switch .btn { padding-inline: 14px; }
+@media (max-width: 767px) {
+  .archive-intro { gap: 8px; padding-bottom: 16px; }
+  .archive-note { font-size: 16px; }
+  .featured-label { font-size: 12px; padding-bottom: 6px; }
+  .featured-actions { margin-top: 8px; }
+  .collection .mobile-caption p:not(.anime) { font-size: 15px; line-height: 1.4; font-weight: 400; }
+  .collection .collection-heading { gap: 8px !important; }
+  .collection .mobile-filter-toggle { margin-block: 10px 16px; }
+  .collection .filter-row { margin-bottom: 12px; }
+}
+
+/* Personal introduction alongside the first print. */
+main > .opening {
+  display: grid;
+  grid-template-columns: minmax(230px, .9fr) minmax(0, 3fr);
+  gap: clamp(24px, 3vw, 48px);
+  align-items: center;
+  padding-block: 20px 0;
+}
+.archive-intro { display: block; padding: 0; }
+#archive-title { font-size: clamp(40px, 4.4vw, 68px); line-height: 1.02; }
+.archive-kicker { font-size: 13px; margin-bottom: 18px; }
+.archive-note {
+  margin-top: 26px;
+  padding-top: 16px;
+  font-family: Fraunces, serif;
+  font-size: clamp(18px, 1.6vw, 24px);
+  line-height: 1.3;
+}
+.featured-layout { display: block; }
+.featured-caption {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  padding-block: 12px 0;
+}
+.featured-caption .featured-label { display: none; }
+.featured-caption .anime, .featured-caption h3,
+.featured-caption > p:not(.featured-label):not(.anime) { margin: 0; }
+.featured-caption h3 { font: 550 20px/1.2 Fraunces, serif; }
+.featured-caption .anime { font-size: 14px; }
+.featured-caption > p:not(.featured-label):not(.anime) { font-size: 14px; }
+.featured-caption .featured-actions { margin: 0 0 0 auto; }
+.featured-caption .slide-download { font-size: 14px; padding: 5px 10px; min-height: 44px; }
+.featured-caption .slide-download small { font-size: 11px; }
+.featured-caption .featured-details { font-size: 14px; }
+.collection .collection-heading h2 { font-family: Fraunces, serif; font-weight: 600; }
+.collection .mobile-filter-toggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin: 0;
+  padding: 6px 14px;
+  border: 1px solid var(--archive-rule);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 14px;
+}
+.collection .filter-row { display: none; }
+.collection .filter-row.is-open { display: flex; }
+.collection .collection-heading { margin-bottom: 20px; }
+.collection .gallery-grid .piece h3 { font-family: Fraunces, serif; font-size: 24px; font-weight: 550; }
+@media (max-width: 991px) {
+  main > .opening { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .archive-intro { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 24px; }
+  #archive-title { font-size: 42px; }
+  .archive-note { margin: 0; }
+}
+@media (max-width: 767px) {
+  .archive-intro { display: block; }
+  #archive-title { font-size: 38px; }
+  .archive-kicker { margin-bottom: 8px; }
+  .archive-note { margin-top: 10px; padding: 0; font-size: 17px; max-width: 34ch; }
+  .featured-caption { gap: 4px 10px; }
+  .featured-caption h3 { flex-basis: 100%; font-size: 24px; }
+  .featured-caption .featured-actions { margin: 8px 0 0; flex-basis: 100%; }
+  .collection .mobile-caption h3 { font-family: Fraunces, serif; font-weight: 550; }
+  .collection .collection-heading .gallery-toolbar { flex: 1; }
+  .collection .collection-heading { margin-bottom: 16px; }
+}
+
+.collection .mobile-filter-toggle { gap: 8px; justify-content: center; }
+@media (max-width: 767px) {
+  .collection .mobile-filter-toggle { width: 44px; height: 44px; padding: 10px; flex-shrink: 0; }
+  .mobile-filter-toggle .filter-label { display: none; }
+  .download-split { flex-wrap: wrap; }
+  .download-options {
+    position: static;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin-top: 6px;
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+  .download-options a { font-size: 14px; line-height: 1.4; }
+}
+
+.preview-link { position: relative; display: block; }
+.explore-orb {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgb(243 238 249 / .82);
+  color: #29163b;
+  border: 1px solid rgb(255 255 255 / .45);
+  font: 600 12px/1 Source, sans-serif;
+  pointer-events: none;
+  z-index: 1;
+}
+.preview-link:hover .explore-orb,
+.preview-link:focus-visible .explore-orb { background: rgb(243 238 249 / .95); }
+.crossover-title { color: inherit; text-decoration: none; text-underline-offset: 4px; }
+.crossover-title:hover, .crossover-title:focus-visible, .crossover-title:active { text-decoration: underline; }
+.collection .piece:hover h3 { text-decoration: none; }
+@media (max-width: 767px) {
+  .explore-orb { width: 48px; height: 48px; bottom: 8px; font-size: 11px; }
+}
+
+/* A thumb tab joins the preview to its caption surface. */
+.preview-link .explore-orb {
+  bottom: 0;
+  width: 76px;
+  height: 40px;
+  padding-top: 7px;
+  border: 0;
+  border-radius: 38px 38px 0 0;
+  background: linear-gradient(to bottom, rgb(243 238 249 / .68), var(--paper) 90%);
+}
+.preview-link:hover .explore-orb,
+.preview-link:focus-visible .explore-orb {
+  background: linear-gradient(to bottom, rgb(243 238 249 / .88), var(--paper) 90%);
+}
+@media (max-width: 767px) {
+  .preview-link .explore-orb { width: 68px; height: 36px; padding-top: 6px; }
+}
+
+.featured-layout > h3,
+.collection .piece > h3,
+.gallery-mobile > article > h3,
+.slider-art > h3 {
+  margin: 0 0 10px;
+  font: 550 clamp(20px, 2vw, 28px)/1.2 Fraunces, serif;
+  letter-spacing: -.02em;
+  text-align: left;
+}
+.featured-caption, .gallery-mobile .mobile-caption { display: flex; flex-direction: column; align-items: stretch; }
+.artist-credit,
+.featured-caption > .artist-credit,
+.collection .piece-copy > .artist-credit,
+.collection .mobile-caption > .artist-credit {
+  width: 100%;
+  margin: 8px 0 0;
+  font: 400 14px/1.4 Source, sans-serif;
+  text-align: right;
+  color: var(--archive-muted);
+}
+.featured-caption { padding-top: 0; }
+.featured-caption .featured-actions { margin: 10px 0 0; align-self: flex-end; }
+.gallery-mobile > article > h3 { padding-inline: 16px; }
+.collection .mobile-caption { padding-top: 0; }
+.slider-art > h3 { padding: 12px; }
+@media (max-width: 767px) {
+  .featured-layout > h3, .gallery-mobile > article > h3 { font-size: 22px; }
+  .featured-caption .featured-actions { flex-basis: auto; }
+}
+
+:root { --brand-anime: #182a43; --brand-art: #b83b28; }
+.crossover-title .title-anime { color: var(--brand-anime); }
+.crossover-title .title-cross { color: #5d5862; }
+.crossover-title .title-art { color: var(--brand-art); }
+
+.featured-caption > .artist-credit { max-width: none; align-self: stretch; }
+.download-picker { width: 100%; color: var(--ink); text-align: left; }
+.download-picker > summary {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  cursor: pointer;
+  list-style: none;
+  border: 1px solid var(--archive-rule);
+}
+.download-picker > summary::-webkit-details-marker { display: none; }
+.download-picker > summary:hover, .download-picker[open] > summary { background: var(--archive-panel); }
+.download-panel {
+  margin-top: 10px;
+  padding: 18px;
+  background: var(--archive-panel);
+  border: 1px solid var(--archive-rule);
+}
+.download-panel > h3 { font: 650 20px/1.2 Source, sans-serif !important; margin: 0 0 8px !important; }
+.download-panel p { font: 400 14px/1.4 Source, sans-serif !important; margin: 0 0 12px !important; text-align: left; }
+.download-group + .download-group { margin-top: 20px; }
+.download-group h4 { font: 700 16px/1.3 Source, sans-serif; margin-bottom: 4px; }
+.download-file { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-top: 1px solid var(--archive-rule); text-decoration: none; font: 400 14px/1.4 Source, sans-serif; }
+.download-file:hover { text-decoration: underline; }
+.download-file small { display: block !important; border: 0 !important; margin: 2px 0 0 !important; padding: 0 !important; font-size: 12px; }
+.featured-caption .featured-actions, .mobile-caption .featured-actions { width: 100%; }
+
+.download-panel {
+  position: fixed;
+  z-index: 20;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 20px 24px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-radius: 14px;
+  background: var(--paper);
+  box-shadow: 0 8px 28px rgb(41 22 59 / .18);
+}
+.download-group h4 {
+  color: var(--archive-muted);
+  font-size: 13px;
+  font-weight: 650;
+}
+.download-group > p { font-size: 12px !important; margin-bottom: 8px !important; }
+.download-file { align-items: center; border: 0; padding: 10px 0; min-height: 44px; }
+.download-file > span:last-child { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 650; }
+.download-group + .download-group { border-top: 1px solid var(--archive-rule); padding-top: 16px; margin-top: 12px; }
+
+.download-panel { padding: 14px 16px; background: #fffaf4; border-color: #c7b7a9; }
+.download-group h4 { color: var(--brand-art); margin: 0 0 4px; }
+.download-file { color: var(--brand-anime); padding: 8px 6px; border-radius: 4px; }
+.download-file:hover, .download-file:focus-visible { background: #f5e5db; }
+.download-group + .download-group { border-color: #d8c9bc; padding-top: 10px; margin-top: 6px; }
+.download-picker > summary { color: var(--brand-anime); }
+.download-picker[open] > summary { background: var(--brand-anime); color: #fffaf4; border-color: var(--brand-anime); }
