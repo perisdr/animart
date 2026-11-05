@@ -1,5 +1,5 @@
 'use strict';
-const SITE_BUILD = '2026.11.03.4';
+const SITE_BUILD = '2026.11.06.1';
 const buildLabel = document.querySelector('#site-build');
 if (buildLabel) {
   buildLabel.textContent = 'Build ' + SITE_BUILD;
@@ -80,14 +80,14 @@ window.addEventListener('resize', () => {
 document.addEventListener('scroll', () => {
   document.querySelectorAll('.download-picker[open]').forEach(positionDownloadPanel);
 }, true);
-function image(r, large = false, eager = false, thumbnail = false) {
+function image(r, large = false, eager = false, thumbnail = false, priority = false) {
   const web = r.webImage;
   const source = thumbnail ? web.thumbnail.path : large ? web.large.path : r.preview;
   const sizes = large
-    ? '(max-width: 767px) 100vw, (max-width: 991px) calc(100vw - 48px), 70vw'
+    ? window.animartFeatured.sizes
     : '(max-width: 767px) 100vw, (min-width: 1200px) calc((100vw - 144px) / 3), calc(50vw - 64px)';
-  const responsive = thumbnail ? '' : ` srcset="${path(r.preview)} 640w, ${path(web.medium.path)} ${web.medium.width}w, ${path(web.large.path)} ${web.large.width}w" sizes="${sizes}"`;
-  return `<img decoding="async" ${large || eager ? 'loading="eager"' : 'loading="lazy"'} src="${path(source)}"${responsive} alt="${esc(r.anime.name)} AI Crossover inspired by ${esc(r.artwork.title)}">`;
+  const responsive = thumbnail ? '' : ` srcset="${esc(window.animartFeatured.srcset(r))}" sizes="${sizes}"`;
+  return `<img decoding="async" ${large || eager ? 'loading="eager"' : 'loading="lazy"'}${priority ? ` fetchpriority="high" width="${web.large.width}" height="${web.large.height}"` : ''} src="${path(source)}"${responsive} alt="${esc(r.anime.name)} AI Crossover inspired by ${esc(r.artwork.title)}">`;
 }
 const crossoverHeading = (r, level = 3) => `<h${level}><a class="crossover-title" href="${detail(r)}"><span class="title-anime">${esc(r.anime.name)}</span> <span class="title-cross">×</span> <span class="title-art">${esc(r.artwork.title)}</span></a></h${level}>`;
 const artistCredit = r => `<p class="artist-credit">After ${esc(r.artwork.artist)}${r.artwork.year ? ` · ${esc(r.artwork.year)}` : ""}</p>`;
@@ -175,12 +175,10 @@ async function loadGallery(){
   document.querySelector('.collection-update').hidden=true;
   document.querySelector('#count').textContent='Loading the collection…';
   try{
-    const response=await fetch('data/wallpapers.json');if(!response.ok)throw Error('Catalogue unavailable');
-    const data=await response.json();if(!Array.isArray(data)||!data.length)throw Error('Catalogue empty');
+    const {records:data, featured}=await window.animartFeatured.load();
     records=data;
-    const featured = records.find(record => record.id === 'demon-slayer-shinobu-monet-garden') || records[0];
     if (featured) {
-      document.querySelector('#featured').innerHTML = `<div class="featured-layout">${crossoverHeading(featured, 2)}<a class="featured-image preview-link" href="${detail(featured)}">${image(featured,true)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="featured-caption">${artistCredit(featured)}<div class="featured-actions">${downloadButton(featured,'featured')}</div></div></div>`;
+      document.querySelector('#featured').innerHTML = `<div class="featured-layout">${crossoverHeading(featured, 2)}<a class="featured-image preview-link" href="${detail(featured)}">${image(featured,true,false,false,true)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="featured-caption">${artistCredit(featured)}<div class="featured-actions">${downloadButton(featured,'featured')}</div></div></div>`;
     }
     const order=name=>name==='One Piece'?0:/Fullmetal|FMA/.test(name)?1:name==='Death Note'?2:3;
     records.sort((a,b)=>order(a.anime.name)-order(b.anime.name));
