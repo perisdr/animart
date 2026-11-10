@@ -3,9 +3,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Animart — Anime, in a different frame</title>
-<script src="scripts/featured.js?v=2026.11.06.3"></script>
+<script src="scripts/featured.js?v=2026.11.10.6"></script>
 <link rel="stylesheet" href="vendor/bootstrap.min.css">
-<link rel="stylesheet" href="styles/site.css?v=2026.11.06.3">
+<link rel="stylesheet" href="styles/site.css?v=2026.11.10.6">
 <link rel="icon" href="favicon.svg">
 <meta name="theme-color" content="#29163b">
 <meta name="description" content="Anime meets art: a personal collection of AI Crossovers for TV wallpapers, with original artwork comparisons and generation prompts.">
@@ -31,7 +31,7 @@
 </section>
 <section id="collection" class="collection container-fluid px-4 px-lg-5">
 <div class="collection-heading d-flex justify-content-between align-items-end flex-wrap gap-3">
-<h2>The collection<span>.</span>
+<h2 id="collection-title" tabindex="-1">The collection<span>.</span>
 </h2>
 <div class="gallery-toolbar d-flex justify-content-between align-items-center flex-wrap gap-3">
 <p id="count" role="status" class="m-0">Loading the collection…</p>
@@ -83,7 +83,28 @@
 <p>The collection couldn’t load. Please try again.</p>
 <button class="btn btn-outline-dark" id="retry" type="button">Try again</button>
 </div>
+<div id="gallery-page-options" class="gallery-page-options" hidden>
+<p id="gallery-range" role="status"></p>
+<div class="gallery-page-size">
+<label for="page-size">AI Crossovers per page</label>
+<select id="page-size" class="form-select" aria-controls="pieces">
+<option value="4">4</option>
+<option value="6" selected>6</option>
+<option value="8">8</option>
+<option value="10">10</option>
+<option value="12">12</option>
+</select>
+</div>
+</div>
 <div id="pieces">
+</div>
+<nav id="gallery-pagination" class="gallery-pagination" aria-label="Gallery pages" hidden></nav>
+<div id="gallery-list-actions" class="gallery-list-actions" hidden>
+<p id="list-progress"></p>
+<div class="list-browse-actions">
+<button type="button" class="btn btn-outline-dark" id="load-more" aria-controls="pieces">Load more</button>
+<a class="btn btn-outline-dark" id="gallery-go-top" href="#collection-title">Go to top</a>
+</div>
 </div>
 <noscript>
 <p>Enable JavaScript to browse the collection, or <a href="Assets/">browse wallpaper files</a>.</p>
@@ -123,7 +144,7 @@
 <div id="crossover-content">
 </div>
 </dialog>
-<script src="scripts/gallery.js?v=2026.11.06.3">
+<script src="scripts/gallery.js?v=2026.11.10.6">
 </script>
 </body>
 </html>

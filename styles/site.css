@@ -499,6 +499,59 @@ main > .opening {
 .crossover-byline { display: flex; flex-wrap: wrap; gap: 0 16px; width: 100%; }
 .crossover-byline > .artist-credit { flex: 1 1 180px; width: auto; }
 .collection .piece-copy .crossover-byline > .artist-credit { margin: 8px 0 0; font: 400 14px/1.4 Source, sans-serif; }
-.crossover-byline > .manga-credit, .list-preview > .manga-credit { text-align: left; }
+.crossover-byline > .manga-credit { text-align: left; }
 .slider-art > .crossover-byline { background: var(--paper); padding: 0 12px 10px; }
 .list-preview { min-width: 0; }
+
+/* List has its own image-and-credit layout, independent of Grid and Slider. */
+.collection .gallery-list .list-piece { grid-template-areas: "preview copy action"; }
+.gallery-list .list-copy { grid-area: copy; min-width: 0; }
+.gallery-list .list-preview { grid-area: preview; container: list-preview / inline-size; }
+.gallery-list .list-action { grid-area: action; }
+.list-media { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "image image" "manga artist"; gap: 8px 16px; }
+.list-media .list-image { grid-area: image; padding: 0; }
+.list-manga-credit { grid-area: manga; }
+.list-art-credit { grid-area: artist; }
+.list-media .artist-credit { width: auto; margin: 0; font: 400 14px/1.4 Source, sans-serif; }
+.list-media .manga-credit { text-align: left; }
+@container list-preview (max-width: 520px) {
+  .list-media { grid-template-columns: minmax(0, 1fr); grid-template-areas: "manga" "image" "artist"; }
+  .list-art-credit .artist-credit { text-align: left; }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .collection .gallery-list .list-piece { grid-template-areas: "preview copy" "preview action"; }
+}
+@media (max-width: 767px) {
+  .gallery-list { margin-inline: -16px; }
+  .collection .gallery-list .list-piece { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "preview" "action"; gap: 12px; padding-block: 24px; }
+  .gallery-list .list-copy, .gallery-list .list-action { padding-inline: 16px; }
+  .gallery-list .list-copy h3 { margin: 0; font: 550 22px/1.35 Fraunces, serif; }
+  .gallery-list .list-description { display: none; }
+  .gallery-list .list-action { flex-direction: row; justify-content: space-between; flex-wrap: wrap; font-size: 14px; }
+  .list-manga-credit, .list-art-credit { padding-inline: 16px; }
+}
+
+/* Page controls share the gallery's quiet, square control styling. */
+#pieces { scroll-margin-top: 20px; }
+.gallery-page-options { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; margin-block: 0 20px; font-size: 14px; }
+.gallery-page-options[hidden], .gallery-pagination[hidden], .gallery-list-actions[hidden], #load-more[hidden] { display: none; }
+.gallery-page-options p { margin: 0; color: var(--archive-muted); }
+.gallery-page-size { display: flex; align-items: center; gap: 12px; }
+.gallery-page-size .form-select { width: auto; min-width: 76px; min-height: 44px; font-size: 14px; }
+.gallery-pagination { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; border-top: 1px solid var(--archive-rule); margin-top: 28px; padding-top: 20px; }
+.pagination-pages { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px; list-style: none; padding: 0; margin: 0; font-variant-numeric: tabular-nums; }
+.gallery-pagination .btn { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; font-size: 14px; }
+.gallery-pagination [aria-current="page"] { background: var(--ink); border-color: var(--ink); color: var(--paper); font-weight: 700; }
+.pagination-gap { padding-inline: 8px; color: var(--archive-muted); }
+.gallery-list-actions { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--archive-rule); text-align: center; }
+.gallery-list-actions p { margin: 0 0 12px; color: var(--archive-muted); font-size: 14px; }
+.list-browse-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.list-browse-actions .btn { display: inline-flex; align-items: center; min-height: 44px; }
+#collection-title { scroll-margin-top: 20px; }
+@media (max-width: 767px) {
+  .gallery-page-options { align-items: flex-start; gap: 8px; }
+  .gallery-page-size { justify-content: space-between; width: 100%; }
+  .gallery-pagination { justify-content: space-between; gap: 8px; }
+  .gallery-pagination .btn { padding-inline: 10px; }
+  .pagination-pages { order: -1; flex-basis: 100%; }
+}

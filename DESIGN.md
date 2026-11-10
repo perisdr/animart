@@ -127,7 +127,7 @@ Self-host Fraunces for the opening invitation, AI Crossover titles, and collecti
 - Opening invitation: use the display role; at intermediate widths it becomes 42px and on phones 38px.
 - Gallery titles: use the title role with a 1.35 line height. Featured and phone-feed titles become 22px on phones. Desktop grid titles remain 24px through the collection override; List titles use their larger responsive scale.
 - Detail title: use the detail role, preserving its larger scale and the same font, weight, line height, and title colors as gallery titles.
-- Credits: use the credit role. Phone gallery credits use 15px with the same 1.4 line height. Pair left-aligned manga credit with right-aligned artist credit and year.
+- Credits: use the credit role. Phone gallery credits use 15px with the same 1.4 line height. Pair left-aligned manga credit with right-aligned artist credit and year in Grid and Slider. List uses the preview-width layout described below.
 - Reading text: use the body role. The personal note uses Fraunces with a 1.4 line height; the story lead uses Source Sans 3 with a 1.5 line height. Keep longer descriptions within their existing 55–70ch measures.
 - Download group labels: use the downloadLabel role; file rows use Source Sans 3 at 14px, with tabular file sizes.
 
@@ -139,7 +139,7 @@ Use fluid containers with Bootstrap gutters: 24px horizontal page padding on sma
 
 Above 991px, place the introduction beside the featured image in a narrow/wide split. At 991px and below, move it above the image; at 767px and below, stack the introduction text. Keep gallery titles above images and bylines below them. Bylines wrap naturally rather than squeezing or clipping creator names.
 
-Desktop visitors can choose Grid, Slider, or List. At 767px and below, use the single-column phone feed and hide the view switch. Filters open through a compact disclosure at every size. List places the manga credit beneath its preview and retains artist information beside the title. Slider places both credits below its large preview.
+Desktop visitors can choose Grid, Slider, or List. At 767px and below, use a single-column phone feed for Grid and List and hide the view switch; explicit Slider URLs retain the responsive slider. Filters open through a compact disclosure at every size. List keeps both creator credits in its image column. When the preview is wider than 520px, place manga left and original artist right beneath it; otherwise place manga above-left and original artist below-left. Neither credit belongs in the description column. Slider places both credits below its large preview.
 
 Desktop details use a centered native dialog up to 1120px wide, with 32px side padding and a viewport-height limit. Phone details fill the screen and use 16px side padding. The close toolbar stays at the top while dialog content scrolls. Download panels are positioned relative to the viewport, open above or below their trigger as space allows, and scroll internally when needed.
 
@@ -153,6 +153,12 @@ Controls, inputs, dialog edges, and gallery frames are square. Download panels h
 
 ## Components
 
+### View-specific listings
+
+Keep separate listing templates for Grid, List, and Slider, sharing only content helpers such as paired title markup, creator credit text, images, and downloads. Grid owns its cards and phone feed; List owns its image-column credits, description, and action layout; Slider owns its large preview, source reference, and navigation. Load more must append the same List template used for the initial batch.
+
+List credit layout responds to the actual preview width through its image-column container. At 520px and below, use manga credit above the image and original artist credit below, both left-aligned. Above that width, use a two-column credit row below the image. On phones, stack the title, preview with its credits, and actions; keep images full-width and use 16px insets for text.
+
 ### Titles and creator bylines
 
 Use shared title markup for the gallery and dialog. Gallery titles are links with hover/focus underlining; the detail heading remains a heading. Under previews, show Manga by followed by the credited manga creator or creators, using the existing artist-credit typography. Keep the original artist's After credit and year. Death Note credits both its writer and illustrator.
@@ -160,6 +166,18 @@ Use shared title markup for the gallery and dialog. Gallery titles are links wit
 ### Gallery controls and search
 
 Use bordered rectangular view buttons, with plum fill and lavender text for the selected state. Filters use a compact disclosure with an inline SVG icon; the phone trigger is a 44px square. Search and selects have at least 48px height, pale fills, and fine rule-colored borders. Preserve visible focus, the input caret color, and the selected-state semantics. Header navigation uses Source Sans 3 at weight 650, with hover underlining.
+
+### Gallery pagination and incremental loading
+
+Place the result range and a labelled size select above the listings. Grid defaults to six AI Crossovers per page and uses numbered page links beneath the results, with Previous and Next where available. Show all pages when there are at most five intermediate pages; otherwise retain the first three, last three, current page, and its neighbours, separating skipped ranges with non-interactive ellipses. Mark the current link with aria-current, use a labelled navigation landmark, and preserve real page URLs and browser history. Hide pagination for a single page.
+
+List defaults to four AI Crossovers per batch. Its Load more button appends the next selected batch without replacing existing entries or scrolling to the beginning. Focus the first newly added title without moving the viewport. Show how many entries are visible, hide Load more at the end, and retain a Go to top link that focuses and scrolls to the collection heading.
+
+Offer 4, 6, 8, 10, and 12 in both views, retaining their settings independently during the session. The phone feed follows the selected view: Grid uses page links and List uses batch loading. Wrap numbered links to fit narrow screens. Slider keeps its own navigation without pagination or batch controls. Use the existing square controls, muted plum status text, fine top rule, and at least 44px interaction targets. Reset after filter or size changes. Grid page changes focus the collection heading and use a 1100ms cubic ease-in-out scroll, retaining its small top margin. Use immediate scrolling when reduced motion is requested. The List Go to top link uses the same heading transition. Wheel, touch, pointer, or keyboard input interrupts the guided scroll. New List batches reveal over 650ms with a 16px rise, a subtle clipping reveal, and a 70ms stagger capped at 350ms; use the existing cubic-bezier(.22,1,.36,1) easing. Skip these animations for reduced motion, including when that preference changes during a transition. Keep catalogue statistics independent of the visible entries, and preserve the current page or loaded batches when opening and closing details.
+
+### Shareable gallery state
+
+Keep view, filters, and navigation state in the query string. Use view=grid, view=list, or view=slider; page is the Grid page, loaded List batch count, or Slider position respectively. Use pageSize for Grid and List, with their defaults of six and four. Preserve q, anime, artist, and artwork filters and the piece hash for detail links. Restore these values on direct navigation, reload, and browser Back/Forward, including on phones. Open the relevant filter disclosures for URL-supplied filters. Normalize invalid view and size values to defaults and constrain pages to the available results.
 
 ### Downloads
 

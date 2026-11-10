@@ -1,5 +1,5 @@
 'use strict';
-const SITE_BUILD = '2026.11.06.3';
+const SITE_BUILD = '2026.11.10.6';
 const buildLabel = document.querySelector('#site-build');
 if (buildLabel) {
   buildLabel.textContent = 'Build ' + SITE_BUILD;
@@ -9,7 +9,15 @@ const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>'
 const root = document.querySelector('#pieces');
 const controls = {q:document.querySelector('#search'),anime:document.querySelector('#anime'),artist:document.querySelector('#artist'),artwork:document.querySelector('#artwork')};
 const normalize = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-function readFilters(){const params=new URLSearchParams(location.search);for(const [name,control] of Object.entries(controls))control.value=params.get(name)||'';}
+function readFilters(){
+  const params = new URLSearchParams(location.search);
+  for (const [name, control] of Object.entries(controls)) control.value = params.get(name) || '';
+  if (Object.values(controls).some(control => control.value)) {
+    filterToggle.setAttribute('aria-expanded', 'true');
+    document.querySelector('#gallery-filters').classList.add('is-open');
+    if (controls.artist.value || controls.artwork.value) document.querySelector('.additional-filters').open = true;
+  }
+}
 function clearFilters(){Object.values(controls).forEach(control=>control.value='');filter();}
 function fillSelect(name,values){const select=controls[name];select.length=1;[...new Set(values)].sort((a,b)=>a.localeCompare(b)).forEach(value=>select.add(new Option(value,value)));}
 
@@ -22,6 +30,212 @@ filterToggle.addEventListener('click', () => {
   document.querySelector('#gallery-filters').classList.toggle('is-open', open);
 });
 let view = 'grid', currentId = null, records = [], filtered = [];
+const galleryPages = {grid: {page: 1, size: 6}, list: {page: 1, size: 4}};
+const pageOptions = document.querySelector('#gallery-page-options');
+const pagination = document.querySelector('#gallery-pagination');
+const pageSize = document.querySelector('#page-size');
+const listActions = document.querySelector('#gallery-list-actions');
+const collectionTitle = document.querySelector('#collection-title');
+const baseTitle = document.title;
+const listingView = () => view;
+const pageSizes = [4, 6, 8, 10, 12];
+let sliderPage = 1;
+const galleryLocationKey = () => {
+  const params = new URLSearchParams(location.search);
+  return JSON.stringify([...Object.keys(controls), 'view', 'page', 'pageSize'].map(name => params.get(name)));
+};
+let lastGalleryLocation = galleryLocationKey();
+
+function parseGalleryLocation(search) {
+  const params = new URLSearchParams(search);
+  const mode = ['grid', 'list', 'slider'].includes(params.get('view')) ? params.get('view') : 'grid';
+  const requestedPage = Number(params.get('page'));
+  const requestedSize = Number(params.get('pageSize'));
+  return {
+    view: mode,
+    page: Number.isSafeInteger(requestedPage) && requestedPage > 0 ? requestedPage : 1,
+    size: mode === 'slider' ? 1 : pageSizes.includes(requestedSize) ? requestedSize : mode === 'list' ? 4 : 6
+  };
+}
+
+function readGalleryLocation() {
+  const state = parseGalleryLocation(location.search);
+  view = state.view;
+  if (view === 'slider') sliderPage = state.page;
+  else Object.assign(galleryPages[view], {page: state.page, size: state.size});
+  lastGalleryLocation = galleryLocationKey();
+}
+
+function writeGalleryLocation(push = false) {
+  const url = new URL(location.href);
+  for (const [name, control] of Object.entries(controls)) {
+    if (control.value) url.searchParams.set(name, control.value);
+    else url.searchParams.delete(name);
+  }
+  url.searchParams.set('view', view);
+  url.searchParams.set('page', view === 'slider' ? sliderPage : galleryPages[view].page);
+  if (view === 'slider') url.searchParams.delete('pageSize');
+  else url.searchParams.set('pageSize', galleryPages[view].size);
+  if (url.href !== location.href) history[push ? 'pushState' : 'replaceState'](null, '', url);
+  lastGalleryLocation = galleryLocationKey();
+}
+
+function paginationPages(total, current) {
+  if (total <= 7) return Array.from({length: total}, (_, index) => index + 1);
+  const visible = new Set([1, 2, 3, total - 2, total - 1, total]);
+  for (let page = current - 1; page <= current + 1; page++) {
+    if (page >= 1 && page <= total) visible.add(page);
+  }
+  const pages = [...visible].sort((a, b) => a - b);
+  const result = [];
+  pages.forEach((page, index) => {
+    const previous = pages[index - 1];
+    if (page - previous === 2) result.push(previous + 1);
+    else if (page - previous > 2) result.push(null);
+    result.push(page);
+  });
+  return result;
+}
+
+function pageLink(page, text, attributes = '') {
+  const url = new URL(location.href);
+  url.searchParams.set('view', 'grid');
+  url.searchParams.set('page', page);
+  url.searchParams.set('pageSize', galleryPages.grid.size);
+  url.hash = 'collection-title';
+  return `<a class="btn btn-outline-dark" href="${esc(url.pathname + url.search + url.hash)}" data-page="${page}" aria-controls="pieces" ${attributes}>${text}</a>`;
+}
+
+function pageRecords() {
+  const mode = listingView();
+  const state = galleryPages[mode];
+  const visible = Boolean(state && filtered.length);
+  pageOptions.hidden = !visible;
+  pagination.hidden = true;
+  listActions.hidden = !visible || mode !== 'list';
+  document.title = baseTitle;
+  if (!visible) {
+    if (state && !filtered.length) state.page = 1;
+    return filtered;
+  }
+  const totalPages = Math.ceil(filtered.length / state.size);
+  state.page = Math.min(state.page, totalPages);
+  const start = mode === 'list' ? 0 : (state.page - 1) * state.size;
+  const end = Math.min(state.page * state.size, filtered.length);
+  pageSize.value = String(state.size);
+  document.querySelector('label[for="page-size"]').textContent = mode === 'list' ? 'AI Crossovers per batch' : 'AI Crossovers per page';
+  document.querySelector('#gallery-range').textContent = `Showing ${start + 1}–${end} of ${filtered.length} AI Crossovers`;
+  if (mode === 'list') {
+    const more = document.querySelector('#load-more');
+    more.hidden = end === filtered.length;
+    more.setAttribute('aria-label', `Load ${Math.min(state.size, filtered.length - end)} more AI Crossovers`);
+    document.querySelector('#list-progress').textContent = end === filtered.length ? `All ${filtered.length} AI Crossovers shown` : `${end} of ${filtered.length} AI Crossovers shown`;
+  } else {
+    pagination.hidden = totalPages === 1;
+    const pages = paginationPages(totalPages, state.page).map(page => page === null
+      ? '<li class="pagination-gap"><span aria-hidden="true">…</span><span class="visually-hidden">Skipped pages</span></li>'
+      : `<li>${pageLink(page, page, `aria-label="Page ${page} of ${totalPages}"${page === state.page ? ' aria-current="page"' : ''}`)}</li>`).join('');
+    pagination.innerHTML = `${state.page > 1 ? pageLink(state.page - 1, 'Previous', 'rel="prev" aria-label="Previous page"') : ''}<ul class="pagination-pages">${pages}</ul>${state.page < totalPages ? pageLink(state.page + 1, 'Next', 'rel="next" aria-label="Next page"') : ''}`;
+    if (totalPages > 1) document.title = `The collection (page ${state.page} of ${totalPages}) — Animart`;
+  }
+  return filtered.slice(start, end);
+}
+
+let anchorScrollFrame = 0;
+function cancelAnchorScroll() {
+  cancelAnimationFrame(anchorScrollFrame);
+  anchorScrollFrame = 0;
+}
+// Let deliberate user input interrupt a guided scroll immediately.
+for (const event of ['wheel', 'touchstart', 'pointerdown', 'keydown']) {
+  window.addEventListener(event, cancelAnchorScroll, {passive: true});
+}
+
+function scrollToCollectionHeading() {
+  cancelAnchorScroll();
+  collectionTitle.focus({preventScroll: true});
+  const margin = parseFloat(getComputedStyle(collectionTitle).scrollMarginTop) || 0;
+  const maximum = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+  const destination = Math.min(maximum, Math.max(0, window.scrollY + collectionTitle.getBoundingClientRect().top - margin));
+  const origin = window.scrollY;
+  const distance = destination - origin;
+  if (reducedMotion.matches || Math.abs(distance) < 1) {
+    window.scrollTo({top: destination, behavior: 'instant'});
+    return;
+  }
+  const started = performance.now();
+  const duration = 1100;
+  function step(now) {
+    const progress = Math.min(1, (now - started) / duration);
+    const eased = progress < .5 ? 4 * progress ** 3 : 1 - (-2 * progress + 2) ** 3 / 2;
+    window.scrollTo({top: origin + distance * eased, behavior: 'instant'});
+    anchorScrollFrame = progress < 1 ? requestAnimationFrame(step) : 0;
+  }
+  anchorScrollFrame = requestAnimationFrame(step);
+}
+
+function revealListAdditions(start) {
+  if (reducedMotion.matches) return;
+  Array.from(root.children).slice(start).forEach((entry, index) => {
+    entry.animate([
+      {opacity: .35, transform: 'translateY(16px)', clipPath: 'inset(0 0 10% 0)'},
+      {opacity: 1, transform: 'none', clipPath: 'inset(0 0 0 0)'}
+    ], {duration: 650, delay: Math.min(index * 70, 350), easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards'});
+  });
+}
+
+function scrollToGalleryStart() {
+  if (listingView() === 'grid') {
+    scrollToCollectionHeading();
+    return;
+  }
+  root.querySelector('h3 a')?.focus({preventScroll: true});
+  root.scrollIntoView({behavior: 'instant', block: 'start'});
+}
+
+pagination.addEventListener('click', event => {
+  const link = event.target.closest('a[data-page]');
+  if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  const page = Number(link.dataset.page);
+  if (page === galleryPages.grid.page) return;
+  galleryPages.grid.page = page;
+  history.pushState(null, '', link.href);
+  lastGalleryLocation = galleryLocationKey();
+  render();
+  scrollToGalleryStart();
+});
+
+document.querySelector('#load-more').addEventListener('click', () => {
+  if (listingView() !== 'list') return;
+  const count = root.querySelectorAll(':scope > article').length;
+  const state = galleryPages.list;
+  if (count >= filtered.length) return;
+  state.page++;
+  const additions = filtered.slice(count, state.page * state.size);
+  root.insertAdjacentHTML('beforeend', additions.map(listListing).join(''));
+  revealListAdditions(count);
+  pageRecords();
+  writeGalleryLocation();
+  root.children[count]?.querySelector('h3 a')?.focus({preventScroll: true});
+});
+
+document.querySelector('#gallery-go-top').addEventListener('click', event => {
+  event.preventDefault();
+  scrollToCollectionHeading();
+});
+
+pageSize.addEventListener('change', () => {
+  const state = galleryPages[listingView()];
+  const size = Number(pageSize.value);
+  if (!state || !pageSizes.includes(size)) return;
+  state.size = size;
+  state.page = 1;
+  render();
+  writeGalleryLocation(true);
+  scrollToGalleryStart();
+});
+
 const path = p => esc(encodeURI(p));
 const detail = r => `#piece=${encodeURIComponent(r.id)}`;
 const defaultDownload = r => r.downloads.find(d => d.label === 'Tinified 1080p') || r.downloads[0];
@@ -94,22 +308,30 @@ const crossoverHeading = (r, level = 3) => `<h${level}><a class="crossover-title
 const artistCredit = r => `<p class="artist-credit">After ${esc(r.artwork.artist)}${r.artwork.year ? ` · ${esc(r.artwork.year)}` : ""}</p>`;
 const mangaCredit = r => `<p class="artist-credit manga-credit">Manga by ${esc(r.anime.mangaCreator)}</p>`;
 const crossoverCredits = r => `<div class="crossover-byline">${mangaCredit(r)}${artistCredit(r)}</div>`;
-const meta = r => crossoverHeading(r) + artistCredit(r);
+// Each view owns its listing layout; only the content helpers are shared.
+const gridListing = r => mobile.matches ? `<article>${crossoverHeading(r)}<a class="mobile-crossover preview-link" href="${detail(r)}">${image(r)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="mobile-caption">${crossoverCredits(r)}<div class="featured-actions">${downloadButton(r,'mobile')}</div></div></article>` : `<article class="col-md-6 col-xl-4"><div class="piece">${crossoverHeading(r)}<a class="preview-link" href="${detail(r)}">${image(r)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="piece-copy">${crossoverCredits(r)}${downloadButton(r,"grid")}</div></div></article>`;
+const listListing = r => `<article class="list-piece"><div class="list-copy">${crossoverHeading(r)}<p class="list-description">${esc(r.artwork.description || '')}</p></div><div class="list-preview"><div class="list-media"><div class="list-manga-credit">${mangaCredit(r)}</div><a class="list-image preview-link" href="${detail(r)}">${image(r)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="list-art-credit">${artistCredit(r)}</div></div></div><div class="list-action"><span>1920 × 1080</span><a href="${detail(r)}">Explore & download →</a></div></article>`;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 reducedMotion.addEventListener('change', () => {
   if (reducedMotion.matches) {
+    if (anchorScrollFrame) {
+      cancelAnchorScroll();
+      collectionTitle.scrollIntoView({behavior: 'instant', block: 'start'});
+    }
     root.getAnimations({subtree:true}).forEach(animation => animation.cancel());
     root.querySelectorAll('.slide-outgoing').forEach(image => image.remove());
   }
 });
-const sliderStage = (r,i) => `<section class="slider-stage" aria-label="AI Crossover viewer" aria-roledescription="carousel"><div class="slider-art">${crossoverHeading(r)}<a class="preview-link" href="${detail(r)}">${image(r,true)}<span class="explore-orb" aria-hidden="true">Explore</span></a>${crossoverCredits(r)}<div class="slide-navigation"><button class="btn" id="previous" aria-label="Previous AI Crossover" ${filtered.length===1?'disabled':''}>←</button><p role="status">${i+1} / ${filtered.length} <span>— ${esc(r.anime.name)}</span></p><button class="btn" id="next" aria-label="Next AI Crossover" ${filtered.length===1?'disabled':''}>→</button></div></div><aside class="slider-caption"><p class="slide-description">${esc(r.artwork.description||'')}</p>${r.artwork.preview?`<figure class="source-reference"><img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} — original artwork"><figcaption>The original artwork</figcaption></figure>`:''}${downloadButton(r, "slider")}</aside></section>`;
+const sliderListing = (r,i) => `<section class="slider-stage" aria-label="AI Crossover viewer" aria-roledescription="carousel"><div class="slider-art">${crossoverHeading(r)}<a class="preview-link" href="${detail(r)}">${image(r,true)}<span class="explore-orb" aria-hidden="true">Explore</span></a>${crossoverCredits(r)}<div class="slide-navigation"><button class="btn" id="previous" aria-label="Previous AI Crossover" ${filtered.length===1?'disabled':''}>←</button><p role="status">${i+1} / ${filtered.length} <span>— ${esc(r.anime.name)}</span></p><button class="btn" id="next" aria-label="Next AI Crossover" ${filtered.length===1?'disabled':''}>→</button></div></div><aside class="slider-caption"><p class="slide-description">${esc(r.artwork.description||'')}</p>${r.artwork.preview?`<figure class="source-reference"><img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} — original artwork"><figcaption>The original artwork</figcaption></figure>`:''}${downloadButton(r, "slider")}</aside></section>`;
 function changeSlide(id, focusId, direction = 1) {
   if (id === currentId) return;
   const previousImage = root.querySelector('.slider-art > a > img');
   const outgoing = previousImage?.cloneNode(true);
   currentId = id;
   const index = filtered.findIndex(record => record.id === id);
-  root.querySelector('.slider-stage').outerHTML = sliderStage(filtered[index],index);
+  sliderPage = index + 1;
+  writeGalleryLocation();
+  root.querySelector('.slider-stage').outerHTML = sliderListing(filtered[index],index);
   document.getElementById(focusId)?.focus({preventScroll:true});
   const incoming = root.querySelector('.slider-art > a > img');
   if (!incoming || !outgoing || reducedMotion.matches) return;
@@ -131,17 +353,19 @@ function render() {
   document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
   document.querySelector('#count').textContent = `${filtered.length} of ${records.length} AI Crossovers`;
   root.className = `gallery-${view}`;
+  const listings = pageRecords();
   if (!filtered.length) { root.innerHTML='<div class="gallery-empty"><h3>No AI Crossovers found.</h3><p>Try another search or return to the full collection.</p><button type="button" class="btn btn-outline-dark" id="reset-gallery">Clear filters</button></div>';document.querySelector('#reset-gallery').onclick=()=>{clearFilters();document.querySelector('#search').focus();};return; }
   if (!filtered.some(r => r.id === currentId)) currentId = filtered[0].id;
-  if (mobile.matches) {
-    root.className = 'gallery-mobile';
-    root.innerHTML = filtered.map(r => `<article>${crossoverHeading(r)}<a class="mobile-crossover preview-link" href="${detail(r)}">${image(r)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="mobile-caption">${crossoverCredits(r)}<div class="featured-actions">${downloadButton(r,'mobile')}</div></div></article>`).join('');
+  if (view === 'grid') {
+    root.className = mobile.matches ? 'gallery-mobile' : 'gallery-grid';
+    const entries = listings.map(gridListing).join('');
+    root.innerHTML = mobile.matches ? entries : `<div class="row g-4">${entries}</div>`;
     return;
   }
-  if (view === 'grid') { root.innerHTML = `<div class="row g-4">${filtered.map(r=>`<article class="col-md-6 col-xl-4"><div class="piece">${crossoverHeading(r)}<a class="preview-link" href="${detail(r)}">${image(r)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="piece-copy">${crossoverCredits(r)}${downloadButton(r,"grid")}</div></div></article>`).join('')}</div>`;return; }
-  if (view === 'list') { root.innerHTML = filtered.map(r=>`<article class="list-piece"><div class="list-preview"><a class="list-image preview-link" href="${detail(r)}">${image(r)}<span class="explore-orb" aria-hidden="true">Explore</span></a>${mangaCredit(r)}</div><div class="list-copy">${meta(r)}<p class="list-description">${esc(r.artwork.description || '')}</p></div><div class="list-action"><span>1920 × 1080</span><a href="${detail(r)}">Explore & download →</a></div></article>`).join('');return; }
+  if (view === 'list') { root.innerHTML = listings.map(listListing).join('');return; }
   const i=filtered.findIndex(r=>r.id===currentId),r=filtered[i];
-  root.innerHTML=sliderStage(r,i);
+  sliderPage = i + 1;
+  root.innerHTML=sliderListing(r,i);
 }
 root.addEventListener('click', event => {
   const button = event.target.closest('#previous, #next');
@@ -159,22 +383,31 @@ root.addEventListener('keydown', event => {
   const index = filtered.findIndex(record => record.id === currentId);
   changeSlide(filtered[(index + amount + filtered.length) % filtered.length].id,event.target.id || null,amount);
 });
-function filter(updateURL=true){
+function filter(updateURL=true, resetPages=true){
+  if (resetPages) Object.values(galleryPages).forEach(state => { state.page = 1; });
   const words=normalize(controls.q.value.trim()).split(/\s+/).filter(Boolean);
   filtered=records.filter(r=>{
     const text=normalize([r.anime.name,...(r.anime.aliases||[]),r.anime.description,r.anime.mangaCreator,r.artwork.title,r.artwork.artist,r.artwork.description,...(r.tags||[])].filter(Boolean).join(' '));
     return (!controls.anime.value||r.anime.name===controls.anime.value)&&(!controls.artist.value||r.artwork.artist===controls.artist.value)&&(!controls.artwork.value||r.artwork.title===controls.artwork.value)&&words.every(word=>text.includes(word));
   });
   document.querySelector('#clear-filters').hidden=!Object.values(controls).some(control=>control.value);
-  if(updateURL){const url=new URL(location.href);for(const [name,control] of Object.entries(controls)){if(control.value)url.searchParams.set(name,control.value);else url.searchParams.delete(name);}history.replaceState(null,'',url);}
+  if (view === 'slider') {
+    if (resetPages) sliderPage = 1;
+    sliderPage = Math.min(sliderPage, Math.max(1, filtered.length));
+    currentId = filtered[sliderPage - 1]?.id || null;
+  }
   render();
+  if (updateURL) writeGalleryLocation();
 }
-document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{view=b.dataset.view;render();});
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{view=b.dataset.view;render();writeGalleryLocation(true);});
 controls.q.addEventListener('input',()=>filter());
 for(const name of ['anime','artist','artwork'])controls[name].addEventListener('change',()=>filter());
 document.querySelector('#clear-filters').addEventListener('click',clearFilters);
 async function loadGallery(){
   document.querySelector('#load-error').hidden=true;
+  pageOptions.hidden=true;
+  pagination.hidden=true;
+  listActions.hidden=true;
   document.querySelector('.collection-update').hidden=true;
   document.querySelector('#count').textContent='Loading the collection…';
   try{
@@ -186,7 +419,7 @@ async function loadGallery(){
     const order=name=>name==='One Piece'?0:/Fullmetal|FMA/.test(name)?1:name==='Death Note'?2:3;
     records.sort((a,b)=>order(a.anime.name)-order(b.anime.name));
     fillSelect('anime',records.map(r=>r.anime.name));fillSelect('artist',records.map(r=>r.artwork.artist));fillSelect('artwork',records.map(r=>r.artwork.title));
-    renderCollectionUpdate();currentId=records[0].id;readFilters();filter(false);syncDetail();
+    renderCollectionUpdate();currentId=records[0].id;readFilters();readGalleryLocation();filter(false,false);writeGalleryLocation();syncDetail();
   }catch(error){root.innerHTML='';document.querySelector('#load-error').hidden=false;document.querySelector('#count').textContent='Collection unavailable';console.error('Unable to load collection:',error);}
 }
 document.querySelector('#retry').addEventListener('click',loadGallery);
@@ -359,5 +592,16 @@ document.addEventListener('error',event=>{
   const message=document.createElement('span');message.className='image-unavailable';message.textContent='Preview unavailable: '+img.alt;img.replaceWith(message);
 },true);
 crossoverDialog.addEventListener('click',event=>{if(event.target!==crossoverDialog)return;const rect=crossoverDialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)closeDetail();});
-window.addEventListener('popstate',()=>{readFilters();filter(false);syncDetail();});
+window.addEventListener('popstate',()=>{
+  // Hash-only detail navigation preserves the loaded List entries and focused link.
+  if (galleryLocationKey() !== lastGalleryLocation) {
+    cancelAnchorScroll();
+    readFilters();
+    readGalleryLocation();
+    filter(false, false);
+    writeGalleryLocation();
+    if (!location.hash.startsWith('#piece=')) scrollToGalleryStart();
+  }
+  syncDetail();
+});
 loadGallery();

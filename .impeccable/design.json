@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-05T23:24:09.842994+00:00",
+  "generatedAt": "2026-11-10T06:42:23.814227+00:00",
   "title": "Design System: Animart — Cel Archive",
   "extensions": {
     "typographyMeta": {
@@ -56,6 +56,21 @@
         "name": "control-feedback-duration",
         "purpose": "Gallery control color transitions.",
         "value": "140ms"
+      },
+      {
+        "name": "gallery-heading-scroll",
+        "value": "1100ms cubic ease-in-out",
+        "purpose": "Guided scroll to the collection heading; user input interrupts and reduced motion jumps immediately."
+      },
+      {
+        "name": "list-batch-reveal",
+        "value": "650ms cubic-bezier(.22,1,.36,1)",
+        "purpose": "Fade, 16px rise, and clipping reveal for appended List entries; skipped for reduced motion."
+      },
+      {
+        "name": "list-batch-stagger",
+        "value": "70ms, capped at 350ms",
+        "purpose": "Separate new List entries without delaying long batches excessively."
       }
     ],
     "breakpoints": [
@@ -323,7 +338,7 @@
     {
       "name": "Creator byline",
       "kind": "custom",
-      "description": "Equal credit typography with manga left and artist right.",
+      "description": "Grid and Slider pair manga left with artist right; List owns a separate responsive layout around its preview.",
       "html": "<div class=\"ds-byline\"><p>Manga by Tsugumi Ohba &amp; Takeshi Obata</p><p>After Edward Hopper · 1942</p></div>",
       "css": ".ds-byline{display:flex;flex-wrap:wrap;gap:0 16px;width:100%;color:var(--archive-muted,#614e72)}.ds-byline p{flex:1 1 180px;margin:8px 0 0;font:400 14px/1.4 Source,sans-serif}.ds-byline p:last-child{text-align:right} :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
     },
@@ -341,6 +356,20 @@
       "description": "Underlined expansion button beneath the prompt preview.",
       "html": "<section class=\"ds-prompt\"><h3>The Prompt</h3><p>Archived prompt preview…</p><button class=\"ds-prompt-toggle\" aria-expanded=\"false\">Click here to view more</button></section>",
       "css": ".ds-prompt{background:var(--archive-panel,#e8def3);border-top:1px solid var(--archive-rule,#a995bb);padding:20px 28px;color:var(--ink,#29163b);font:17px Source,sans-serif}.ds-prompt h3{font-size:28px;font-weight:700;margin:0}.ds-prompt p{line-height:1.7}.ds-prompt-toggle{display:block;border:0;border-bottom:1px solid currentColor;background:transparent;color:inherit;padding:10px 0;min-height:44px;font:700 17px Source,sans-serif;cursor:pointer;text-align:left}.ds-prompt-toggle:hover{color:var(--red,#633988)} :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
+    },
+    {
+      "name": "Gallery pagination",
+      "kind": "nav",
+      "description": "Numbered Grid links with current-page semantics; List uses incremental loading.",
+      "html": "<nav class=\"ds-pagination\" aria-label=\"Gallery pages\"><a href=\"?view=grid&amp;page=1&amp;pageSize=6#collection\" aria-label=\"Page 1 of 2\" aria-current=\"page\">1</a><a href=\"?view=grid&amp;page=2&amp;pageSize=6#collection\" aria-label=\"Page 2 of 2\">2</a><a href=\"?view=grid&amp;page=2&amp;pageSize=6#collection\" rel=\"next\">Next</a></nav>",
+      "css": ".ds-pagination{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px;border-top:1px solid var(--archive-rule,#a995bb);margin-top:28px;padding-top:20px;font:14px Source,sans-serif}.ds-pagination a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:6px 12px;border:1px solid var(--archive-rule,#a995bb);border-radius:0;color:var(--ink,#29163b);text-decoration:none}.ds-pagination a:hover,.ds-pagination [aria-current=page]{background:var(--ink,#29163b);color:var(--paper,#ebe4f3)}.ds-pagination [aria-current=page]{font-weight:700}.ds-pagination a:focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
+    },
+    {
+      "name": "List load more",
+      "kind": "custom",
+      "description": "Append a batch of AI Crossovers or return to the collection heading.",
+      "html": "<div class=\"ds-list-actions\"><p>4 of 12 AI Crossovers shown</p><button type=\"button\">Load more</button><a href=\"#collection-title\">Go to top</a></div>",
+      "css": ".ds-list-actions{border-top:1px solid var(--archive-rule,#a995bb);padding-top:20px;text-align:center;font:17px Source,sans-serif;color:var(--ink,#29163b)}.ds-list-actions p{color:var(--archive-muted,#614e72);font-size:14px;margin:0 0 12px}.ds-list-actions button,.ds-list-actions a{display:inline-flex;align-items:center;min-height:44px;margin:0 6px;padding:6px 12px;border:1px solid var(--archive-rule,#a995bb);border-radius:0;background:transparent;color:inherit;font:inherit;text-decoration:none;cursor:pointer}.ds-list-actions button:hover,.ds-list-actions a:hover{background:var(--ink,#29163b);color:var(--paper,#ebe4f3)}.ds-list-actions :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
     }
   ],
   "narrative": {
