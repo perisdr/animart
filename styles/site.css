@@ -132,7 +132,7 @@ main > .opening { padding-block: 20px 0; }
 .collection .additional-filters summary { width: fit-content; cursor: pointer; font-weight: 650; }
 .collection .gallery-toolbar { border-bottom: 1px solid var(--archive-rule); margin-bottom: 20px; }
 .collection .gallery-grid > .row { --bs-gutter-x: 24px; --bs-gutter-y: 28px; }
-.collection .gallery-grid .piece { border-bottom: 1px solid var(--archive-rule); padding-bottom: 12px; height: 100%; }
+.collection .gallery-grid .piece { border-bottom: 0; padding-bottom: 12px; height: 100%; }
 .collection .gallery-grid .piece h3 { font-size: clamp(21px, 2vw, 30px); }
 .collection .piece .anime { margin-top: 9px; font-size: 14px; }
 .collection .piece small { margin-top: 8px; }
