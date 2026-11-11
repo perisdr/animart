@@ -24,10 +24,22 @@ Keep IDs stable and paths relative, with exact filename case for static hosting.
 Each entry's `addedOn` is its first catalogue addition date (`YYYY-MM-DD`), not
 the date its metadata or downloads changed. Initial dates come from git history.
 Footer counts and last-added date derive from the full catalogue, never filters.
-`artwork.sourceUrl` is the primary original-work reference; use verified WikiArt
-entries when the exact work matches. `artwork.links` holds labelled supplementary
-museum/reference links. Preserve `previewSourceUrl`, credits and reuse terms:
-switching a reference URL does not change the source or rights of a local image.
+Use the verified AniDB entry as the primary reference for every anime title,
+including each film in a multi-film AI Crossover. If AniDB has no matching
+entry, use the exact title's page on TMDB, MyAnimeList, or a comparable catalogue.
+
+For `artwork.sourceUrl`, use the WikiArt entry matching the exact original work
+and version. If none is available, use a verified page for that work from a
+museum, artist's estate, or another reliable reference site.
+
+In **Interesting links** (`artwork.links`), always include a labelled official
+permalink for each featured anime title and original work when available. Look
+for title pages from studios or distributors and collection records from museums
+or artists' estates. Verify that each URL leads directly to the named title or
+work. Exclude time-limited listings such as screenings, ticket sales, and
+temporary exhibition schedules.
+
+Preserve `previewSourceUrl`, credits and reuse terms when changing reference links.
 Document source-verification exceptions in `docs/source-links.md`.
 
 Keep the four download variants and default Tinified 1080p option. Do not regenerate
