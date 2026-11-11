@@ -3,6 +3,8 @@
     "id": "death-note-nighthawks",
     "anime": {
       "name": "Death Note",
+      "mangaCreator": "Tsugumi Ohba & Takeshi Obata",
+      "mangaSourceUrl": "https://www.viz.com/death-note",
       "anidbUrl": "https://anidb.net/anime/4563",
       "aliases": [
         "Desu Noto",
@@ -104,6 +106,8 @@
     "id": "death-note-the-death-of-marat",
     "anime": {
       "name": "Death Note",
+      "mangaCreator": "Tsugumi Ohba & Takeshi Obata",
+      "mangaSourceUrl": "https://www.viz.com/death-note",
       "anidbUrl": "https://anidb.net/anime/4563",
       "aliases": [
         "Desu Noto",
@@ -202,6 +206,8 @@
     "id": "death-note-the-scream",
     "anime": {
       "name": "Death Note",
+      "mangaCreator": "Tsugumi Ohba & Takeshi Obata",
+      "mangaSourceUrl": "https://www.viz.com/death-note",
       "anidbUrl": "https://anidb.net/anime/4563",
       "aliases": [
         "Desu Noto",
@@ -300,6 +306,8 @@
     "id": "death-note-the-son-of-man",
     "anime": {
       "name": "Death Note",
+      "mangaCreator": "Tsugumi Ohba & Takeshi Obata",
+      "mangaSourceUrl": "https://www.viz.com/death-note",
       "anidbUrl": "https://anidb.net/anime/4563",
       "aliases": [
         "Desu Noto",
@@ -394,6 +402,8 @@
     "id": "demon-slayer-mugen-train-turner",
     "anime": {
       "name": "Demon Slayer",
+      "mangaCreator": "Koyoharu Gotouge",
+      "mangaSourceUrl": "https://www.viz.com/demon-slayer-kimetsu-no-yaiba",
       "anidbUrl": "https://anidb.net/anime/14107",
       "aliases": [
         "Kimetsu no Yaiba",
@@ -497,6 +507,8 @@
     "id": "demon-slayer-rengoku-red-fuji",
     "anime": {
       "name": "Demon Slayer",
+      "mangaCreator": "Koyoharu Gotouge",
+      "mangaSourceUrl": "https://www.viz.com/demon-slayer-kimetsu-no-yaiba",
       "anidbUrl": "https://anidb.net/anime/14107",
       "aliases": [
         "Kimetsu no Yaiba",
@@ -600,6 +612,8 @@
     "id": "demon-slayer-shinobu-monet-garden",
     "anime": {
       "name": "Demon Slayer",
+      "mangaCreator": "Koyoharu Gotouge",
+      "mangaSourceUrl": "https://www.viz.com/demon-slayer-kimetsu-no-yaiba",
       "anidbUrl": "https://anidb.net/anime/14107",
       "aliases": [
         "Kimetsu no Yaiba",
@@ -707,6 +721,8 @@
     "id": "demon-slayer-tanjiro-great-wave-corrected",
     "anime": {
       "name": "Demon Slayer",
+      "mangaCreator": "Koyoharu Gotouge",
+      "mangaSourceUrl": "https://www.viz.com/demon-slayer-kimetsu-no-yaiba",
       "anidbUrl": "https://anidb.net/anime/14107",
       "aliases": [
         "Kimetsu no Yaiba",
@@ -810,6 +826,8 @@
     "id": "demon-slayer-tanjiro-moonlit-temple",
     "anime": {
       "name": "Demon Slayer",
+      "mangaCreator": "Koyoharu Gotouge",
+      "mangaSourceUrl": "https://www.viz.com/demon-slayer-kimetsu-no-yaiba",
       "anidbUrl": "https://anidb.net/anime/14107",
       "aliases": [
         "Kimetsu no Yaiba",
@@ -913,6 +931,8 @@
     "id": "fma-fma-creation-of-adam-1920x1080",
     "anime": {
       "name": "Fullmetal Alchemist",
+      "mangaCreator": "Hiromu Arakawa",
+      "mangaSourceUrl": "https://www.viz.com/fullmetal-alchemist",
       "anidbUrl": "https://anidb.net/anime/979",
       "aliases": [
         "FMA",
@@ -1013,6 +1033,8 @@
     "id": "fma-fma-wanderer-1920x1080",
     "anime": {
       "name": "Fullmetal Alchemist",
+      "mangaCreator": "Hiromu Arakawa",
+      "mangaSourceUrl": "https://www.viz.com/fullmetal-alchemist",
       "anidbUrl": "https://anidb.net/anime/979",
       "aliases": [
         "FMA",
@@ -1112,6 +1134,8 @@
     "id": "one-piece-one-piece-great-wave-1920x1080",
     "anime": {
       "name": "One Piece",
+      "mangaCreator": "Eiichiro Oda",
+      "mangaSourceUrl": "https://www.viz.com/one-piece",
       "anidbUrl": "https://anidb.net/anime/69",
       "aliases": [
         "Luffy",

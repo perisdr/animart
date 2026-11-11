@@ -3,47 +3,49 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Animart — Anime, in a different frame</title>
+<script src="scripts/featured.js?v=2026.11.10.6"></script>
 <link rel="stylesheet" href="vendor/bootstrap.min.css">
-<link rel="stylesheet" href="styles/site.css?v=2026.11.03.1">
-<!-- Keep the default gallery image and its responsive sizes in sync with gallery.js. -->
-<link rel="preload" as="image" type="image/webp" fetchpriority="high"
-      imagesrcset="previews/one-piece-one-piece-great-wave-1920x1080.webp 640w, previews/web/one-piece-one-piece-great-wave-1920x1080-1280.webp 1280w, previews/web/one-piece-one-piece-great-wave-1920x1080-1920.webp 1920w"
-      imagesizes="(max-width: 767px) 100vw, (max-width: 991px) calc(100vw - 48px), (min-width: 1500px) 1080px, 70vw">
+<link rel="stylesheet" href="styles/site.css?v=2026.11.11.1">
 <link rel="icon" href="favicon.svg">
-<meta name="theme-color" content="#182a43">
+<meta name="theme-color" content="#29163b">
 <meta name="description" content="Anime meets art: a personal collection of AI Crossovers for TV wallpapers, with original artwork comparisons and generation prompts.">
 <body>
 <a class="skip-link" href="#collection">Skip to collection</a>
 <header class="container-fluid px-4 px-lg-5">
-<a class="brand" href="#" aria-label="Animart home"><img class="brand-logo" src="Assets/branding/animart-on-dark-v1.webp" width="378" height="252" alt="Animart">
-</a>
+<a class="brand" href="#" aria-label="Animart home"><img class="brand-logo" src="Assets/branding/animart-on-light-v1.png" width="1536" height="1024" alt="Animart"></a>
 <nav class="d-flex gap-4" aria-label="Main navigation">
 <a href="#collection">Collection</a>
 <a href="#story">The story</a>
 </nav>
 </header>
 <main>
-<section class="opening">
-<div class="container-fluid px-4 px-lg-5">
-<div class="row align-items-end g-4 title-row">
-<div class="col-lg-8">
-<h1>Anime, in a<br>
-<em>different frame.</em>
-</h1>
+<section class="opening container-fluid px-4 px-lg-5" aria-labelledby="archive-title">
+<div class="archive-intro">
+<div>
+<p class="archive-kicker">The Crossover you didn't know you needed</p>
+<h1 id="archive-title">Anime, in a<br><em>different frame.</em></h1>
 </div>
-<div class="col-lg-4 intro">
-<p>Characters I love. Paintings I’m learning to appreciate.</p>
+<p class="archive-note">Characters I love. Paintings I’m learning to appreciate.</p>
 </div>
-</div>
-</div>
+<div id="featured"></div>
 </section>
 <section id="collection" class="collection container-fluid px-4 px-lg-5">
 <div class="collection-heading d-flex justify-content-between align-items-end flex-wrap gap-3">
-<h2>The collection<span>.</span>
+<h2 id="collection-title" tabindex="-1">The collection<span>.</span>
 </h2>
-<p>16:9 wallpapers · Made for your screen</p>
+<div class="gallery-toolbar d-flex justify-content-between align-items-center flex-wrap gap-3">
+<p id="count" role="status" class="m-0">Loading the collection…</p>
+<button class="btn btn-outline-dark" id="clear-filters" type="button" hidden>Clear filters</button>
+<button type="button" class="btn mobile-filter-toggle" aria-expanded="false" aria-controls="gallery-filters" aria-label="Search and filter the collection"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18l-7 8v7l-4 2v-9z"/></svg><span class="filter-label">Filters</span></button>
+<div class="btn-group view-switch" role="group" aria-label="Gallery view">
+<button class="btn" type="button" data-view="grid" aria-pressed="true">Grid</button>
+<button class="btn" type="button" data-view="slider" aria-pressed="false">Slider</button>
+<button class="btn" type="button" data-view="list" aria-pressed="false">List</button>
 </div>
-<button type="button" class="btn mobile-filter-toggle" aria-expanded="false" aria-controls="gallery-filters">Search & filter</button>
+</div>
+
+</div>
+
 <form id="gallery-filters" class="row g-3 filter-row" onsubmit="return false">
 <div class="col-md-7">
 <label class="form-label" for="search">Search the collection</label>
@@ -77,20 +79,32 @@
 </div>
 </details>
 </form>
-<div class="gallery-toolbar d-flex justify-content-between align-items-center flex-wrap gap-3">
-<p id="count" role="status" class="m-0">Loading the collection…</p>
-<button class="btn btn-outline-dark" id="clear-filters" type="button" hidden>Clear filters</button>
-<div class="btn-group view-switch" role="group" aria-label="Gallery view">
-<button class="btn" type="button" data-view="grid" aria-pressed="false">Grid</button>
-<button class="btn" type="button" data-view="slider" aria-pressed="true">Slider</button>
-<button class="btn" type="button" data-view="list" aria-pressed="false">List</button>
-</div>
-</div>
 <div id="load-error" role="alert" hidden>
 <p>The collection couldn’t load. Please try again.</p>
 <button class="btn btn-outline-dark" id="retry" type="button">Try again</button>
 </div>
+<div id="gallery-page-options" class="gallery-page-options" hidden>
+<p id="gallery-range" role="status"></p>
+<div class="gallery-page-size">
+<label for="page-size">AI Crossovers per page</label>
+<select id="page-size" class="form-select" aria-controls="pieces">
+<option value="4">4</option>
+<option value="6" selected>6</option>
+<option value="8">8</option>
+<option value="10">10</option>
+<option value="12">12</option>
+</select>
+</div>
+</div>
 <div id="pieces">
+</div>
+<nav id="gallery-pagination" class="gallery-pagination" aria-label="Gallery pages" hidden></nav>
+<div id="gallery-list-actions" class="gallery-list-actions" hidden>
+<p id="list-progress"></p>
+<div class="list-browse-actions">
+<button type="button" class="btn btn-outline-dark" id="load-more" aria-controls="pieces">Load more</button>
+<a class="btn btn-outline-dark" id="gallery-go-top" href="#collection-title">Go to top</a>
+</div>
 </div>
 <noscript>
 <p>Enable JavaScript to browse the collection, or <a href="Assets/">browse wallpaper files</a>.</p>
@@ -113,7 +127,7 @@
 </section>
 </main>
 <footer class="container-fluid px-4 px-lg-5 d-flex justify-content-between flex-wrap gap-3">
-<span class="brand"><img class="brand-logo" src="Assets/branding/animart-on-dark-v1.webp" width="378" height="252" alt="Animart"></span>
+<span class="brand"><img class="brand-logo" src="Assets/branding/animart-on-light-v1.png" width="1536" height="1024" alt="Animart"></span>
 <section class="collection-update" aria-labelledby="collection-update-title" hidden>
 <h2 id="collection-update-title">Collection update</h2>
 <p id="last-added"></p>
@@ -122,15 +136,15 @@
 <a href="#collection">Back to collection ↑</a>
 <p id="site-build" class="w-100" hidden></p>
 </footer>
-<dialog id="artwork-dialog" aria-labelledby="artwork-title">
+<dialog id="crossover-dialog" aria-labelledby="crossover-title">
 <div class="detail-toolbar">
 <span>AI Crossover details</span>
-<button class="btn" id="close-artwork" aria-label="Close AI Crossover details">Close ×</button>
+<button class="btn" id="close-crossover" aria-label="Close AI Crossover details">Close ×</button>
 </div>
-<div id="artwork-content">
+<div id="crossover-content">
 </div>
 </dialog>
-<script src="scripts/gallery.js?v=2026.11.03.1">
+<script src="scripts/gallery.js?v=2026.11.11.1">
 </script>
 </body>
 </html>

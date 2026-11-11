@@ -1,5 +1,35 @@
 # Production image audit
 
+## Random featured preview
+
+`scripts/featured.js` runs in the document head, starts the catalogue request,
+and selects one entry for each page load. Web Crypto with rejection sampling
+avoids modulo bias; browsers without Web Crypto use `Math.random()` as a
+best-effort fallback. Repeated selections are allowed. Gallery filters and
+resizing do not select again.
+
+Only the chosen preview receives a responsive, high-priority preload. Its
+`srcset` and `sizes` are shared with the rendered image, which is eager and
+has `fetchpriority="high"` plus intrinsic dimensions. The gallery reuses the
+same catalogue promise and selected entry; no fixed image or full-size PNG
+is preloaded.
+
+This shortens discovery but still requires JavaScript and the catalogue
+response. It cannot guarantee a Lighthouse score or an HTML-discoverable LCP
+image. Choosing at a first-party server/edge and returning matching image
+markup and preload in the HTML would remove that dependency, but requires
+changing the static hosting architecture. A random redirect or download
+alias alone cannot ensure the preload and displayed image match.
+
+PNG download URLs and filenames remain unchanged. Friendly saved filenames
+can be supplied with the anchor's `download` attribute without duplicating
+files; public URL aliases need hosting support and do not improve preview LCP.
+
+Run `node --test scripts/featured.test.cjs` for selection boundary, preload
+consistency, fallback and retry checks.
+
+## Image assets
+
 All production `<img>` sources and responsive candidates are WebP. Downloads and historical mockups are outside this rendering inventory. The 316-byte SVG favicon and inline control SVGs remain vectors; rasterizing these would increase their size and lose scalable edges.
 
 Generated locally with Pillow/libwebp, method 6: quality 85 for AI Crossovers, 90 for the logo. No Tinify API requests or quota were used. Existing 640px catalogue previews and original-work WebPs remain unchanged. No claims are made about the logo’s prior Tinify processing.

@@ -1,22 +1,38 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-03T21:24:16.6195055+02:00",
-  "title": "Design System: Animart",
+  "generatedAt": "2026-11-10T06:42:23.814227+00:00",
+  "title": "Design System: Animart — Cel Archive",
   "extensions": {
     "typographyMeta": {
       "display": {
-        "displayName": "Fraunces display",
-        "purpose": "Headlines and artwork titles; locally hosted SIL OFL font."
+        "displayName": "Display",
+        "purpose": "Opening invitation."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Gallery AI Crossover headings."
+      },
+      "detail": {
+        "displayName": "Detail",
+        "purpose": "Larger paired title in the native detail dialog."
       },
       "body": {
-        "displayName": "Source Sans 3",
-        "purpose": "Reading and interface controls; local CSS family Source."
+        "displayName": "Body",
+        "purpose": "Reading text and controls; Source loads Source Sans 3."
+      },
+      "credit": {
+        "displayName": "Credit",
+        "purpose": "Manga creator and original artist bylines."
+      },
+      "downloadLabel": {
+        "displayName": "DownloadLabel",
+        "purpose": "Resolution group labels."
       }
     },
     "shadows": [
       {
         "name": "wipe-handle",
-        "value": "0 2px 8px #182a4355",
+        "value": "0 2px 8px #29163b55",
         "purpose": "Make the comparison handle legible over artwork."
       }
     ],
@@ -40,6 +56,21 @@
         "name": "control-feedback-duration",
         "purpose": "Gallery control color transitions.",
         "value": "140ms"
+      },
+      {
+        "name": "gallery-heading-scroll",
+        "value": "1100ms cubic ease-in-out",
+        "purpose": "Guided scroll to the collection heading; user input interrupts and reduced motion jumps immediately."
+      },
+      {
+        "name": "list-batch-reveal",
+        "value": "650ms cubic-bezier(.22,1,.36,1)",
+        "purpose": "Fade, 16px rise, and clipping reveal for appended List entries; skipped for reduced motion."
+      },
+      {
+        "name": "list-batch-stagger",
+        "value": "70ms, capped at 350ms",
+        "purpose": "Separate new List entries without delaying long batches excessively."
       }
     ],
     "breakpoints": [
@@ -52,67 +83,329 @@
         "value": "767px"
       },
       {
-        "name": "stacked-slider-max",
+        "name": "stacked-intro-max",
         "value": "991px"
       },
       {
-        "name": "wide-container-min",
-        "value": "1500px"
+        "name": "large-bootstrap-gutter-min",
+        "value": "992px"
       }
-    ]
+    ],
+    "colorMeta": {
+      "lavender": {
+        "role": "neutral",
+        "displayName": "Matte Lavender",
+        "canonical": "#ebe4f3",
+        "tonalRamp": [
+          "oklch(15.00% 0.02139 306.83)",
+          "oklch(26.43% 0.02139 306.83)",
+          "oklch(37.86% 0.02139 306.83)",
+          "oklch(49.29% 0.02139 306.83)",
+          "oklch(60.71% 0.02139 306.83)",
+          "oklch(72.14% 0.02139 306.83)",
+          "oklch(83.57% 0.02139 306.83)",
+          "oklch(95.00% 0.02139 306.83)"
+        ]
+      },
+      "plum": {
+        "role": "primary",
+        "displayName": "Plum Ink",
+        "canonical": "#29163b",
+        "tonalRamp": [
+          "oklch(15.00% 0.07032 305.56)",
+          "oklch(26.43% 0.07032 305.56)",
+          "oklch(37.86% 0.07032 305.56)",
+          "oklch(49.29% 0.07032 305.56)",
+          "oklch(60.71% 0.07032 305.56)",
+          "oklch(72.14% 0.07032 305.56)",
+          "oklch(83.57% 0.07032 305.56)",
+          "oklch(95.00% 0.07032 305.56)"
+        ]
+      },
+      "violet": {
+        "role": "primary",
+        "displayName": "Archive Violet",
+        "canonical": "#633988",
+        "tonalRamp": [
+          "oklch(15.00% 0.13003 306.26)",
+          "oklch(26.43% 0.13003 306.26)",
+          "oklch(37.86% 0.13003 306.26)",
+          "oklch(49.29% 0.13003 306.26)",
+          "oklch(60.71% 0.13003 306.26)",
+          "oklch(72.14% 0.13003 306.26)",
+          "oklch(83.57% 0.13003 306.26)",
+          "oklch(95.00% 0.13003 306.26)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Lavender Rule",
+        "canonical": "#a995bb",
+        "tonalRamp": [
+          "oklch(15.00% 0.05890 308.65)",
+          "oklch(26.43% 0.05890 308.65)",
+          "oklch(37.86% 0.05890 308.65)",
+          "oklch(49.29% 0.05890 308.65)",
+          "oklch(60.71% 0.05890 308.65)",
+          "oklch(72.14% 0.05890 308.65)",
+          "oklch(83.57% 0.05890 308.65)",
+          "oklch(95.00% 0.05890 308.65)"
+        ]
+      },
+      "comparison": {
+        "role": "neutral",
+        "displayName": "Comparison Lavender",
+        "canonical": "#e8def3",
+        "tonalRamp": [
+          "oklch(15.00% 0.03013 307.11)",
+          "oklch(26.43% 0.03013 307.11)",
+          "oklch(37.86% 0.03013 307.11)",
+          "oklch(49.29% 0.03013 307.11)",
+          "oklch(60.71% 0.03013 307.11)",
+          "oklch(72.14% 0.03013 307.11)",
+          "oklch(83.57% 0.03013 307.11)",
+          "oklch(95.00% 0.03013 307.11)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Plum",
+        "canonical": "#614e72",
+        "tonalRamp": [
+          "oklch(15.00% 0.06164 308.19)",
+          "oklch(26.43% 0.06164 308.19)",
+          "oklch(37.86% 0.06164 308.19)",
+          "oklch(49.29% 0.06164 308.19)",
+          "oklch(60.71% 0.06164 308.19)",
+          "oklch(72.14% 0.06164 308.19)",
+          "oklch(83.57% 0.06164 308.19)",
+          "oklch(95.00% 0.06164 308.19)"
+        ]
+      },
+      "anime": {
+        "role": "secondary",
+        "displayName": "Anime Navy",
+        "canonical": "#182a43",
+        "tonalRamp": [
+          "oklch(15.00% 0.05216 256.82)",
+          "oklch(26.43% 0.05216 256.82)",
+          "oklch(37.86% 0.05216 256.82)",
+          "oklch(49.29% 0.05216 256.82)",
+          "oklch(60.71% 0.05216 256.82)",
+          "oklch(72.14% 0.05216 256.82)",
+          "oklch(83.57% 0.05216 256.82)",
+          "oklch(95.00% 0.05216 256.82)"
+        ]
+      },
+      "originalTitle": {
+        "role": "secondary",
+        "displayName": "Original Vermilion",
+        "canonical": "#b83b28",
+        "tonalRamp": [
+          "oklch(15.00% 0.16442 31.45)",
+          "oklch(26.43% 0.16442 31.45)",
+          "oklch(37.86% 0.16442 31.45)",
+          "oklch(49.29% 0.16442 31.45)",
+          "oklch(60.71% 0.16442 31.45)",
+          "oklch(72.14% 0.16442 31.45)",
+          "oklch(83.57% 0.16442 31.45)",
+          "oklch(95.00% 0.16442 31.45)"
+        ]
+      },
+      "cross": {
+        "role": "neutral",
+        "displayName": "Muted Cross",
+        "canonical": "#5d5862",
+        "tonalRamp": [
+          "oklch(15.00% 0.01707 308.06)",
+          "oklch(26.43% 0.01707 308.06)",
+          "oklch(37.86% 0.01707 308.06)",
+          "oklch(49.29% 0.01707 308.06)",
+          "oklch(60.71% 0.01707 308.06)",
+          "oklch(72.14% 0.01707 308.06)",
+          "oklch(83.57% 0.01707 308.06)",
+          "oklch(95.00% 0.01707 308.06)"
+        ]
+      },
+      "input": {
+        "role": "neutral",
+        "displayName": "Pale Lavender Input",
+        "canonical": "#faf7fd",
+        "tonalRamp": [
+          "oklch(15.00% 0.00851 308.36)",
+          "oklch(26.43% 0.00851 308.36)",
+          "oklch(37.86% 0.00851 308.36)",
+          "oklch(49.29% 0.00851 308.36)",
+          "oklch(60.71% 0.00851 308.36)",
+          "oklch(72.14% 0.00851 308.36)",
+          "oklch(83.57% 0.00851 308.36)",
+          "oklch(95.00% 0.00851 308.36)"
+        ]
+      },
+      "download": {
+        "role": "neutral",
+        "displayName": "Warm Cream",
+        "canonical": "#fffaf4",
+        "tonalRamp": [
+          "oklch(15.00% 0.00958 72.66)",
+          "oklch(26.43% 0.00958 72.66)",
+          "oklch(37.86% 0.00958 72.66)",
+          "oklch(49.29% 0.00958 72.66)",
+          "oklch(60.71% 0.00958 72.66)",
+          "oklch(72.14% 0.00958 72.66)",
+          "oklch(83.57% 0.00958 72.66)",
+          "oklch(95.00% 0.00958 72.66)"
+        ]
+      },
+      "downloadRule": {
+        "role": "neutral",
+        "displayName": "Warm Border",
+        "canonical": "#c7b7a9",
+        "tonalRamp": [
+          "oklch(15.00% 0.02673 63.64)",
+          "oklch(26.43% 0.02673 63.64)",
+          "oklch(37.86% 0.02673 63.64)",
+          "oklch(49.29% 0.02673 63.64)",
+          "oklch(60.71% 0.02673 63.64)",
+          "oklch(72.14% 0.02673 63.64)",
+          "oklch(83.57% 0.02673 63.64)",
+          "oklch(95.00% 0.02673 63.64)"
+        ]
+      },
+      "downloadHover": {
+        "role": "neutral",
+        "displayName": "Peach Feedback",
+        "canonical": "#f5e5db",
+        "tonalRamp": [
+          "oklch(15.00% 0.02211 54.33)",
+          "oklch(26.43% 0.02211 54.33)",
+          "oklch(37.86% 0.02211 54.33)",
+          "oklch(49.29% 0.02211 54.33)",
+          "oklch(60.71% 0.02211 54.33)",
+          "oklch(72.14% 0.02211 54.33)",
+          "oklch(83.57% 0.02211 54.33)",
+          "oklch(95.00% 0.02211 54.33)"
+        ]
+      },
+      "downloadDivider": {
+        "role": "neutral",
+        "displayName": "Warm Divider",
+        "canonical": "#d8c9bc",
+        "tonalRamp": [
+          "oklch(15.00% 0.02452 63.44)",
+          "oklch(26.43% 0.02452 63.44)",
+          "oklch(37.86% 0.02452 63.44)",
+          "oklch(49.29% 0.02452 63.44)",
+          "oklch(60.71% 0.02452 63.44)",
+          "oklch(72.14% 0.02452 63.44)",
+          "oklch(83.57% 0.02452 63.44)",
+          "oklch(95.00% 0.02452 63.44)"
+        ]
+      }
+    }
   },
   "components": [
     {
-      "name": "Download action",
-      "html": "<a class=\"ds-download\" href=\"#download\">Download wallpaper</a>",
-      "css": ".ds-download{display:block;background:var(--red,#b83b28);color:white;padding:12px 18px;font:17px Source,sans-serif;text-decoration:none}.ds-download:hover{background:var(--ink,#182a43)} :focus-visible{outline:3px solid var(--red,#b83b28);outline-offset:5px}"
-    },
-    {
       "name": "Gallery view",
-      "html": "<button class=\"ds-view\" aria-pressed=\"true\">Slider</button>",
-      "css": ".ds-view{border:1px solid var(--ink,#182a43);border-radius:0;min-height:44px;padding-inline:22px;background:var(--ink,#182a43);color:var(--paper,#f4ebdd)}.ds-view:hover{background:#dce5ea;color:var(--ink,#182a43)} :focus-visible{outline:3px solid var(--red,#b83b28);outline-offset:5px}"
+      "kind": "button",
+      "refersTo": "view-button",
+      "description": "Square view switch with a visible selected state.",
+      "html": "<button class=\"ds-view\" aria-pressed=\"true\">Grid</button><button class=\"ds-view\" aria-pressed=\"false\">Slider</button>",
+      "css": ".ds-view{font:17px Source,sans-serif;border:1px solid var(--ink,#29163b);border-radius:0;min-height:44px;padding:6px 14px;background:var(--paper,#ebe4f3);color:var(--ink,#29163b)}.ds-view[aria-pressed=true]{background:var(--ink,#29163b);color:var(--paper,#ebe4f3)}.ds-view:hover{background:#e8def3;color:var(--ink,#29163b)} :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
     },
     {
       "name": "Search",
-      "html": "<label class=\"ds-search\">Search <input type=\"search\"></label>",
-      "css": ".ds-search{display:grid;gap:8px;font:14px Source,sans-serif}.ds-search input{min-height:48px;border:1px solid var(--ink,#182a43);border-radius:0;background:transparent;padding:6px 12px;font:17px Source,sans-serif} :focus-visible{outline:3px solid var(--red,#b83b28);outline-offset:5px}"
+      "kind": "input",
+      "refersTo": "search-input",
+      "description": "Pale lavender search field with a violet focus outline.",
+      "html": "<label class=\"ds-search\">Search the collection<input type=\"search\" placeholder=\"Anime, character, artist…\"></label>",
+      "css": ".ds-search{display:grid;gap:4px;color:var(--ink,#29163b);font:600 13px Source,sans-serif}.ds-search input{min-height:48px;border:1px solid var(--archive-rule,#a995bb);border-radius:0;background:#faf7fd;padding:6px 12px;color:var(--ink,#29163b);caret-color:var(--red,#633988);font:17px Source,sans-serif}.ds-search input:focus{border-color:var(--red,#633988);outline:2px solid var(--red,#633988);outline-offset:2px;box-shadow:none} :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
     },
     {
       "name": "Navigation",
-      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#collection\">Collection</a></nav>",
-      "css": ".ds-nav{padding:22px 24px;background:var(--ink,#182a43);color:var(--paper,#f4ebdd);border-bottom:1px solid #647080}.ds-nav a{color:inherit;text-decoration:none}.ds-nav a:hover{text-decoration:underline} :focus-visible{outline:3px solid var(--red,#b83b28);outline-offset:5px}"
+      "kind": "nav",
+      "description": "Quiet header links on the lavender page surface.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a href=\"#collection\">Collection</a><a href=\"#story\">The story</a></nav>",
+      "css": ".ds-nav{display:flex;gap:24px;padding:12px 24px;background:var(--paper,#ebe4f3);color:var(--ink,#29163b);border-bottom:1px solid var(--archive-rule,#a995bb);font:650 17px Source,sans-serif}.ds-nav a{color:inherit;padding-block:10px;text-decoration:none}.ds-nav a:hover{text-decoration:underline;text-underline-offset:5px} :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
+    },
+    {
+      "name": "Paired title",
+      "kind": "custom",
+      "description": "Shared navy anime and vermilion original-work title.",
+      "html": "<h3 class=\"ds-title\"><a href=\"#piece=death-note-nighthawks\"><span class=\"ds-anime\">Death Note</span> <span class=\"ds-cross\">×</span> <span class=\"ds-art\">Nighthawks</span></a></h3>",
+      "css": ".ds-title{margin:0 0 10px;font:550 clamp(20px,2vw,28px)/1.35 Fraunces,serif;letter-spacing:-.02em}.ds-title a{color:inherit;text-decoration:none;text-underline-offset:4px}.ds-title a:hover,.ds-title a:focus-visible{text-decoration:underline}.ds-anime{color:var(--brand-anime,#182a43)}.ds-cross{color:#5d5862}.ds-art{color:var(--brand-art,#b83b28)} :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
+    },
+    {
+      "name": "Creator byline",
+      "kind": "custom",
+      "description": "Grid and Slider pair manga left with artist right; List owns a separate responsive layout around its preview.",
+      "html": "<div class=\"ds-byline\"><p>Manga by Tsugumi Ohba &amp; Takeshi Obata</p><p>After Edward Hopper · 1942</p></div>",
+      "css": ".ds-byline{display:flex;flex-wrap:wrap;gap:0 16px;width:100%;color:var(--archive-muted,#614e72)}.ds-byline p{flex:1 1 180px;margin:8px 0 0;font:400 14px/1.4 Source,sans-serif}.ds-byline p:last-child{text-align:right} :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
+    },
+    {
+      "name": "Download panel",
+      "kind": "custom",
+      "refersTo": "download-panel",
+      "description": "Warm disclosure surface with four PNG options.",
+      "html": "<details class=\"ds-download\"><summary aria-label=\"Download options\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" aria-hidden=\"true\"><path d=\"M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5\"/></svg></summary><div class=\"ds-panel\"><section class=\"ds-group\"><h4>Full HD · 1080p</h4><a href=\"#download\" class=\"ds-file\"><strong>Optimized PNG</strong><span>↓</span></a><a href=\"#download\" class=\"ds-file\"><strong>Uncompressed PNG</strong><span>↓</span></a></section><section class=\"ds-group\"><h4>4K · 2160p</h4><a href=\"#download\" class=\"ds-file\"><strong>Optimized PNG</strong><span>↓</span></a><a href=\"#download\" class=\"ds-file\"><strong>Uncompressed PNG</strong><span>↓</span></a></section></div></details>",
+      "css": ".ds-download{color:var(--brand-anime,#182a43);font:14px Source,sans-serif}.ds-download summary{display:grid;place-items:center;width:44px;height:44px;margin-left:auto;cursor:pointer;list-style:none;border:1px solid var(--archive-rule,#a995bb)}.ds-download summary::-webkit-details-marker{display:none}.ds-download summary:hover{background:var(--archive-panel,#e8def3)}.ds-download[open] summary{background:var(--brand-anime,#182a43);color:#fffaf4}.ds-panel{margin-top:10px;padding:14px 16px;background:#fffaf4;border:1px solid #c7b7a9;border-radius:14px;box-shadow:none}.ds-group h4{color:var(--brand-art,#b83b28);font:650 13px/1.3 Source,sans-serif;margin:0 0 4px}.ds-group+.ds-group{border-top:1px solid #d8c9bc;padding-top:10px;margin-top:6px}.ds-file{display:flex;align-items:center;justify-content:space-between;min-height:44px;padding:8px 6px;border-radius:4px;color:var(--brand-anime,#182a43);text-decoration:none}.ds-file:hover,.ds-file:focus-visible{background:#f5e5db;text-decoration:underline} :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
     },
     {
       "name": "Prompt disclosure",
-      "html": "<details class=\"ds-prompt\"><summary>The Prompt</summary><p>Archived prompt text appears here.</p></details>",
-      "css": ".ds-prompt{border-top:1px solid #b9afa2;padding-block:16px;font:17px Source,sans-serif}.ds-prompt summary{cursor:pointer} :focus-visible{outline:3px solid var(--red,#b83b28);outline-offset:5px}"
+      "kind": "button",
+      "description": "Underlined expansion button beneath the prompt preview.",
+      "html": "<section class=\"ds-prompt\"><h3>The Prompt</h3><p>Archived prompt preview…</p><button class=\"ds-prompt-toggle\" aria-expanded=\"false\">Click here to view more</button></section>",
+      "css": ".ds-prompt{background:var(--archive-panel,#e8def3);border-top:1px solid var(--archive-rule,#a995bb);padding:20px 28px;color:var(--ink,#29163b);font:17px Source,sans-serif}.ds-prompt h3{font-size:28px;font-weight:700;margin:0}.ds-prompt p{line-height:1.7}.ds-prompt-toggle{display:block;border:0;border-bottom:1px solid currentColor;background:transparent;color:inherit;padding:10px 0;min-height:44px;font:700 17px Source,sans-serif;cursor:pointer;text-align:left}.ds-prompt-toggle:hover{color:var(--red,#633988)} :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
+    },
+    {
+      "name": "Gallery pagination",
+      "kind": "nav",
+      "description": "Numbered Grid links with current-page semantics; List uses incremental loading.",
+      "html": "<nav class=\"ds-pagination\" aria-label=\"Gallery pages\"><a href=\"?view=grid&amp;page=1&amp;pageSize=6#collection\" aria-label=\"Page 1 of 2\" aria-current=\"page\">1</a><a href=\"?view=grid&amp;page=2&amp;pageSize=6#collection\" aria-label=\"Page 2 of 2\">2</a><a href=\"?view=grid&amp;page=2&amp;pageSize=6#collection\" rel=\"next\">Next</a></nav>",
+      "css": ".ds-pagination{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px;border-top:1px solid var(--archive-rule,#a995bb);margin-top:28px;padding-top:20px;font:14px Source,sans-serif}.ds-pagination a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:6px 12px;border:1px solid var(--archive-rule,#a995bb);border-radius:0;color:var(--ink,#29163b);text-decoration:none}.ds-pagination a:hover,.ds-pagination [aria-current=page]{background:var(--ink,#29163b);color:var(--paper,#ebe4f3)}.ds-pagination [aria-current=page]{font-weight:700}.ds-pagination a:focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
+    },
+    {
+      "name": "List load more",
+      "kind": "custom",
+      "description": "Append a batch of AI Crossovers or return to the collection heading.",
+      "html": "<div class=\"ds-list-actions\"><p>4 of 12 AI Crossovers shown</p><button type=\"button\">Load more</button><a href=\"#collection-title\">Go to top</a></div>",
+      "css": ".ds-list-actions{border-top:1px solid var(--archive-rule,#a995bb);padding-top:20px;text-align:center;font:17px Source,sans-serif;color:var(--ink,#29163b)}.ds-list-actions p{color:var(--archive-muted,#614e72);font-size:14px;margin:0 0 12px}.ds-list-actions button,.ds-list-actions a{display:inline-flex;align-items:center;min-height:44px;margin:0 6px;padding:6px 12px;border:1px solid var(--archive-rule,#a995bb);border-radius:0;background:transparent;color:inherit;font:inherit;text-decoration:none;cursor:pointer}.ds-list-actions button:hover,.ds-list-actions a:hover{background:var(--ink,#29163b);color:var(--paper,#ebe4f3)}.ds-list-actions :focus-visible{outline:3px solid var(--red,#633988);outline-offset:5px}"
     }
   ],
   "narrative": {
-    "northStar": "The Crossover Edition",
-    "overview": "An image-first exhibition publication with expressive type, warm paper, dark framing, and selective vermilion actions.",
+    "northStar": "Cel Archive",
+    "overview": "Matte lavender framing, plum text, and fine rules keep the interface quiet around the anime imagery. Fraunces gives the titles an editorial character; Source Sans 3 keeps descriptions, credits, and controls clear. The existing violet accent and navy/vermilion title pairing are intentional.\n\nThe collection feels personal and image-led. Both source creators receive visible credit, while the original works retain their own proportions and provenance in comparisons.",
     "keyCharacteristics": [
-      "Desktop gallery view choices",
-      "Single mobile image feed",
-      "Preserved image proportions",
-      "Collapsed verbatim prompts"
+      "Uncropped 16:9 AI Crossover images.",
+      "Navy anime titles paired with vermilion original-work titles.",
+      "Manga creator credits on the left and original artist credits on the right.",
+      "Flat lavender surfaces, fine rules, and restrained controls.",
+      "A single-column phone gallery with a full-screen detail dialog."
     ],
     "rules": [
       {
-        "name": "Preserve proportion",
-        "body": "Use contained images in every comparison, including the mobile reveal.",
-        "section": "layout"
+        "name": "The Paired Title Rule",
+        "body": "Keep anime names navy, the multiplication sign muted, and original-work titles vermilion in both the gallery and detail dialog.",
+        "section": "colors"
+      },
+      {
+        "name": "The Shared Heading Rule",
+        "body": "Detail titles read Anime Title × Art Title; their sibling subtitle reads Manga Creator × Artist. Preserve the page h1, featured h2, and collection h3 hierarchy independently of visual size.",
+        "section": "typography"
       }
     ],
     "dos": [
-      "Keep the approved fonts and palette.",
-      "Honor reduced motion.",
-      "Keep prompt provenance accurate."
+      "Do preserve the Cel Archive palette, self-hosted fonts, and image proportions.",
+      "Do use the same paired title colors and typography in gallery and detail views.",
+      "Do keep both source creator credits legible when their byline wraps.",
+      "Do retain visible focus, reduced-motion behavior, and clear AI Crossover labels.",
+      "Do keep download options, provenance links, and prompt disclosure accessible."
     ],
     "donts": [
-      "Do not add a redundant Show both button.",
-      "Do not show desktop gallery view choices on phones.",
-      "Do not imply pixel alignment between different compositions."
+      "Don't crop images to make gallery entries or comparisons uniform.",
+      "Don't add diffuse shadows to the floating download panel.",
+      "Don't replace the intentional violet accent or title colors because of a generic design detector warning.",
+      "Don't replace functional hover, focus, or selected states with static decoration."
     ]
   }
 }

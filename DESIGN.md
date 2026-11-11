@@ -1,111 +1,213 @@
 ---
-name: Animart — The Crossover Edition
-description: An image-first anime and art collection for TV wallpapers.
+name: "Animart — Cel Archive"
+description: "Anime AI Crossovers framed by matte lavender, paired source credits, and editorial titles."
 colors:
-  paper: "#f4ebdd"
-  ink: "#182a43"
-  vermilion: "#b83b28"
-  headline-accent: "#f5a184"
-  comparison-surface: "#dce5ea"
-  paper-rule: "#b9afa2"
-  ink-rule: "#647080"
+  lavender: "#ebe4f3"
+  plum: "#29163b"
+  violet: "#633988"
+  rule: "#a995bb"
+  comparison: "#e8def3"
+  muted: "#614e72"
+  anime: "#182a43"
+  originalTitle: "#b83b28"
+  cross: "#5d5862"
+  input: "#faf7fd"
+  download: "#fffaf4"
+  downloadRule: "#c7b7a9"
+  downloadHover: "#f5e5db"
+  downloadDivider: "#d8c9bc"
 typography:
   display:
     fontFamily: "Fraunces, serif"
-    fontSize: "clamp(40px,4.5vw,64px)"
-    fontWeight: 500
-    lineHeight: 0.98
-    letterSpacing: "-0.035em"
+    fontSize: "clamp(40px, 4.4vw, 68px)"
+    fontWeight: 650
+    lineHeight: 1.02
+    letterSpacing: "-.035em"
+  title:
+    fontFamily: "Fraunces, serif"
+    fontSize: "clamp(20px, 2vw, 28px)"
+    fontWeight: 550
+    lineHeight: 1.35
+    letterSpacing: "-.02em"
+  detail:
+    fontFamily: "Fraunces, serif"
+    fontSize: "clamp(32px, 4vw, 52px)"
+    fontWeight: 550
+    lineHeight: 1.35
+    letterSpacing: "-.035em"
   body:
     fontFamily: "Source, sans-serif"
     fontSize: "17px"
-  wordmark:
-    fontFamily: "Fraunces, serif"
-    fontSize: "43px"
+    fontWeight: 400
+    lineHeight: 1.5
+  credit:
+    fontFamily: "Source, sans-serif"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: 1.4
+  downloadLabel:
+    fontFamily: "Source, sans-serif"
+    fontSize: "13px"
     fontWeight: 650
-    lineHeight: 1
-    letterSpacing: "-0.03em"
+    lineHeight: 1.3
 rounded:
-  control: "0"
-  wipe-handle: "50%"
+  control: "0px"
+  downloadRow: "4px"
+  downloadPanel: "14px"
 spacing:
-  compact: "12px"
-  standard: "16px"
-  section-gap: "24px"
-  dialog-inset: "32px"
+  xs: "4px"
+  sm: "8px"
+  md: "16px"
+  gutter: "24px"
+  lg: "32px"
 components:
-  button-primary:
-    backgroundColor: "{colors.vermilion}"
-    textColor: "#ffffff"
+  view-button:
+    backgroundColor: "{colors.lavender}"
+    textColor: "{colors.plum}"
     rounded: "{rounded.control}"
-    padding: "12px 18px"
-  button-primary-hover:
-    backgroundColor: "{colors.ink}"
-    textColor: "#ffffff"
-  selected-view:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
+    padding: "6px 14px"
+    height: "44px"
+  view-button-selected:
+    backgroundColor: "{colors.plum}"
+    textColor: "{colors.lavender}"
+  search-input:
+    backgroundColor: "{colors.input}"
+    textColor: "{colors.plum}"
     rounded: "{rounded.control}"
+    height: "48px"
+  download-panel:
+    backgroundColor: "{colors.download}"
+    rounded: "{rounded.downloadPanel}"
+    padding: "14px 16px"
+  download-row:
+    textColor: "{colors.anime}"
+    rounded: "{rounded.downloadRow}"
+    padding: "8px 6px"
+  download-row-hover:
+    backgroundColor: "{colors.downloadHover}"
 ---
 
-# Design System: Animart
+# Design System: Animart — Cel Archive
 
 ## Overview
 
-**Creative North Star: The Crossover Edition.** Approved for promotion from the mockup to the main site on 2 November 2026. An independent exhibition-publication character: expressive typography, warm paper, ink-blue framing, and selective vermilion actions. Artwork leads; visitors can explore its source and download the crossover without a competing marketing funnel.
+**Creative North Star: "Cel Archive"**
 
-The approved typography and palette are durable commitments. The first museum-catalogue proposal is superseded. Existing factual story, AI disclosure, artwork sources, and credits remain part of the experience.
+Matte lavender framing, plum text, and fine rules keep the interface quiet around the anime imagery. Fraunces gives the titles an editorial character; Source Sans 3 keeps descriptions, credits, and controls clear. The existing violet accent and navy/vermilion title pairing are intentional.
+
+The collection feels personal and image-led. Both source creators receive visible credit, while the original works retain their own proportions and provenance in comparisons.
+
+**Key Characteristics:**
+- Uncropped 16:9 AI Crossover images.
+- Navy anime titles paired with vermilion original-work titles.
+- Manga creator credits on the left and original artist credits on the right.
+- Flat lavender surfaces, fine rules, and restrained controls.
+- A single-column phone gallery with a full-screen detail dialog.
 
 ## Colors
 
-Paper is the gallery and dialog surface; ink is the header, opening, story, and footer surface as well as primary text on paper. Vermilion marks download actions and selected thumbnails. The headline's warm accent provides contrast on ink. Pale blue supports contained images without changing their proportions. Rules use paper-rule on light surfaces and ink-rule on dark surfaces.
+### Primary
+
+Plum is the principal text and selected-control color. Violet supplies focus, hover feedback, and the emphasized phrase in the opening invitation.
+
+### Secondary
+
+Navy identifies the anime side of each title; vermilion identifies the original-work side. The multiplication sign uses its own muted neutral. Download rows reuse navy for text and vermilion for group labels.
+
+### Neutral
+
+Lavender is the page and dialog surface. The comparison tone provides image backdrops, prompt panels, and story framing. Muted plum supports source credits and collection counts; the rule color separates sections and outlines controls. Inputs use a pale lavender fill. Download panels use a warm cream surface, warm borders and dividers, and a peach hover fill.
+
+**The Paired Title Rule.** Keep anime names navy, the multiplication sign muted, and original-work titles vermilion in both the gallery and detail dialog.
 
 ## Typography
 
-Fraunces is the display, wordmark, and artwork-title face. Source Sans 3 is locally registered as `Source` for reading and controls. Both variable TTFs and their SIL Open Font License files live in `fonts/`; no external font requests are required.
+Self-host Fraunces for the opening invitation, AI Crossover titles, and collection heading. The CSS family named Source loads Source Sans 3 and serves body text, credits, controls, and supporting headings.
 
-Desktop h1 uses the frontmatter display scale. Phone h1 is 36px at widths up to 767px; the wordmark becomes 33px. Artwork-detail titles use `clamp(32px,4vw,52px)`. Keep long titles wrapping naturally. Supporting captions are compact, while body and form text remain readable.
+- Opening invitation: use the display role; at intermediate widths it becomes 42px and on phones 38px.
+- Gallery titles: use the title role with a 1.35 line height. Featured and phone-feed titles become 22px on phones. Desktop grid titles remain 24px through the collection override; List titles use their larger responsive scale.
+- Detail title: use the detail role, preserving its larger scale and the same font, weight, line height, and title colors as gallery titles.
+- Credits: use the credit role. Phone gallery credits use 15px with the same 1.4 line height. Pair left-aligned manga credit with right-aligned artist credit and year in Grid and Slider. List uses the preview-width layout described below.
+- Reading text: use the body role. The personal note uses Fraunces with a 1.4 line height; the story lead uses Source Sans 3 with a 1.5 line height. Keep longer descriptions within their existing 55–70ch measures.
+- Download group labels: use the downloadLabel role; file rows use Source Sans 3 at 14px, with tabular file sizes.
+
+**The Shared Heading Rule.** Detail titles read Anime Title × Art Title; their sibling subtitle reads Manga Creator × Artist. Preserve the page h1, featured h2, and collection h3 hierarchy independently of visual size.
 
 ## Layout
 
-Use locally stored Bootstrap 5.3.8 CSS containers, rows, columns, gutters, flex utilities, and form foundations; custom CSS supplies the artistic composition. The static site requires no build step or Bootstrap JavaScript bundle.
+Use fluid containers with Bootstrap gutters: 24px horizontal page padding on smaller desktop sizes and 48px at larger sizes; the phone collection uses 16px padding and extends its image feed to the viewport edges. Desktop grid gutters are 24px horizontally and 28px vertically. The gallery currently shows two columns, including at wide desktop sizes.
 
-Desktop offers Grid, Slider, and List, with Slider as the default. Slider pairs a large landscape with contextual details and a thumbnail strip; Grid provides an overview; List favors comparison of descriptions. At 991px and below, the slider stage stacks. At 767px and below, one edge-to-edge image feed replaces all three desktop choices, with short captions and collapsed search/filter controls.
+Above 991px, place the introduction beside the featured image in a narrow/wide split. At 991px and below, move it above the image; at 767px and below, stack the introduction text. Keep gallery titles above images and bylines below them. Bylines wrap naturally rather than squeezing or clipping creator names.
 
-The collection amplifies the publication identity with a large Fraunces heading and an ink rule. Desktop filters share a compact row, with additional filters expanding beneath it. Grid uses two generous image columns; List gives images roughly a third of the row. Slider titles reach 48px, and phone captions use 23px Fraunces beneath uncropped images. These treatments are scoped to the collection; the opening, story, and detail dialog retain their own hierarchy.
+Desktop visitors can choose Grid, Slider, or List. At 767px and below, use a single-column phone feed for Grid and List and hide the view switch; explicit Slider URLs retain the responsive slider. Filters open through a compact disclosure at every size. List keeps both creator credits in its image column. When the preview is wider than 520px, place manga left and original artist right beneath it; otherwise place manga above-left and original artist below-left. Neither credit belongs in the description column. Slider places both credits below its large preview.
 
-The desktop artwork dialog is at most 1120px wide, inset 20px from the viewport edges. Mobile details use the viewport. Keep image proportions with `object-fit: contain`; never force unrelated paintings into matching crops. Desktop comparison supports Original / Both / Crossover and clicking an image to expand or reset. Mobile replaces these with a draggable reveal over two contained images in a 4:3 frame. This compares compositions; it does not imply pixel-aligned subjects.
+Desktop details use a centered native dialog up to 1120px wide, with 32px side padding and a viewport-height limit. Phone details fill the screen and use 16px side padding. The close toolbar stays at the top while dialog content scrolls. Download panels are positioned relative to the viewport, open above or below their trigger as space allows, and scroll internally when needed.
 
 ## Elevation & Depth
 
-The gallery is flat: surfaces, rules, and scale establish hierarchy. Native dialog separation uses `rgb(10 20 35 / .78)` backdrop. The wipe handle alone uses `0 2px 8px #182a4355` for visibility over artwork. Avoid decorative card shadows.
+Use tonal surfaces and fine borders for separation. Gallery entries and floating download panels have no diffuse shadow. The dark translucent dialog backdrop separates details from the collection. The circular comparison handle alone uses a small functional shadow (0 2px 8px #29163b55) to remain legible over images.
 
 ## Shapes
 
-Controls and artwork frames are square. The mobile wipe handle is circular with a 44px footprint. The rest of the interface should not inherit that circular shape merely for decoration.
+Controls, inputs, dialog edges, and gallery frames are square. Download panels have softly curved corners using the downloadPanel radius; their rows use the smaller downloadRow radius. The Explore affordance is a semicircular tab joining image and caption, while the mobile comparison handle is circular. Preserve these component-specific shapes rather than applying rounded cards throughout the gallery.
 
 ## Components
 
-- **Gallery controls:** labelled Bootstrap form controls; selected view buttons invert ink and paper. Preserve active filters across view changes.
-- **Downloads:** solid vermilion primary action, with dimensions and size; secondary files remain available. Use unambiguous crossover labels.
-- **Comparison:** preserve image aspect ratios and accessible keyboard controls. No redundant Show both button; the Both option and image toggle provide reset on desktop.
-- **Motion:** desktop image transitions use 320ms and `cubic-bezier(.22,1,.36,1)`, with uniform scaling and positional continuity. Disable this animation under reduced motion. No automatic gallery advancement.
-- **Collection browsing:** user-triggered slide changes reveal the next print with a directional 420ms wipe after its image decodes. Controls remain available during the transition. Reduced motion skips the wipe and cancels an active one. Thumbnail titles remain visible; the selected thumbnail uses vermilion and stays in view. Left/right arrow keys browse while a navigation or thumbnail button has focus. Supporting control color feedback takes 140ms; no automatic entrances or looping effects.
-- **Loading:** slide changes replace only the viewer stage, preserving the thumbnail strip and its scroll position. The prompt archive loads on the first detail visit, independently of the gallery and comparison; successful requests are shared and cached for the page session, while failures allow retry. The first phone preview loads eagerly and later previews remain lazy. Viewer images use dedicated responsive WebP derivatives; all download variants remain unchanged.
-- **The Prompt:** native details disclosure, initially closed for every artwork. Preserve original line breaks and provide copy feedback/fallback. Prompts come from the archive, not generated descriptions.
-- **Navigation/footer:** shallow header, dark closing story/footer, useful grouped links; maintain the distinction between dark framing and light gallery.
-- **Focus:** visible 3px vermilion outlines with offsets; on dark story/footer surfaces use the warm headline accent.
+### View-specific listings
+
+Keep separate listing templates for Grid, List, and Slider, sharing only content helpers such as paired title markup, creator credit text, images, and downloads. Grid owns its cards and phone feed; List owns its image-column credits, description, and action layout; Slider owns its large preview, source reference, and navigation. Load more must append the same List template used for the initial batch.
+
+List credit layout responds to the actual preview width through its image-column container. At 520px and below, use manga credit above the image and original artist credit below, both left-aligned. Above that width, use a two-column credit row below the image. On phones, stack the title, preview with its credits, and actions; keep images full-width and use 16px insets for text.
+
+### Titles and creator bylines
+
+Use shared title markup for the gallery and dialog. Gallery titles are links with hover/focus underlining; the detail heading remains a heading. Under previews, show Manga by followed by the credited manga creator or creators, using the existing artist-credit typography. Keep the original artist's After credit and year. Death Note credits both its writer and illustrator.
+
+### Gallery controls and search
+
+Use bordered rectangular view buttons, with plum fill and lavender text for the selected state. Filters use a compact disclosure with an inline SVG icon; the phone trigger is a 44px square. Search and selects have at least 48px height, pale fills, and fine rule-colored borders. Preserve visible focus, the input caret color, and the selected-state semantics. Header navigation uses Source Sans 3 at weight 650, with hover underlining.
+
+### Gallery pagination and incremental loading
+
+Place the result range and a labelled size select above the listings. Grid defaults to six AI Crossovers per page and uses numbered page links beneath the results, with Previous and Next where available. Show all pages when there are at most five intermediate pages; otherwise retain the first three, last three, current page, and its neighbours, separating skipped ranges with non-interactive ellipses. Mark the current link with aria-current, use a labelled navigation landmark, and preserve real page URLs and browser history. Hide pagination for a single page.
+
+List defaults to four AI Crossovers per batch. Its Load more button appends the next selected batch without replacing existing entries or scrolling to the beginning. Focus the first newly added title without moving the viewport. Show how many entries are visible, hide Load more at the end, and retain a Go to top link that focuses and scrolls to the collection heading.
+
+Offer 4, 6, 8, 10, and 12 in both views, retaining their settings independently during the session. The phone feed follows the selected view: Grid uses page links and List uses batch loading. Wrap numbered links to fit narrow screens. Slider keeps its own navigation without pagination or batch controls. Use the existing square controls, muted plum status text, fine top rule, and at least 44px interaction targets. Reset after filter or size changes. Grid page changes focus the collection heading and use a 1100ms cubic ease-in-out scroll, retaining its small top margin. Use immediate scrolling when reduced motion is requested. The List Go to top link uses the same heading transition. Wheel, touch, pointer, or keyboard input interrupts the guided scroll. New List batches reveal over 650ms with a 16px rise, a subtle clipping reveal, and a 70ms stagger capped at 350ms; use the existing cubic-bezier(.22,1,.36,1) easing. Skip these animations for reduced motion, including when that preference changes during a transition. Keep catalogue statistics independent of the visible entries, and preserve the current page or loaded batches when opening and closing details.
+
+### Shareable gallery state
+
+Keep view, filters, and navigation state in the query string. Use view=grid, view=list, or view=slider; page is the Grid page, loaded List batch count, or Slider position respectively. Use pageSize for Grid and List, with their defaults of six and four. Preserve q, anime, artist, and artwork filters and the piece hash for detail links. Restore these values on direct navigation, reload, and browser Back/Forward, including on phones. Open the relevant filter disclosures for URL-supplied filters. Normalize invalid view and size values to defaults and constrain pages to the available results.
+
+### Downloads
+
+Use the native disclosure with a 44px square SVG download trigger aligned right. Its open state uses navy fill and warm cream text. The warm floating panel has a defined border, no shadow, and two resolution groups separated by a fine warm rule. Rows have at least 44px height, paired file labels and sizes, and peach hover/focus feedback. Keep all four PNG variants and the default Tinified 1080p choice.
+
+### Detail dialog and comparison
+
+Keep the native dialog and shareable piece URLs. The desktop comparison offers Original, Both, and AI Crossover states, with pressed-state buttons and image expansion controls. On phones, use the draggable comparison wipe when an original preview exists. Preserve each image's proportions; the wipe frame uses contain fitting rather than cropping.
+
+Image expansion uses 320ms transitions; slide changes reveal the new image directionally over 420ms after decoding. Both use cubic-bezier(.22,1,.36,1). Respect reduced motion and keep controls usable while images load.
+
+### Prompt disclosure and source credits
+
+Use a softly tinted prompt section with a faded three-line preview, an underlined disclosure button, and a Copy prompt action after expansion. Preserve archived prompt text and loading/retry feedback. Source credits include both manga creators and original-work provenance, plus the AI disclosure.
+
+### Focus and interaction
+
+Use the existing violet focus outline (3px with 5px offset) for general controls, with component-specific offsets where implemented. Inputs use a tighter 2px focus outline. Preserve keyboard operation, focus return from the dialog, Escape handling, and visible selected states.
 
 ## Do's and Don'ts
 
-- **Do** retain the approved fonts and palette across every view and state.
-- **Do** keep mobile image-first and place richer information in details.
-- **Do** preserve source artwork proportions and label both sides of a comparison.
-- **Do** retain actual prompt provenance: archive section 8 is the original prompt for the subsequently corrected Tanjiro wave; section 13 is unused and excluded.
-- **Don't** restore a separate Show both button or desktop view selector on phones.
-- **Don't** claim a free image licence merely because the fonts and Bootstrap are freely licensed.
-- **Don't** copy the reference site's channel numbers, broadcast palette, or terminal aesthetic.
+### Do:
+- Do preserve the Cel Archive palette, self-hosted fonts, and image proportions.
+- Do use the same paired title colors and typography in gallery and detail views.
+- Do keep both source creator credits legible when their byline wraps.
+- Do retain visible focus, reduced-motion behavior, and clear AI Crossover labels.
+- Do keep download options, provenance links, and prompt disclosure accessible.
 
-## Web image delivery
-
-All production raster image sources use WebP. The logo is 378×252 for a maximum 126px display size; AI Crossover filmstrip thumbnails use 320×180. Catalogue previews provide the 640px candidate, with 1280px and 1920px derivatives in `previews/web/` for larger or high-density screens. `data/wallpapers.json` records these as `webImage`; never use a download PNG as an image source. Original-work previews retain their verified local WebPs, credits, and proportions. The small SVG favicon and inline icons remain vectors. See `docs/image-optimization.md` for the complete audit and rebuild instructions.
+### Don't:
+- Don't crop images to make gallery entries or comparisons uniform.
+- Don't add diffuse shadows to the floating download panel.
+- Don't replace the intentional violet accent or title colors because of a generic design detector warning.
+- Don't replace functional hover, focus, or selected states with static decoration.
