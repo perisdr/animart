@@ -76,7 +76,11 @@ Add an entry in `data/wallpapers.json`, retaining the existing field structure.
 Every entry needs a unique stable `id`, an anime, an artwork, a preview path, and
 download variants. Keep paths relative to the repository root and match filename
 case exactly for GitHub Pages. Filters populate automatically from the catalogue.
-Search also includes anime aliases, descriptions, and tags.
+For a multi-film AI Crossover, use `anime.name` for its listing name and
+`anime.films` for its inspirations. Each film has a canonical `title` and a
+reference `url`. Use the same title for a single-film listing so both appear
+under one Anime filter. Search also includes `anime.creator`, film titles,
+aliases, descriptions, and tags.
 
 Place new source wallpapers in `Assets/`, then run the thumbnail script when you
 want to generate their previews. There is no need to regenerate existing images.

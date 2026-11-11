@@ -1231,5 +1231,239 @@
         "bytes": 648786
       }
     }
+  },
+  {
+    "id": "miyazaki-three-worlds-metamorphosis-ii",
+    "anime": {
+      "name": "Miyazaki Three Worlds",
+      "creator": "Hayao Miyazaki",
+      "films": [
+        {
+          "title": "My Neighbor Totoro",
+          "url": "https://gkids.com/films/my-neighbor-totoro/"
+        },
+        {
+          "title": "Spirited Away",
+          "url": "https://gkids.com/films/spirited-away/"
+        },
+        {
+          "title": "Ponyo",
+          "url": "https://gkids.com/films/ponyo/"
+        }
+      ],
+      "description": "This AI Crossover brings together worlds from three films directed by Hayao Miyazaki."
+    },
+    "artwork": {
+      "title": "Metamorphosis II",
+      "artist": "M. C. Escher",
+      "year": "1939–1940",
+      "description": "Follow the print from left to right and the same edge belongs first to one shape, then to another. Fish become birds, a pattern of cubes becomes the town of Atrani, and a tower becomes a rook on a chessboard.",
+      "sourceUrl": "https://www.wikiart.org/en/m-c-escher/metamorphosis-ii",
+      "preview": "previews/originals/metamorphosis-ii.webp",
+      "previewSourceUrl": "https://www.wikiart.org/en/m-c-escher/metamorphosis-ii",
+      "credit": "Woodcut by M. C. Escher. Comparison image via WikiArt.",
+      "reuseTerms": "WikiArt identifies its reproduction as fair use. Copyright remains with the rights holders.",
+      "links": [
+        {
+          "label": "National Gallery of Art",
+          "url": "https://www.nga.gov/artworks/61278-metamorphosis-ii"
+        },
+        {
+          "label": "Wikipedia — Metamorphosis II",
+          "url": "https://en.wikipedia.org/wiki/Metamorphosis_II"
+        }
+      ]
+    },
+    "metadataStatus": "source-linked",
+    "preview": "Assets/Miyazaki/tinified/Miyazaki Three Worlds X Metamorphosis II X 640x360.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "woodcut",
+      "tessellation",
+      "Studio Ghibli"
+    ],
+    "downloads": [
+      {
+        "label": "Tinified 1080p",
+        "path": "Assets/Miyazaki/tinified/Miyazaki Three Worlds X Metamorphosis II X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1667825
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/Miyazaki/tinified/Miyazaki Three Worlds X Metamorphosis II X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 5389247
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/Miyazaki/Miyazaki Three Worlds X Metamorphosis II X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 3982247
+      },
+      {
+        "label": "Uncompressed 2160p",
+        "path": "Assets/Miyazaki/Miyazaki Three Worlds X Metamorphosis II X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 12057808
+      }
+    ],
+    "addedOn": "2026-11-11",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/miyazaki-three-worlds-metamorphosis-ii-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 19058
+      },
+      "medium": {
+        "path": "previews/web/miyazaki-three-worlds-metamorphosis-ii-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 265964
+      },
+      "large": {
+        "path": "previews/web/miyazaki-three-worlds-metamorphosis-ii-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 490860
+      }
+    }
+  },
+  {
+    "id": "miyazaki-seven-worlds-metamorphosis-ii",
+    "anime": {
+      "name": "Miyazaki Seven Worlds",
+      "creator": "Hayao Miyazaki",
+      "films": [
+        {
+          "title": "My Neighbor Totoro",
+          "url": "https://gkids.com/films/my-neighbor-totoro/"
+        },
+        {
+          "title": "Princess Mononoke",
+          "url": "https://gkids.com/films/princess-mononoke/"
+        },
+        {
+          "title": "Nausicaä of the Valley of the Wind",
+          "url": "https://gkids.com/films/nausicaa-of-the-valley-of-the-wind/"
+        },
+        {
+          "title": "Spirited Away",
+          "url": "https://gkids.com/films/spirited-away/"
+        },
+        {
+          "title": "Kiki’s Delivery Service",
+          "url": "https://gkids.com/films/kikis-delivery-service/"
+        },
+        {
+          "title": "Castle in the Sky",
+          "url": "https://gkids.com/films/castle-in-the-sky/"
+        },
+        {
+          "title": "Howl’s Moving Castle",
+          "url": "https://gkids.com/films/howls-moving-castle/"
+        }
+      ],
+      "description": "This AI Crossover brings together worlds from seven films directed by Hayao Miyazaki."
+    },
+    "artwork": {
+      "title": "Metamorphosis II",
+      "artist": "M. C. Escher",
+      "year": "1939–1940",
+      "description": "Follow the print from left to right and the same edge belongs first to one shape, then to another. Fish become birds, a pattern of cubes becomes the town of Atrani, and a tower becomes a rook on a chessboard.",
+      "sourceUrl": "https://www.wikiart.org/en/m-c-escher/metamorphosis-ii",
+      "preview": "previews/originals/metamorphosis-ii.webp",
+      "previewSourceUrl": "https://www.wikiart.org/en/m-c-escher/metamorphosis-ii",
+      "credit": "Woodcut by M. C. Escher. Comparison image via WikiArt.",
+      "reuseTerms": "WikiArt identifies its reproduction as fair use. Copyright remains with the rights holders.",
+      "links": [
+        {
+          "label": "National Gallery of Art",
+          "url": "https://www.nga.gov/artworks/61278-metamorphosis-ii"
+        },
+        {
+          "label": "Wikipedia — Metamorphosis II",
+          "url": "https://en.wikipedia.org/wiki/Metamorphosis_II"
+        }
+      ]
+    },
+    "metadataStatus": "source-linked",
+    "preview": "Assets/Miyazaki/tinified/Miyazaki Seven Worlds X Metamorphosis II X 640x360.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "woodcut",
+      "tessellation",
+      "Studio Ghibli"
+    ],
+    "downloads": [
+      {
+        "label": "Tinified 1080p",
+        "path": "Assets/Miyazaki/tinified/Miyazaki Seven Worlds X Metamorphosis II X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 1747141
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/Miyazaki/tinified/Miyazaki Seven Worlds X Metamorphosis II X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 5743546
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/Miyazaki/Miyazaki Seven Worlds X Metamorphosis II X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "format": "png",
+        "bytes": 4827771
+      },
+      {
+        "label": "Uncompressed 2160p",
+        "path": "Assets/Miyazaki/Miyazaki Seven Worlds X Metamorphosis II X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 15108109
+      }
+    ],
+    "addedOn": "2026-11-11",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/miyazaki-seven-worlds-metamorphosis-ii-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 29080
+      },
+      "medium": {
+        "path": "previews/web/miyazaki-seven-worlds-metamorphosis-ii-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 422172
+      },
+      "large": {
+        "path": "previews/web/miyazaki-seven-worlds-metamorphosis-ii-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 791018
+      }
+    }
   }
 ]

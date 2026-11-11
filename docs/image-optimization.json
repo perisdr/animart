@@ -298,5 +298,53 @@
         "bytes": 648786
       }
     ]
+  },
+  {
+    "source": "Assets/Miyazaki/Miyazaki Three Worlds X Metamorphosis II X 1080p.png",
+    "beforeBytes": 1667825,
+    "outputs": [
+      {
+        "path": "previews/web/miyazaki-three-worlds-metamorphosis-ii-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 19058
+      },
+      {
+        "path": "previews/web/miyazaki-three-worlds-metamorphosis-ii-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 265964
+      },
+      {
+        "path": "previews/web/miyazaki-three-worlds-metamorphosis-ii-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 490860
+      }
+    ]
+  },
+  {
+    "source": "Assets/Miyazaki/Miyazaki Seven Worlds X Metamorphosis II X 1080p.png",
+    "beforeBytes": 1747141,
+    "outputs": [
+      {
+        "path": "previews/web/miyazaki-seven-worlds-metamorphosis-ii-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 29080
+      },
+      {
+        "path": "previews/web/miyazaki-seven-worlds-metamorphosis-ii-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 422172
+      },
+      {
+        "path": "previews/web/miyazaki-seven-worlds-metamorphosis-ii-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 791018
+      }
+    ]
   }
 ]

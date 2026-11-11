@@ -8,7 +8,10 @@ if (buildLabel) {
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const root = document.querySelector('#pieces');
 const controls = {q:document.querySelector('#search'),anime:document.querySelector('#anime'),artist:document.querySelector('#artist'),artwork:document.querySelector('#artwork')};
-const normalize = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const normalize = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[’‘]/g, "'").toLowerCase();
+function animeTitles(record) {
+  return record.anime.films?.map(film => film.title) || [record.anime.name];
+}
 function readFilters(){
   const params = new URLSearchParams(location.search);
   for (const [name, control] of Object.entries(controls)) control.value = params.get(name) || '';
@@ -305,11 +308,11 @@ function image(r, large = false, eager = false, thumbnail = false, priority = fa
 const crossoverTitle = r => `<span class="title-anime">${esc(r.anime.name)}</span> <span class="title-cross">×</span> <span class="title-art">${esc(r.artwork.title)}</span>`;
 const crossoverHeading = (r, level = 3) => `<h${level}><a class="crossover-title" href="${detail(r)}">${crossoverTitle(r)}</a></h${level}>`;
 const artistCredit = r => `<p class="artist-credit">After ${esc(r.artwork.artist)}${r.artwork.year ? ` · ${esc(r.artwork.year)}` : ""}</p>`;
-const mangaCredit = r => `<p class="artist-credit manga-credit">Manga by ${esc(r.anime.mangaCreator)}</p>`;
-const crossoverCredits = r => `<div class="crossover-byline">${mangaCredit(r)}${artistCredit(r)}</div>`;
+const animeCredit = r => `<p class="artist-credit manga-credit">${r.anime.creator ? 'Directed by' : 'Manga by'} ${esc(r.anime.creator || r.anime.mangaCreator)}</p>`;
+const crossoverCredits = r => `<div class="crossover-byline">${animeCredit(r)}${artistCredit(r)}</div>`;
 // Each view owns its listing layout; only the content helpers are shared.
 const gridListing = r => mobile.matches ? `<article>${crossoverHeading(r)}<a class="mobile-crossover preview-link" href="${detail(r)}">${image(r)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="mobile-caption">${crossoverCredits(r)}</div></article>` : `<article class="col-md-6 col-xl-4"><div class="piece">${crossoverHeading(r)}<a class="preview-link" href="${detail(r)}">${image(r)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="piece-copy">${crossoverCredits(r)}</div></div></article>`;
-const listListing = r => `<article class="list-piece"><div class="list-copy">${crossoverHeading(r)}<p class="list-description">${esc(r.artwork.description || '')}</p></div><div class="list-preview"><div class="list-media"><div class="list-manga-credit">${mangaCredit(r)}</div><a class="list-image preview-link" href="${detail(r)}">${image(r)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="list-art-credit">${artistCredit(r)}</div></div></div><div class="list-action"><span>1920 × 1080</span><a href="${detail(r)}">View details →</a></div></article>`;
+const listListing = r => `<article class="list-piece"><div class="list-copy">${crossoverHeading(r)}<p class="list-description">${esc(r.artwork.description || '')}</p></div><div class="list-preview"><div class="list-media"><div class="list-manga-credit">${animeCredit(r)}</div><a class="list-image preview-link" href="${detail(r)}">${image(r)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="list-art-credit">${artistCredit(r)}</div></div></div><div class="list-action"><span>1920 × 1080</span><a href="${detail(r)}">View details →</a></div></article>`;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 reducedMotion.addEventListener('change', () => {
   if (reducedMotion.matches) {
@@ -386,8 +389,8 @@ function filter(updateURL=true, resetPages=true){
   if (resetPages) Object.values(galleryPages).forEach(state => { state.page = 1; });
   const words=normalize(controls.q.value.trim()).split(/\s+/).filter(Boolean);
   filtered=records.filter(r=>{
-    const text=normalize([r.anime.name,...(r.anime.aliases||[]),r.anime.description,r.anime.mangaCreator,r.artwork.title,r.artwork.artist,r.artwork.description,...(r.tags||[])].filter(Boolean).join(' '));
-    return (!controls.anime.value||r.anime.name===controls.anime.value)&&(!controls.artist.value||r.artwork.artist===controls.artist.value)&&(!controls.artwork.value||r.artwork.title===controls.artwork.value)&&words.every(word=>text.includes(word));
+    const text=normalize([r.anime.name,r.anime.creator,...animeTitles(r),...(r.anime.aliases||[]),r.anime.description,r.anime.mangaCreator,r.artwork.title,r.artwork.artist,r.artwork.description,...(r.tags||[])].filter(Boolean).join(' '));
+    return (!controls.anime.value||animeTitles(r).includes(controls.anime.value))&&(!controls.artist.value||r.artwork.artist===controls.artist.value)&&(!controls.artwork.value||r.artwork.title===controls.artwork.value)&&words.every(word=>text.includes(word));
   });
   document.querySelector('#clear-filters').hidden=!Object.values(controls).some(control=>control.value);
   if (view === 'slider') {
@@ -417,7 +420,7 @@ async function loadGallery(){
     }
     const order=name=>name==='One Piece'?0:/Fullmetal|FMA/.test(name)?1:name==='Death Note'?2:3;
     records.sort((a,b)=>order(a.anime.name)-order(b.anime.name));
-    fillSelect('anime',records.map(r=>r.anime.name));fillSelect('artist',records.map(r=>r.artwork.artist));fillSelect('artwork',records.map(r=>r.artwork.title));
+    fillSelect('anime',records.flatMap(animeTitles));fillSelect('artist',records.map(r=>r.artwork.artist));fillSelect('artwork',records.map(r=>r.artwork.title));
     renderCollectionUpdate();currentId=records[0].id;readFilters();readGalleryLocation();filter(false,false);writeGalleryLocation();syncDetail();
   }catch(error){root.innerHTML='';document.querySelector('#load-error').hidden=false;document.querySelector('#count').textContent='Collection unavailable';console.error('Unable to load collection:',error);}
 }
@@ -426,6 +429,12 @@ document.querySelector('#retry').addEventListener('click',loadGallery);
 const crossoverDialog = document.querySelector('#crossover-dialog');
 let detailLauncher = null;
 const externalLink = (url,label) => /^https:\/\//.test(url || '') ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>` : '';
+function animeLinks(anime) {
+  if (anime.films) {
+    return '<ul>' + anime.films.map(film => '<li>' + externalLink(film.url, film.title) + '</li>').join('') + '</ul>';
+  }
+  return externalLink(anime.anidbUrl, 'Explore the anime') + externalLink(anime.alternateAnidbUrl, 'Brotherhood on AniDB');
+}
 function interestingLinks(artwork) {
   const links = (artwork.links || []).map(link => externalLink(link.url, link.label)).filter(Boolean);
   return links.length ? '<section class="interesting-links"><h3>Interesting links</h3><ul>' + links.map(link => '<li>' + link + '</li>').join('') + '</ul></section>' : '';
@@ -441,7 +450,7 @@ function renderCollectionUpdate() {
     lastAdded.append('Last added: ', time);
   }
   const artists = new Set(records.map(r => r.artwork.artist)).size;
-  const anime = new Set(records.map(r => r.anime.name)).size;
+  const anime = new Set(records.flatMap(animeTitles)).size;
   document.querySelector('#collection-totals').textContent = records.length + ' AI Crossovers · ' + artists + ' original artists · ' + anime + ' anime';
   document.querySelector('.collection-update').hidden = false;
 }
@@ -465,7 +474,7 @@ function syncDetail() {
   const r=records.find(item=>item.id===id);
   if(!r){if(crossoverDialog.open)crossoverDialog.close();return;}
   if(!crossoverDialog.open)detailLauncher=document.activeElement;
-  document.querySelector('#crossover-content').innerHTML=`<div class="row g-3 align-items-end"><div class="col-lg-8"><h2 id="crossover-title">${crossoverTitle(r)}</h2><p>${esc(r.anime.mangaCreator)} × ${esc(r.artwork.artist)}</p></div><div class="col-lg-4">${downloadButton(r)}</div></div><div class="comparison-controls my-4"><div class="btn-group compare-switch" role="group" aria-label="Original and AI Crossover comparison"><button class="btn" data-compare="0" aria-pressed="false">Original</button><button class="btn" data-compare="1" aria-pressed="true">Both</button><button class="btn" data-compare="2" aria-pressed="false">AI Crossover</button></div><p id="comparison-hint">Select an image to expand it. Select it again or choose Both to compare.</p></div><div class="art-comparison" data-mode="both"><figure data-image="original">${r.artwork.preview?`<img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} by ${esc(r.artwork.artist)}">`:'<p>Original preview unavailable.</p>'}<figcaption>The original artwork</figcaption></figure><figure data-image="crossover">${image(r,true)}<figcaption>The AI Crossover</figcaption></figure></div><div class="row g-4 mt-2"><section class="col-md-6"><h3>Behind the painting</h3><p>${esc(r.artwork.description||'')}</p>${externalLink(r.artwork.sourceUrl,'View the original')}</section><section class="col-md-6"><h3>From the anime</h3><p>${esc(r.anime.description||'')}</p>${externalLink(r.anime.anidbUrl,'Explore the anime')}${externalLink(r.anime.alternateAnidbUrl,'Brotherhood on AniDB')}</section></div>${interestingLinks(r.artwork)}<section class="prompt-section"><h3>The Prompt</h3><p role="status">Loading the original prompt…</p></section><section class="crossover-credits"><h3>Credits & sources</h3><p>Manga: ${esc(r.anime.mangaCreator)}. ${externalLink(r.anime.mangaSourceUrl,'Manga creator & source')}</p><p>${esc(r.artwork.credit||r.artwork.artist)} ${esc(r.artwork.reuseTerms||'')}</p>${externalLink(r.artwork.previewSourceUrl,'Image source & rights')}<p>AI Crossover: an AI-generated fan experiment. No affiliation with the original creators or rights holders.</p></section>`;
+  document.querySelector('#crossover-content').innerHTML=`<div class="row g-3 align-items-end"><div class="col-lg-8"><h2 id="crossover-title">${crossoverTitle(r)}</h2><p>${esc(r.anime.creator || r.anime.mangaCreator)} × ${esc(r.artwork.artist)}</p></div><div class="col-lg-4">${downloadButton(r)}</div></div><div class="comparison-controls my-4"><div class="btn-group compare-switch" role="group" aria-label="Original and AI Crossover comparison"><button class="btn" data-compare="0" aria-pressed="false">Original</button><button class="btn" data-compare="1" aria-pressed="true">Both</button><button class="btn" data-compare="2" aria-pressed="false">AI Crossover</button></div><p id="comparison-hint">Select an image to expand it. Select it again or choose Both to compare.</p></div><div class="art-comparison" data-mode="both"><figure data-image="original">${r.artwork.preview?`<img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} by ${esc(r.artwork.artist)}">`:'<p>Original preview unavailable.</p>'}<figcaption>The original artwork</figcaption></figure><figure data-image="crossover">${image(r,true)}<figcaption>The AI Crossover</figcaption></figure></div><div class="row g-4 mt-2"><section class="col-md-6"><h3>Behind the artwork</h3><p>${esc(r.artwork.description||'')}</p>${externalLink(r.artwork.sourceUrl,'View the original')}</section><section class="col-md-6"><h3>From the anime</h3><p>${esc(r.anime.description||'')}</p>${animeLinks(r.anime)}</section></div>${interestingLinks(r.artwork)}<section class="prompt-section"><h3>The Prompt</h3><p role="status">Loading the original prompt…</p></section><section class="crossover-credits"><h3>Credits & sources</h3><p>${r.anime.creator ? 'Directed by' : 'Manga by'} ${esc(r.anime.creator || r.anime.mangaCreator)}. ${externalLink(r.anime.mangaSourceUrl,'Manga creator & source')}</p><p>${esc(r.artwork.credit||r.artwork.artist)} ${esc(r.artwork.reuseTerms||'')}</p>${externalLink(r.artwork.previewSourceUrl,'Image source & rights')}<p>AI Crossover: an AI-generated fan experiment. No affiliation with the original creators or rights holders.</p></section>`;
   const comparison = crossoverDialog.querySelector('.art-comparison');
   const modes = ['original','both','crossover'];
   function setComparison(value) {
