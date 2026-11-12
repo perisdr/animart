@@ -56,11 +56,8 @@
 .collection .list-copy h3{font-size:clamp(30px,3vw,44px);line-height:1.35;text-wrap:balance}
 .collection .list-description{max-width:55ch}
 @media(min-width:992px){
- .collection .filter-row{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(120px,.45fr);align-items:end;column-gap:24px;margin-inline:0;padding-block:18px}
+ .collection .filter-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:end;column-gap:24px;margin-inline:0;padding-block:18px}
  .collection .filter-row>div,.collection .additional-filters{width:auto;padding:0;margin:0}
- .collection .additional-filters summary{padding-block:12px}
- .collection .additional-filters[open]{grid-column:1/-1}
- .collection .additional-filters[open] summary{padding-block:4px}
  .collection .slider-stage{gap:36px}
  .collection .gallery-grid>.row>article{width:50%}
 }
@@ -315,8 +312,26 @@ main > .opening {
   color: var(--ink);
   font-size: 14px;
 }
-.collection .filter-row { display: none; }
-.collection .filter-row.is-open { display: flex; }
+.collection .filter-row { display: flex; margin-inline: 0; }
+.filter-panel { display: grid; grid-template-rows: 1fr; opacity: 1; }
+.filter-panel[inert] { grid-template-rows: 0fr; opacity: 0; }
+.filter-clip { min-height: 0; overflow: clip; display: flow-root; }
+.collection .more-filter-toggle {
+  background: transparent; color: inherit; border: 0; width: fit-content;
+  min-height: 44px; font-size: 14px; font-weight: 650; text-align: left;
+}
+.more-filter-toggle::before { content: '\25B8'; display: inline-block; margin-right: .35em; }
+.more-filter-toggle[aria-expanded=true]::before { transform: rotate(90deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .filter-panel { transition: grid-template-rows 350ms cubic-bezier(.22,1,.36,1), opacity 350ms cubic-bezier(.22,1,.36,1); }
+  .more-filter-toggle::before { transition: transform 350ms cubic-bezier(.22,1,.36,1); }
+}
+@media (min-width: 992px) {
+  .collection .filter-row { display: grid; }
+  #extra-filter-panel { grid-column: 1 / -1; }
+  #extra-filter-panel .row { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); column-gap: 24px; margin-inline: 0; }
+  #extra-filter-panel .row > div { padding-inline: 0; width: auto; }
+}
 .collection .collection-heading { margin-bottom: 20px; }
 .collection .gallery-grid .piece h3 { font-family: Fraunces, serif; font-size: 24px; font-weight: 550; }
 @media (max-width: 991px) {

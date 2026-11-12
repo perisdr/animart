@@ -16,9 +16,8 @@ function readFilters(){
   const params = new URLSearchParams(location.search);
   for (const [name, control] of Object.entries(controls)) control.value = params.get(name) || '';
   if (Object.values(controls).some(control => control.value)) {
-    filterToggle.setAttribute('aria-expanded', 'true');
-    document.querySelector('#gallery-filters').classList.add('is-open');
-    if (controls.artist.value || controls.artwork.value) document.querySelector('.additional-filters').open = true;
+    setFilterPanel(filterToggle, true);
+    if (controls.artist.value || controls.artwork.value) setFilterPanel(moreFilterToggle, true);
   }
 }
 function clearFilters(){Object.values(controls).forEach(control=>control.value='');filter();}
@@ -27,11 +26,15 @@ function fillSelect(name,values){const select=controls[name];select.length=1;[..
 const mobile = matchMedia('(max-width: 767px)');
 mobile.addEventListener('change', () => render());
 const filterToggle = document.querySelector('.mobile-filter-toggle');
-filterToggle.addEventListener('click', () => {
-  const open = filterToggle.getAttribute('aria-expanded') !== 'true';
-  filterToggle.setAttribute('aria-expanded', String(open));
-  document.querySelector('#gallery-filters').classList.toggle('is-open', open);
-});
+const moreFilterToggle = document.querySelector('.more-filter-toggle');
+function setFilterPanel(button, open) {
+  const panel = document.getElementById(button.getAttribute('aria-controls'));
+  button.setAttribute('aria-expanded', String(open));
+  panel.inert = !open;
+}
+for (const button of [filterToggle, moreFilterToggle]) {
+  button.addEventListener('click', () => setFilterPanel(button, button.getAttribute('aria-expanded') !== 'true'));
+}
 let view = 'grid', currentId = null, records = [], filtered = [];
 const galleryPages = {grid: {page: 1, size: 6}, list: {page: 1, size: 4}};
 const pageOptions = document.querySelector('#gallery-page-options');

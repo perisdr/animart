@@ -5,7 +5,7 @@
 <title>Animart — Anime, in a different frame</title>
 <script src="scripts/featured.js?v=2026.11.10.6"></script>
 <link rel="stylesheet" href="vendor/bootstrap.min.css">
-<link rel="stylesheet" href="styles/site.css?v=2026.11.11.1">
+<link rel="stylesheet" href="styles/site.css?v=2026.11.12.2">
 <link rel="icon" href="favicon.svg">
 <meta name="theme-color" content="#29163b">
 <meta name="description" content="Anime meets art: a personal collection of AI Crossovers for TV wallpapers, with original artwork comparisons and generation prompts.">
@@ -36,7 +36,7 @@
 <div class="gallery-toolbar d-flex justify-content-between align-items-center flex-wrap gap-3">
 <p id="count" role="status" class="m-0">Loading the collection…</p>
 <button class="btn btn-outline-dark" id="clear-filters" type="button" hidden>Clear filters</button>
-<button type="button" class="btn mobile-filter-toggle" aria-expanded="false" aria-controls="gallery-filters" aria-label="Search and filter the collection"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18l-7 8v7l-4 2v-9z"/></svg><span class="filter-label">Filters</span></button>
+<button type="button" class="btn mobile-filter-toggle" aria-expanded="false" aria-controls="filter-panel" aria-label="Search and filter the collection"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18l-7 8v7l-4 2v-9z"/></svg><span class="filter-label">Filters</span></button>
 <div class="btn-group view-switch" role="group" aria-label="Gallery view">
 <button class="btn" type="button" data-view="grid" aria-pressed="true">Grid</button>
 <button class="btn" type="button" data-view="slider" aria-pressed="false">Slider</button>
@@ -46,6 +46,7 @@
 
 </div>
 
+<div id="filter-panel" class="filter-panel" inert><div class="filter-clip">
 <form id="gallery-filters" class="row g-3 filter-row" onsubmit="return false">
 <div class="col-md-7">
 <label class="form-label" for="search">Search the collection</label>
@@ -61,8 +62,8 @@
 <option>One Piece</option>
 </select>
 </div>
-<details class="col-12 additional-filters">
-<summary>More filters</summary>
+<button type="button" class="more-filter-toggle" aria-expanded="false" aria-controls="extra-filter-panel">More filters</button>
+<div id="extra-filter-panel" class="col-12 filter-panel" inert><div class="filter-clip">
 <div class="row g-3 mt-1">
 <div class="col-md-6">
 <label class="form-label" for="artist">Artist</label>
@@ -77,8 +78,9 @@
 </select>
 </div>
 </div>
-</details>
+</div></div>
 </form>
+</div></div>
 <div id="load-error" role="alert" hidden>
 <p>The collection couldn’t load. Please try again.</p>
 <button class="btn btn-outline-dark" id="retry" type="button">Try again</button>
@@ -144,7 +146,7 @@
 <div id="crossover-content">
 </div>
 </dialog>
-<script src="scripts/gallery.js?v=2026.11.11.1">
+<script src="scripts/gallery.js?v=2026.11.12.2">
 </script>
 </body>
 </html>
