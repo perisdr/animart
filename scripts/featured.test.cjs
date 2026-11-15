@@ -5,7 +5,7 @@ const {runInNewContext} = require('node:vm');
 const source = readFileSync(__dirname + '/featured.js', 'utf8');
 const records = JSON.parse(readFileSync(__dirname + '/../data/wallpapers.json', 'utf8'));
 
-function setup({values = [0], fallback, failFirst = false} = {}) {
+function setup({values = [0], fallback, failFirst = false, catalogue = records} = {}) {
   let fetches = 0, draws = 0;
   const preloads = [];
   const window = {crypto: fallback === undefined ? {getRandomValues(array) {
@@ -18,7 +18,7 @@ function setup({values = [0], fallback, failFirst = false} = {}) {
     fetch: async () => {
       fetches++;
       if (failFirst && fetches === 1) throw Error('Offline');
-      return {ok: true, json: async () => records.slice()};
+      return {ok: true, json: async () => catalogue.slice()};
     },
     document: {
       createElement: () => ({setAttribute(name, value) {this[name] = value;}}),
@@ -37,9 +37,10 @@ test('every catalogue entry is reachable, including the final accepted bucket', 
 });
 
 test('rejects the incomplete bucket instead of biasing the first entries', async () => {
-  const limit = Math.floor(2 ** 32 / records.length) * records.length;
-  const state = setup({values: [limit, 0xffffffff, records.length - 1]});
-  assert.equal((await state.api.load()).featured.id, records.at(-1).id);
+  // Three entries always leave an incomplete bucket in the 32-bit range.
+  const catalogue = records.slice(0, 3);
+  const state = setup({catalogue, values: [0xffffffff, 0xffffffff, 2]});
+  assert.equal((await state.api.load()).featured.id, catalogue[2].id);
   assert.equal(state.draws(), 3);
 });
 

@@ -1465,5 +1465,211 @@
         "bytes": 791018
       }
     }
+  },
+  {
+    "id": "claymore-la-liberte-guidant-le-peuple",
+    "anime": {
+      "name": "Claymore",
+      "mangaCreator": "Norihiro Yagi",
+      "mangaSourceUrl": "https://www.viz.com/claymore",
+      "anidbUrl": "https://anidb.net/anime/4892",
+      "aliases": [
+        "Teresa",
+        "Clare",
+        "The Black Card",
+        "Liberty Leading the People"
+      ],
+      "description": "In the 2007 anime, silver-eyed warriors hunt Yoma, monsters that can pass for human. The warriors carry Yoma flesh themselves. Teresa’s bond with a young girl named Clare puts her at odds with the organization that commands her."
+    },
+    "artwork": {
+      "title": "La Liberté guidant le peuple",
+      "artist": "Eugène Delacroix",
+      "year": "1830",
+      "description": "Liberty looks back over her shoulder as she carries the tricolour across a Paris barricade. Delacroix painted the scene in response to the July Revolution of 1830. In the AI Crossover, Teresa turns toward her fellow Claymores beneath a black standard.",
+      "sourceUrl": "https://www.wikiart.org/en/eugene-delacroix/the-liberty-leading-the-people-1830",
+      "preview": "previews/originals/la-liberte-guidant-le-peuple.webp",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Eug%C3%A8ne_Delacroix_-_Le_28_Juillet._La_Libert%C3%A9_guidant_le_peuple.jpg",
+      "credit": "Eugène Delacroix. Comparison image via Wikimedia Commons.",
+      "reuseTerms": "Wikimedia Commons marks this reproduction as public domain.",
+      "links": [
+        {
+          "label": "Nippon TV — Claymore",
+          "url": "https://www.ntv.co.jp/english/pc/2011/03/claymore.html"
+        },
+        {
+          "label": "Musée du Louvre — La Liberté guidant le peuple",
+          "url": "https://collections.louvre.fr/en/ark:/53355/cl010065872"
+        }
+      ]
+    },
+    "metadataStatus": "source-linked",
+    "preview": "Assets/Claymore/tinified/Claymore X La Liberté guidant le peuple X 640x360.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "Romanticism",
+      "oil painting"
+    ],
+    "downloads": [
+      {
+        "label": "Tinified 1080p",
+        "path": "Assets/Claymore/tinified/Claymore X La Liberté guidant le peuple X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 936688,
+        "format": "png"
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/Claymore/tinified/Claymore X La Liberté guidant le peuple X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 2790939,
+        "format": "png"
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/Claymore/Claymore X La Liberté guidant le peuple X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 2643158,
+        "format": "png"
+      },
+      {
+        "label": "Uncompressed 2160p",
+        "path": "Assets/Claymore/Claymore X La Liberté guidant le peuple X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 7170520,
+        "format": "png"
+      }
+    ],
+    "addedOn": "2026-11-15",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/claymore-la-liberte-guidant-le-peuple-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 6568
+      },
+      "medium": {
+        "path": "previews/web/claymore-la-liberte-guidant-le-peuple-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 47628
+      },
+      "large": {
+        "path": "previews/web/claymore-la-liberte-guidant-le-peuple-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 88242
+      }
+    }
+  },
+  {
+    "id": "naruto-wind-god-and-thunder-god",
+    "anime": {
+      "name": "Naruto",
+      "mangaCreator": "Masashi Kishimoto",
+      "mangaSourceUrl": "https://www.viz.com/naruto",
+      "anidbUrl": "https://anidb.net/anime/4880",
+      "aliases": [
+        "Naruto: Shippuden",
+        "Naruto Uzumaki",
+        "Sasuke Uchiha",
+        "Fūjin",
+        "Raijin"
+      ],
+      "description": "In Naruto: Shippuden, Naruto returns to the Hidden Leaf Village after training with Jiraiya. His determination to bring Sasuke home persists as the two former teammates follow different paths."
+    },
+    "artwork": {
+      "title": "Wind God and Thunder God",
+      "artist": "Tawaraya Sōtatsu",
+      "year": "17th century",
+      "description": "On a pair of folding screens belonging to Kennin-ji in Kyoto, the thunder god leans into his ring of drums and the wind god grips a billowing bag. Gold leaf fills the space between them. The AI Crossover gives the drums to Sasuke and the wind bag to Naruto.",
+      "sourceUrl": "https://www.kyohaku.go.jp/eng/collection/meihin/kinsei/item10/",
+      "preview": "previews/originals/wind-god-and-thunder-god.webp",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Wind-God-Fujin-and-Thunder-God-Raijin-by-Tawaraya-Sotatsu.png",
+      "credit": "Tawaraya Sōtatsu. Comparison image via Wikimedia Commons.",
+      "reuseTerms": "Wikimedia Commons marks this reproduction as public domain.",
+      "links": [
+        {
+          "label": "Naruto Official Site — Naruto: Shippuden",
+          "url": "https://naruto-official.com/en/anime/naruto2"
+        },
+        {
+          "label": "Kyoto National Museum — Wind God and Thunder God Screens",
+          "url": "https://www.kyohaku.go.jp/eng/collection/meihin/kinsei/item10/"
+        }
+      ]
+    },
+    "metadataStatus": "source-linked",
+    "preview": "Assets/Naruto/tinified/Naruto X Wind God and Thunder God X 640x360.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "Rinpa",
+      "folding screens",
+      "gold leaf"
+    ],
+    "downloads": [
+      {
+        "label": "Tinified 1080p",
+        "path": "Assets/Naruto/tinified/Naruto X Wind God and Thunder God X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 1321581,
+        "format": "png"
+      },
+      {
+        "label": "Tinified 2160p",
+        "path": "Assets/Naruto/tinified/Naruto X Wind God and Thunder God X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 3946980,
+        "format": "png"
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/Naruto/Naruto X Wind God and Thunder God X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 3398844,
+        "format": "png"
+      },
+      {
+        "label": "Uncompressed 2160p",
+        "path": "Assets/Naruto/Naruto X Wind God and Thunder God X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 9921691,
+        "format": "png"
+      }
+    ],
+    "addedOn": "2026-11-15",
+    "webImage": {
+      "thumbnail": {
+        "path": "previews/web/naruto-wind-god-and-thunder-god-320.webp",
+        "width": 320,
+        "height": 180,
+        "bytes": 11088
+      },
+      "medium": {
+        "path": "previews/web/naruto-wind-god-and-thunder-god-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 111984
+      },
+      "large": {
+        "path": "previews/web/naruto-wind-god-and-thunder-god-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 216244
+      }
+    }
   }
 ]

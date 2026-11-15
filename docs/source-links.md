@@ -44,3 +44,7 @@ That is the initial `addedOn` date, not the date of later resolution/metadata ed
 ## Supplementary link expansion
 
 Added verified Google Arts & Culture entries for Nighthawks, the Washington Japanese Footbridge, Rain Steam and Speed, and Abbey among Oak Trees. Great Wave links explicitly identify the British Museum impression; The Scream identifies the 1910 MUNCH version. Red Fuji retains its existing Google Arts & Culture reference and adds Carnegie’s collection impression (catalogued as after Hokusai). No exact Google Arts & Culture object listing was confirmed for Marat, Son of Man, Creation of Adam or Wanderer; unrelated works were omitted. Existing official museum references remain.
+
+## Claymore and Naruto additions, 15 November 2026
+
+AniDB’s title export confirms Claymore (4892) and Naruto Shippuuden (4880). The Naruto prompt names Shippuden as its character reference. WikiArt lists Delacroix’s 1830 canvas. For Sōtatsu’s Kennin-ji screens, an exact WikiArt entry could not be confirmed. The [Kyoto National Museum record](https://www.kyohaku.go.jp/eng/collection/meihin/kinsei/item10/) identifies the artist and the pair. Each catalogue entry links to its separate public-domain comparison image on Wikimedia Commons.
