@@ -405,8 +405,45 @@ function filter(updateURL=true, resetPages=true){
   if (updateURL) writeGalleryLocation();
 }
 document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{view=b.dataset.view;render();writeGalleryLocation(true);});
-controls.q.addEventListener('input',()=>filter());
-for(const name of ['anime','artist','artwork'])controls[name].addEventListener('change',()=>filter());
+function captureGalleryEvent(name, properties) {
+  // The snippet queues calls even if a blocker prevents the SDK from ever loading.
+  const client = window.posthog;
+  if (client?.__loaded) client.capture?.(name, properties);
+}
+
+let searchTimer;
+let pendingSearch = '';
+function captureSearch() {
+  clearTimeout(searchTimer);
+  if (pendingSearch && pendingSearch === controls.q.value.trim()) {
+    captureGalleryEvent('gallery_searched', {
+      search_term: pendingSearch,
+      result_count: filtered.length
+    });
+  }
+  pendingSearch = '';
+}
+controls.q.addEventListener('input', event => {
+  filter();
+  clearTimeout(searchTimer);
+  pendingSearch = event.isComposing ? '' : controls.q.value.trim();
+  if (pendingSearch) searchTimer = setTimeout(captureSearch, 1000);
+});
+controls.q.addEventListener('blur', captureSearch);
+controls.q.addEventListener('keydown', event => {
+  if (event.key === 'Enter' && !event.isComposing) captureSearch();
+});
+for (const name of ['anime', 'artist', 'artwork']) {
+  controls[name].addEventListener('change', () => {
+    filter();
+    const value = controls[name].value;
+    if (value) captureGalleryEvent('gallery_filter_selected', {
+      filter_type: name,
+      filter_value: value,
+      result_count: filtered.length
+    });
+  });
+}
 document.querySelector('#clear-filters').addEventListener('click',clearFilters);
 async function loadGallery(){
   document.querySelector('#load-error').hidden=true;
@@ -478,6 +515,20 @@ function syncDetail() {
   if(!r){if(crossoverDialog.open)crossoverDialog.close();return;}
   if(!crossoverDialog.open)detailLauncher=document.activeElement;
   document.querySelector('#crossover-content').innerHTML=`<div class="row g-3 align-items-end"><div class="col-lg-8"><h2 id="crossover-title">${crossoverTitle(r)}</h2><p>${esc(r.anime.creator || r.anime.mangaCreator)} × ${esc(r.artwork.artist)}</p></div><div class="col-lg-4">${downloadButton(r)}</div></div><div class="comparison-controls my-4"><div class="btn-group compare-switch" role="group" aria-label="Original and AI Crossover comparison"><button class="btn" data-compare="0" aria-pressed="false">Original</button><button class="btn" data-compare="1" aria-pressed="true">Both</button><button class="btn" data-compare="2" aria-pressed="false">AI Crossover</button></div><p id="comparison-hint">Select an image to expand it. Select it again or choose Both to compare.</p></div><div class="art-comparison" data-mode="both"><figure data-image="original">${r.artwork.preview?`<img src="${path(r.artwork.preview)}" alt="${esc(r.artwork.title)} by ${esc(r.artwork.artist)}">`:'<p>Original preview unavailable.</p>'}<figcaption>The original artwork</figcaption></figure><figure data-image="crossover">${image(r,true)}<figcaption>The AI Crossover</figcaption></figure></div><div class="row g-4 mt-2"><section class="col-md-6"><h3>Behind the artwork</h3><p>${esc(r.artwork.description||'')}</p>${externalLink(r.artwork.sourceUrl,'View the original')}</section><section class="col-md-6"><h3>From the anime</h3><p>${esc(r.anime.description||'')}</p>${animeLinks(r.anime)}</section></div>${interestingLinks(r.artwork)}<section class="prompt-section"><h3>The Prompt</h3><p role="status">Loading the original prompt…</p></section><section class="crossover-credits"><h3>Credits & sources</h3><p>${r.anime.creator ? 'Directed by' : 'Manga by'} ${esc(r.anime.creator || r.anime.mangaCreator)}. ${externalLink(r.anime.mangaSourceUrl,'Manga creator & source')}</p><p>${esc(r.artwork.credit||r.artwork.artist)} ${esc(r.artwork.reuseTerms||'')}</p>${externalLink(r.artwork.previewSourceUrl,'Image source & rights')}<p>AI Crossover: an AI-generated fan experiment. No affiliation with the original creators or rights holders.</p></section>`;
+  crossoverDialog.querySelector('.download-picker').addEventListener('click', event => {
+    const link = event.target.closest('a.download-file');
+    if (!link) return;
+    const file = r.downloads.find(item => encodeURI(item.path) === link.getAttribute('href'));
+    if (!file) return;
+    captureGalleryEvent('crossover_download_requested', {
+      crossover_id: r.id,
+      crossover_title: `${r.anime.name} × ${r.artwork.title}`,
+      file_variant: file.label,
+      file_path: file.path,
+      resolution_height: file.height,
+      optimized: file.label.startsWith('Tinified')
+    });
+  });
   const comparison = crossoverDialog.querySelector('.art-comparison');
   const modes = ['original','both','crossover'];
   function setComparison(value) {

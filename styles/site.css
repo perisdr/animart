@@ -570,3 +570,56 @@ main > .opening {
   .gallery-pagination .btn { padding-inline: 10px; }
   .pagination-pages { order: -1; flex-basis: 100%; }
 }
+#cc-main {
+  --cc-font-family: Source, sans-serif;
+  --cc-bg: var(--paper);
+  --cc-primary-color: var(--ink);
+  --cc-secondary-color: var(--ink);
+  --cc-btn-primary-bg: var(--ink);
+  --cc-btn-primary-hover-bg: var(--brand-art);
+  --cc-btn-secondary-bg: var(--archive-panel);
+  --cc-modal-border-radius: 0;
+  --cc-btn-border-radius: 0;
+}
+#cc-main .cm.cm--box {
+  max-width: 32em;
+  border: 1px solid var(--ink);
+}
+#cc-main .cm.cm--box::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: var(--brand-art);
+  animation: cookie-countdown-drain var(--countdown-duration) linear forwards;
+  animation-play-state: var(--countdown-play-state, running);
+  transform-origin: left;
+  pointer-events: none;
+}
+@keyframes cookie-countdown-drain {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+#cc-main #cookie-countdown {
+  font-variant-numeric: tabular-nums;
+}
+#cc-main .pm .pm__close-btn {
+  display: none;
+}
+#cc-main .cm .cm__texts {
+  min-height: 108px;
+  padding-right: 88px;
+  background: url('../Assets/branding/l-cookie-coffee.webp') right 12px bottom / auto 96px no-repeat;
+}
+#cc-main .cm .cm__title {
+  font: 550 1.5rem/1.1 Fraunces, serif;
+}
+@media (max-width: 480px) {
+  #cc-main .cm .cm__texts {
+    min-height: 84px;
+    padding-right: 64px;
+    background-size: auto 72px;
+    background-position: right 6px bottom;
+  }
+}
