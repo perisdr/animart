@@ -3,8 +3,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Animart — Anime, in a different frame</title>
+<link rel="preload" as="script" href="vendor/cookieconsent-3.2.1/cookieconsent.umd.js">
+<script src="vendor/cookieconsent-3.2.1/cookieconsent.umd.js"></script>
 <script src="scripts/featured.js?v=2026.11.10.6"></script>
 <link rel="stylesheet" href="vendor/bootstrap.min.css">
+<link rel="stylesheet" href="vendor/cookieconsent-3.2.1/cookieconsent.css">
 <link rel="stylesheet" href="styles/site.css?v=2026.11.12.2">
 <link rel="icon" href="favicon.svg">
 <meta name="theme-color" content="#29163b">
@@ -135,6 +138,7 @@
 <p id="last-added"></p>
 <p id="collection-totals"></p>
 </section>
+<button type="button" class="btn btn-link p-0 text-reset" id="cookie-settings" data-cc="show-preferencesModal" hidden>Cookie settings</button>
 <a href="#collection">Back to collection ↑</a>
 <p id="site-build" class="w-100" hidden></p>
 </footer>
@@ -148,5 +152,6 @@
 </dialog>
 <script src="scripts/gallery.js?v=2026.11.12.2">
 </script>
+<script defer src="scripts/cookieconsent-config.js"></script>
 </body>
 </html>
