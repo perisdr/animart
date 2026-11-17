@@ -117,6 +117,47 @@ main > .opening { padding-block: 16px 0; }
 :root { --archive-rule: #a995bb; --archive-panel: #e8def3; --archive-muted: #614e72; }
 .brand { line-height: 1.15; letter-spacing: -.035em; }
 header nav a { font-weight: 650; }
+header nav a[aria-current="page"] { text-decoration: underline; }
+.full-story {
+  width: min(calc(100% - 3rem), 80ch);
+  margin-inline: auto;
+  padding-block: clamp(2rem, 3.5vw, 3.5rem);
+  font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+}
+.full-story h1 {
+  max-width: 16ch;
+  margin-bottom: .65em;
+  font: 650 clamp(2.5rem, 5vw, 4.25rem)/1.05 Fraunces, serif;
+  text-wrap: balance;
+}
+.full-story h2 {
+  margin-block: 1.5em .5em;
+  font: 650 clamp(2rem, 4vw, 3rem)/1.1 Fraunces, serif;
+}
+.full-story article {
+  margin-bottom: 1.25em;
+  padding-bottom: .5em;
+  border-bottom: 1px solid var(--archive-rule);
+}
+.story-row + .story-row {
+  margin-top: clamp(2rem, 4vw, 4rem);
+  padding-top: clamp(2rem, 4vw, 4rem);
+  border-top: 1px solid var(--archive-rule);
+}
+.story-row h2 { margin-top: 0; }
+.story-row figure { margin: 0; }
+@media (min-width: 992px) {
+  .full-story { width: min(calc(100% - 6rem), 96rem); }
+  .story-row {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: clamp(2rem, 4vw, 4.5rem);
+    align-items: center;
+  }
+  .story-row-reverse { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); }
+  .story-row-reverse figure { grid-area: 1 / 1; }
+}
 main > .opening { padding-block: 20px 0; }
 #archive-title { color: var(--archive-muted); font-weight: 650; }
 .featured-label { color: var(--archive-muted); }
@@ -152,6 +193,18 @@ main > .opening { padding-block: 20px 0; }
 .story p { max-width: 65ch; }
 .story a, footer a { color: inherit; }
 .story details { border-top: 1px solid var(--archive-rule); padding-top: 12px; }
+@media (prefers-reduced-motion: no-preference) {
+  .story details::details-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 350ms cubic-bezier(.22,1,.36,1),
+                opacity 350ms cubic-bezier(.22,1,.36,1),
+                content-visibility 350ms allow-discrete;
+  }
+  .story details[open]::details-content { grid-template-rows: 1fr; opacity: 1; }
+  .story-note-content { min-height: 0; overflow: clip; }
+}
 .story summary { font-weight: 700; cursor: pointer; }
 .story :focus-visible, footer :focus-visible { outline-color: var(--red); }
 footer { background: var(--paper); color: var(--ink); border-color: var(--archive-rule); }
