@@ -36,7 +36,7 @@
       ]
     },
     "metadataStatus": "source-linked",
-    "preview": "previews/death-note-nighthawks.webp",
+    "preview": "Assets/Death Note/tinified/Death Note X Nighthawks X 640x360.webp",
     "tags": [
       "AI-generated",
       "anime",
@@ -48,20 +48,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/Death Note/tinified/Death Note X Nighthawks X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
-        "bytes": 986309
+        "bytes": 2651407
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/Death Note/tinified/Death Note X Nighthawks X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "format": "png",
-        "bytes": 2831891
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/Death Note/tinified/Death Note X Nighthawks X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "format": "webp",
+        "bytes": 428976
       },
       {
         "label": "Uncompressed 1080p",
@@ -70,6 +70,22 @@
         "height": 1080,
         "format": "png",
         "bytes": 2667161
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/Death Note/tinified/Death Note X Nighthawks X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 7764403
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/Death Note/tinified/Death Note X Nighthawks X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "format": "webp",
+        "bytes": 965608
       },
       {
         "label": "Uncompressed 2160p",
@@ -83,22 +99,22 @@
     "addedOn": "2026-11-01",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/death-note-nighthawks-320.webp",
+        "path": "Assets/Death Note/tinified/death-note-nighthawks-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 8868
+        "bytes": 18140
       },
       "medium": {
-        "path": "previews/web/death-note-nighthawks-1280.webp",
+        "path": "Assets/Death Note/tinified/death-note-nighthawks-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 93208
+        "bytes": 228060
       },
       "large": {
-        "path": "previews/web/death-note-nighthawks-1920.webp",
+        "path": "Assets/Death Note/tinified/death-note-nighthawks-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 170366
+        "bytes": 428976
       }
     }
   },
@@ -139,7 +155,7 @@
       ]
     },
     "metadataStatus": "source-linked",
-    "preview": "previews/death-note-the-death-of-marat.webp",
+    "preview": "Assets/Death Note/tinified/Death Note X The Death of Marat X 640x360.webp",
     "tags": [
       "AI-generated",
       "anime",
@@ -148,20 +164,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/Death Note/tinified/Death Note X The Death of Marat X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
-        "bytes": 1225060
+        "bytes": 2564042
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/Death Note/tinified/Death Note X The Death of Marat X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "format": "png",
-        "bytes": 3442700
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/Death Note/tinified/Death Note X The Death of Marat X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "format": "webp",
+        "bytes": 378780
       },
       {
         "label": "Uncompressed 1080p",
@@ -170,6 +186,22 @@
         "height": 1080,
         "format": "png",
         "bytes": 2585084
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/Death Note/tinified/Death Note X The Death of Marat X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 7492409
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/Death Note/tinified/Death Note X The Death of Marat X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "format": "webp",
+        "bytes": 874592
       },
       {
         "label": "Uncompressed 2160p",
@@ -183,22 +215,22 @@
     "addedOn": "2026-11-01",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/death-note-the-death-of-marat-320.webp",
+        "path": "Assets/Death Note/tinified/death-note-the-death-of-marat-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 6140
+        "bytes": 14178
       },
       "medium": {
-        "path": "previews/web/death-note-the-death-of-marat-1280.webp",
+        "path": "Assets/Death Note/tinified/death-note-the-death-of-marat-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 73330
+        "bytes": 204316
       },
       "large": {
-        "path": "previews/web/death-note-the-death-of-marat-1920.webp",
+        "path": "Assets/Death Note/tinified/death-note-the-death-of-marat-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 137358
+        "bytes": 378780
       }
     }
   },
@@ -239,7 +271,7 @@
       ]
     },
     "metadataStatus": "source-linked",
-    "preview": "previews/death-note-the-scream.webp",
+    "preview": "Assets/Death Note/tinified/Death Note X The Scream X 640x360.webp",
     "tags": [
       "AI-generated",
       "anime",
@@ -248,20 +280,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/Death Note/tinified/Death Note X The Scream X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
-        "bytes": 1338625
+        "bytes": 3853144
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/Death Note/tinified/Death Note X The Scream X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "format": "png",
-        "bytes": 3888842
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/Death Note/tinified/Death Note X The Scream X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "format": "webp",
+        "bytes": 917140
       },
       {
         "label": "Uncompressed 1080p",
@@ -270,6 +302,22 @@
         "height": 1080,
         "format": "png",
         "bytes": 3853935
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/Death Note/tinified/Death Note X The Scream X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 12737198
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/Death Note/tinified/Death Note X The Scream X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "format": "webp",
+        "bytes": 1986124
       },
       {
         "label": "Uncompressed 2160p",
@@ -283,22 +331,22 @@
     "addedOn": "2026-11-01",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/death-note-the-scream-320.webp",
+        "path": "Assets/Death Note/tinified/death-note-the-scream-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 21926
+        "bytes": 35156
       },
       "medium": {
-        "path": "previews/web/death-note-the-scream-1280.webp",
+        "path": "Assets/Death Note/tinified/death-note-the-scream-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 298314
+        "bytes": 480628
       },
       "large": {
-        "path": "previews/web/death-note-the-scream-1920.webp",
+        "path": "Assets/Death Note/tinified/death-note-the-scream-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 522872
+        "bytes": 917140
       }
     }
   },
@@ -335,7 +383,7 @@
       ]
     },
     "metadataStatus": "source-linked",
-    "preview": "previews/death-note-the-son-of-man.webp",
+    "preview": "Assets/Death Note/tinified/Death Note X The Son of Man X 640x360.webp",
     "tags": [
       "AI-generated",
       "anime",
@@ -344,20 +392,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/Death Note/tinified/Death Note X The Son of Man X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
-        "bytes": 1044186
+        "bytes": 2740321
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/Death Note/tinified/Death Note X The Son of Man X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "format": "png",
-        "bytes": 2926367
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/Death Note/tinified/Death Note X The Son of Man X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "format": "webp",
+        "bytes": 438670
       },
       {
         "label": "Uncompressed 1080p",
@@ -366,6 +414,22 @@
         "height": 1080,
         "format": "png",
         "bytes": 2753120
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/Death Note/tinified/Death Note X The Son of Man X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 8178559
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/Death Note/tinified/Death Note X The Son of Man X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "format": "webp",
+        "bytes": 965884
       },
       {
         "label": "Uncompressed 2160p",
@@ -379,22 +443,22 @@
     "addedOn": "2026-11-01",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/death-note-the-son-of-man-320.webp",
+        "path": "Assets/Death Note/tinified/death-note-the-son-of-man-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 9542
+        "bytes": 21322
       },
       "medium": {
-        "path": "previews/web/death-note-the-son-of-man-1280.webp",
+        "path": "Assets/Death Note/tinified/death-note-the-son-of-man-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 107274
+        "bytes": 251030
       },
       "large": {
-        "path": "previews/web/death-note-the-son-of-man-1920.webp",
+        "path": "Assets/Death Note/tinified/death-note-the-son-of-man-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 183972
+        "bytes": 438670
       }
     }
   },
@@ -437,7 +501,7 @@
       ]
     },
     "metadataStatus": "source-linked",
-    "preview": "previews/demon-slayer-mugen-train-turner.webp",
+    "preview": "Assets/Demon Slayer/tinified/Demon Slayer X Rain, Steam, and Speed X 640x360.webp",
     "tags": [
       "AI-generated",
       "anime",
@@ -449,20 +513,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/Demon Slayer/tinified/Demon Slayer X Rain, Steam, and Speed X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
-        "bytes": 1194554
+        "bytes": 3494552
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/Demon Slayer/tinified/Demon Slayer X Rain, Steam, and Speed X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "format": "png",
-        "bytes": 3520404
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X Rain, Steam, and Speed X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "format": "webp",
+        "bytes": 781478
       },
       {
         "label": "Uncompressed 1080p",
@@ -471,6 +535,22 @@
         "height": 1080,
         "format": "png",
         "bytes": 3495275
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X Rain, Steam, and Speed X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 11080863
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X Rain, Steam, and Speed X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "format": "webp",
+        "bytes": 1590844
       },
       {
         "label": "Uncompressed 2160p",
@@ -484,22 +564,22 @@
     "addedOn": "2026-11-01",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/demon-slayer-mugen-train-turner-320.webp",
+        "path": "Assets/Demon Slayer/tinified/demon-slayer-mugen-train-turner-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 17472
+        "bytes": 31884
       },
       "medium": {
-        "path": "previews/web/demon-slayer-mugen-train-turner-1280.webp",
+        "path": "Assets/Demon Slayer/tinified/demon-slayer-mugen-train-turner-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 217200
+        "bytes": 412232
       },
       "large": {
-        "path": "previews/web/demon-slayer-mugen-train-turner-1920.webp",
+        "path": "Assets/Demon Slayer/tinified/demon-slayer-mugen-train-turner-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 369662
+        "bytes": 781478
       }
     }
   },
@@ -542,7 +622,7 @@
       ]
     },
     "metadataStatus": "source-linked",
-    "preview": "previews/demon-slayer-rengoku-red-fuji.webp",
+    "preview": "Assets/Demon Slayer/tinified/Demon Slayer X Fine Wind, Clear Morning X 640x360.webp",
     "tags": [
       "AI-generated",
       "anime",
@@ -554,20 +634,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/Demon Slayer/tinified/Demon Slayer X Fine Wind, Clear Morning X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
-        "bytes": 1169891
+        "bytes": 4003534
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/Demon Slayer/tinified/Demon Slayer X Fine Wind, Clear Morning X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "format": "png",
-        "bytes": 3325855
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X Fine Wind, Clear Morning X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "format": "webp",
+        "bytes": 944184
       },
       {
         "label": "Uncompressed 1080p",
@@ -576,6 +656,22 @@
         "height": 1080,
         "format": "png",
         "bytes": 4004348
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X Fine Wind, Clear Morning X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 13106741
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X Fine Wind, Clear Morning X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "format": "webp",
+        "bytes": 2065400
       },
       {
         "label": "Uncompressed 2160p",
@@ -589,22 +685,22 @@
     "addedOn": "2026-11-01",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/demon-slayer-rengoku-red-fuji-320.webp",
+        "path": "Assets/Demon Slayer/tinified/demon-slayer-rengoku-red-fuji-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 22222
+        "bytes": 35142
       },
       "medium": {
-        "path": "previews/web/demon-slayer-rengoku-red-fuji-1280.webp",
+        "path": "Assets/Demon Slayer/tinified/demon-slayer-rengoku-red-fuji-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 301234
+        "bytes": 487370
       },
       "large": {
-        "path": "previews/web/demon-slayer-rengoku-red-fuji-1920.webp",
+        "path": "Assets/Demon Slayer/tinified/demon-slayer-rengoku-red-fuji-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 555334
+        "bytes": 944184
       }
     }
   },
@@ -651,7 +747,7 @@
       ]
     },
     "metadataStatus": "source-linked",
-    "preview": "previews/demon-slayer-shinobu-monet-garden.webp",
+    "preview": "Assets/Demon Slayer/tinified/Demon Slayer X The Japanese Footbridge X 640x360.webp",
     "tags": [
       "AI-generated",
       "anime",
@@ -663,20 +759,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Japanese Footbridge X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
-        "bytes": 1488307
+        "bytes": 4284297
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Japanese Footbridge X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "format": "png",
-        "bytes": 4460061
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Japanese Footbridge X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "format": "webp",
+        "bytes": 1095058
       },
       {
         "label": "Uncompressed 1080p",
@@ -685,6 +781,22 @@
         "height": 1080,
         "format": "png",
         "bytes": 4285158
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Japanese Footbridge X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 14633109
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Japanese Footbridge X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "format": "webp",
+        "bytes": 2388328
       },
       {
         "label": "Uncompressed 2160p",
@@ -698,22 +810,22 @@
     "addedOn": "2026-11-01",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/demon-slayer-shinobu-monet-garden-320.webp",
+        "path": "Assets/Demon Slayer/tinified/demon-slayer-shinobu-monet-garden-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 27276
+        "bytes": 40762
       },
       "medium": {
-        "path": "previews/web/demon-slayer-shinobu-monet-garden-1280.webp",
+        "path": "Assets/Demon Slayer/tinified/demon-slayer-shinobu-monet-garden-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 377174
+        "bytes": 562598
       },
       "large": {
-        "path": "previews/web/demon-slayer-shinobu-monet-garden-1920.webp",
+        "path": "Assets/Demon Slayer/tinified/demon-slayer-shinobu-monet-garden-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 658954
+        "bytes": 1095058
       }
     }
   },
@@ -756,7 +868,7 @@
       ]
     },
     "metadataStatus": "source-linked",
-    "preview": "previews/demon-slayer-tanjiro-great-wave-corrected.webp",
+    "preview": "Assets/Demon Slayer/tinified/Demon Slayer X The Great Wave off Kanagawa X 640x360.webp",
     "tags": [
       "AI-generated",
       "anime",
@@ -768,20 +880,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Great Wave off Kanagawa X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
-        "bytes": 1334925
+        "bytes": 3984171
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Great Wave off Kanagawa X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "format": "png",
-        "bytes": 4039796
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Great Wave off Kanagawa X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "format": "webp",
+        "bytes": 904398
       },
       {
         "label": "Uncompressed 1080p",
@@ -790,6 +902,22 @@
         "height": 1080,
         "format": "png",
         "bytes": 3985350
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Great Wave off Kanagawa X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 13091745
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Great Wave off Kanagawa X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "format": "webp",
+        "bytes": 1917176
       },
       {
         "label": "Uncompressed 2160p",
@@ -803,22 +931,22 @@
     "addedOn": "2026-11-01",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/demon-slayer-tanjiro-great-wave-corrected-320.webp",
+        "path": "Assets/Demon Slayer/tinified/demon-slayer-tanjiro-great-wave-corrected-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 27544
+        "bytes": 40010
       },
       "medium": {
-        "path": "previews/web/demon-slayer-tanjiro-great-wave-corrected-1280.webp",
+        "path": "Assets/Demon Slayer/tinified/demon-slayer-tanjiro-great-wave-corrected-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 323068
+        "bytes": 511070
       },
       "large": {
-        "path": "previews/web/demon-slayer-tanjiro-great-wave-corrected-1920.webp",
+        "path": "Assets/Demon Slayer/tinified/demon-slayer-tanjiro-great-wave-corrected-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 540466
+        "bytes": 904398
       }
     }
   },
@@ -861,7 +989,7 @@
       ]
     },
     "metadataStatus": "source-linked",
-    "preview": "previews/demon-slayer-tanjiro-moonlit-temple.webp",
+    "preview": "Assets/Demon Slayer/tinified/Demon Slayer X The Abbey in the Oakwood X 640x360.webp",
     "tags": [
       "AI-generated",
       "anime",
@@ -873,20 +1001,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Abbey in the Oakwood X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
-        "bytes": 1505083
+        "bytes": 3700277
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Abbey in the Oakwood X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "format": "png",
-        "bytes": 4581573
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Abbey in the Oakwood X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "format": "webp",
+        "bytes": 812212
       },
       {
         "label": "Uncompressed 1080p",
@@ -895,6 +1023,22 @@
         "height": 1080,
         "format": "png",
         "bytes": 3701419
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Abbey in the Oakwood X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 11692920
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Abbey in the Oakwood X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "format": "webp",
+        "bytes": 1669962
       },
       {
         "label": "Uncompressed 2160p",
@@ -908,22 +1052,22 @@
     "addedOn": "2026-11-01",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/demon-slayer-tanjiro-moonlit-temple-320.webp",
+        "path": "Assets/Demon Slayer/tinified/demon-slayer-tanjiro-moonlit-temple-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 18414
+        "bytes": 33044
       },
       "medium": {
-        "path": "previews/web/demon-slayer-tanjiro-moonlit-temple-1280.webp",
+        "path": "Assets/Demon Slayer/tinified/demon-slayer-tanjiro-moonlit-temple-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 243572
+        "bytes": 436920
       },
       "large": {
-        "path": "previews/web/demon-slayer-tanjiro-moonlit-temple-1920.webp",
+        "path": "Assets/Demon Slayer/tinified/demon-slayer-tanjiro-moonlit-temple-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 412442
+        "bytes": 812212
       }
     }
   },
@@ -966,7 +1110,7 @@
       ]
     },
     "metadataStatus": "source-linked",
-    "preview": "previews/fma-fma-creation-of-adam-1920x1080.webp",
+    "preview": "Assets/FMA/tinified/Fullmetal Alchemist X The Creation of Adam X 640x360.webp",
     "tags": [
       "AI-generated",
       "anime",
@@ -975,20 +1119,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/FMA/tinified/Fullmetal Alchemist X The Creation of Adam X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
-        "bytes": 1194083
+        "bytes": 3082267
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/FMA/tinified/Fullmetal Alchemist X The Creation of Adam X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "format": "png",
-        "bytes": 3246042
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/FMA/tinified/Fullmetal Alchemist X The Creation of Adam X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "format": "webp",
+        "bytes": 582316
       },
       {
         "label": "Uncompressed 1080p",
@@ -997,6 +1141,22 @@
         "height": 1080,
         "format": "png",
         "bytes": 3085050
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/FMA/tinified/Fullmetal Alchemist X The Creation of Adam X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 9453531
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/FMA/tinified/Fullmetal Alchemist X The Creation of Adam X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "format": "webp",
+        "bytes": 1159522
       },
       {
         "label": "Uncompressed 2160p",
@@ -1010,22 +1170,22 @@
     "addedOn": "2026-11-01",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/fma-fma-creation-of-adam-1920x1080-320.webp",
+        "path": "Assets/FMA/tinified/fma-fma-creation-of-adam-1920x1080-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 14186
+        "bytes": 27178
       },
       "medium": {
-        "path": "previews/web/fma-fma-creation-of-adam-1920x1080-1280.webp",
+        "path": "Assets/FMA/tinified/fma-fma-creation-of-adam-1920x1080-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 147566
+        "bytes": 329226
       },
       "large": {
-        "path": "previews/web/fma-fma-creation-of-adam-1920x1080-1920.webp",
+        "path": "Assets/FMA/tinified/fma-fma-creation-of-adam-1920x1080-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 248894
+        "bytes": 582316
       }
     }
   },
@@ -1064,7 +1224,7 @@
       ]
     },
     "metadataStatus": "source-linked",
-    "preview": "previews/fma-fma-wanderer-1920x1080.webp",
+    "preview": "Assets/FMA/tinified/Fullmetal Alchemist X Wanderer above the Sea of Fog X 640x360.webp",
     "tags": [
       "AI-generated",
       "anime",
@@ -1076,20 +1236,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/FMA/tinified/Fullmetal Alchemist X Wanderer above the Sea of Fog X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
-        "bytes": 1091520
+        "bytes": 3311494
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/FMA/tinified/Fullmetal Alchemist X Wanderer above the Sea of Fog X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "format": "png",
-        "bytes": 3439447
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/FMA/tinified/Fullmetal Alchemist X Wanderer above the Sea of Fog X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "format": "webp",
+        "bytes": 681226
       },
       {
         "label": "Uncompressed 1080p",
@@ -1098,6 +1258,22 @@
         "height": 1080,
         "format": "png",
         "bytes": 3314126
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/FMA/tinified/Fullmetal Alchemist X Wanderer above the Sea of Fog X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 11660718
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/FMA/tinified/Fullmetal Alchemist X Wanderer above the Sea of Fog X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "format": "webp",
+        "bytes": 1726410
       },
       {
         "label": "Uncompressed 2160p",
@@ -1111,22 +1287,22 @@
     "addedOn": "2026-11-01",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/fma-fma-wanderer-1920x1080-320.webp",
+        "path": "Assets/FMA/tinified/fma-fma-wanderer-1920x1080-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 16704
+        "bytes": 30668
       },
       "medium": {
-        "path": "previews/web/fma-fma-wanderer-1920x1080-1280.webp",
+        "path": "Assets/FMA/tinified/fma-fma-wanderer-1920x1080-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 191410
+        "bytes": 364566
       },
       "large": {
-        "path": "previews/web/fma-fma-wanderer-1920x1080-1920.webp",
+        "path": "Assets/FMA/tinified/fma-fma-wanderer-1920x1080-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 317694
+        "bytes": 681226
       }
     }
   },
@@ -1166,7 +1342,7 @@
       ]
     },
     "metadataStatus": "source-linked",
-    "preview": "previews/one-piece-one-piece-great-wave-1920x1080.webp",
+    "preview": "Assets/One Piece/tinified/One Piece X The Great Wave off Kanagawa X 640x360.webp",
     "tags": [
       "AI-generated",
       "anime",
@@ -1178,20 +1354,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/One Piece/tinified/One Piece X The Great Wave off Kanagawa X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
-        "bytes": 1330542
+        "bytes": 4315738
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/One Piece/tinified/One Piece X The Great Wave off Kanagawa X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "format": "png",
-        "bytes": 3893688
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/One Piece/tinified/One Piece X The Great Wave off Kanagawa X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "format": "webp",
+        "bytes": 1074128
       },
       {
         "label": "Uncompressed 1080p",
@@ -1200,6 +1376,22 @@
         "height": 1080,
         "format": "png",
         "bytes": 4316611
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/One Piece/tinified/One Piece X The Great Wave off Kanagawa X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 14448060
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/One Piece/tinified/One Piece X The Great Wave off Kanagawa X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "format": "webp",
+        "bytes": 2236110
       },
       {
         "label": "Uncompressed 2160p",
@@ -1213,22 +1405,22 @@
     "addedOn": "2026-11-01",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/one-piece-one-piece-great-wave-1920x1080-320.webp",
+        "path": "Assets/One Piece/tinified/one-piece-one-piece-great-wave-1920x1080-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 29052
+        "bytes": 41584
       },
       "medium": {
-        "path": "previews/web/one-piece-one-piece-great-wave-1920x1080-1280.webp",
+        "path": "Assets/One Piece/tinified/one-piece-one-piece-great-wave-1920x1080-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 364146
+        "bytes": 555712
       },
       "large": {
-        "path": "previews/web/one-piece-one-piece-great-wave-1920x1080-1920.webp",
+        "path": "Assets/One Piece/tinified/one-piece-one-piece-great-wave-1920x1080-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 648786
+        "bytes": 1074128
       }
     }
   },
@@ -1287,20 +1479,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/Miyazaki/tinified/Miyazaki Three Worlds X Metamorphosis II X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
-        "bytes": 1667825
+        "bytes": 3971812
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/Miyazaki/tinified/Miyazaki Three Worlds X Metamorphosis II X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "format": "png",
-        "bytes": 5389247
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/Miyazaki/tinified/Miyazaki Three Worlds X Metamorphosis II X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "format": "webp",
+        "bytes": 923872
       },
       {
         "label": "Uncompressed 1080p",
@@ -1309,6 +1501,22 @@
         "height": 1080,
         "format": "png",
         "bytes": 3982247
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/Miyazaki/tinified/Miyazaki Three Worlds X Metamorphosis II X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 11919316
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/Miyazaki/tinified/Miyazaki Three Worlds X Metamorphosis II X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "format": "webp",
+        "bytes": 2172376
       },
       {
         "label": "Uncompressed 2160p",
@@ -1322,22 +1530,22 @@
     "addedOn": "2026-11-11",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/miyazaki-three-worlds-metamorphosis-ii-320.webp",
+        "path": "Assets/Miyazaki/tinified/miyazaki-three-worlds-metamorphosis-ii-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 19058
+        "bytes": 31278
       },
       "medium": {
-        "path": "previews/web/miyazaki-three-worlds-metamorphosis-ii-1280.webp",
+        "path": "Assets/Miyazaki/tinified/miyazaki-three-worlds-metamorphosis-ii-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 265964
+        "bytes": 463266
       },
       "large": {
-        "path": "previews/web/miyazaki-three-worlds-metamorphosis-ii-1920.webp",
+        "path": "Assets/Miyazaki/tinified/miyazaki-three-worlds-metamorphosis-ii-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 490860
+        "bytes": 923872
       }
     }
   },
@@ -1412,20 +1620,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/Miyazaki/tinified/Miyazaki Seven Worlds X Metamorphosis II X 1080p.png",
         "width": 1920,
         "height": 1080,
         "format": "png",
-        "bytes": 1747141
+        "bytes": 4826170
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/Miyazaki/tinified/Miyazaki Seven Worlds X Metamorphosis II X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "format": "png",
-        "bytes": 5743546
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/Miyazaki/tinified/Miyazaki Seven Worlds X Metamorphosis II X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "format": "webp",
+        "bytes": 1251716
       },
       {
         "label": "Uncompressed 1080p",
@@ -1434,6 +1642,22 @@
         "height": 1080,
         "format": "png",
         "bytes": 4827771
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/Miyazaki/tinified/Miyazaki Seven Worlds X Metamorphosis II X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "format": "png",
+        "bytes": 15086945
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/Miyazaki/tinified/Miyazaki Seven Worlds X Metamorphosis II X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "format": "webp",
+        "bytes": 2998906
       },
       {
         "label": "Uncompressed 2160p",
@@ -1447,22 +1671,22 @@
     "addedOn": "2026-11-11",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/miyazaki-seven-worlds-metamorphosis-ii-320.webp",
+        "path": "Assets/Miyazaki/tinified/miyazaki-seven-worlds-metamorphosis-ii-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 29080
+        "bytes": 43538
       },
       "medium": {
-        "path": "previews/web/miyazaki-seven-worlds-metamorphosis-ii-1280.webp",
+        "path": "Assets/Miyazaki/tinified/miyazaki-seven-worlds-metamorphosis-ii-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 422172
+        "bytes": 630372
       },
       "large": {
-        "path": "previews/web/miyazaki-seven-worlds-metamorphosis-ii-1920.webp",
+        "path": "Assets/Miyazaki/tinified/miyazaki-seven-worlds-metamorphosis-ii-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 791018
+        "bytes": 1251716
       }
     }
   },
@@ -1514,20 +1738,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/Claymore/tinified/Claymore X La Liberté guidant le peuple X 1080p.png",
         "width": 1920,
         "height": 1080,
-        "bytes": 936688,
+        "bytes": 2599612,
         "format": "png"
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/Claymore/tinified/Claymore X La Liberté guidant le peuple X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "bytes": 2790939,
-        "format": "png"
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/Claymore/tinified/Claymore X La Liberté guidant le peuple X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 376290,
+        "format": "webp"
       },
       {
         "label": "Uncompressed 1080p",
@@ -1536,6 +1760,22 @@
         "height": 1080,
         "bytes": 2643158,
         "format": "png"
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/Claymore/tinified/Claymore X La Liberté guidant le peuple X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 6777792,
+        "format": "png"
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/Claymore/tinified/Claymore X La Liberté guidant le peuple X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 906962,
+        "format": "webp"
       },
       {
         "label": "Uncompressed 2160p",
@@ -1549,22 +1789,22 @@
     "addedOn": "2026-11-15",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/claymore-la-liberte-guidant-le-peuple-320.webp",
+        "path": "Assets/Claymore/tinified/claymore-la-liberte-guidant-le-peuple-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 6568
+        "bytes": 21112
       },
       "medium": {
-        "path": "previews/web/claymore-la-liberte-guidant-le-peuple-1280.webp",
+        "path": "Assets/Claymore/tinified/claymore-la-liberte-guidant-le-peuple-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 47628
+        "bytes": 233858
       },
       "large": {
-        "path": "previews/web/claymore-la-liberte-guidant-le-peuple-1920.webp",
+        "path": "Assets/Claymore/tinified/claymore-la-liberte-guidant-le-peuple-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 88242
+        "bytes": 376290
       }
     }
   },
@@ -1618,20 +1858,20 @@
     ],
     "downloads": [
       {
-        "label": "Tinified 1080p",
+        "label": "Optimized PNG 1080p",
         "path": "Assets/Naruto/tinified/Naruto X Wind God and Thunder God X 1080p.png",
         "width": 1920,
         "height": 1080,
-        "bytes": 1321581,
+        "bytes": 3362522,
         "format": "png"
       },
       {
-        "label": "Tinified 2160p",
-        "path": "Assets/Naruto/tinified/Naruto X Wind God and Thunder God X 2160p.png",
-        "width": 3840,
-        "height": 2160,
-        "bytes": 3946980,
-        "format": "png"
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/Naruto/tinified/Naruto X Wind God and Thunder God X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 713184,
+        "format": "webp"
       },
       {
         "label": "Uncompressed 1080p",
@@ -1640,6 +1880,22 @@
         "height": 1080,
         "bytes": 3398844,
         "format": "png"
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/Naruto/tinified/Naruto X Wind God and Thunder God X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 9734372,
+        "format": "png"
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/Naruto/tinified/Naruto X Wind God and Thunder God X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1577168,
+        "format": "webp"
       },
       {
         "label": "Uncompressed 2160p",
@@ -1653,22 +1909,22 @@
     "addedOn": "2026-11-15",
     "webImage": {
       "thumbnail": {
-        "path": "previews/web/naruto-wind-god-and-thunder-god-320.webp",
+        "path": "Assets/Naruto/tinified/naruto-wind-god-and-thunder-god-320.webp",
         "width": 320,
         "height": 180,
-        "bytes": 11088
+        "bytes": 29038
       },
       "medium": {
-        "path": "previews/web/naruto-wind-god-and-thunder-god-1280.webp",
+        "path": "Assets/Naruto/tinified/naruto-wind-god-and-thunder-god-1280.webp",
         "width": 1280,
         "height": 720,
-        "bytes": 111984
+        "bytes": 387178
       },
       "large": {
-        "path": "previews/web/naruto-wind-god-and-thunder-god-1920.webp",
+        "path": "Assets/Naruto/tinified/naruto-wind-god-and-thunder-god-1920.webp",
         "width": 1920,
         "height": 1080,
-        "bytes": 216244
+        "bytes": 713184
       }
     }
   }

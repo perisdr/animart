@@ -13,10 +13,10 @@ offers Grid, Slider, and List; mobile uses one image-first feed. Artwork details
 include comparisons, generation prompts, direct downloads, and shareable links.
 The gallery requires no build step; local testing uses a static
 web server. Opening the page directly with `file://` is not a supported target.
-Nothing is deployed. The existing collection contains 12 crossovers, each with original
-and Tinify-optimized PNG downloads at 1920 × 1080 and 3840 × 2160.
-The split download button defaults to Tinified 1080p; its dropdown offers Tinified
-2160p, Uncompressed 1080p, and Uncompressed 2160p.
+Nothing is deployed. The existing collection contains 16 crossovers, each with original
+and Pillow Q95 WebP downloads at 1920 × 1080 and 3840 × 2160.
+The default download is Optimized WebP 1080p. The download menu offers
+Optimized PNG, Optimized WebP, and Uncompressed PNG at both 1080p and 2160p.
 
 ## Structure
 
@@ -62,13 +62,16 @@ and skips unchanged source images with matching generated outputs.
 Tinify charges quota for uploads and resizing; its returned monthly count is printed.
 Original-art previews can be added to the same pipeline after sourcing and attribution review.
 
-For additional wallpaper variants, `scripts/tinify_variants.py` accepts source PNG paths
-and uses `TINIFY_API_KEY` (or `--env-file` pointing to a local file). It saves a
-full-resolution compressed PNG and a 640 × 360 WebP thumbnail beside each source
-in its `tinified/` folder, skipping existing outputs. All collection wallpaper filenames follow
-`Anime Title X Painting Title X 1080p.png` / `2160p.png`; small thumbnails use
-`Anime Title X Painting Title X 640x360.webp`. The 2160p review variants are upscaled;
-see the review notes in `docs/` for their generation provenance.
+For AI Crossover previews and optimized downloads, run `python scripts/optimize_images.py`.
+This uses local Pillow WebP Q95 (method 6), preserves embedded ICC profiles,
+and requires no API key. Previews select the closest-ratio uncompressed PNG
+from the entry's download sources (preferring the smaller source on ties), resize
+with Lanczos, then encode once. Downloads encode the matching uncompressed PNG
+without resizing. Outputs live in the existing `tinified/` folders; the catalogue
+paths, dimensions, byte counts and optimization audit are updated automatically.
+The six download choices are: Optimized PNG, Optimized WebP and Uncompressed PNG, each at
+1080p and 2160p. The default is Optimized 1080p. `scripts/web_images.py` invokes
+the same pipeline. The older Tinify scripts are legacy tools, not this workflow.
 
 ## Editing the collection
 
@@ -125,3 +128,8 @@ custom CSS and gallery script in `index.html` to the same `YYYY.MM.DD.N` ID
 no build step, and gives changed assets new cache URLs. The label identifies
 the loaded release, not whether a newer release is still deploying. An older
 cached HTML page can still show the previous build until refreshed.
+
+Optimized PNG downloads use Pillow lossless PNG optimization (`optimize=True`,
+`compress_level=9`), not Q95 (PNG has no quality setting). Run
+`python scripts/optimize_png.py` to rebuild only these PNGs. Pixels are verified
+against each original; file sizes may be similar to or larger than the originals.

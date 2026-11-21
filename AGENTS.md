@@ -42,7 +42,7 @@ temporary exhibition schedules.
 Preserve `previewSourceUrl`, credits and reuse terms when changing reference links.
 Document source-verification exceptions in `docs/source-links.md`.
 
-Keep the four download variants and default Tinified 1080p option. Do not regenerate
+Keep the six download variants and default Optimized 1080p WebP option. Do not regenerate
 images or use paid Tinify quota unless requested. Never commit API keys or `.env`.
 
 ## Verification

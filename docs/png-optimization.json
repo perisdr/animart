@@ -1,0 +1,226 @@
+[
+  {
+    "source": "Assets/Death Note/Death Note X Nighthawks X 1080p.png",
+    "output": "Assets/Death Note/tinified/Death Note X Nighthawks X 1080p.png",
+    "sourceBytes": 2667161,
+    "bytes": 2651407,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Death Note/Death Note X Nighthawks X 2160p.png",
+    "output": "Assets/Death Note/tinified/Death Note X Nighthawks X 2160p.png",
+    "sourceBytes": 15422167,
+    "bytes": 7764403,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Death Note/Death Note X The Death of Marat X 1080p.png",
+    "output": "Assets/Death Note/tinified/Death Note X The Death of Marat X 1080p.png",
+    "sourceBytes": 2585084,
+    "bytes": 2564042,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Death Note/Death Note X The Death of Marat X 2160p.png",
+    "output": "Assets/Death Note/tinified/Death Note X The Death of Marat X 2160p.png",
+    "sourceBytes": 14011070,
+    "bytes": 7492409,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Death Note/Death Note X The Scream X 1080p.png",
+    "output": "Assets/Death Note/tinified/Death Note X The Scream X 1080p.png",
+    "sourceBytes": 3853935,
+    "bytes": 3853144,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Death Note/Death Note X The Scream X 2160p.png",
+    "output": "Assets/Death Note/tinified/Death Note X The Scream X 2160p.png",
+    "sourceBytes": 24072257,
+    "bytes": 12737198,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Death Note/Death Note X The Son of Man X 1080p.png",
+    "output": "Assets/Death Note/tinified/Death Note X The Son of Man X 1080p.png",
+    "sourceBytes": 2753120,
+    "bytes": 2740321,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Death Note/Death Note X The Son of Man X 2160p.png",
+    "output": "Assets/Death Note/tinified/Death Note X The Son of Man X 2160p.png",
+    "sourceBytes": 15585417,
+    "bytes": 8178559,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Demon Slayer/Demon Slayer X Rain, Steam, and Speed X 1080p.png",
+    "output": "Assets/Demon Slayer/tinified/Demon Slayer X Rain, Steam, and Speed X 1080p.png",
+    "sourceBytes": 3495275,
+    "bytes": 3494552,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Demon Slayer/Demon Slayer X Rain, Steam, and Speed X 2160p.png",
+    "output": "Assets/Demon Slayer/tinified/Demon Slayer X Rain, Steam, and Speed X 2160p.png",
+    "sourceBytes": 23911049,
+    "bytes": 11080863,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Demon Slayer/Demon Slayer X Fine Wind, Clear Morning X 1080p.png",
+    "output": "Assets/Demon Slayer/tinified/Demon Slayer X Fine Wind, Clear Morning X 1080p.png",
+    "sourceBytes": 4004348,
+    "bytes": 4003534,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Demon Slayer/Demon Slayer X Fine Wind, Clear Morning X 2160p.png",
+    "output": "Assets/Demon Slayer/tinified/Demon Slayer X Fine Wind, Clear Morning X 2160p.png",
+    "sourceBytes": 21618466,
+    "bytes": 13106741,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Demon Slayer/Demon Slayer X The Japanese Footbridge X 1080p.png",
+    "output": "Assets/Demon Slayer/tinified/Demon Slayer X The Japanese Footbridge X 1080p.png",
+    "sourceBytes": 4285158,
+    "bytes": 4284297,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Demon Slayer/Demon Slayer X The Japanese Footbridge X 2160p.png",
+    "output": "Assets/Demon Slayer/tinified/Demon Slayer X The Japanese Footbridge X 2160p.png",
+    "sourceBytes": 26452846,
+    "bytes": 14633109,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Demon Slayer/Demon Slayer X The Great Wave off Kanagawa X 1080p.png",
+    "output": "Assets/Demon Slayer/tinified/Demon Slayer X The Great Wave off Kanagawa X 1080p.png",
+    "sourceBytes": 3985350,
+    "bytes": 3984171,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Demon Slayer/Demon Slayer X The Great Wave off Kanagawa X 2160p.png",
+    "output": "Assets/Demon Slayer/tinified/Demon Slayer X The Great Wave off Kanagawa X 2160p.png",
+    "sourceBytes": 22347136,
+    "bytes": 13091745,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Demon Slayer/Demon Slayer X The Abbey in the Oakwood X 1080p.png",
+    "output": "Assets/Demon Slayer/tinified/Demon Slayer X The Abbey in the Oakwood X 1080p.png",
+    "sourceBytes": 3701419,
+    "bytes": 3700277,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Demon Slayer/Demon Slayer X The Abbey in the Oakwood X 2160p.png",
+    "output": "Assets/Demon Slayer/tinified/Demon Slayer X The Abbey in the Oakwood X 2160p.png",
+    "sourceBytes": 20581127,
+    "bytes": 11692920,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/FMA/Fullmetal Alchemist X The Creation of Adam X 1080p.png",
+    "output": "Assets/FMA/tinified/Fullmetal Alchemist X The Creation of Adam X 1080p.png",
+    "sourceBytes": 3085050,
+    "bytes": 3082267,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/FMA/Fullmetal Alchemist X The Creation of Adam X 2160p.png",
+    "output": "Assets/FMA/tinified/Fullmetal Alchemist X The Creation of Adam X 2160p.png",
+    "sourceBytes": 18640894,
+    "bytes": 9453531,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/FMA/Fullmetal Alchemist X Wanderer above the Sea of Fog X 1080p.png",
+    "output": "Assets/FMA/tinified/Fullmetal Alchemist X Wanderer above the Sea of Fog X 1080p.png",
+    "sourceBytes": 3314126,
+    "bytes": 3311494,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/FMA/Fullmetal Alchemist X Wanderer above the Sea of Fog X 2160p.png",
+    "output": "Assets/FMA/tinified/Fullmetal Alchemist X Wanderer above the Sea of Fog X 2160p.png",
+    "sourceBytes": 21777432,
+    "bytes": 11660718,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/One Piece/One Piece X The Great Wave off Kanagawa X 1080p.png",
+    "output": "Assets/One Piece/tinified/One Piece X The Great Wave off Kanagawa X 1080p.png",
+    "sourceBytes": 4316611,
+    "bytes": 4315738,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/One Piece/One Piece X The Great Wave off Kanagawa X 2160p.png",
+    "output": "Assets/One Piece/tinified/One Piece X The Great Wave off Kanagawa X 2160p.png",
+    "sourceBytes": 24283472,
+    "bytes": 14448060,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Miyazaki/Miyazaki Three Worlds X Metamorphosis II X 1080p.png",
+    "output": "Assets/Miyazaki/tinified/Miyazaki Three Worlds X Metamorphosis II X 1080p.png",
+    "sourceBytes": 3982247,
+    "bytes": 3971812,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Miyazaki/Miyazaki Three Worlds X Metamorphosis II X 2160p.png",
+    "output": "Assets/Miyazaki/tinified/Miyazaki Three Worlds X Metamorphosis II X 2160p.png",
+    "sourceBytes": 12057808,
+    "bytes": 11919316,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Miyazaki/Miyazaki Seven Worlds X Metamorphosis II X 1080p.png",
+    "output": "Assets/Miyazaki/tinified/Miyazaki Seven Worlds X Metamorphosis II X 1080p.png",
+    "sourceBytes": 4827771,
+    "bytes": 4826170,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Miyazaki/Miyazaki Seven Worlds X Metamorphosis II X 2160p.png",
+    "output": "Assets/Miyazaki/tinified/Miyazaki Seven Worlds X Metamorphosis II X 2160p.png",
+    "sourceBytes": 15108109,
+    "bytes": 15086945,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Claymore/Claymore X La Libert\u00e9 guidant le peuple X 1080p.png",
+    "output": "Assets/Claymore/tinified/Claymore X La Libert\u00e9 guidant le peuple X 1080p.png",
+    "sourceBytes": 2643158,
+    "bytes": 2599612,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Claymore/Claymore X La Libert\u00e9 guidant le peuple X 2160p.png",
+    "output": "Assets/Claymore/tinified/Claymore X La Libert\u00e9 guidant le peuple X 2160p.png",
+    "sourceBytes": 7170520,
+    "bytes": 6777792,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Naruto/Naruto X Wind God and Thunder God X 1080p.png",
+    "output": "Assets/Naruto/tinified/Naruto X Wind God and Thunder God X 1080p.png",
+    "sourceBytes": 3398844,
+    "bytes": 3362522,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Naruto/Naruto X Wind God and Thunder God X 2160p.png",
+    "output": "Assets/Naruto/tinified/Naruto X Wind God and Thunder God X 2160p.png",
+    "sourceBytes": 9921691,
+    "bytes": 9734372,
+    "pixelIdentical": true
+  }
+]

@@ -244,11 +244,11 @@ pageSize.addEventListener('change', () => {
 
 const path = p => esc(encodeURI(p));
 const detail = r => `#piece=${encodeURIComponent(r.id)}`;
-const defaultDownload = r => r.downloads.find(d => d.label === 'Tinified 1080p') || r.downloads[0];
+const defaultDownload = r => r.downloads.find(d => d.label === 'Optimized WebP 1080p') || r.downloads[0];
 function downloadButton(r) {
   const groups = [1080, 2160].map(height => {
     const files = r.downloads.filter(file => file.height === height);
-    return `<section class="download-group"><h3 class="download-group-title">${height === 1080 ? 'Full HD · 1080p' : '4K · 2160p'}</h3>${files.map(file => `<a class="download-file" href="${path(file.path)}" download><span><strong>${file.label.startsWith('Tinified') ? 'Optimized PNG' : 'Uncompressed PNG'}</strong></span><span>${(file.bytes / 1000000).toFixed(2)} MB ↓</span></a>`).join('')}</section>`;
+    return `<section class="download-group"><h3 class="download-group-title">${height === 1080 ? 'Full HD · 1080p' : '4K · 2160p'}</h3>${files.map(file => `<a class="download-file" href="${path(file.path)}" download><span><strong>${file.label.startsWith('Optimized') ? (file.format === 'png' ? 'Optimized PNG' : 'Optimized WebP') : 'Uncompressed PNG'}</strong></span><span>${(file.bytes / 1000000).toFixed(2)} MB ↓</span></a>`).join('')}</section>`;
   }).join('');
   return `<details class="download-picker"><summary aria-label="Download options for ${esc(r.anime.name)} × ${esc(r.artwork.title)}" title="Download options"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg></summary><div class="download-panel">${groups}</div></details>`;
 }
@@ -526,7 +526,7 @@ function syncDetail() {
       file_variant: file.label,
       file_path: file.path,
       resolution_height: file.height,
-      optimized: file.label.startsWith('Tinified')
+      optimized: file.label.startsWith('Optimized')
     });
   });
   const comparison = crossoverDialog.querySelector('.art-comparison');
