@@ -23,12 +23,6 @@
         "bytes": 228060
       },
       {
-        "path": "Assets/Death Note/tinified/death-note-nighthawks-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 428976
-      },
-      {
         "path": "Assets/Death Note/tinified/Death Note X Nighthawks X 1080p.webp",
         "width": 1920,
         "height": 1080,
@@ -64,12 +58,6 @@
         "width": 1280,
         "height": 720,
         "bytes": 204316
-      },
-      {
-        "path": "Assets/Death Note/tinified/death-note-the-death-of-marat-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 378780
       },
       {
         "path": "Assets/Death Note/tinified/Death Note X The Death of Marat X 1080p.webp",
@@ -109,12 +97,6 @@
         "bytes": 480628
       },
       {
-        "path": "Assets/Death Note/tinified/death-note-the-scream-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 917140
-      },
-      {
         "path": "Assets/Death Note/tinified/Death Note X The Scream X 1080p.webp",
         "width": 1920,
         "height": 1080,
@@ -150,12 +132,6 @@
         "width": 1280,
         "height": 720,
         "bytes": 251030
-      },
-      {
-        "path": "Assets/Death Note/tinified/death-note-the-son-of-man-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 438670
       },
       {
         "path": "Assets/Death Note/tinified/Death Note X The Son of Man X 1080p.webp",
@@ -195,12 +171,6 @@
         "bytes": 412232
       },
       {
-        "path": "Assets/Demon Slayer/tinified/demon-slayer-mugen-train-turner-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 781478
-      },
-      {
         "path": "Assets/Demon Slayer/tinified/Demon Slayer X Rain, Steam, and Speed X 1080p.webp",
         "width": 1920,
         "height": 1080,
@@ -236,12 +206,6 @@
         "width": 1280,
         "height": 720,
         "bytes": 487370
-      },
-      {
-        "path": "Assets/Demon Slayer/tinified/demon-slayer-rengoku-red-fuji-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 944184
       },
       {
         "path": "Assets/Demon Slayer/tinified/Demon Slayer X Fine Wind, Clear Morning X 1080p.webp",
@@ -281,12 +245,6 @@
         "bytes": 562598
       },
       {
-        "path": "Assets/Demon Slayer/tinified/demon-slayer-shinobu-monet-garden-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 1095058
-      },
-      {
         "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Japanese Footbridge X 1080p.webp",
         "width": 1920,
         "height": 1080,
@@ -322,12 +280,6 @@
         "width": 1280,
         "height": 720,
         "bytes": 511070
-      },
-      {
-        "path": "Assets/Demon Slayer/tinified/demon-slayer-tanjiro-great-wave-corrected-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 904398
       },
       {
         "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Great Wave off Kanagawa X 1080p.webp",
@@ -367,12 +319,6 @@
         "bytes": 436920
       },
       {
-        "path": "Assets/Demon Slayer/tinified/demon-slayer-tanjiro-moonlit-temple-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 812212
-      },
-      {
         "path": "Assets/Demon Slayer/tinified/Demon Slayer X The Abbey in the Oakwood X 1080p.webp",
         "width": 1920,
         "height": 1080,
@@ -408,12 +354,6 @@
         "width": 1280,
         "height": 720,
         "bytes": 329226
-      },
-      {
-        "path": "Assets/FMA/tinified/fma-fma-creation-of-adam-1920x1080-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 582316
       },
       {
         "path": "Assets/FMA/tinified/Fullmetal Alchemist X The Creation of Adam X 1080p.webp",
@@ -453,12 +393,6 @@
         "bytes": 364566
       },
       {
-        "path": "Assets/FMA/tinified/fma-fma-wanderer-1920x1080-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 681226
-      },
-      {
         "path": "Assets/FMA/tinified/Fullmetal Alchemist X Wanderer above the Sea of Fog X 1080p.webp",
         "width": 1920,
         "height": 1080,
@@ -494,12 +428,6 @@
         "width": 1280,
         "height": 720,
         "bytes": 555712
-      },
-      {
-        "path": "Assets/One Piece/tinified/one-piece-one-piece-great-wave-1920x1080-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 1074128
       },
       {
         "path": "Assets/One Piece/tinified/One Piece X The Great Wave off Kanagawa X 1080p.webp",
@@ -539,12 +467,6 @@
         "bytes": 463266
       },
       {
-        "path": "Assets/Miyazaki/tinified/miyazaki-three-worlds-metamorphosis-ii-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 923872
-      },
-      {
         "path": "Assets/Miyazaki/tinified/Miyazaki Three Worlds X Metamorphosis II X 1080p.webp",
         "width": 1920,
         "height": 1080,
@@ -580,12 +502,6 @@
         "width": 1280,
         "height": 720,
         "bytes": 630372
-      },
-      {
-        "path": "Assets/Miyazaki/tinified/miyazaki-seven-worlds-metamorphosis-ii-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 1251716
       },
       {
         "path": "Assets/Miyazaki/tinified/Miyazaki Seven Worlds X Metamorphosis II X 1080p.webp",
@@ -625,12 +541,6 @@
         "bytes": 233858
       },
       {
-        "path": "Assets/Claymore/tinified/claymore-la-liberte-guidant-le-peuple-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 376290
-      },
-      {
         "path": "Assets/Claymore/tinified/Claymore X La Libert\u00e9 guidant le peuple X 1080p.webp",
         "width": 1920,
         "height": 1080,
@@ -666,12 +576,6 @@
         "width": 1280,
         "height": 720,
         "bytes": 387178
-      },
-      {
-        "path": "Assets/Naruto/tinified/naruto-wind-god-and-thunder-god-1920.webp",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 713184
       },
       {
         "path": "Assets/Naruto/tinified/Naruto X Wind God and Thunder God X 1080p.webp",

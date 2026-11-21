@@ -37,6 +37,8 @@ def main():
         record['preview'] = result['path']
         outputs.append(result)
         for field, old in record['webImage'].items():
+            if field == 'large':
+                continue
             size = (old['width'], old['height'])
             destination = folder / f"{record['id']}-{size[0]}.webp"
             record['webImage'][field] = encode(preview_source(size), destination, size)
@@ -49,6 +51,8 @@ def main():
             result = encode(source, destination)
             download.update(result, format='webp', label=f"Optimized WebP {result['height']}p")
             outputs.append(result)
+        large = next(d for d in record['downloads'] if d['format'] == 'webp' and d['height'] == 1080)
+        record['webImage']['large'] = {key: large[key] for key in ('path', 'width', 'height', 'bytes')}
         audit.append({'id': record['id'], 'encoder': 'Pillow WebP', 'quality': 95, 'outputs': outputs})
         print(record['id'], flush=True)
     catalogue.write_text(json.dumps(records, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
