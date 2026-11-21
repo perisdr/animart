@@ -299,13 +299,13 @@ window.addEventListener('resize', () => {
 document.addEventListener('scroll', () => {
   document.querySelectorAll('.download-picker[open]').forEach(positionDownloadPanel);
 }, true);
-function image(r, large = false, eager = false, thumbnail = false, priority = false) {
+function image(r, large = false, eager = false, priority = false) {
   const web = r.webImage;
-  const source = thumbnail ? web.thumbnail.path : large ? web.large.path : r.preview;
+  const source = large ? web.large.path : r.preview;
   const sizes = large
     ? window.animartFeatured.sizes
     : '(max-width: 767px) 100vw, (min-width: 1200px) calc((100vw - 144px) / 3), calc(50vw - 64px)';
-  const responsive = thumbnail ? '' : ` srcset="${esc(window.animartFeatured.srcset(r))}" sizes="${sizes}"`;
+  const responsive = ` srcset="${esc(window.animartFeatured.srcset(r))}" sizes="${sizes}"`;
   return `<img decoding="async" ${large || eager ? 'loading="eager"' : 'loading="lazy"'}${priority ? ` fetchpriority="high" width="${web.large.width}" height="${web.large.height}"` : ''} src="${path(source)}"${responsive} alt="${esc(r.anime.name)} AI Crossover inspired by ${esc(r.artwork.title)}">`;
 }
 const crossoverTitle = r => `<span class="title-anime">${esc(r.anime.name)}</span> <span class="title-cross">×</span> <span class="title-art">${esc(r.artwork.title)}</span>`;
@@ -456,7 +456,7 @@ async function loadGallery(){
     const {records:data, featured}=await window.animartFeatured.load();
     records=data;
     if (featured) {
-      document.querySelector('#featured').innerHTML = `<div class="featured-layout">${crossoverHeading(featured, 2)}<a class="featured-image preview-link" href="${detail(featured)}">${image(featured,true,false,false,true)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="featured-caption">${crossoverCredits(featured)}</div></div>`;
+      document.querySelector('#featured').innerHTML = `<div class="featured-layout">${crossoverHeading(featured, 2)}<a class="featured-image preview-link" href="${detail(featured)}">${image(featured,true,false,true)}<span class="explore-orb" aria-hidden="true">Explore</span></a><div class="featured-caption">${crossoverCredits(featured)}</div></div>`;
     }
     const order=name=>name==='One Piece'?0:/Fullmetal|FMA/.test(name)?1:name==='Death Note'?2:3;
     records.sort((a,b)=>order(a.anime.name)-order(b.anime.name));

@@ -37,7 +37,7 @@ def main():
         record['preview'] = result['path']
         outputs.append(result)
         for field, old in record['webImage'].items():
-            if field == 'large':
+            if field != 'medium':
                 continue
             size = (old['width'], old['height'])
             destination = folder / f"{record['id']}-{size[0]}.webp"

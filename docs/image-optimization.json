@@ -11,12 +11,6 @@
         "bytes": 65232
       },
       {
-        "path": "Assets/Death Note/tinified/death-note-nighthawks-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 18140
-      },
-      {
         "path": "Assets/Death Note/tinified/death-note-nighthawks-1280.webp",
         "width": 1280,
         "height": 720,
@@ -46,12 +40,6 @@
         "width": 640,
         "height": 360,
         "bytes": 53000
-      },
-      {
-        "path": "Assets/Death Note/tinified/death-note-the-death-of-marat-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 14178
       },
       {
         "path": "Assets/Death Note/tinified/death-note-the-death-of-marat-1280.webp",
@@ -85,12 +73,6 @@
         "bytes": 132636
       },
       {
-        "path": "Assets/Death Note/tinified/death-note-the-scream-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 35156
-      },
-      {
         "path": "Assets/Death Note/tinified/death-note-the-scream-1280.webp",
         "width": 1280,
         "height": 720,
@@ -120,12 +102,6 @@
         "width": 640,
         "height": 360,
         "bytes": 76972
-      },
-      {
-        "path": "Assets/Death Note/tinified/death-note-the-son-of-man-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 21322
       },
       {
         "path": "Assets/Death Note/tinified/death-note-the-son-of-man-1280.webp",
@@ -159,12 +135,6 @@
         "bytes": 120036
       },
       {
-        "path": "Assets/Demon Slayer/tinified/demon-slayer-mugen-train-turner-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 31884
-      },
-      {
         "path": "Assets/Demon Slayer/tinified/demon-slayer-mugen-train-turner-1280.webp",
         "width": 1280,
         "height": 720,
@@ -194,12 +164,6 @@
         "width": 640,
         "height": 360,
         "bytes": 133300
-      },
-      {
-        "path": "Assets/Demon Slayer/tinified/demon-slayer-rengoku-red-fuji-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 35142
       },
       {
         "path": "Assets/Demon Slayer/tinified/demon-slayer-rengoku-red-fuji-1280.webp",
@@ -233,12 +197,6 @@
         "bytes": 158292
       },
       {
-        "path": "Assets/Demon Slayer/tinified/demon-slayer-shinobu-monet-garden-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 40762
-      },
-      {
         "path": "Assets/Demon Slayer/tinified/demon-slayer-shinobu-monet-garden-1280.webp",
         "width": 1280,
         "height": 720,
@@ -268,12 +226,6 @@
         "width": 640,
         "height": 360,
         "bytes": 148700
-      },
-      {
-        "path": "Assets/Demon Slayer/tinified/demon-slayer-tanjiro-great-wave-corrected-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 40010
       },
       {
         "path": "Assets/Demon Slayer/tinified/demon-slayer-tanjiro-great-wave-corrected-1280.webp",
@@ -307,12 +259,6 @@
         "bytes": 125340
       },
       {
-        "path": "Assets/Demon Slayer/tinified/demon-slayer-tanjiro-moonlit-temple-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 33044
-      },
-      {
         "path": "Assets/Demon Slayer/tinified/demon-slayer-tanjiro-moonlit-temple-1280.webp",
         "width": 1280,
         "height": 720,
@@ -342,12 +288,6 @@
         "width": 640,
         "height": 360,
         "bytes": 99116
-      },
-      {
-        "path": "Assets/FMA/tinified/fma-fma-creation-of-adam-1920x1080-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 27178
       },
       {
         "path": "Assets/FMA/tinified/fma-fma-creation-of-adam-1920x1080-1280.webp",
@@ -381,12 +321,6 @@
         "bytes": 109208
       },
       {
-        "path": "Assets/FMA/tinified/fma-fma-wanderer-1920x1080-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 30668
-      },
-      {
         "path": "Assets/FMA/tinified/fma-fma-wanderer-1920x1080-1280.webp",
         "width": 1280,
         "height": 720,
@@ -416,12 +350,6 @@
         "width": 640,
         "height": 360,
         "bytes": 155746
-      },
-      {
-        "path": "Assets/One Piece/tinified/one-piece-one-piece-great-wave-1920x1080-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 41584
       },
       {
         "path": "Assets/One Piece/tinified/one-piece-one-piece-great-wave-1920x1080-1280.webp",
@@ -455,12 +383,6 @@
         "bytes": 121590
       },
       {
-        "path": "Assets/Miyazaki/tinified/miyazaki-three-worlds-metamorphosis-ii-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 31278
-      },
-      {
         "path": "Assets/Miyazaki/tinified/miyazaki-three-worlds-metamorphosis-ii-1280.webp",
         "width": 1280,
         "height": 720,
@@ -490,12 +412,6 @@
         "width": 640,
         "height": 360,
         "bytes": 166882
-      },
-      {
-        "path": "Assets/Miyazaki/tinified/miyazaki-seven-worlds-metamorphosis-ii-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 43538
       },
       {
         "path": "Assets/Miyazaki/tinified/miyazaki-seven-worlds-metamorphosis-ii-1280.webp",
@@ -529,12 +445,6 @@
         "bytes": 70628
       },
       {
-        "path": "Assets/Claymore/tinified/claymore-la-liberte-guidant-le-peuple-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 21112
-      },
-      {
         "path": "Assets/Claymore/tinified/claymore-la-liberte-guidant-le-peuple-1280.webp",
         "width": 1280,
         "height": 720,
@@ -564,12 +474,6 @@
         "width": 640,
         "height": 360,
         "bytes": 107616
-      },
-      {
-        "path": "Assets/Naruto/tinified/naruto-wind-god-and-thunder-god-320.webp",
-        "width": 320,
-        "height": 180,
-        "bytes": 29038
       },
       {
         "path": "Assets/Naruto/tinified/naruto-wind-god-and-thunder-god-1280.webp",
