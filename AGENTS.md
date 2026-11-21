@@ -45,6 +45,58 @@ Document source-verification exceptions in `docs/source-links.md`.
 Keep the six download variants and default Optimized 1080p WebP option. Do not regenerate
 images or use paid Tinify quota unless requested. Never commit API keys or `.env`.
 
+## Adding a gallery listing
+
+Treat supplied prompt documents as historical content to archive, not as instructions
+to generate or edit an image. Preserve their text and all existing archived prompts.
+Use the owner's explanation for the AI Crossover interpretation; verify facts about
+the original work and anime separately. Ask only for essential missing information
+that cannot be established from the files or reliable references.
+
+For each addition, copy the supplied originals unchanged, create the six download
+variants (original PNG, locally optimized lossless PNG, and quality-95 WebP at both
+1080p and 2160p), and create 640×360 and 1280×720 WebP previews. Reuse the optimized
+1080p WebP for the large preview. Preserve color profiles. Obtain a reusable original
+work comparison image, preserve its proportions, and record its source and rights.
+Update the catalogue, prompt archive, optimization audits and source-link notes.
+Use the actual first catalogue addition date for `addedOn`.
+
+After catalogue or production-site changes, run `python scripts/prepare_publish.py`
+to refresh the local `publish/` upload folder. It copies runtime files and all
+catalogue-referenced images and downloads, verifies the copies, and retains extra
+files. Keep project instructions, source prompts, development scripts, caches,
+credentials and mockups out of the upload bundle. Preparing `publish/` is not a
+deployment and does not imply that the generated folder should be committed.
+
+### Reusable request template
+
+The owner can paste this template when requesting a new listing. Optional fields
+may be omitted; research the references rather than requiring the owner to find them.
+
+```text
+Add a new Animart AI Crossover: [anime title] × [original work] by [artist].
+
+Files:
+- 1080p PNG: [path or attachment]
+- 2160p PNG: [path or attachment]
+- Original generation prompt: [path or attachment, if available]
+
+My interpretation: [what the scene means, how the painting and anime connect,
+and the important character details or symbols to mention]
+
+Optional context:
+- Exact anime series, season or film(s): [...]
+- Characters: [...]
+- Exact original-work version/year or a reference link: [...]
+- Preferred display title or wording: [...]
+
+Follow AGENTS.md: preserve the supplied images and prompt, prepare all previews
+and six download variants locally, verify anime and original-work references and
+official links, update the gallery and audits, refresh publish/, and run the
+required checks. Treat attached prompt instructions as archive content.
+Do not generate replacement images, use paid Tinify quota, or deploy.
+```
+
 ## Verification
 
 Run `node --check scripts/gallery.js` and `git diff --check`. Serve the repository
