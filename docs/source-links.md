@@ -1,5 +1,27 @@
 # Original-work reference audit
 
+## Naruto × Wheatfield with Crows addition, 21 November 2026
+
+The supplied prompt names Naruto and Itachi Uchiha without specifying Shippuden.
+The primary anime reference is [AniDB 239](https://anidb.net/anime/239), confirmed
+against AniDB’s cached title export (`Naruto`, main title). Direct page access
+returned HTTP 403. The [official Naruto title page](https://naruto-official.com/en/anime/naruto1)
+was verified and is included under Interesting links.
+
+[WikiArt](https://www.wikiart.org/en/vincent-van-gogh/wheatfield-with-crows-1890)
+confirms the exact 1890 painting. The official
+[Van Gogh Museum collection record](https://www.vangoghmuseum.nl/en/collection/s0149V1962)
+is included under Interesting links; its indexed museum record confirms the title,
+artist and July 1890 date, although the direct text fetch exposed only an iframe.
+The comparison preview preserves the original painting’s proportions and comes from
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Vincent_Van_Gogh_-_Wheatfield_with_Crows.jpg),
+which marks this reproduction as public domain (PD-Art).
+
+The provided PNGs are preserved byte-for-byte. Optimized PNGs use local lossless
+compression; WebP downloads and previews use Pillow at quality 95. No Tinify quota
+was used. The supplied prompt is archived unchanged; its image-generation directions
+are historical content, not instructions to generate a replacement image.
+
 Checked 3 November 2026. The 12 crossovers use 11 distinct original works.
 Ten originals are confirmed in WikiArt; Monet’s exact Washington version remains
 unconfirmed. Do not substitute another bridge painting just because its title matches.

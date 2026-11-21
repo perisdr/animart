@@ -222,5 +222,19 @@
     "sourceBytes": 9921691,
     "bytes": 9734372,
     "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Naruto/Naruto X Wheatfield with Crows X 1080p.png",
+    "output": "Assets/Naruto/tinified/Naruto X Wheatfield with Crows X 1080p.png",
+    "sourceBytes": 3817520,
+    "bytes": 3817520,
+    "pixelIdentical": true
+  },
+  {
+    "source": "Assets/Naruto/Naruto X Wheatfield with Crows X 2160p.png",
+    "output": "Assets/Naruto/tinified/Naruto X Wheatfield with Crows X 2160p.png",
+    "sourceBytes": 11466038,
+    "bytes": 11466032,
+    "pixelIdentical": true
   }
 ]

@@ -1831,5 +1831,121 @@
         "bytes": 713184
       }
     }
+  },
+  {
+    "id": "naruto-wheatfield-with-crows",
+    "anime": {
+      "name": "Naruto",
+      "mangaCreator": "Masashi Kishimoto",
+      "mangaSourceUrl": "https://www.viz.com/naruto",
+      "anidbUrl": "https://anidb.net/anime/239",
+      "aliases": [
+        "Itachi Uchiha",
+        "Sharingan",
+        "Akatsuki",
+        "genjutsu"
+      ],
+      "description": "Naruto follows a young ninja seeking recognition in the Hidden Leaf Village. Itachi Uchiha, Sasuke’s older brother and a member of the Akatsuki, brings a quieter menace through his Sharingan and illusion techniques."
+    },
+    "artwork": {
+      "title": "Wheatfield with Crows",
+      "artist": "Vincent van Gogh",
+      "year": "1890",
+      "description": "Van Gogh sets golden wheat and diverging paths beneath a dark blue sky crossed by crows. This AI Crossover uses his restless brushwork to turn the landscape into genjutsu: the crows’ Sharingan eyes hint at Itachi’s presence before his tiny figure emerges on the horizon. A winding path leads toward him, while a red Akatsuki cloud takes shape in the storm.",
+      "sourceUrl": "https://www.wikiart.org/en/vincent-van-gogh/wheatfield-with-crows-1890",
+      "preview": "previews/originals/wheatfield-with-crows.webp",
+      "previewSourceUrl": "https://commons.wikimedia.org/wiki/File:Vincent_Van_Gogh_-_Wheatfield_with_Crows.jpg",
+      "credit": "Vincent van Gogh / Van Gogh Museum, Amsterdam. Comparison image via Wikimedia Commons.",
+      "reuseTerms": "Public domain reproduction (PD-Art), per Wikimedia Commons.",
+      "links": [
+        {
+          "label": "Naruto Official Site — Naruto",
+          "url": "https://naruto-official.com/en/anime/naruto1"
+        },
+        {
+          "label": "Van Gogh Museum — Wheatfield with Crows",
+          "url": "https://www.vangoghmuseum.nl/en/collection/s0149V1962"
+        }
+      ]
+    },
+    "metadataStatus": "source-linked",
+    "preview": "Assets/Naruto/tinified/Naruto X Wheatfield with Crows X 640x360.webp",
+    "tags": [
+      "AI-generated",
+      "anime",
+      "TV wallpaper",
+      "16:9",
+      "Post-Impressionism",
+      "wheatfield",
+      "crows",
+      "genjutsu",
+      "Sharingan",
+      "Itachi Uchiha"
+    ],
+    "downloads": [
+      {
+        "label": "Optimized PNG 1080p",
+        "path": "Assets/Naruto/tinified/Naruto X Wheatfield with Crows X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 3817520,
+        "format": "png"
+      },
+      {
+        "label": "Optimized WebP 1080p",
+        "path": "Assets/Naruto/tinified/Naruto X Wheatfield with Crows X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 858634,
+        "format": "webp"
+      },
+      {
+        "label": "Uncompressed 1080p",
+        "path": "Assets/Naruto/Naruto X Wheatfield with Crows X 1080p.png",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 3817520,
+        "format": "png"
+      },
+      {
+        "label": "Optimized PNG 2160p",
+        "path": "Assets/Naruto/tinified/Naruto X Wheatfield with Crows X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 11466032,
+        "format": "png"
+      },
+      {
+        "label": "Optimized WebP 2160p",
+        "path": "Assets/Naruto/tinified/Naruto X Wheatfield with Crows X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1988166,
+        "format": "webp"
+      },
+      {
+        "label": "Uncompressed 2160p",
+        "path": "Assets/Naruto/Naruto X Wheatfield with Crows X 2160p.png",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 11466038,
+        "format": "png"
+      }
+    ],
+    "addedOn": "2026-11-21",
+    "webImage": {
+      "medium": {
+        "path": "Assets/Naruto/tinified/naruto-wheatfield-with-crows-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 460074
+      },
+      "large": {
+        "path": "Assets/Naruto/tinified/Naruto X Wheatfield with Crows X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 858634
+      }
+    }
   }
 ]

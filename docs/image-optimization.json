@@ -494,5 +494,36 @@
         "bytes": 1577168
       }
     ]
+  },
+  {
+    "id": "naruto-wheatfield-with-crows",
+    "encoder": "Pillow WebP",
+    "quality": 95,
+    "outputs": [
+      {
+        "path": "Assets/Naruto/tinified/Naruto X Wheatfield with Crows X 640x360.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 126764
+      },
+      {
+        "path": "Assets/Naruto/tinified/naruto-wheatfield-with-crows-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 460074
+      },
+      {
+        "path": "Assets/Naruto/tinified/Naruto X Wheatfield with Crows X 1080p.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 858634
+      },
+      {
+        "path": "Assets/Naruto/tinified/Naruto X Wheatfield with Crows X 2160p.webp",
+        "width": 3840,
+        "height": 2160,
+        "bytes": 1988166
+      }
+    ]
   }
 ]
